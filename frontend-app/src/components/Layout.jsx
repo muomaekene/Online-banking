@@ -4,7 +4,9 @@ import { useDarkMode } from "../utils/useDarkMode";
 import { themes } from "../utils/Theme";
 
 import Sidebar from "./Sidebar";
-import Container from "./Styles/LayoutStyles";
+import TopBar from "./TopBar";
+
+import styled from "styled-components";
 
 const Layout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode();
@@ -18,10 +20,21 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Container>
         <Sidebar />
-        <main>{children}</main>
+        <main>
+          <TopBar />
+          <div>{children}</div>
+        </main>
       </Container>
     </ThemeProvider>
   );
 };
 
 export default Layout;
+
+const Container = styled.div`
+  main {
+    margin-left: 240px;
+    width: calc(100% - 240px);
+    position: fixed;
+  }
+`;

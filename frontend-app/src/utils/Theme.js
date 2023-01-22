@@ -5,23 +5,19 @@ export const themes = createTheme({
     darkTheme: {
       main: "#202124",
       text: "#b1b2b3",
-      primary: "#c6384d",
-      secondary: "#fff",
+      primary: "#E1333C",
+      secondary: "#edf0f3",
     },
     lightTheme: {
-      main: "#edf0f3",
-      text: "#525354",
-      primary: "#c6384d",
+      primary: "#EEEEEE",
       secondary: "#fff",
+      main: "#25304b",
+      hover: "#3d455d",
+      border: "#e3e3e3",
+      text: "#292929",
+      altText: "#717171",
+      badge: "#c6384d",
     },
   },
-  // palette: {
-  //   primary: {
-  //     main: "HEXADECIMAL COLOR",
-  //   },
-  //   secondary: {
-  //     main: "HEXADECIMAL COLOR",
-  //   },
-  // },
   screens: {},
 });

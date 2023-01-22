@@ -8,10 +8,10 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${({ theme }) => theme.main};
+    background: ${({ theme }) => theme.secondary};
     color: ${({ theme }) => theme.text};
-    font-family: "Manrope", sans-serif;
-  }
+    font-family: 'Urbanist', sans-serif;
+  } 
 
   a {
     text-decoration: none;
