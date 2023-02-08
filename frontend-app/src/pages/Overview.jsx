@@ -22,9 +22,6 @@ const Overview = () => {
               <Accounts account={account} key={account.key} />
             ))}
           </div>
-          <div className="stats">
-            <LineChart />
-          </div>
           <div className="transactions">
             <div className="group-title">
               <h2 className="title">Recent transactions</h2>
@@ -36,6 +33,9 @@ const Overview = () => {
               </Link>
             </div>
             <Transactions />
+          </div>
+          <div className="stats">
+            <LineChart />
           </div>
         </div>
         <div className="flex-right">
@@ -100,7 +100,7 @@ const Container = styled.div`
   }
 
   .title {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 600;
   }
 
@@ -146,7 +146,7 @@ const Container = styled.div`
 
   .boxx {
     margin-top: 10px;
-    height: 19.5rem;
+    height: 19.3rem;
     width: 100%;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;

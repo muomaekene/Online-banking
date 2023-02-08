@@ -37,7 +37,7 @@ const Container = styled.div`
 
   .card-number {
     margin-left: 20px;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .card-bottom {

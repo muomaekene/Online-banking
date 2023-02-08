@@ -114,6 +114,7 @@ const Container = styled.div`
     cursor: pointer;
     margin-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: 0.3s ease all;
 
     :hover {
       padding: 5px;
