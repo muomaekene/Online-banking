@@ -13,17 +13,9 @@ const TransTable = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data });
 
-  const truncateString = (str, num) => {
-    if (str.length > num) {
-      return str.slice(0, num) + "...";
-    } else {
-      return str;
-    }
-  };
-
   return (
     <Table {...getTableProps()}>
-      <thead className="table-header">
+      <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
@@ -55,32 +47,28 @@ const Table = styled.table`
   display: table;
   table-layout: fixed;
   width: 100%;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
   overflow: hidden;
 
   thead {
-    font-size: 12px;
     tr {
-      background: ${(props) => props.theme.main};
-      color: ${(props) => props.theme.secondary};
+      background-color: ${(props) => props.theme.border};
+      color: ${(props) => props.theme.text};
       text-align: left;
     }
   }
   th,
   td {
-    padding: 12px 15px;
+    padding: 7px 15px;
+  }
+  th {
+    font-weight: 600;
   }
   tbody {
     tr {
-      border-bottom: thin solid #dddddd;
       :nth-of-type(even) {
-        background-color: ${(props) => props.theme.primary};
-      }
-
-      :last-of-type {
-        border-bottom: 2px solid ${(props) => props.theme.main};
+        background-color: ${(props) => props.theme.border};
       }
     }
   }

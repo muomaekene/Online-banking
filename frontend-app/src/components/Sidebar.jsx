@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../utils/uiData";
 
 import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline";
+import Logo from "./Logo";
 
 import styled from "styled-components";
 
@@ -9,14 +10,9 @@ const Sidebar = () => {
   return (
     <Container>
       <div className="top-sidebar">
-        <div className="logo">
-          <NavLink to="/overview">
-            <img
-              className="image"
-              src="https://www.cunj.com/wpcms/wp-content/themes/cunj/images/ocblogo.png"
-            />
-          </NavLink>
-        </div>
+        <NavLink to="/overview">
+          <Logo />
+        </NavLink>
       </div>
       <div className="mid-sidebar">
         <ul className="navs">
@@ -51,28 +47,20 @@ const Container = styled.aside`
   left: 0;
   height: 100%;
   width: 240px;
-  background: none;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   display: flex;
   flex-direction: column;
   padding: 25px 10px;
   color: ${(props) => props.theme.altText};
+  background: ${(props) => props.theme.main};
   border-right: 1px solid ${(props) => props.theme.border};
 
   .top-sidebar {
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-
-  .logo {
-    display: block;
     margin-bottom: 20px;
-
-    .image {
-      width: 35px;
-    }
   }
 
   .mid-sidebar {
@@ -83,8 +71,6 @@ const Container = styled.aside`
     list-style: none;
 
     .nav-item {
-      transition: all 0.7s ease;
-
       :hover {
         background: ${(props) => props.theme.border};
         border-radius: 10px;
@@ -102,8 +88,8 @@ const Container = styled.aside`
       }
 
       .active {
-        background: ${(props) => props.theme.main};
-        color: ${(props) => props.theme.secondary};
+        background: ${(props) => props.theme.primary};
+        color: ${(props) => props.theme.activeText};
         border-radius: 10px;
       }
     }
@@ -126,10 +112,9 @@ const Container = styled.aside`
     font-size: inherit;
     cursor: pointer;
     border: none;
-    background: ${(props) => props.theme.main};
-    color: ${(props) => props.theme.secondary};
+    background: ${(props) => props.theme.primary};
+    color: ${(props) => props.theme.activeText};
     border-radius: 20px;
-    transition: all 0.5s ease;
     font-family: inherit;
 
     :hover {

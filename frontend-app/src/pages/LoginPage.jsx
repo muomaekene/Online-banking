@@ -2,17 +2,16 @@ import { Link } from "react-router-dom";
 import { ArrowRightOnRectangleIcon } from "@heroicons/react/24/solid";
 
 import styled from "styled-components";
+import Logo from "../components/Logo";
 
 const Login = () => {
   return (
     <Container>
       <form action="" className="login-form">
         <div className="login-top">
-          <img
-            className="image"
-            src="https://www.cunj.com/wpcms/wp-content/themes/cunj/images/ocblogo.png"
-          />
+          <Logo />
         </div>
+        <h2 className="title">e-Banking login</h2>
         <input className="input-bar" type="email" placeholder="Email" />
         <input className="input-bar" type="password" placeholder="Password" />
         <Link to="/overview" className="login">
@@ -29,8 +28,8 @@ const Login = () => {
         </p>
 
         <div className="bottom">
-          <Link to="/signup">Open bank account</Link>
-          <Link to="/signup">Learn more</Link>
+          <Link to="/create-account">Open bank account</Link>
+          <Link to="#">Learn more</Link>
         </div>
       </form>
     </Container>
@@ -44,8 +43,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Urbanist", sans-serif;
-  color: #717171;
+  font-family: "Hind", sans-serif;
+  color: #25304b;
   font-weight: 500;
   height: 100vh;
   width: 100vw;
@@ -68,7 +67,7 @@ const Container = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 340px;
+    width: 320px;
     padding: 40px 25px;
     background: none;
     border-radius: 10px;
@@ -78,7 +77,13 @@ const Container = styled.div`
   .login-top {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+  }
+
+  .title {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 5px;
   }
 
   .form-label {
@@ -89,14 +94,21 @@ const Container = styled.div`
   .input-bar {
     border-radius: 20px;
     padding: 12px 20px;
-    border: 1px solid #25304b;
     margin-bottom: 10px;
+    background: #e3e3e3;
+    border: 1.5px solid transparent;
     outline: none;
 
-    ::placeholder {
+    :focus-within {
+      background: #fff;
+      border: 1.5px solid #25304b;
+      border-radius: 20px;
+    }
+
+    ::-webkit-input-placeholder {
       font-size: 14px;
       font-weight: 500;
-      font-family: "Urbanist", sans-serif;
+      font-family: "Hind", sans-serif;
     }
   }
 
@@ -119,7 +131,8 @@ const Container = styled.div`
     color: #fff;
     border-radius: 50px;
     border: none;
-    transition: all 0.5s ease;
+    font-family: "Hind", sans-serif;
+    font-size: 14px;
 
     :hover {
       background: #3d455d;
@@ -138,10 +151,9 @@ const Container = styled.div`
   }
 
   .reset-link {
-    color: #25304b;
-
     :hover {
       text-decoration: underline;
+      color: #d22626;
     }
   }
 
@@ -151,5 +163,6 @@ const Container = styled.div`
     width: 80%;
     text-decoration: underline;
     font-size: 14px;
+    color: #25304b;
   }
 `;

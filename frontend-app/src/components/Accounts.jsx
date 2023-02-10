@@ -21,7 +21,8 @@ const Accounts = ({ account }) => {
 export default Accounts;
 
 const Container = styled.div`
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  box-shadow: ${(props) => props.theme.shadow};
+  background: ${(props) => props.theme.box};
   padding: 0 15px;
   height: 100%;
   border-radius: 10px;
@@ -29,12 +30,11 @@ const Container = styled.div`
   align-items: center;
   cursor: pointer;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   color: ${(props) => props.theme.altText};
-  transition: all 0.5s ease;
 
   :hover {
-    background: ${(props) => props.theme.primary};
+    background: ${(props) => props.theme.border};
     box-shadow: none;
   }
 
@@ -52,22 +52,22 @@ const Container = styled.div`
   }
 
   .acct-icon {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     margin-right: 12px;
   }
 
   .acct-bal {
     font-size: 16px;
     color: ${(props) => props.theme.text};
-    margin-top: 8px;
-    margin-bottom: -3px;
+    margin-top: 4px;
+    margin-bottom: -7px;
   }
 
   .acct-type {
     color: ${(props) => props.theme.text};
     text-transform: uppercase;
-    font-weight: 700;
-    margin-bottom: -3px;
+    font-weight: 600;
+    margin-bottom: -6px;
   }
 `;

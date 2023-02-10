@@ -19,13 +19,16 @@ const Cards = () => {
 export default Cards;
 
 const Container = styled.div`
-  background: #1565c0;
+  background: rgb(102, 195, 34);
+  background: linear-gradient(
+    0deg,
+    rgba(102, 195, 34, 1) 0%,
+    rgba(21, 101, 192, 1) 58%
+  );
   color: #fff;
   height: 9.5rem;
   width: 100%;
   border-radius: 15px;
-  margin-bottom: 8px;
-  font-family: "Outfit", sans-serif;
   cursor: pointer;
   font-weight: 400;
 

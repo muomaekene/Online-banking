@@ -4,7 +4,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     background: ${({ theme }) => theme.secondary};
     color: ${({ theme }) => theme.text};
-    font-family: 'Urbanist', sans-serif;
+    font-family: 'Hind', sans-serif;
   } 
 
   a {

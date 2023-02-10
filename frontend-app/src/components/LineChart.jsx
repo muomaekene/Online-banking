@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,10 +10,8 @@ import {
   Tooltip,
   Legend,
 } from "chart.js/auto";
-import { Line } from "react-chartjs-2";
 
 import { ChartData } from "../utils/uiData";
-
 import styled from "styled-components";
 
 const LineChart = () => {
@@ -44,34 +43,40 @@ const LineChart = () => {
       ],
     });
     setChatOptions({
+      fill: true,
       responsive: true,
       maintainAspectRatio: false,
       scales: {
         y: {
           ticks: {
             font: {
-              family: "'Urbanist', sans-serif",
               weight: 600,
+              size: "12px",
+              family: "'Hind', sans-serif",
             },
           },
         },
         x: {
           ticks: {
             font: {
-              family: "'Urbanist', sans-serif",
               weight: 600,
+              size: "12px",
+              family: "'Hind', sans-serif",
             },
           },
         },
       },
       plugins: {
         legend: {
+          display: true,
           position: "right",
-          fullsize: true,
-        },
-        title: {
-          display: false,
-          text: "Expenses and Income Data",
+          labels: {
+            font: {
+              weight: 500,
+              size: "12px",
+              family: "'Hind', sans-serif",
+            },
+          },
         },
       },
     });
@@ -79,7 +84,7 @@ const LineChart = () => {
 
   return (
     <Container>
-      <Line data={chartData} options={chartOptions} width="400" height="130" />
+      <Line data={chartData} options={chartOptions} width="400" height="110" />
     </Container>
   );
 };
@@ -87,8 +92,6 @@ const LineChart = () => {
 export default LineChart;
 
 const Container = styled.div`
-  border-radius: 10px;
-  padding: 10px 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  height: 100%;
+  height: calc(100% - 29px);
+  width: 100%;
 `;

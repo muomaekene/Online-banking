@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
 
   const { lightTheme, darkTheme } = themes.modes;
 
-  const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const themeMode = theme === "light" ? darkTheme : lightTheme;
 
   return (
     <ThemeProvider theme={themeMode}>
@@ -21,8 +21,8 @@ const Layout = ({ children }) => {
       <Container>
         <Sidebar />
         <main>
-          <TopBar />
-          <div>{children}</div>
+          <TopBar theme={theme} themeToggler={themeToggler} />
+          <div theme={theme}>{children}</div>
         </main>
       </Container>
     </ThemeProvider>
@@ -34,7 +34,10 @@ export default Layout;
 const Container = styled.div`
   main {
     margin-left: 240px;
+    padding: 0 20px;
     width: calc(100% - 240px);
+    height: 100vh;
     position: fixed;
+    background: ${(props) => props.theme.main};
   }
 `;
