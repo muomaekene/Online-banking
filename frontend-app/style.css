@@ -1,0 +1,21 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ #root {
+     height: 100%;
+ }
+
+ a {
+     text-decoration: none;
+     color: inherit;
+ }
+
+ a :focus,
+ :visited,
+ :link,
+ :active {
+     text-decoration: none;
+ }

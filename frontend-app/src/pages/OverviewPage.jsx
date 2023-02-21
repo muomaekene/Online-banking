@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { acctSummary } from "../utils/uiData";
+import { acctSummary, FISCAL_YEAR } from "../utils/uiData";
 import { ChevronRight, ExpandMore } from "@mui/icons-material";
 
 import Layout from "../components/Layout";
@@ -7,8 +7,12 @@ import Accounts from "../components/Accounts";
 import Transactions from "../components/Transactions";
 import LineChart from "../components/LineChart";
 import Card from "../components/Card";
+import Option from "../components/Option";
 
 import styled from "styled-components";
+
+//there are quite a number of repeated styles in this component
+//refactor codebase and create a reusable styled component to fix this
 
 const Overview = () => {
   return (
@@ -20,6 +24,7 @@ const Overview = () => {
               <Accounts account={account} key={account.key} />
             ))}
           </Link>
+
           <div className="transactions">
             <div className="transaction-title">
               <h3 className="title-header">Recent transactions</h3>
@@ -32,22 +37,20 @@ const Overview = () => {
             </div>
             <Transactions />
           </div>
+
           <div className="stats">
             <div className="stats-title">
               <h3 className="title-header">Annual analytics</h3>
               <select className="select-year">
-                <option value="">Select year</option>
-                <option value="2023">2023</option>
-                <option value="2022">2022</option>
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-                <option value="2018">2018</option>
+                {FISCAL_YEAR.map((year) => (
+                  <Option key={year.id} name={year.name} value={year.value} />
+                ))}
               </select>
             </div>
             <LineChart />
           </div>
         </div>
+
         <div className="flex-right">
           <div className="my-cards">
             <div>
@@ -76,7 +79,7 @@ export default Overview;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  height: calc(100vh - 49px);
+  height: calc(100% - 48px);
 
   .flex-left {
     width: 70%;
@@ -86,26 +89,23 @@ const Container = styled.div`
   .accounts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    height: 6rem;
-    gap: 20px;
+    gap: 15px;
   }
 
   .transactions {
-    box-shadow: ${(props) => props.theme.shadow};
     border-radius: 10px;
-    height: 11rem;
     margin: 15px 0;
-    background: ${(props) => props.theme.box};
+    background: ${({ theme }) => theme.box};
+    box-shadow: ${({ theme }) => theme.shadow};
   }
 
   .stats {
     position: relative;
-    box-shadow: ${(props) => props.theme.shadow};
-    border-radius: 10px;
-    height: 14.5rem;
-    width: 100%;
-    background: ${(props) => props.theme.box};
     padding: 10px 15px;
+    border-radius: 10px;
+    width: 100%;
+    background: ${({ theme }) => theme.box};
+    box-shadow: ${({ theme }) => theme.shadow};
   }
 
   .transaction-title {
@@ -134,10 +134,11 @@ const Container = styled.div`
     font-size: 13px;
     font-weight: 500;
     padding: 1px 4px;
-    border: 1.5px solid ${(props) => props.theme.border};
+    border: 1.5px solid ${({ theme }) => theme.border};
     border-radius: 4px;
-    color: ${(props) => props.theme.altText};
+    color: ${({ theme }) => theme.altText};
     outline: none;
+    cursor: pointer;
   }
 
   .title-header {
@@ -148,7 +149,7 @@ const Container = styled.div`
   .details {
     font-weight: 500;
     font-size: 13px;
-    color: ${(props) => props.theme.altText};
+    color: ${({ theme }) => theme.altText};
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -176,24 +177,24 @@ const Container = styled.div`
     cursor: pointer;
     font-size: 13px;
     background: none;
-    color: ${(props) => props.theme.text};
-    border: 1.5px solid ${(props) => props.theme.border};
+    color: ${({ theme }) => theme.text};
+    border: 1.5px solid ${({ theme }) => theme.border};
     font-family: inherit;
     font-weight: 500;
     margin: 6px 0 10px 0;
 
     :hover {
-      background: ${(props) => props.theme.hover};
-      color: ${(props) => props.theme.activeText};
+      background: ${({ theme }) => theme.hover};
+      color: ${({ theme }) => theme.activeText};
       border: 1.5px solid transparent;
     }
   }
 
   .boxx {
-    height: 19.2rem;
+    height: 19.5rem;
     width: 100%;
     border-radius: 10px;
-    box-shadow: ${(props) => props.theme.shadow};
-    background: ${(props) => props.theme.box};
+    box-shadow: ${({ theme }) => theme.shadow};
+    background: ${({ theme }) => theme.box};
   }
 `;

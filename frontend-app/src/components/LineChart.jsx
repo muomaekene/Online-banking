@@ -84,7 +84,7 @@ const LineChart = () => {
 
   return (
     <Container>
-      <Line data={chartData} options={chartOptions} width="400" height="110" />
+      <Line data={chartData} options={chartOptions} width="400" height="115" />
     </Container>
   );
 };
@@ -92,6 +92,6 @@ const LineChart = () => {
 export default LineChart;
 
 const Container = styled.div`
-  height: calc(100% - 29px);
   width: 100%;
+  height: 100%;
 `;

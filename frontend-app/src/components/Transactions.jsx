@@ -1,12 +1,12 @@
 import { useMemo } from "react";
 import { useTable } from "react-table";
 
-import { COLUMNS } from "./Columns";
+import { COLUMNS } from "../utils/uiData";
 import MOCK_DATA from "../utils/MOCK_DATA.json";
 
 import styled from "styled-components";
 
-const TransTable = () => {
+const Transactions = () => {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(() => MOCK_DATA, []);
 
@@ -40,7 +40,7 @@ const TransTable = () => {
   );
 };
 
-export default TransTable;
+export default Transactions;
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -53,8 +53,8 @@ const Table = styled.table`
 
   thead {
     tr {
-      background-color: ${(props) => props.theme.border};
-      color: ${(props) => props.theme.text};
+      background-color: ${({ theme }) => theme.border};
+      color: ${({ theme }) => theme.text};
       text-align: left;
     }
   }
@@ -68,7 +68,7 @@ const Table = styled.table`
   tbody {
     tr {
       :nth-of-type(even) {
-        background-color: ${(props) => props.theme.border};
+        background-color: ${({ theme }) => theme.border};
       }
     }
   }

@@ -9,6 +9,6 @@ export default Logo;
 const Container = styled.h1`
   font-family: "Teko", sans-serif;
   font-size: 30px;
-  color: ${(props) => props.theme.primary};
+  color: ${({ theme }) => theme.primary};
   text-transform: uppercase;
 `;

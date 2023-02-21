@@ -89,11 +89,11 @@ const Container = styled.div`
     align-items: center;
     padding: 0 10px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background: ${(props) => props.theme.box};
+    background: ${({ theme }) => theme.box};
     border-radius: 10px;
 
     :focus-within {
-      background: ${(props) => props.theme.border};
+      background: ${({ theme }) => theme.border};
       border-radius: 10px;
       box-shadow: none;
     }
@@ -105,10 +105,10 @@ const Container = styled.div`
       width: calc(100% - 24px);
       font-weight: 500;
       font-size: 14px;
-      color: ${(props) => props.theme.primary};
+      color: ${({ theme }) => theme.primary};
 
       ::placeholder {
-        color: ${(props) => props.theme.altText};
+        color: ${({ theme }) => theme.altText};
         font-size: 14px;
         letter-spacing: 0;
         font-family: "Hind", sans-serif;
@@ -139,12 +139,12 @@ const Container = styled.div`
     cursor: pointer;
     margin-left: 15px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background: ${(props) => props.theme.box};
+    background: ${({ theme }) => theme.box};
 
     :hover {
       padding: 5px;
       border-radius: 25%;
-      background: ${(props) => props.theme.border};
+      background: ${({ theme }) => theme.border};
     }
   }
 
@@ -157,14 +157,14 @@ const Container = styled.div`
     :hover {
       padding: 4px;
       border-radius: 50%;
-      background: ${(props) => props.theme.border};
+      background: ${({ theme }) => theme.border};
     }
   }
 
   .icon {
     width: 22px;
     height: 22px;
-    color: ${(props) => props.theme.primary};
+    color: ${({ theme }) => theme.primary};
   }
 
   .profile {
@@ -178,7 +178,11 @@ const Container = styled.div`
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    color: ${(props) => props.theme.altText};
+    color: ${({ theme }) => theme.altText};
+
+    :hover {
+      text-decoration: underline;
+    }
   }
 
   .avatar {
@@ -189,8 +193,8 @@ const Container = styled.div`
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: ${(props) => props.theme.primary};
-    color: ${(props) => props.theme.activeText};
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.activeText};
     display: flex;
     align-items: center;
     justify-content: center;

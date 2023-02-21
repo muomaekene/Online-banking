@@ -13,6 +13,7 @@ import checkBook from "../assets/img/checkBook.png";
 import creditCard from "../assets/img/creditCard.png";
 import moneyBox from "../assets/img/moneyBox.png";
 
+// navigation links data
 export const navLinks = [
   {
     key: "overview",
@@ -64,6 +65,7 @@ export const navLinks = [
   },
 ];
 
+// account summary data
 export const acctSummary = [
   {
     key: 10,
@@ -94,6 +96,7 @@ export const acctSummary = [
   },
 ];
 
+// chart data
 export const ChartData = [
   {
     id: 1,
@@ -166,5 +169,199 @@ export const ChartData = [
     month: "Dec",
     amtSpent: 8345.0,
     amtEarned: 7585.23,
+  },
+];
+
+// table header data
+export const COLUMNS = [
+  {
+    Header: "Account",
+    accessor: "account",
+  },
+  {
+    Header: "Date",
+    accessor: "date",
+  },
+  {
+    Header: "Details",
+    accessor: "details",
+  },
+  {
+    Header: "Amount",
+    accessor: "amount",
+  },
+  {
+    Header: "Balance",
+    accessor: "balance",
+  },
+];
+
+// sign-up form data
+export const SIGNUP_VALUES = [
+  {
+    title: "Create login",
+    values: [
+      {
+        id: 1,
+        type: "text",
+        placeholder: "Username",
+      },
+      {
+        id: 2,
+        type: "password",
+        placeholder: "Password",
+      },
+      {
+        id: 3,
+        type: "password",
+        placeholder: "Confirm password",
+      },
+    ],
+  },
+  {
+    title: "Personal info",
+    values: [
+      {
+        id: 40,
+        type: "text",
+        placeholder: "Title",
+      },
+      {
+        id: 4,
+        type: "text",
+        placeholder: "First name",
+      },
+      {
+        id: 5,
+        type: "text",
+        placeholder: "Middle initial",
+      },
+      {
+        id: 6,
+        type: "text",
+        placeholder: "Last name",
+      },
+      {
+        id: 7,
+        type: "text",
+        placeholder: "Maiden name",
+      },
+      {
+        id: 8,
+        type: "date",
+        placeholder: "Date of birth",
+      },
+      {
+        id: 9,
+        type: "text",
+        placeholder: "Account holder SSN",
+      },
+    ],
+  },
+  {
+    title: "Contact info",
+    values: [
+      {
+        id: 10,
+        type: "text",
+        placeholder: "Street address",
+      },
+      {
+        id: 11,
+        type: "text",
+        placeholder: "Country",
+      },
+      {
+        id: 12,
+        type: "text",
+        placeholder: "State",
+      },
+      {
+        id: 13,
+        type: "text",
+        placeholder: "City",
+      },
+      {
+        id: 14,
+        type: "text",
+        placeholder: "Zip code",
+      },
+      {
+        id: 15,
+        type: "text",
+        placeholder: "Email address",
+      },
+      {
+        id: 16,
+        type: "text",
+        placeholder: "Primary phone no.",
+      },
+      {
+        id: 17,
+        type: "text",
+        placeholder: "Secondary phone",
+      },
+    ],
+  },
+];
+
+export const ACCT_TYPE = [
+  {
+    id: 1,
+    name: "Please choose an account",
+    value: "",
+  },
+  {
+    id: 2,
+    name: "Savings account",
+    value: "savings",
+  },
+  {
+    id: 3,
+    name: "Checking account",
+    value: "checking",
+  },
+  {
+    id: 4,
+    name: "Individual retirement account",
+    value: "retirement",
+  },
+  {
+    id: 5,
+    name: "Money market account",
+    value: "money-market",
+  },
+];
+
+export const FISCAL_YEAR = [
+  {
+    id: 6,
+    name: "Select year",
+    value: "",
+  },
+  {
+    id: 7,
+    name: "2022",
+    value: 2022,
+  },
+  {
+    id: 8,
+    name: "2021",
+    value: 2021,
+  },
+  {
+    id: 9,
+    name: "2020",
+    value: 2020,
+  },
+  {
+    id: 10,
+    name: "2019",
+    value: 2019,
+  },
+  {
+    id: 11,
+    name: "2018",
+    value: 2018,
   },
 ];

@@ -9,7 +9,7 @@ import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
 import HelpPage from "./pages/HelpPage";
 import LoginPage from "./pages/LoginPage";
-import CreateAccountPage from "./pages/CreateAccountPage";
+import SignupPage from "./pages/SignupPage";
 import PageNotFound from "./pages/PageNotFound";
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
       <Route path="/settings" element={<SettingsPage />} />
       <Route path="/help" element={<HelpPage />} />
       <Route path="/login" element={<LoginPage />} />
-      <Route path="/create-account" element={<CreateAccountPage />} />
+      <Route path="/create-account" element={<SignupPage />} />
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );

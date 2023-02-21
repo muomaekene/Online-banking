@@ -21,9 +21,9 @@ const Accounts = ({ account }) => {
 export default Accounts;
 
 const Container = styled.div`
-  box-shadow: ${(props) => props.theme.shadow};
-  background: ${(props) => props.theme.box};
-  padding: 0 15px;
+  box-shadow: ${({ theme }) => theme.shadow};
+  background: ${({ theme }) => theme.box};
+  padding: 10px 15px;
   height: 100%;
   border-radius: 10px;
   display: flex;
@@ -31,10 +31,10 @@ const Container = styled.div`
   cursor: pointer;
   font-size: 12px;
   font-weight: 500;
-  color: ${(props) => props.theme.altText};
+  color: ${({ theme }) => theme.altText};
 
   :hover {
-    background: ${(props) => props.theme.border};
+    background: ${({ theme }) => theme.border};
     box-shadow: none;
   }
 
@@ -59,13 +59,13 @@ const Container = styled.div`
 
   .acct-bal {
     font-size: 16px;
-    color: ${(props) => props.theme.text};
+    color: ${({ theme }) => theme.text};
     margin-top: 4px;
     margin-bottom: -7px;
   }
 
   .acct-type {
-    color: ${(props) => props.theme.text};
+    color: ${({ theme }) => theme.text};
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: -6px;

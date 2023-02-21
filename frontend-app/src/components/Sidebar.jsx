@@ -10,9 +10,7 @@ const Sidebar = () => {
   return (
     <Container>
       <div className="top-sidebar">
-        <NavLink to="/overview">
-          <Logo />
-        </NavLink>
+        <Logo />
       </div>
       <div className="mid-sidebar">
         <ul className="navs">
@@ -41,20 +39,13 @@ const Sidebar = () => {
 export default Sidebar;
 
 const Container = styled.aside`
-  position: fixed;
-  height: 100vh;
-  top: 0;
-  left: 0;
   height: 100%;
-  width: 240px;
+  width: 100%;
   font-size: 12px;
   font-weight: 500;
   display: flex;
   flex-direction: column;
   padding: 25px 10px;
-  color: ${(props) => props.theme.altText};
-  background: ${(props) => props.theme.main};
-  border-right: 1px solid ${(props) => props.theme.border};
 
   .top-sidebar {
     display: flex;
@@ -72,7 +63,7 @@ const Container = styled.aside`
 
     .nav-item {
       :hover {
-        background: ${(props) => props.theme.border};
+        background: ${({ theme }) => theme.border};
         border-radius: 10px;
       }
       .nav-link {
@@ -88,8 +79,8 @@ const Container = styled.aside`
       }
 
       .active {
-        background: ${(props) => props.theme.primary};
-        color: ${(props) => props.theme.activeText};
+        background: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.activeText};
         border-radius: 10px;
       }
     }
@@ -112,13 +103,14 @@ const Container = styled.aside`
     font-size: inherit;
     cursor: pointer;
     border: none;
-    background: ${(props) => props.theme.primary};
-    color: ${(props) => props.theme.activeText};
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.activeText};
     border-radius: 20px;
     font-family: inherit;
+    margin-bottom: 10px;
 
     :hover {
-      background: ${(props) => props.theme.hover};
+      background: ${({ theme }) => theme.hover};
     }
 
     .logout-icon {
