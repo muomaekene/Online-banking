@@ -1,41 +1,21 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 import {
   BellIcon,
-  MagnifyingGlassIcon,
   ChatBubbleOvalLeftEllipsisIcon,
   SunIcon,
   MoonIcon,
 } from "@heroicons/react/24/outline";
 
-import { Clear } from "@mui/icons-material";
-
 import styled from "styled-components";
+import Searchbar from "./Searchbar";
 
 const TopBar = ({ theme, themeToggler }) => {
-  const [inputValue, setInputValue] = useState("");
-
   return (
     <Container>
       <div className="left-topbar">
-        <h2 className="welcome-message">Good morning, Robbin</h2>
-        <form className="search-bar">
-          <div className="icon-nowrap">
-            <MagnifyingGlassIcon className="icon" />
-          </div>
-          <input
-            className="input-bar"
-            type="text"
-            placeholder="Search dashboard"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-          />
-
-          {inputValue && (
-            <Clear className="clear-input" onClick={() => setInputValue("")} />
-          )}
-        </form>
+        <h2 className="welcome-message">Good morning, Shaun</h2>
+        <Searchbar />
       </div>
       <div className="right-topbar">
         <div className="icon-wrap" onClick={themeToggler}>
@@ -54,7 +34,7 @@ const TopBar = ({ theme, themeToggler }) => {
         <div className="profile">
           <div className="avatar">RE</div>
           <div className="profile-name">
-            <Link to="/profile">Robbin Eckert</Link>
+            <Link to="/profile">Shaun Eckert</Link>
           </div>
         </div>
       </div>
@@ -81,48 +61,6 @@ const Container = styled.div`
     font-weight: 500;
   }
 
-  .search-bar {
-    position: relative;
-    width: 50%;
-    height: 80%;
-    display: flex;
-    align-items: center;
-    padding: 0 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background: ${({ theme }) => theme.box};
-    border-radius: 10px;
-
-    :focus-within {
-      background: ${({ theme }) => theme.border};
-      border-radius: 10px;
-      box-shadow: none;
-    }
-    .input-bar {
-      padding: 0px 5px;
-      background: none;
-      border: none;
-      outline: none;
-      width: calc(100% - 24px);
-      font-weight: 500;
-      font-size: 14px;
-      color: ${({ theme }) => theme.primary};
-
-      ::placeholder {
-        color: ${({ theme }) => theme.altText};
-        font-size: 14px;
-        letter-spacing: 0;
-        font-family: "Hind", sans-serif;
-      }
-    }
-
-    .clear-input {
-      cursor: pointer;
-      font-size: 20px;
-      position: absolute;
-      right: 15px;
-    }
-  }
-
   .right-topbar {
     width: 32%;
     display: flex;
@@ -138,33 +76,24 @@ const Container = styled.div`
     position: relative;
     cursor: pointer;
     margin-left: 15px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    background: ${({ theme }) => theme.box};
+    border: 1px solid ${({ theme }) => theme.secondary};
+    background: ${({ theme }) => theme.main};
+    color: ${({ theme }) => theme.text};
 
     :hover {
       padding: 5px;
       border-radius: 25%;
-      background: ${({ theme }) => theme.border};
-    }
-  }
+      background: ${({ theme }) => theme.primary};
+      border: 1px solid ${({ theme }) => theme.primary};
 
-  .icon-nowrap {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    padding: 4px;
-
-    :hover {
-      padding: 4px;
-      border-radius: 50%;
-      background: ${({ theme }) => theme.border};
+      color: ${({ theme }) => theme.text};
     }
   }
 
   .icon {
     width: 22px;
     height: 22px;
-    color: ${({ theme }) => theme.primary};
+    color: inherit;
   }
 
   .profile {
@@ -178,10 +107,10 @@ const Container = styled.div`
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    color: ${({ theme }) => theme.altText};
+    color: ${({ theme }) => theme.text};
 
     :hover {
-      text-decoration: underline;
+      color: ${({ theme }) => theme.altText};
     }
   }
 
@@ -193,8 +122,8 @@ const Container = styled.div`
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.activeText};
+    background: ${({ theme }) => theme.secondary};
+    color: ${({ theme }) => theme.text};
     display: flex;
     align-items: center;
     justify-content: center;

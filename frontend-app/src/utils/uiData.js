@@ -66,30 +66,30 @@ export const navLinks = [
 ];
 
 // account summary data
-export const acctSummary = [
+export const accountInfo = [
   {
     key: 10,
-    acctType: "Checking",
-    acctBal: "$8,450.10",
-    acctNo: "*7786",
+    type: "Checking",
+    bal: "$8,450.10",
+    number: "*7786",
     desc: "Available",
     img: checkBook,
     alt: "check-book",
   },
   {
     key: 15,
-    acctType: "Savings",
-    acctBal: "$19,885.85",
-    acctNo: "*7361",
+    type: "Savings",
+    bal: "$19,885.85",
+    number: "*7361",
     desc: "Available",
     img: moneyBox,
     alt: "money-box",
   },
   {
     key: 20,
-    acctType: "Credit Card",
-    acctBal: "$2,950.03",
-    acctNo: "*7098",
+    type: "Credit Card",
+    bal: "$2,950.03",
+    number: "*7098",
     desc: "Outstanding",
     img: creditCard,
     alt: "credit-card",
@@ -363,5 +363,28 @@ export const FISCAL_YEAR = [
     id: 11,
     name: "2018",
     value: 2018,
+  },
+];
+
+export const ACCOUNT_TYPE = [
+  {
+    id: 25,
+    name: "Transfer from",
+    value: "",
+  },
+  {
+    id: 26,
+    name: "Savings",
+    value: "savings",
+  },
+  {
+    id: 27,
+    name: "Checking",
+    value: "checking",
+  },
+  {
+    id: 28,
+    name: "Credit card",
+    value: "credit-card",
   },
 ];

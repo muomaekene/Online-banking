@@ -13,7 +13,7 @@ export default Footer;
 const PageFooter = styled.footer`
   padding: 8px;
   text-align: center;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 400;
+  font-size: 14px;
   color: ${({ theme }) => theme.altText};
 `;

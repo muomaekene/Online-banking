@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import {
-  ArrowRightOnRectangleIcon,
-  EyeIcon,
-  EyeSlashIcon,
-} from "@heroicons/react/24/outline";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
+import { LoginRounded } from "@mui/icons-material";
 
 import Logo from "../components/Logo";
+import ActionBtn from "./ActionBtn";
+
 import styled from "styled-components";
 
 const LoginForm = () => {
@@ -23,52 +22,56 @@ const LoginForm = () => {
   };
 
   return (
-    <Form className="login-form">
+    <Form>
       <div className="brand">
         <Logo />
       </div>
 
-      <fieldset className="input-group">
-        <legend className="caption">e-Banking login</legend>
-        <input
-          id="mail"
-          className="input-bar"
-          type="email"
-          placeholder="Email"
-          maxLength="32"
-          required
-        />
-        <input
-          className="input-bar"
-          type={inputType}
-          placeholder="Password"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          minLength="6"
-          maxLength="32"
-          required
-        />
-        <button type="button" className="show-passw" onClick={showPassw}>
-          {inputValue &&
-            (inputType === "password" ? (
-              <EyeSlashIcon className="icon" />
-            ) : (
-              <EyeIcon className="icon" />
-            ))}
-        </button>
-      </fieldset>
+      <div>
+        <fieldset className="input-group">
+          <legend className="caption">e-Banking login</legend>
+          <input
+            id="mail"
+            className="input-bar"
+            type="email"
+            placeholder="Email"
+            maxLength="32"
+            required
+          />
+          <input
+            className="input-bar"
+            type={inputType}
+            placeholder="Password"
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)}
+            minLength="6"
+            maxLength="32"
+            required
+          />
+          <button type="button" className="show-passw" onClick={showPassw}>
+            {inputValue &&
+              (inputType === "password" ? (
+                <EyeSlashIcon className="icon" />
+              ) : (
+                <EyeIcon className="icon" />
+              ))}
+          </button>
+        </fieldset>
 
-      <div className="form-actions">
-        <p className="reset-passw">
-          <Link to="#" className="reset-link">
-            Forgot password?
-          </Link>
-        </p>
+        <div className="form-actions">
+          <p className="reset-passw">
+            <Link to="#" className="reset-link">
+              Forgot password?
+            </Link>
+          </p>
 
-        <button type="submit" className="login-btn">
-          <ArrowRightOnRectangleIcon className="icon" />
-          <span>Login</span>
-        </button>
+          <ActionBtn
+            icon={
+              <LoginRounded style={{ fontSize: "15px", marginRight: "2px" }} />
+            }
+            title="Login"
+          />
+        </div>
       </div>
 
       <div className="form-links">
@@ -83,25 +86,30 @@ export default LoginForm;
 
 const Form = styled.form`
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: space-around;
   width: 320px;
+  height: 22rem;
   padding: 40px 25px;
-  border-radius: 5px;
-  border: 1.5px solid #e8e8e8;
-  background: #fff;
+  border: 1px solid ${({ theme }) => theme.secondary};
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50px;
+  margin-right: auto;
+  margin-left: auto;
 
   .brand {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
   }
 
   .caption {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
-    margin-bottom: 5px;
-    color: #000;
+    margin-bottom: 7px;
+    color: ${({ theme }) => theme.text};
   }
 
   .input-group {
@@ -112,22 +120,22 @@ const Form = styled.form`
   .input-bar {
     margin-bottom: 8px;
     border-radius: 5px;
-    border: 1px solid #d5d5d5;
-    background: #f1f3f4;
+    border: 1px solid ${({ theme }) => theme.secondary};
+    background: none;
     padding: 0 40px 0 20px;
     outline: none;
     width: 100%;
     height: 42px;
 
     ::placeholder {
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 400;
-      font-family: "Hind", sans-serif;
+      font-family: "Figtree", sans-serif;
     }
 
     :focus-within {
-      background: #f1f3f4;
-      border: 1px solid #25304b;
+      background: #f8f8f8;
+      border: 1px solid ${({ theme }) => theme.solid};
       border-radius: 5px;
     }
   }
@@ -144,34 +152,9 @@ const Form = styled.form`
 
   .form-actions {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    height: 40px;
-  }
-
-  .login-btn {
-    display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 10px 0;
-    width: 100px;
-    height: 100%;
-    cursor: pointer;
-    background: #25304b;
-    color: #fff;
-    border-radius: 5px;
-    border: none;
-    font-family: "Hind", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-
-    :hover {
-      background: #3d455d;
-    }
-
-    span {
-      margin-left: 5px;
-    }
+    align-content: center;
+    justify-content: space-between;
   }
 
   .icon {
@@ -181,8 +164,8 @@ const Form = styled.form`
 
   .reset-passw {
     font-weight: 400;
-    font-size: 14px;
-    margin: 10px 0 20px 0;
+    font-size: 13px;
+    color: ${({ theme }) => theme.text};
   }
 
   .reset-link {
@@ -197,8 +180,7 @@ const Form = styled.form`
     justify-content: space-between;
     width: 80%;
     text-decoration: underline;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
-    color: #000;
   }
 `;

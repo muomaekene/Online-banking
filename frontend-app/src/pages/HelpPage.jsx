@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import MainLayout from "../components/MainLayout";
 
 const Help = () => {
-  return <Layout>Help</Layout>;
+  return <MainLayout>Help</MainLayout>;
 };
 
 export default Help;

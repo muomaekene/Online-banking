@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import MainLayout from "../components/MainLayout";
 
 const Transactions = () => {
-  return <Layout>Transactions</Layout>;
+  return <MainLayout>Transactions</MainLayout>;
 };
 
 export default Transactions;

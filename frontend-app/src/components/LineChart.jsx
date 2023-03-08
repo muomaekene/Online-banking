@@ -50,18 +50,18 @@ const LineChart = () => {
         y: {
           ticks: {
             font: {
-              weight: 600,
-              size: "12px",
-              family: "'Hind', sans-serif",
+              weight: 500,
+              size: "11px",
+              family: "'Figtree', sans-serif",
             },
           },
         },
         x: {
           ticks: {
             font: {
-              weight: 600,
-              size: "12px",
-              family: "'Hind', sans-serif",
+              weight: 500,
+              size: "11px",
+              family: "'Figtree', sans-serif",
             },
           },
         },
@@ -74,7 +74,7 @@ const LineChart = () => {
             font: {
               weight: 500,
               size: "12px",
-              family: "'Hind', sans-serif",
+              family: "'Figtree', sans-serif",
             },
           },
         },
@@ -84,7 +84,7 @@ const LineChart = () => {
 
   return (
     <Container>
-      <Line data={chartData} options={chartOptions} width="400" height="115" />
+      <Line data={chartData} options={chartOptions} width="400" height="129" />
     </Container>
   );
 };
@@ -94,4 +94,5 @@ export default LineChart;
 const Container = styled.div`
   width: 100%;
   height: 100%;
+  padding: 0 15px 10px 15px;
 `;

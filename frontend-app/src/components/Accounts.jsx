@@ -1,17 +1,19 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 const Accounts = ({ account }) => {
-  const { acctType, acctBal, acctNo, desc, img: Image, alt: altText } = account;
+  const { type, bal, number, desc, img: Image, alt: altText } = account;
 
   return (
-    <Container>
+    <Container to="/accounts">
       <div className="left">
         <img className="acct-icon" src={Image} alt={altText} />
       </div>
       <div className="right">
-        <p className="acct-type">{acctType}</p>
-        <p>({acctNo})</p>
-        <p className="acct-bal">{acctBal}</p>
+        <p className="acct-type">{type}</p>
+        <p>({number})</p>
+        <p className="acct-bal">{bal}</p>
         <p>{desc} bal</p>
       </div>
     </Container>
@@ -20,9 +22,9 @@ const Accounts = ({ account }) => {
 
 export default Accounts;
 
-const Container = styled.div`
-  box-shadow: ${({ theme }) => theme.shadow};
-  background: ${({ theme }) => theme.box};
+const Container = styled(Link)`
+  border: 1px solid ${({ theme }) => theme.secondary};
+  background: ${({ theme }) => theme.main};
   padding: 10px 15px;
   height: 100%;
   border-radius: 10px;
@@ -34,8 +36,9 @@ const Container = styled.div`
   color: ${({ theme }) => theme.altText};
 
   :hover {
-    background: ${({ theme }) => theme.border};
+    background: ${({ theme }) => theme.primary};
     box-shadow: none;
+    border: 1px solid ${({ theme }) => theme.primary};
   }
 
   .card-left {
@@ -58,16 +61,14 @@ const Container = styled.div`
   }
 
   .acct-bal {
-    font-size: 16px;
+    font-size: 14px;
     color: ${({ theme }) => theme.text};
-    margin-top: 4px;
-    margin-bottom: -7px;
+    margin-top: 8px;
   }
 
   .acct-type {
     color: ${({ theme }) => theme.text};
     text-transform: uppercase;
     font-weight: 600;
-    margin-bottom: -6px;
   }
 `;

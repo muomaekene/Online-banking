@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-import { SIGNUP_VALUES } from "../utils/uiData";
-import { ACCT_TYPE } from "../utils/uiData";
+import { ACCOUNT_TYPE, SIGNUP_VALUES } from "../utils/uiData";
 
 import FormInput from "./FormInput";
-import Option from "./Option";
+import ActionBtn from "./ActionBtn";
 
 import styled from "styled-components";
+import SelectOption from "./SelectOption";
 
 const SignupForm = () => {
   return (
@@ -14,11 +14,7 @@ const SignupForm = () => {
       <h2 className="form-title">Open bank account</h2>
       <fieldset className="select-group">
         <legend className="caption">Account type</legend>
-        <select className="select-acct">
-          {ACCT_TYPE.map((type) => (
-            <Option key={type.id} name={type.name} value={type.value} />
-          ))}
-        </select>
+        <SelectOption data={ACCOUNT_TYPE} />
       </fieldset>
 
       {SIGNUP_VALUES.map((item) => (
@@ -32,22 +28,22 @@ const SignupForm = () => {
 
       <fieldset className="consent">
         <div className="consent-box">
-          <input type="checkbox" name="tos" required />
-          &nbsp;
+          <input className="checkbox" type="checkbox" name="tos" required />
           <label htmlFor="tos">
-            I have read and accepted the <Link to="#">Terms of Service</Link>
+            I have read and accepted the{" "}
+            <Link to="#" className="terms-of-service">
+              Terms of Service
+            </Link>
           </label>
         </div>
         <div className="consent-box">
-          <input type="checkbox" name="subscribe" />
-          &nbsp;
+          <input className="checkbox" type="checkbox" name="subscribe" />
+
           <label htmlFor="subscribe">Subscibe to our newsletters</label>
         </div>
       </fieldset>
 
-      <button type="submit" className="signup-btn">
-        Complete registration
-      </button>
+      <ActionBtn title="Create account" />
     </Form>
   );
 };
@@ -55,17 +51,15 @@ const SignupForm = () => {
 export default SignupForm;
 
 const Form = styled.form`
-  width: 70%;
-  background: #fff;
-  padding: 20px 20px;
-  margin: 20px 0;
-  border-radius: 5px;
-  border: 1px solid #e8e8e8;
+  width: 60%;
+  padding-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
 
   .form-title {
     font-weight: 400;
-    font-size: 22px;
-    margin-bottom: 20px;
+    font-size: 25px;
+    margin-bottom: 30px;
   }
 
   .select-group {
@@ -73,16 +67,17 @@ const Form = styled.form`
     flex-direction: column;
     margin-bottom: 20px;
     border: none;
+    width: 32%;
   }
 
   .select-acct {
     width: 32%;
-    padding: 10px 10px;
+    padding: 12px 10px;
     outline: none;
     border-radius: 5px;
-    border: 1px solid #e5e5e5;
-    background: #f1f3f4;
-    color: #606060;
+    border: 1px solid ${({ theme }) => theme.secondary};
+    background: none;
+    color: ${({ theme }) => theme.altText};
     cursor: pointer;
   }
 
@@ -95,33 +90,36 @@ const Form = styled.form`
   }
 
   .caption {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 2px;
-  }
-
-  .signup-btn {
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background: #25304b;
-    color: #fff;
     font-size: 14px;
-    text-decoration: none;
-    cursor: pointer;
-    font-family: inherit;
+    font-weight: 400;
+    margin-bottom: 5px;
   }
 
   .consent {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
+    justify-content: space-between;
+    margin-bottom: 20px;
     border: none;
+    height: 40px;
   }
 
   .consent-box {
     display: flex;
     align-content: center;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  .checkbox {
+    margin-right: 7px;
+  }
+
+  .terms-of-service {
+    text-decoration: underline;
+
+    :hover {
+      color: ${({ theme }) => theme.altText};
+    }
   }
 `;

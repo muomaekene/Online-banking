@@ -7,8 +7,8 @@ const Logo = () => {
 export default Logo;
 
 const Container = styled.h1`
-  font-family: "Teko", sans-serif;
-  font-size: 30px;
-  color: ${({ theme }) => theme.primary};
+  font-family: "Gloock", serif;
+  font-size: 25px;
+  color: ${({ theme }) => theme.solid};
   text-transform: uppercase;
 `;

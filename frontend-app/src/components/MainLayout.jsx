@@ -1,15 +1,13 @@
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "../utils/global";
 import { useDarkMode } from "../utils/useDarkMode";
-import { themes } from "../utils/Theme";
+import { themes } from "../utils/theme";
 
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
-
-import styled from "styled-components";
 import Footer from "./Footer";
 
-const Layout = ({ children }) => {
+const MainLayout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode();
 
   const { lightTheme, darkTheme } = themes.modes;
@@ -33,11 +31,13 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default MainLayout;
 
 const Container = styled.div`
   height: 100%;
-  padding: 3px;
+  padding-right: 3px;
+  padding-top: 3px;
+  padding: 3px 3px 3px 0;
 
   #sidebar-container {
     display: inline-block;
@@ -46,7 +46,8 @@ const Container = styled.div`
     width: 18%;
     overflow: auto;
     color: ${({ theme }) => theme.altText};
-    border-right: 1.5px solid ${({ theme }) => theme.border};
+    border-right: 1px solid ${({ theme }) => theme.secondary};
+    background: ${({ theme }) => theme.main};
 
     ::-webkit-scrollbar {
       width: 5px;
@@ -54,7 +55,7 @@ const Container = styled.div`
 
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background: ${({ theme }) => theme.border};
+      background: ${({ theme }) => theme.scrollbar};
     }
   }
 
@@ -65,6 +66,7 @@ const Container = styled.div`
     width: 82%;
     overflow: auto;
     padding: 0 20px;
+    background: ${({ theme }) => theme.main};
 
     ::-webkit-scrollbar {
       width: 7px;

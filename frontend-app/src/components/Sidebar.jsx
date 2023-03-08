@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../utils/uiData";
+import { LogoutRounded } from "@mui/icons-material";
 
-import { ArrowLeftOnRectangleIcon } from "@heroicons/react/24/outline";
 import Logo from "./Logo";
-
+import ActionBtn from "./ActionBtn";
 import styled from "styled-components";
 
 const Sidebar = () => {
@@ -26,10 +26,12 @@ const Sidebar = () => {
       </div>
       <div className="bottom-sidebar">
         <Link to="/login">
-          <button className="logout-botton">
-            <ArrowLeftOnRectangleIcon className="logout-icon" />
-            Logout
-          </button>
+          <ActionBtn
+            icon={
+              <LogoutRounded style={{ fontSize: "15px", marginRight: "2px" }} />
+            }
+            title="Logout"
+          />
         </Link>
       </div>
     </Container>
@@ -63,7 +65,8 @@ const Container = styled.aside`
 
     .nav-item {
       :hover {
-        background: ${({ theme }) => theme.border};
+        background: ${({ theme }) => theme.primary};
+        color: ${({ theme }) => theme.text};
         border-radius: 10px;
       }
       .nav-link {
@@ -79,9 +82,10 @@ const Container = styled.aside`
       }
 
       .active {
-        background: ${({ theme }) => theme.primary};
-        color: ${({ theme }) => theme.activeText};
+        background: ${({ theme }) => theme.solid};
+        color: ${({ theme }) => theme.main};
         border-radius: 10px;
+        font-weight: 500;
       }
     }
     .nav-item:nth-child(6) {
@@ -93,30 +97,5 @@ const Container = styled.aside`
     display: flex;
     flex-direction: row;
     justify-content: center;
-  }
-
-  .logout-botton {
-    display: flex;
-    align-items: center;
-    padding: 10px 18px;
-    font-weight: 500;
-    font-size: inherit;
-    cursor: pointer;
-    border: none;
-    background: ${({ theme }) => theme.primary};
-    color: ${({ theme }) => theme.activeText};
-    border-radius: 20px;
-    font-family: inherit;
-    margin-bottom: 10px;
-
-    :hover {
-      background: ${({ theme }) => theme.hover};
-    }
-
-    .logout-icon {
-      width: 18px;
-      height: 18px;
-      margin-right: 4px;
-    }
   }
 `;

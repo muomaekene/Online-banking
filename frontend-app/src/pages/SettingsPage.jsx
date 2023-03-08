@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import MainLayout from "../components/MainLayout";
 
 const Settings = () => {
-  return <Layout>Settings</Layout>;
+  return <MainLayout>Settings</MainLayout>;
 };
 
 export default Settings;

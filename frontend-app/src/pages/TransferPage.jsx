@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import MainLayout from "../components/MainLayout";
 
 const Transfers = () => {
-  return <Layout>Transfers</Layout>;
+  return <MainLayout>Transfers</MainLayout>;
 };
 
 export default Transfers;

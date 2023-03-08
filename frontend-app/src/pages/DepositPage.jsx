@@ -1,7 +1,7 @@
-import Layout from "../components/Layout";
+import MainLayout from "../components/MainLayout";
 
 const Deposit = () => {
-  return <Layout>Deposit</Layout>;
+  return <MainLayout>Deposit</MainLayout>;
 };
 
 export default Deposit;

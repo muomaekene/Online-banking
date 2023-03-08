@@ -1,76 +1,87 @@
-import { Link } from "react-router-dom";
-import { acctSummary, FISCAL_YEAR } from "../utils/uiData";
-import { ChevronRight, ExpandMore } from "@mui/icons-material";
+import { accountInfo } from "../utils/uiData";
+import { FISCAL_YEAR } from "../utils/uiData";
+import {
+  AddRounded,
+  ChevronRightRounded,
+  ExpandMoreRounded,
+} from "@mui/icons-material";
 
-import Layout from "../components/Layout";
+import MainLayout from "../components/MainLayout";
 import Accounts from "../components/Accounts";
 import Transactions from "../components/Transactions";
 import LineChart from "../components/LineChart";
 import Card from "../components/Card";
-import Option from "../components/Option";
+import ActionBtn from "../components/ActionBtn";
+import SectionTitle from "../components/SectionTitle";
+import SectionDetails from "../components/SectionDetails";
+import SelectOption from "../components/SelectOption";
+import QuickTransfer from "../components/QuickTransfer";
 
 import styled from "styled-components";
 
-//there are quite a number of repeated styles in this component
-//refactor codebase and create a reusable styled component to fix this
-
 const Overview = () => {
   return (
-    <Layout>
+    <MainLayout>
       <Container>
         <div className="flex-left">
-          <Link to="/accounts" className="accounts">
-            {acctSummary.map((account) => (
-              <Accounts account={account} key={account.key} />
+          <section className="accounts">
+            {accountInfo.map((info) => (
+              <Accounts account={info} key={info.key} />
             ))}
-          </Link>
-
-          <div className="transactions">
-            <div className="transaction-title">
-              <h3 className="title-header">Recent transactions</h3>
-              <Link to="/transactions">
-                <p className="details">
-                  <span>See all</span>
-                  <ChevronRight className="icon" />
-                </p>
-              </Link>
+          </section>
+          <section className="transactions">
+            <div className="title-cover">
+              <SectionTitle
+                title="Recent transactions"
+                details={
+                  <SectionDetails
+                    source="/transactions"
+                    detail="See all"
+                    icon={<ChevronRightRounded className="icon" />}
+                  />
+                }
+              />
             </div>
             <Transactions />
-          </div>
-
-          <div className="stats">
-            <div className="stats-title">
-              <h3 className="title-header">Annual analytics</h3>
-              <select className="select-year">
-                {FISCAL_YEAR.map((year) => (
-                  <Option key={year.id} name={year.name} value={year.value} />
-                ))}
-              </select>
+          </section>
+          <section className="stats">
+            <div className="title-cover">
+              <SectionTitle title="Fiscal analytics" />
+              <div className="tooltip">
+                {<SelectOption data={FISCAL_YEAR} />}
+              </div>
             </div>
             <LineChart />
-          </div>
+          </section>
         </div>
 
         <div className="flex-right">
-          <div className="my-cards">
-            <div>
-              <div className="card-title">
-                <h3 className="title-header">Your cards</h3>
-                <p className="details">
-                  <span>All cards</span>
-                  <ExpandMore className="icon" />
-                </p>
-              </div>
-            </div>
+          <section>
+            <SectionTitle
+              title="Your cards"
+              details={
+                <SectionDetails
+                  source=""
+                  detail="All cards"
+                  icon={<ExpandMoreRounded className="icon" />}
+                />
+              }
+            />
             <Card />
-            <button className="add-card">+ Add card</button>
-          </div>
-          <div className="activities">
-            <div className="boxx"></div>
-          </div>
+            <ActionBtn
+              icon={
+                <AddRounded style={{ fontSize: "15px", marginRight: "2px" }} />
+              }
+              title="Add card"
+            />
+          </section>
+          <section className="quick-transfer">
+            <SectionTitle title="Quick transfer" />
+            <QuickTransfer />
+          </section>
         </div>
       </Container>
-    </Layout>
+    </MainLayout>
   );
 };
 
@@ -79,7 +90,6 @@ export default Overview;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  height: calc(100% - 48px);
 
   .flex-left {
     width: 70%;
@@ -93,108 +103,52 @@ const Container = styled.div`
   }
 
   .transactions {
-    border-radius: 10px;
     margin: 15px 0;
-    background: ${({ theme }) => theme.box};
-    box-shadow: ${({ theme }) => theme.shadow};
+    padding-bottom: 5px;
+    border-radius: 10px;
+    background: ${({ theme }) => theme.main};
+    border: 1px solid ${({ theme }) => theme.secondary};
   }
 
   .stats {
     position: relative;
-    padding: 10px 15px;
     border-radius: 10px;
     width: 100%;
-    background: ${({ theme }) => theme.box};
-    box-shadow: ${({ theme }) => theme.shadow};
+    background: ${({ theme }) => theme.main};
+    border: 1px solid ${({ theme }) => theme.secondary};
   }
 
-  .transaction-title {
+  .flex-right {
+    width: 30%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 15px 8px 15px;
-  }
-
-  .card-title {
-    display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
   }
 
-  .stats-title {
-    margin-bottom: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .quick-transfer {
+    padding: 10px 20px;
+    height: 19rem;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.secondary};
+    background: ${({ theme }) => theme.main};
+    position: relative;
   }
 
-  .select-year {
-    font-family: "Hind", sans-serif;
-    background: none;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 1px 4px;
-    border: 1.5px solid ${({ theme }) => theme.border};
-    border-radius: 4px;
-    color: ${({ theme }) => theme.altText};
-    outline: none;
-    cursor: pointer;
+  .title-cover {
+    padding: 10px 15px;
   }
 
-  .title-header {
-    font-size: 14px;
-    font-weight: 500;
-  }
-
-  .details {
-    font-weight: 500;
-    font-size: 13px;
-    color: ${({ theme }) => theme.altText};
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  .tooltip {
+    width: 110px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    z-index: 666;
   }
 
   .icon {
     font-size: 17px;
     margin-left: 1px;
-  }
-
-  .flex-right {
-    width: 30%;
-    top: 45px;
-    right: 0;
-  }
-
-  .add-card {
-    border-radius: 20px;
-    border: none;
-    padding: 6px 0;
-    width: 32%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 13px;
-    background: none;
-    color: ${({ theme }) => theme.text};
-    border: 1.5px solid ${({ theme }) => theme.border};
-    font-family: inherit;
-    font-weight: 500;
-    margin: 6px 0 10px 0;
-
-    :hover {
-      background: ${({ theme }) => theme.hover};
-      color: ${({ theme }) => theme.activeText};
-      border: 1.5px solid transparent;
-    }
-  }
-
-  .boxx {
-    height: 19.5rem;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: ${({ theme }) => theme.shadow};
-    background: ${({ theme }) => theme.box};
   }
 `;

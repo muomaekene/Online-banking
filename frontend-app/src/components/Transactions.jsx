@@ -1,9 +1,8 @@
 import { useMemo } from "react";
 import { useTable } from "react-table";
-
 import { COLUMNS } from "../utils/uiData";
-import MOCK_DATA from "../utils/MOCK_DATA.json";
 
+import MOCK_DATA from "../utils/MOCK_DATA.json";
 import styled from "styled-components";
 
 const Transactions = () => {
@@ -48,27 +47,24 @@ const Table = styled.table`
   table-layout: fixed;
   width: 100%;
   font-size: 12px;
-  font-weight: 500;
   overflow: hidden;
 
   thead {
     tr {
-      background-color: ${({ theme }) => theme.border};
-      color: ${({ theme }) => theme.text};
+      background-color: ${({ theme }) => theme.primary};
       text-align: left;
     }
   }
   th,
   td {
     padding: 7px 15px;
+    font-weight: 400;
   }
-  th {
-    font-weight: 600;
-  }
+
   tbody {
     tr {
       :nth-of-type(even) {
-        background-color: ${({ theme }) => theme.border};
+        background-color: ${({ theme }) => theme.primary};
       }
     }
   }
