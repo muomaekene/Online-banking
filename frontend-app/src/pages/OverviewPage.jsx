@@ -1,21 +1,17 @@
+import { Link } from "react-router-dom";
+
 import { accountInfo } from "../utils/uiData";
 import { FISCAL_YEAR } from "../utils/uiData";
-import {
-  AddRounded,
-  ChevronRightRounded,
-  ExpandMoreRounded,
-} from "@mui/icons-material";
+import { ChevronRightRounded } from "@mui/icons-material";
 
 import MainLayout from "../components/MainLayout";
 import Accounts from "../components/Accounts";
 import Transactions from "../components/Transactions";
 import LineChart from "../components/LineChart";
 import Card from "../components/Card";
-import ActionBtn from "../components/ActionBtn";
-import SectionTitle from "../components/SectionTitle";
-import SectionDetails from "../components/SectionDetails";
 import SelectOption from "../components/SelectOption";
 import QuickTransfer from "../components/QuickTransfer";
+import More from "../components/More";
 
 import styled from "styled-components";
 
@@ -29,24 +25,21 @@ const Overview = () => {
               <Accounts account={info} key={info.key} />
             ))}
           </section>
+
           <section className="transactions">
             <div className="title-cover">
-              <SectionTitle
-                title="Recent transactions"
-                details={
-                  <SectionDetails
-                    source="/transactions"
-                    detail="See all"
-                    icon={<ChevronRightRounded className="icon" />}
-                  />
-                }
-              />
+              <p>Recent transactions</p>
+              <Link to="/transactions" className="link-to">
+                <p>See all</p>
+                <ChevronRightRounded className="icon" />
+              </Link>
             </div>
             <Transactions />
           </section>
+
           <section className="stats">
             <div className="title-cover">
-              <SectionTitle title="Fiscal analytics" />
+              <p>Fiscal analytics</p>
               <div className="tooltip">
                 {<SelectOption data={FISCAL_YEAR} />}
               </div>
@@ -57,26 +50,16 @@ const Overview = () => {
 
         <div className="flex-right">
           <section>
-            <SectionTitle
-              title="Your cards"
-              details={
-                <SectionDetails
-                  source=""
-                  detail="All cards"
-                  icon={<ExpandMoreRounded className="icon" />}
-                />
-              }
-            />
             <Card />
-            <ActionBtn
-              icon={
-                <AddRounded style={{ fontSize: "15px", marginRight: "2px" }} />
-              }
-              title="Add card"
-            />
           </section>
+
+          <section className="card-details"></section>
+
           <section className="quick-transfer">
-            <SectionTitle title="Quick transfer" />
+            <div className="title-cover">
+              <p>Quick transfer</p>
+              <More />
+            </div>
             <QuickTransfer />
           </section>
         </div>
@@ -93,62 +76,81 @@ const Container = styled.div`
 
   .flex-left {
     width: 70%;
-    margin-right: 20px;
+    margin-right: ${({ theme }) => theme.spacing(3)};
   }
 
   .accounts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: ${({ theme }) => theme.spacing(2)};
   }
 
   .transactions {
-    margin: 15px 0;
+    margin: ${({ theme }) => theme.spacing(2)} 0;
     padding-bottom: 5px;
     border-radius: 10px;
-    background: ${({ theme }) => theme.main};
-    border: 1px solid ${({ theme }) => theme.secondary};
+    background: ${({ theme }) => theme.palette.main};
+    border: 1px solid ${({ theme }) => theme.palette.border};
   }
 
   .stats {
     position: relative;
     border-radius: 10px;
-    width: 100%;
-    background: ${({ theme }) => theme.main};
-    border: 1px solid ${({ theme }) => theme.secondary};
+    background: ${({ theme }) => theme.palette.main};
+    border: 1px solid ${({ theme }) => theme.palette.border};
   }
 
   .flex-right {
     width: 30%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 
   .quick-transfer {
-    padding: 10px 20px;
     height: 19rem;
-    width: 100%;
     border-radius: 10px;
-    border: 1px solid ${({ theme }) => theme.secondary};
-    background: ${({ theme }) => theme.main};
+    border: 1px solid ${({ theme }) => theme.palette.border};
+    background: ${({ theme }) => theme.palette.main};
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .title-cover {
-    padding: 10px 15px;
+    padding: 10px 20px 10px 15px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
   }
 
   .tooltip {
-    width: 110px;
+    width: 100px;
     position: absolute;
-    right: 15px;
+    right: 20px;
     top: 10px;
-    z-index: 666;
   }
 
   .icon {
     font-size: 17px;
     margin-left: 1px;
+  }
+
+  .card-details {
+    height: 3rem;
+    background: ${({ theme }) => theme.palette.primary};
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .link-to {
+    display: flex;
+    color: ${({ theme }) => theme.palette.altText};
+
+    :hover {
+      color: ${({ theme }) => theme.palette.text};
+    }
   }
 `;

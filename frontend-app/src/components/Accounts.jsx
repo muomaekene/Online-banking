@@ -7,14 +7,12 @@ const Accounts = ({ account }) => {
 
   return (
     <Container to="/accounts">
-      <div className="left">
-        <img className="acct-icon" src={Image} alt={altText} />
-      </div>
-      <div className="right">
-        <p className="acct-type">{type}</p>
+      <img className="account-icon" src={Image} alt={altText} />
+      <div>
+        <p className="account-type">{type}</p>
         <p>({number})</p>
-        <p className="acct-bal">{bal}</p>
-        <p>{desc} bal</p>
+        <p className="account-bal">{bal}</p>
+        <p>{desc}</p>
       </div>
     </Container>
   );
@@ -23,52 +21,37 @@ const Accounts = ({ account }) => {
 export default Accounts;
 
 const Container = styled(Link)`
-  border: 1px solid ${({ theme }) => theme.secondary};
-  background: ${({ theme }) => theme.main};
   padding: 10px 15px;
   height: 100%;
   border-radius: 10px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 500;
-  color: ${({ theme }) => theme.altText};
+  background: ${({ theme }) => theme.palette.primary};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+  color: ${({ theme }) => theme.palette.altText};
 
   :hover {
-    background: ${({ theme }) => theme.primary};
-    box-shadow: none;
-    border: 1px solid ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.palette.secondary};
   }
 
-  .card-left {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-  }
-
-  .card-right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .acct-icon {
+  .account-icon {
     width: 35px;
     height: 35px;
-    margin-right: 12px;
+    margin-right: ${({ theme }) => theme.spacing(2)};
   }
 
-  .acct-bal {
-    font-size: 14px;
-    color: ${({ theme }) => theme.text};
-    margin-top: 8px;
-  }
-
-  .acct-type {
-    color: ${({ theme }) => theme.text};
+  .account-type {
     text-transform: uppercase;
-    font-weight: 600;
+    color: ${({ theme }) => theme.palette.text};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+  }
+
+  .account-bal {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    color: ${({ theme }) => theme.palette.text};
+    margin-top: 8px;
   }
 `;

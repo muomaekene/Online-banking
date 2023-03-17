@@ -1,14 +1,15 @@
-import { themes } from "../utils/theme";
+import styled, { ThemeProvider } from "styled-components";
+import { createTheme } from "@mui/system";
 import { GlobalStyles } from "../utils/global";
+import { getDesignToken } from "../utils/theme";
 
 import Footer from "./Footer";
-import styled, { ThemeProvider } from "styled-components";
 
 const AuthLayout = ({ children }) => {
-  const { lightTheme } = themes.modes;
+  const themes = createTheme(getDesignToken("light"));
 
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={themes}>
       <GlobalStyles />
       <Navbar>
         <h1 className="title">Credit Union of New Jersey</h1>
@@ -21,23 +22,24 @@ const AuthLayout = ({ children }) => {
 
 export default AuthLayout;
 
-const Main = styled.main`
-  position: relative;
-  width: 100%;
-  height: 84%;
-  overflow: auto;
-`;
-
 const Navbar = styled.nav`
   height: 10%;
-  background: ${({ theme }) => theme.solid};
-  color: ${({ theme }) => theme.main};
+  background: ${({ theme }) => theme.palette.solid};
+  color: ${({ theme }) => theme.palette.main};
   display: flex;
   align-items: center;
   padding-left: 30px;
 
   .title {
-    font-size: 20px;
-    font-family: "Gloock", serif;
+    font-size: ${({ theme }) => theme.typography.header.fontSize};
+    font-family: ${({ theme }) => theme.typography.header.fontFamily};
+    font-weight: ${({ theme }) => theme.typography.header.fontWeight};
   }
+`;
+
+const Main = styled.main`
+  position: relative;
+  width: 100%;
+  height: 84%;
+  overflow: auto;
 `;

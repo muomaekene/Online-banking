@@ -43,7 +43,8 @@ const LineChart = () => {
       ],
     });
     setChatOptions({
-      fill: true,
+      // fill: true,
+      pointStyle: false,
       responsive: true,
       maintainAspectRatio: false,
       scales: {
@@ -51,7 +52,7 @@ const LineChart = () => {
           ticks: {
             font: {
               weight: 500,
-              size: "11px",
+              size: "12px",
               family: "'Figtree', sans-serif",
             },
           },
@@ -60,7 +61,7 @@ const LineChart = () => {
           ticks: {
             font: {
               weight: 500,
-              size: "11px",
+              size: "12px",
               family: "'Figtree', sans-serif",
             },
           },

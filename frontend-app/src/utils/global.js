@@ -3,9 +3,9 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 
   html, body {
-    background: ${({ theme }) => theme.main};
-    color: ${({ theme }) => theme.text};
-    font-family: 'Figtree', sans-serif;    
+    background: ${({ theme }) => theme.palette.main};
+    color: ${({ theme }) => theme.palette.text};
+    font-family: ${({ theme }) => theme.typography.main.fontFamily};
     height: 100%;
   } 
 

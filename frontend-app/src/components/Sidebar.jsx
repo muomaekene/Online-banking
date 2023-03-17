@@ -43,11 +43,14 @@ export default Sidebar;
 const Container = styled.aside`
   height: 100%;
   width: 100%;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   display: flex;
   flex-direction: column;
   padding: 25px 10px;
+  color: ${({ theme }) => theme.palette.altText};
+  border-right: 1px solid ${({ theme }) => theme.palette.border};
+  background: ${({ theme }) => theme.palette.main};
 
   .top-sidebar {
     display: flex;
@@ -65,8 +68,8 @@ const Container = styled.aside`
 
     .nav-item {
       :hover {
-        background: ${({ theme }) => theme.primary};
-        color: ${({ theme }) => theme.text};
+        background: ${({ theme }) => theme.palette.secondary};
+        color: ${({ theme }) => theme.palette.text};
         border-radius: 10px;
       }
       .nav-link {
@@ -82,8 +85,8 @@ const Container = styled.aside`
       }
 
       .active {
-        background: ${({ theme }) => theme.solid};
-        color: ${({ theme }) => theme.main};
+        background: ${({ theme }) => theme.palette.solid};
+        color: ${({ theme }) => theme.palette.main};
         border-radius: 10px;
         font-weight: 500;
       }

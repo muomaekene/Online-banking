@@ -28,8 +28,8 @@ const LoginForm = () => {
       </div>
 
       <div>
-        <fieldset className="input-group">
-          <legend className="caption">e-Banking login</legend>
+        <fieldset className="form-group">
+          <legend className="form-header">e-Banking login</legend>
           <input
             id="mail"
             className="input-bar"
@@ -91,7 +91,7 @@ const Form = styled.form`
   width: 320px;
   height: 22rem;
   padding: 40px 25px;
-  border: 1px solid ${({ theme }) => theme.secondary};
+  border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: 10px;
   position: absolute;
   left: 0;
@@ -105,38 +105,37 @@ const Form = styled.form`
     justify-content: center;
   }
 
-  .caption {
-    font-size: 15px;
-    font-weight: 500;
-    margin-bottom: 7px;
-    color: ${({ theme }) => theme.text};
+  .form-header {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    margin-bottom: ${({ theme }) => theme.spacing(1)};
+    color: ${({ theme }) => theme.palette.text};
   }
 
-  .input-group {
+  .form-group {
     position: relative;
     border: none;
   }
 
   .input-bar {
     margin-bottom: 8px;
-    border-radius: 5px;
-    border: 1px solid ${({ theme }) => theme.secondary};
+    border-radius: 10px;
+    border: 1px solid ${({ theme }) => theme.palette.border};
     background: none;
-    padding: 0 40px 0 20px;
+    padding: 0 15px;
     outline: none;
     width: 100%;
-    height: 42px;
+    height: 40px;
 
     ::placeholder {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 400;
       font-family: "Figtree", sans-serif;
     }
 
     :focus-within {
-      background: #f8f8f8;
-      border: 1px solid ${({ theme }) => theme.solid};
-      border-radius: 5px;
+      border: 1px solid ${({ theme }) => theme.palette.solid};
+      background: none;
     }
   }
 
@@ -146,7 +145,7 @@ const Form = styled.form`
     cursor: pointer;
     outline: none;
     position: absolute;
-    top: 62px;
+    top: 60px;
     right: 16px;
   }
 
@@ -158,14 +157,14 @@ const Form = styled.form`
   }
 
   .icon {
-    height: 17px;
-    width: 17px;
+    height: 15px;
+    width: 15px;
   }
 
   .reset-passw {
-    font-weight: 400;
-    font-size: 13px;
-    color: ${({ theme }) => theme.text};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    color: ${({ theme }) => theme.palette.text};
   }
 
   .reset-link {
@@ -180,7 +179,7 @@ const Form = styled.form`
     justify-content: space-between;
     width: 80%;
     text-decoration: underline;
-    font-size: 13px;
-    font-weight: 400;
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   }
 `;

@@ -1,16 +1,35 @@
-import masterCard from "../assets/img/masterCard.png";
+import masterCard from "../assets/images/masterCard.png";
+import More from "./More";
 
 import styled from "styled-components";
 
 const Cards = () => {
   return (
     <Container>
-      <img className="card-logo" src={masterCard} alt="visa-logo" />
-      <p className="card-number">6574 &nbsp; 7584 &nbsp; 8743 &nbsp; 0595</p>
-      <div className="card-bottom">
-        <p>Robbin Eckert</p>
-        <p className="exp-date">12/25</p>
-        <p>CVV &nbsp;***</p>
+      <div className="card-body">
+        <div className="group-item">
+          <p>Debit</p>
+          <More />
+        </div>
+
+        <div className="group-item">
+          <img className="card-logo" src={masterCard} alt="visa-logo" />
+          <p>
+            <i>917</i>
+          </p>
+          <p>8834 ****</p>
+        </div>
+      </div>
+
+      <div className="card-band">
+        <div>
+          <p>Card balance</p>
+          <p>$13 528.31</p>
+        </div>
+        <div>
+          <p>Expiry date</p>
+          <p>10/26</p>
+        </div>
       </div>
     </Container>
   );
@@ -18,38 +37,53 @@ const Cards = () => {
 
 export default Cards;
 
-const Container = styled.div`
-  background: rgb(102, 195, 34);
-  background: linear-gradient(0deg, rgba(102, 195, 34, 1) 0%, #0eb69d 58%);
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: #fff;
-  height: 9.4rem;
+  height: 9.6rem;
   width: 100%;
-  border-radius: 15px;
   cursor: pointer;
   font-weight: 400;
-  margin-bottom: 10px;
-  margin-top: 5px;
+  margin-bottom: 15px;
+
+  .card-body {
+    background: rgb(46, 104, 154);
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .group-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 12px;
+  }
 
   .card-logo {
-    width: 50px;
-    height: 50px;
-    margin-left: 15px;
-    margin-top: 5px;
+    width: 40px;
+    height: 40px;
   }
 
-  .card-number {
-    margin-top: 10px;
-    margin-left: 20px;
-    font-size: 16px;
-  }
-
-  .card-bottom {
+  .card-band {
+    background: ${({ theme }) => theme.palette.primary};
+    color: ${({ theme }) => theme.palette.text};
+    font-weight: 500;
+    height: 35%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     display: flex;
-    margin: 25px 0 0 20px;
-    font-size: 13px;
-  }
-
-  .exp-date {
-    margin: 0 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    padding: 0 20px;
   }
 `;

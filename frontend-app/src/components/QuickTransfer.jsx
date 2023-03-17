@@ -1,6 +1,12 @@
 import { useState } from "react";
-import { ACCOUNT_TYPE } from "../utils/uiData";
 import { SendRounded } from "@mui/icons-material";
+import { ACCOUNT_TYPE } from "../utils/uiData";
+import {
+  COMMA_SEPARATOR_REGEX,
+  HYPHEN_SEPARATOR_REGEX,
+  createPattern,
+  removeNonNumerals,
+} from "../utils/REGEX";
 
 import ActionBtn from "../components/ActionBtn";
 import SelectOption from "./SelectOption";
@@ -8,19 +14,9 @@ import SelectOption from "./SelectOption";
 import styled from "styled-components";
 
 const QuickTransfer = () => {
-  const [amount, setAmount] = useState(null);
-  const [account, setAccount] = useState(null);
-  const [routing, setRouting] = useState(null);
-
-  const COMMA_SEPARATOR_REGEX = /\B(?=(\d{3})+(?!\d))/g;
-  const HYPHEN_SEPARATOR_REGEX = /\B(?=(\d{4})+(?!\d))/g;
-  const REMOVE_TEXT_REGEX = /[^0-9]/g;
-
-  const createPattern = (num, regex, char) =>
-    num.toString().replace(regex, char);
-
-  const removeNonNumerals = (num) =>
-    num.toString().replace(REMOVE_TEXT_REGEX, "");
+  const [amount, setAmount] = useState("");
+  const [account, setAccount] = useState("");
+  const [routing, setRouting] = useState("");
 
   const handleAmount = (event) =>
     setAmount(
@@ -104,7 +100,8 @@ const QuickTransfer = () => {
 export default QuickTransfer;
 
 const Form = styled.form`
-  margin-top: 20px;
+  margin-top: 5px;
+  width: 88%;
 
   .input-group {
     margin-bottom: 10px;
@@ -113,16 +110,16 @@ const Form = styled.form`
   .input-wrap {
     margin-top: 10px;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 40px;
     display: flex;
     align-items: center;
-    border: 1px solid ${({ theme }) => theme.secondary};
+    border: 1px solid transparent;
+    background: ${({ theme }) => theme.palette.primary};
     position: relative;
 
     :focus-within {
-      background: ${({ theme }) => theme.primary};
-      border: 1px solid ${({ theme }) => theme.primary};
+      background: ${({ theme }) => theme.palette.secondary};
     }
 
     span {
@@ -130,7 +127,7 @@ const Form = styled.form`
       left: 15px;
       font-weight: 500;
       font-size: 13px;
-      color: ${({ theme }) => theme.altText};
+      color: ${({ theme }) => theme.palette.altText};
     }
   }
 
@@ -142,12 +139,12 @@ const Form = styled.form`
     padding: 0 30px;
     background: none;
     font-family: inherit;
-    z-index: 666;
-    color: ${({ theme }) => theme.text};
+    font-size: 12px;
+    color: ${({ theme }) => theme.palette.altText};
 
     ::placeholder {
-      color: ${({ theme }) => theme.text};
-      font-size: 13px;
+      color: ${({ theme }) => theme.palette.altText};
+      font-size: 12px;
     }
   }
 `;

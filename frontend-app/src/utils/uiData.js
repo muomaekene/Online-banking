@@ -9,9 +9,9 @@ import {
 
 import { DashboardOutlined, HelpOutline } from "@mui/icons-material";
 
-import checkBook from "../assets/img/checkBook.png";
-import creditCard from "../assets/img/creditCard.png";
-import moneyBox from "../assets/img/moneyBox.png";
+import moneyBox from "../assets/images/moneyBox.png";
+import creditCard from "../assets/images/creditCard.png";
+import checkBook from "../assets/images/checkBook.png";
 
 // navigation links data
 export const navLinks = [
@@ -47,7 +47,7 @@ export const navLinks = [
   },
   {
     key: "profile",
-    name: "Profile",
+    name: "Bank profile",
     icon: UserIcon,
     to: "/profile",
   },
@@ -305,7 +305,7 @@ export const SIGNUP_VALUES = [
   },
 ];
 
-export const ACCT_TYPE = [
+export const CHOOSE_ACCT = [
   {
     id: 1,
     name: "Please choose an account",
@@ -334,11 +334,6 @@ export const ACCT_TYPE = [
 ];
 
 export const FISCAL_YEAR = [
-  {
-    id: 6,
-    name: "Select year",
-    value: "",
-  },
   {
     id: 7,
     name: "2022",

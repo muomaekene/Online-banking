@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const Option = ({ value, name }) => {
-  return <Item value={value}>{name}</Item>;
+  return <option value={value}>{name}</option>;
 };
 
 export default Option;
 
-const Item = styled.option`
-  color: ${({ theme }) => theme.text};
-  background: ${({ theme }) => theme.main};
-`;
+// const Item = styled.option`
+//   color: ${({ theme }) => theme.text};
+//   background: ${({ theme }) => theme.main};
+// `;

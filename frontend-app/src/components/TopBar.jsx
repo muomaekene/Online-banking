@@ -19,7 +19,7 @@ const TopBar = ({ theme, themeToggler }) => {
       </div>
       <div className="right-topbar">
         <div className="icon-wrap" onClick={themeToggler}>
-          {theme === "light" ? (
+          {theme === "dark" ? (
             <SunIcon className="icon" />
           ) : (
             <MoonIcon className="icon" />
@@ -76,17 +76,13 @@ const Container = styled.div`
     position: relative;
     cursor: pointer;
     margin-left: 15px;
-    border: 1px solid ${({ theme }) => theme.secondary};
-    background: ${({ theme }) => theme.main};
-    color: ${({ theme }) => theme.text};
+    border: 1px solid transparent;
+    background: ${({ theme }) => theme.palette.primary};
+    color: ${({ theme }) => theme.palette.text};
 
     :hover {
-      padding: 5px;
-      border-radius: 25%;
-      background: ${({ theme }) => theme.primary};
-      border: 1px solid ${({ theme }) => theme.primary};
-
-      color: ${({ theme }) => theme.text};
+      background: ${({ theme }) => theme.palette.secondary};
+      color: ${({ theme }) => theme.palette.text};
     }
   }
 
@@ -107,10 +103,10 @@ const Container = styled.div`
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.palette.text};
 
     :hover {
-      color: ${({ theme }) => theme.altText};
+      color: ${({ theme }) => theme.palette.altText};
     }
   }
 
@@ -122,8 +118,8 @@ const Container = styled.div`
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: ${({ theme }) => theme.secondary};
-    color: ${({ theme }) => theme.text};
+    background: ${({ theme }) => theme.palette.secondary};
+    color: ${({ theme }) => theme.palette.text};
     display: flex;
     align-items: center;
     justify-content: center;

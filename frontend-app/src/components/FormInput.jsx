@@ -8,19 +8,19 @@ export default FormInput;
 
 const Input = styled.input`
   font-family: inherit;
-  padding: 12px 15px;
-  border-radius: 5px;
+  padding: 0 ${({ theme }) => theme.spacing(2)};
+  height: 40px;
+  border-radius: 10px;
   background: none;
-  border: 1px solid ${({ theme }) => theme.secondary};
+  border: 1px solid ${({ theme }) => theme.palette.border};
   outline: none;
 
   :focus-within {
-    background: #f9f8f8;
-    border: 1px solid ${({ theme }) => theme.solid};
-    border-radius: 5px;
+    border: 1px solid ${({ theme }) => theme.palette.solid};
+    background: none;
   }
 
   ::placeholder {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;

@@ -1,7 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
+import { createTheme } from "@mui/system";
+
 import { GlobalStyles } from "../utils/global";
 import { useDarkMode } from "../utils/useDarkMode";
-import { themes } from "../utils/theme";
+import { getDesignToken } from "../utils/theme";
 
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
@@ -9,13 +11,10 @@ import Footer from "./Footer";
 
 const MainLayout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode();
-
-  const { lightTheme, darkTheme } = themes.modes;
-
-  const themeMode = theme === "light" ? darkTheme : lightTheme;
+  const themes = createTheme(getDesignToken(theme));
 
   return (
-    <ThemeProvider theme={themeMode}>
+    <ThemeProvider theme={themes}>
       <GlobalStyles />
       <Container>
         <div id="sidebar-container">
@@ -45,9 +44,6 @@ const Container = styled.div`
     height: 100%;
     width: 18%;
     overflow: auto;
-    color: ${({ theme }) => theme.altText};
-    border-right: 1px solid ${({ theme }) => theme.secondary};
-    background: ${({ theme }) => theme.main};
 
     ::-webkit-scrollbar {
       width: 5px;
@@ -55,7 +51,7 @@ const Container = styled.div`
 
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background: ${({ theme }) => theme.scrollbar};
+      background: ${({ theme }) => theme.palette.scrollbar};
     }
   }
 
@@ -65,8 +61,8 @@ const Container = styled.div`
     height: 100%;
     width: 82%;
     overflow: auto;
-    padding: 0 20px;
-    background: ${({ theme }) => theme.main};
+    background: ${({ theme }) => theme.palette.main};
+    padding: 0 ${({ theme }) => theme.spacing(3)};
 
     ::-webkit-scrollbar {
       width: 7px;
@@ -74,7 +70,7 @@ const Container = styled.div`
 
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
-      background: ${({ theme }) => theme.scrollbar};
+      background: ${({ theme }) => theme.palette.scrollbar};
     }
   }
 `;

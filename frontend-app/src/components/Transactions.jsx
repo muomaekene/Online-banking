@@ -46,25 +46,25 @@ const Table = styled.table`
   display: table;
   table-layout: fixed;
   width: 100%;
-  font-size: 12px;
+  font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
   overflow: hidden;
 
   thead {
     tr {
-      background-color: ${({ theme }) => theme.primary};
+      background-color: ${({ theme }) => theme.palette.primary};
       text-align: left;
     }
   }
   th,
   td {
     padding: 7px 15px;
-    font-weight: 400;
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   }
 
   tbody {
     tr {
       :nth-of-type(even) {
-        background-color: ${({ theme }) => theme.primary};
+        background-color: ${({ theme }) => theme.palette.primary};
       }
     }
   }

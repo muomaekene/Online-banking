@@ -34,46 +34,40 @@ const Form = styled.form`
   height: 80%;
   display: flex;
   align-items: center;
-  padding: 0 10px;
-  border: 1px solid ${({ theme }) => theme.secondary};
-  background: ${({ theme }) => theme.main};
+  padding: 0 ${({ theme }) => theme.spacing(1)};
+  background: ${({ theme }) => theme.palette.primary};
   border-radius: 10px;
 
   :focus-within {
-    background: ${({ theme }) => theme.primary};
-    border-radius: 10px;
-    box-shadow: none;
-    border: 1px solid ${({ theme }) => theme.primary};
+    background: ${({ theme }) => theme.palette.secondary};
   }
 
   .icon-nowrap {
     display: flex;
     align-items: center;
     cursor: pointer;
-    padding: 5px;
+    padding: ${({ theme }) => theme.spacing(0)};
 
     :hover {
-      padding: 5px;
+      padding: ${({ theme }) => theme.spacing(0)};
       border-radius: 50%;
-      background: ${({ theme }) => theme.primary};
+      background: ${({ theme }) => theme.palette.primary};
     }
   }
 
   .input-bar {
-    padding: 0px 5px;
+    padding: 0 ${({ theme }) => theme.spacing(0)};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    color: ${({ theme }) => theme.palette.text};
+    width: calc(100% - 24px);
     background: none;
     border: none;
     outline: none;
-    width: calc(100% - 24px);
-    font-weight: 500;
-    font-size: 14px;
-    color: ${({ theme }) => theme.text};
 
     ::placeholder {
-      color: ${({ theme }) => theme.text};
-      font-size: 14px;
-      letter-spacing: 0;
-      font-family: "Figtree", sans-serif;
+      color: ${({ theme }) => theme.palette.text};
+      font-family: ${({ theme }) => theme.typography.main.fontFamily};
     }
   }
 
