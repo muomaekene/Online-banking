@@ -1,9 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { navLinks } from "../utils/uiData";
-import { LogoutRounded } from "@mui/icons-material";
 
 import Logo from "./Logo";
-import ActionBtn from "./ActionBtn";
+
 import styled from "styled-components";
 
 const Sidebar = () => {
@@ -23,16 +22,6 @@ const Sidebar = () => {
             </li>
           ))}
         </ul>
-      </div>
-      <div className="bottom-sidebar">
-        <Link to="/login">
-          <ActionBtn
-            icon={
-              <LogoutRounded style={{ fontSize: "15px", marginRight: "2px" }} />
-            }
-            title="Logout"
-          />
-        </Link>
       </div>
     </Container>
   );
@@ -57,6 +46,7 @@ const Container = styled.aside`
     flex-direction: row;
     justify-content: center;
     margin-bottom: 20px;
+    position: relative;
   }
 
   .mid-sidebar {
@@ -68,20 +58,9 @@ const Container = styled.aside`
 
     .nav-item {
       :hover {
-        background: ${({ theme }) => theme.palette.secondary};
+        background: ${({ theme }) => theme.palette.hover};
         color: ${({ theme }) => theme.palette.text};
         border-radius: 10px;
-      }
-      .nav-link {
-        padding: 12px 30px;
-        display: flex;
-        align-items: center;
-
-        .icon {
-          width: 18px;
-          height: 18px;
-          margin-right: 8px;
-        }
       }
 
       .active {
@@ -91,14 +70,20 @@ const Container = styled.aside`
         font-weight: 500;
       }
     }
-    .nav-item:nth-child(6) {
+    .nav-item:nth-child(7) {
       margin-bottom: 50px;
     }
-  }
 
-  .bottom-sidebar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    .nav-link {
+      padding: 12px 30px;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+    }
   }
 `;

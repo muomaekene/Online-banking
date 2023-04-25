@@ -11,6 +11,8 @@ import HelpPage from "./pages/HelpPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import PageNotFound from "./pages/PageNotFound";
+import AnalyticsPage from "./pages/AnalyticsPage";
+import VirtualCardsPage from "./pages/VirtualCardsPage";
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
       <Route path="/transfer" element={<TransferPage />} />
       <Route path="/deposit" element={<DepositPage />} />
       <Route path="/transactions" element={<TransactionsPage />} />
+      <Route path="/analytics" element={<AnalyticsPage />} />
+      <Route path="/cards" element={<VirtualCardsPage />} />
       <Route path="/profile" element={<ProfilePage />} />
       <Route path="/settings" element={<SettingsPage />} />
       <Route path="/help" element={<HelpPage />} />

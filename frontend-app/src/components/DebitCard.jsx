@@ -1,9 +1,18 @@
+import { useState } from "react";
+
 import masterCard from "../assets/images/masterCard.png";
+import Dropdown from "./Dropdown";
 import More from "./More";
 
 import styled from "styled-components";
 
-const Cards = () => {
+const DebitCard = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Container>
       <div className="card-body">
@@ -17,7 +26,7 @@ const Cards = () => {
           <p>
             <i>917</i>
           </p>
-          <p>8834 ****</p>
+          <p className="card-no">8834 ****</p>
         </div>
       </div>
 
@@ -35,7 +44,7 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+export default DebitCard;
 
 const Container = styled.section`
   display: flex;
@@ -71,10 +80,14 @@ const Container = styled.section`
     width: 40px;
     height: 40px;
   }
+  .card-no {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
 
   .card-band {
     background: ${({ theme }) => theme.palette.primary};
-    color: ${({ theme }) => theme.palette.text};
+    color: ${({ theme }) => theme.palette.altText};
     font-weight: 500;
     height: 35%;
     border-bottom-left-radius: 15px;

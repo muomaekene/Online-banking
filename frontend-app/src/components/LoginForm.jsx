@@ -5,13 +5,22 @@ import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { LoginRounded } from "@mui/icons-material";
 
 import Logo from "../components/Logo";
-import ActionBtn from "./ActionBtn";
+import CustomBtn from "./CustomBtn";
 
 import styled from "styled-components";
 
 const LoginForm = () => {
   const [inputType, setInputType] = useState("password");
-  const [inputValue, setInputValue] = useState("");
+  const [loginValues, setLoginValues] = useState({ userID: "", password: "" });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(JSON.stringify(loginValues));
+  };
+
+  const handleChange = (e) => {
+    setLoginValues({ ...loginValues, [e.target.name]: e.target.value });
+  };
 
   const showPassw = () => {
     if (inputType === "password") {
@@ -22,34 +31,33 @@ const LoginForm = () => {
   };
 
   return (
-    <Form>
+    <Form onSubmit={handleSubmit}>
       <div className="brand">
         <Logo />
       </div>
-
-      <div>
+      <>
         <fieldset className="form-group">
           <legend className="form-header">e-Banking login</legend>
           <input
-            id="mail"
             className="input-bar"
-            type="email"
-            placeholder="Email"
-            maxLength="32"
+            name="userID"
+            type="text"
+            placeholder="User ID"
+            value={loginValues.userID}
+            onChange={handleChange}
             required
           />
           <input
             className="input-bar"
+            name="password"
             type={inputType}
             placeholder="Password"
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            minLength="6"
-            maxLength="32"
+            value={loginValues.password}
+            onChange={handleChange}
             required
           />
           <button type="button" className="show-passw" onClick={showPassw}>
-            {inputValue &&
+            {loginValues.password &&
               (inputType === "password" ? (
                 <EyeSlashIcon className="icon" />
               ) : (
@@ -64,19 +72,19 @@ const LoginForm = () => {
               Forgot password?
             </Link>
           </p>
-
-          <ActionBtn
-            icon={
-              <LoginRounded style={{ fontSize: "15px", marginRight: "2px" }} />
-            }
-            title="Login"
-          />
+          <CustomBtn title="Login">
+            <LoginRounded style={{ fontSize: "15px", marginRight: "2px" }} />
+          </CustomBtn>
         </div>
-      </div>
+      </>
 
-      <div className="form-links">
-        <Link to="/create-account">Open bank account</Link>
-        <Link to="#">Learn more</Link>
+      <div className="bottom-links">
+        <Link to="/create-account" className="link">
+          Open bank account
+        </Link>
+        <Link to="#" className="link">
+          Learn more
+        </Link>
       </div>
     </Form>
   );
@@ -87,10 +95,9 @@ export default LoginForm;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   width: 320px;
   height: 22rem;
-  padding: 40px 25px;
+  padding: 25px 25px;
   border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: 10px;
   position: absolute;
@@ -103,6 +110,7 @@ const Form = styled.form`
   .brand {
     display: flex;
     justify-content: center;
+    margin-bottom: 4rem;
   }
 
   .form-header {
@@ -121,7 +129,7 @@ const Form = styled.form`
     margin-bottom: 8px;
     border-radius: 10px;
     border: 1px solid ${({ theme }) => theme.palette.border};
-    background: none;
+    background: ${({ theme }) => theme.palette.main};
     padding: 0 15px;
     outline: none;
     width: 100%;
@@ -130,12 +138,11 @@ const Form = styled.form`
     ::placeholder {
       font-size: 12px;
       font-weight: 400;
-      font-family: "Figtree", sans-serif;
     }
 
     :focus-within {
       border: 1px solid ${({ theme }) => theme.palette.solid};
-      background: none;
+      background: ${({ theme }) => theme.palette.main};
     }
   }
 
@@ -154,6 +161,7 @@ const Form = styled.form`
     align-items: center;
     align-content: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
   }
 
   .icon {
@@ -174,12 +182,19 @@ const Form = styled.form`
     }
   }
 
-  .form-links {
+  .bottom-links {
     display: flex;
     justify-content: space-between;
     width: 80%;
-    text-decoration: underline;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    color: ${({ theme }) => theme.palette.altText};
+  }
+
+  .link {
+    :hover {
+      text-decoration: underline;
+      color: ${({ theme }) => theme.palette.solid};
+    }
   }
 `;

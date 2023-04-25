@@ -1,42 +1,65 @@
-import { Link } from "react-router-dom";
-
 import {
   BellIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
   SunIcon,
   MoonIcon,
+  ChatBubbleOvalLeftIcon,
+  Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
 
-import styled from "styled-components";
 import Searchbar from "./Searchbar";
+import Dropdown from "./Dropdown";
+import NavIcon from "./NavIcon";
+import Avatar from "./Avatar";
+
+import {
+  messagesDropdown,
+  notificationsDropdown,
+  profileDropdown,
+} from "../utils/uiData";
+
+import styled from "styled-components";
 
 const TopBar = ({ theme, themeToggler }) => {
   return (
     <Container>
       <div className="left-topbar">
-        <h2 className="welcome-message">Good morning, Shaun</h2>
+        <h2 className="welcome-message">Good morning, Robbin</h2>
         <Searchbar />
       </div>
       <div className="right-topbar">
-        <div className="icon-wrap" onClick={themeToggler}>
+        <NavIcon themeToggler={themeToggler}>
           {theme === "dark" ? (
             <SunIcon className="icon" />
           ) : (
             <MoonIcon className="icon" />
           )}
-        </div>
-        <div className="icon-wrap">
-          <ChatBubbleOvalLeftEllipsisIcon className="icon" />
-        </div>
-        <div className="icon-wrap">
-          <BellIcon className="icon" />
-        </div>
-        <div className="profile">
-          <div className="avatar">RE</div>
-          <div className="profile-name">
-            <Link to="/profile">Shaun Eckert</Link>
-          </div>
-        </div>
+        </NavIcon>
+        <Dropdown
+          name="Messages"
+          link="View all"
+          triggerElement={
+            <NavIcon>
+              <ChatBubbleOvalLeftIcon className="icon" />
+            </NavIcon>
+          }
+          data={messagesDropdown}
+        />
+        <Dropdown
+          name="Notifications"
+          icon={<Cog6ToothIcon style={{ width: "15px", height: "15px" }} />}
+          triggerElement={
+            <NavIcon>
+              <BellIcon className="icon" />
+            </NavIcon>
+          }
+          data={notificationsDropdown}
+        />
+        <Dropdown
+          name="Robbin J. Eckert"
+          userID="@user_1039"
+          triggerElement={<Avatar>RE</Avatar>}
+          data={profileDropdown}
+        />
       </div>
     </Container>
   );
@@ -50,53 +73,23 @@ const Container = styled.div`
   margin-bottom: 10px;
 
   .left-topbar {
-    width: 68%;
+    width: 70%;
     display: flex;
     align-items: center;
+    padding: 0 10px;
   }
 
   .welcome-message {
     font-size: 19px;
-    margin-right: 100px;
-    font-weight: 500;
+    margin-right: 80px;
+    font-weight: 400;
   }
 
   .right-topbar {
-    width: 32%;
+    width: 30%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-  }
-
-  .icon-wrap {
-    display: flex;
-    align-items: center;
-    padding: 5px;
-    border-radius: 25%;
-    position: relative;
-    cursor: pointer;
-    margin-left: 15px;
-    border: 1px solid transparent;
-    background: ${({ theme }) => theme.palette.primary};
-    color: ${({ theme }) => theme.palette.text};
-
-    :hover {
-      background: ${({ theme }) => theme.palette.secondary};
-      color: ${({ theme }) => theme.palette.text};
-    }
-  }
-
-  .icon {
-    width: 22px;
-    height: 22px;
-    color: inherit;
-  }
-
-  .profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 25px;
+    padding: 0 5px;
   }
 
   .profile-name {
@@ -104,24 +97,16 @@ const Container = styled.div`
     font-weight: 500;
     cursor: pointer;
     color: ${({ theme }) => theme.palette.text};
+    margin-left: 5px;
 
     :hover {
       color: ${({ theme }) => theme.palette.altText};
     }
   }
 
-  .avatar {
-    cursor: pointer;
-    font-size: 12px;
-    font-weight: 600;
-    margin-right: 5px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: ${({ theme }) => theme.palette.secondary};
-    color: ${({ theme }) => theme.palette.text};
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: inherit;
   }
 `;

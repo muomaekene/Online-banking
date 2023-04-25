@@ -15,7 +15,6 @@ const AuthLayout = ({ children }) => {
         <h1 className="title">Credit Union of New Jersey</h1>
       </Navbar>
       <Main>{children}</Main>
-      <Footer />
     </ThemeProvider>
   );
 };
@@ -23,12 +22,11 @@ const AuthLayout = ({ children }) => {
 export default AuthLayout;
 
 const Navbar = styled.nav`
-  height: 10%;
   background: ${({ theme }) => theme.palette.solid};
   color: ${({ theme }) => theme.palette.main};
   display: flex;
   align-items: center;
-  padding-left: 30px;
+  padding: 15px 30px;
 
   .title {
     font-size: ${({ theme }) => theme.typography.header.fontSize};

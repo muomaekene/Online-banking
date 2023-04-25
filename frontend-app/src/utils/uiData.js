@@ -5,9 +5,13 @@ import {
   ArrowPathIcon,
   WrenchIcon,
   UserIcon,
+  ArrowTrendingUpIcon,
+  BuildingLibraryIcon,
+  QuestionMarkCircleIcon,
+  ArrowLeftOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
-import { DashboardOutlined, HelpOutline } from "@mui/icons-material";
+import { AccountCircle, DashboardOutlined } from "@mui/icons-material";
 
 import moneyBox from "../assets/images/moneyBox.png";
 import creditCard from "../assets/images/creditCard.png";
@@ -24,12 +28,12 @@ export const navLinks = [
   {
     key: "accounts",
     name: "Accounts",
-    icon: CreditCardIcon,
+    icon: BuildingLibraryIcon,
     to: "/accounts",
   },
   {
     key: "transfer",
-    name: "Pay & Transfer",
+    name: "Pay & transfer",
     icon: ArrowsRightLeftIcon,
     to: "/transfer",
   },
@@ -46,8 +50,20 @@ export const navLinks = [
     to: "/transactions",
   },
   {
+    key: "analytics",
+    name: "Analytics",
+    icon: ArrowTrendingUpIcon,
+    to: "/analytics",
+  },
+  {
+    key: "cards",
+    name: "Virtual cards",
+    icon: CreditCardIcon,
+    to: "/cards",
+  },
+  {
     key: "profile",
-    name: "Bank profile",
+    name: "Manage profile",
     icon: UserIcon,
     to: "/profile",
   },
@@ -60,7 +76,7 @@ export const navLinks = [
   {
     key: "help",
     name: "Get Help",
-    icon: HelpOutline,
+    icon: QuestionMarkCircleIcon,
     to: "/help",
   },
 ];
@@ -72,7 +88,7 @@ export const accountInfo = [
     type: "Checking",
     bal: "$8,450.10",
     number: "*7786",
-    desc: "Available",
+    desc: "Available bal",
     img: checkBook,
     alt: "check-book",
   },
@@ -81,16 +97,16 @@ export const accountInfo = [
     type: "Savings",
     bal: "$19,885.85",
     number: "*7361",
-    desc: "Available",
+    desc: "Available bal",
     img: moneyBox,
     alt: "money-box",
   },
   {
     key: 20,
-    type: "Credit Card",
+    type: "Credit card",
     bal: "$2,950.03",
     number: "*7098",
-    desc: "Outstanding",
+    desc: "Outstanding bal",
     img: creditCard,
     alt: "credit-card",
   },
@@ -155,20 +171,14 @@ export const ChartData = [
   {
     id: 10,
     month: "Oct",
-    amtSpent: 2395.94,
-    amtEarned: 3590.65,
   },
   {
     id: 11,
     month: "Nov",
-    amtSpent: 1390.23,
-    amtEarned: 7205.38,
   },
   {
     id: 12,
     month: "Dec",
-    amtSpent: 8345.0,
-    amtEarned: 7585.23,
   },
 ];
 
@@ -193,115 +203,6 @@ export const COLUMNS = [
   {
     Header: "Balance",
     accessor: "balance",
-  },
-];
-
-// sign-up form data
-export const SIGNUP_VALUES = [
-  {
-    title: "Create login",
-    values: [
-      {
-        id: 1,
-        type: "text",
-        placeholder: "Username",
-      },
-      {
-        id: 2,
-        type: "password",
-        placeholder: "Password",
-      },
-      {
-        id: 3,
-        type: "password",
-        placeholder: "Confirm password",
-      },
-    ],
-  },
-  {
-    title: "Personal info",
-    values: [
-      {
-        id: 40,
-        type: "text",
-        placeholder: "Title",
-      },
-      {
-        id: 4,
-        type: "text",
-        placeholder: "First name",
-      },
-      {
-        id: 5,
-        type: "text",
-        placeholder: "Middle initial",
-      },
-      {
-        id: 6,
-        type: "text",
-        placeholder: "Last name",
-      },
-      {
-        id: 7,
-        type: "text",
-        placeholder: "Maiden name",
-      },
-      {
-        id: 8,
-        type: "date",
-        placeholder: "Date of birth",
-      },
-      {
-        id: 9,
-        type: "text",
-        placeholder: "Account holder SSN",
-      },
-    ],
-  },
-  {
-    title: "Contact info",
-    values: [
-      {
-        id: 10,
-        type: "text",
-        placeholder: "Street address",
-      },
-      {
-        id: 11,
-        type: "text",
-        placeholder: "Country",
-      },
-      {
-        id: 12,
-        type: "text",
-        placeholder: "State",
-      },
-      {
-        id: 13,
-        type: "text",
-        placeholder: "City",
-      },
-      {
-        id: 14,
-        type: "text",
-        placeholder: "Zip code",
-      },
-      {
-        id: 15,
-        type: "text",
-        placeholder: "Email address",
-      },
-      {
-        id: 16,
-        type: "text",
-        placeholder: "Primary phone no.",
-      },
-      {
-        id: 17,
-        type: "text",
-        placeholder: "Secondary phone",
-      },
-    ],
   },
 ];
 
@@ -335,29 +236,29 @@ export const CHOOSE_ACCT = [
 
 export const FISCAL_YEAR = [
   {
+    id: 6,
+    name: "2023",
+    value: "2023",
+  },
+  {
     id: 7,
     name: "2022",
-    value: 2022,
+    value: "2022",
   },
   {
     id: 8,
     name: "2021",
-    value: 2021,
+    value: "2021",
   },
   {
     id: 9,
     name: "2020",
-    value: 2020,
+    value: "2020",
   },
   {
     id: 10,
     name: "2019",
-    value: 2019,
-  },
-  {
-    id: 11,
-    name: "2018",
-    value: 2018,
+    value: "2019",
   },
 ];
 
@@ -381,5 +282,70 @@ export const ACCOUNT_TYPE = [
     id: 28,
     name: "Credit card",
     value: "credit-card",
+  },
+];
+
+export const profileDropdown = [
+  {
+    title: "Edit profile",
+    icon: UserIcon,
+    to: "/profile",
+  },
+  {
+    title: "Settings",
+    icon: WrenchIcon,
+    to: "/settings",
+  },
+  {
+    title: "Get help",
+    icon: QuestionMarkCircleIcon,
+    to: "/help",
+  },
+  {
+    title: "Logout",
+    icon: ArrowLeftOnRectangleIcon,
+    to: "/login",
+  },
+];
+
+export const notificationsDropdown = [
+  {
+    title: "New credit alert!",
+    icon: AccountCircle,
+    message: "Dear customer, you just...",
+    time: "12:02 am",
+  },
+  {
+    title: "Terms update!",
+    icon: AccountCircle,
+    message: "Dear customer, we have...",
+    time: "10:13 pm",
+  },
+  {
+    title: "New offer!",
+    icon: AccountCircle,
+    message: "Congratulations, your account...",
+    time: "5:27 pm",
+  },
+];
+
+export const messagesDropdown = [
+  {
+    title: "Melinda Brown",
+    icon: AccountCircle,
+    message: "Hey, I need yout to confirm...",
+    time: "9:16 am",
+  },
+  {
+    title: "Oliver Eckert",
+    icon: AccountCircle,
+    message: "I have just sent some funds to...",
+    time: "11:10 am",
+  },
+  {
+    title: "Ekene Muoma",
+    icon: AccountCircle,
+    message: "Good day, please when am I...",
+    time: "11:10 am",
   },
 ];

@@ -1,49 +1,96 @@
 import { Link } from "react-router-dom";
+import { useForm } from "../utils/useForm";
+import { SIGNUP_CONTROLS } from "../utils/formControls";
+import { validations } from "../utils/validations";
 
-import { CHOOSE_ACCT, SIGNUP_VALUES } from "../utils/uiData";
-
-import FormInput from "./FormInput";
-import ActionBtn from "./ActionBtn";
-import SelectOption from "./SelectOption";
+import SignupInput from "./SignupInput";
+import CustomBtn from "./CustomBtn";
+import ErrorMsg from "./ErrorMsg";
 
 import styled from "styled-components";
 
 const SignupForm = () => {
+  const { handleChange, handleSubmit, data, errors } = useForm({
+    validations,
+    onSubmit: () => {
+      console.log(data);
+      alert("Form submitted!");
+    },
+  });
+
   return (
-    <Form className="form">
+    <Form className="form" onSubmit={handleSubmit}>
       <h2 className="form-title">Open bank account</h2>
       <fieldset className="select-group">
-        <legend className="field-title">Account type</legend>
-        <SelectOption data={CHOOSE_ACCT} />
+        <legend className="field-title">Select account</legend>
+        <ul className="select-items">
+          <li className="select-item">
+            <input
+              id="savings"
+              name="accountType"
+              className="select-option"
+              type="radio"
+              value="savings"
+              checked={data.accountType === "savings"}
+              onChange={handleChange}
+            />
+            <label htmlFor="savings">Savings account</label>
+          </li>
+          <li className="select-item">
+            <input
+              id="checking"
+              name="accountType"
+              className="select-option"
+              type="radio"
+              value="checking"
+              checked={data.accountType === "checking"}
+              onChange={handleChange}
+            />
+            <label htmlFor="checking">Checking account</label>
+          </li>
+        </ul>
+        {errors.accountType && <ErrorMsg message={errors.accountType} />}
       </fieldset>
 
-      {SIGNUP_VALUES.map((item) => (
-        <fieldset key={item.title} className="input-group">
-          <legend className="field-title">{item.title}</legend>
-          {item.values.map((inputs) => (
-            <FormInput key={inputs.id} inputs={inputs} />
+      {SIGNUP_CONTROLS.map((items) => (
+        <fieldset key={items.title} className="input-group">
+          <legend className="field-title">{items.title}</legend>
+          {items.attributes.map((attribute) => (
+            <SignupInput
+              key={attribute.id}
+              {...attribute}
+              value={data[attribute.name]}
+              handleChange={handleChange}
+              errors={errors}
+            />
           ))}
         </fieldset>
       ))}
 
-      <fieldset className="checkbox-group">
-        <ul className="checkbox-items">
-          <li className="checkbox-item">
-            <input className="checkbox" type="checkbox" id="tos" required />
+      <fieldset className="select-group">
+        <ul className="select-items">
+          <li className="select-item">
+            <input
+              id="tos"
+              name="tos"
+              className="select-option"
+              type="checkbox"
+              required
+            />
             <label htmlFor="tos">
-              I have read and accepted the &#160;
+              I have read and I accept the &#160;
               <Link to="#" className="terms-of-service">
                 Terms of Service
               </Link>
             </label>
           </li>
-          <li className="checkbox-item">
-            <input className="checkbox" type="checkbox" id="subscribe" />
+          <li className="select-item">
+            <input className="select-option" type="checkbox" id="subscribe" />
             <label htmlFor="subscribe">Subscibe to our newsletters</label>
           </li>
         </ul>
       </fieldset>
-      <ActionBtn title="Create account" />
+      <CustomBtn title="Create account" />
     </Form>
   );
 };
@@ -63,11 +110,32 @@ const Form = styled.form`
   }
 
   .select-group {
+    margin-bottom: ${({ theme }) => theme.spacing(3)};
+    border: none;
+    color: ${({ theme }) => theme.palette.altText};
+  }
+
+  .select-items {
+    list-style-type: none;
+    font-size: 12px;
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    background: ${({ theme }) => theme.palette.primary};
+    color: ${({ theme }) => theme.palette.text};
+    border-radius: 5px;
+    padding: 12px 15px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
-    border: none;
-    width: 32%;
+    justify-content: space-between;
+    height: 60px;
+  }
+
+  .select-item {
+    display: flex;
+    cursor: pointer;
+  }
+
+  .select-option {
+    margin-right: 5px;
   }
 
   .input-group {
@@ -80,30 +148,9 @@ const Form = styled.form`
 
   .field-title {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.altText};
-  }
-
-  .checkbox-group {
-    margin-bottom: ${({ theme }) => theme.spacing(3)};
-    border: none;
-    color: ${({ theme }) => theme.palette.altText};
-  }
-
-  .checkbox-items {
-    list-style-type: none;
-    font-size: 14px;
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
-  }
-
-  .checkbox-item {
-    display: flex;
-    align-items: center;
-  }
-
-  .checkbox {
-    margin-right: 7px;
   }
 
   .terms-of-service {

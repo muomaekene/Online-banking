@@ -1,15 +1,15 @@
 import styled from "styled-components";
 
-const ActionBtn = ({ icon, title }) => {
+const CustomBtn = ({ children, title }) => {
   return (
     <Button>
-      {icon}
+      {children}
       {title}
     </Button>
   );
 };
 
-export default ActionBtn;
+export default CustomBtn;
 
 const Button = styled.button`
   display: flex;
@@ -25,8 +25,6 @@ const Button = styled.button`
   font-family: inherit;
 
   :hover {
-    background: ${({ theme }) => theme.palette.secondary};
-    color: ${({ theme }) => theme.palette.text};
-    font-weight: 500;
+    background: ${({ theme }) => theme.palette.light};
   }
 `;

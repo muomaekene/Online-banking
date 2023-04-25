@@ -1,18 +1,21 @@
 import { useState } from "react";
 
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { Clear } from "@mui/icons-material";
+import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import styled from "styled-components";
 
 const Searchbar = () => {
   const [inputValue, setInputValue] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
-    <Form>
-      <div className="icon-nowrap">
+    <Form onSubmit={handleSubmit}>
+      <button className="icon-wrap">
         <MagnifyingGlassIcon className="icon" />
-      </div>
+      </button>
       <input
         className="input-bar"
         type="text"
@@ -22,7 +25,7 @@ const Searchbar = () => {
       />
 
       {inputValue && (
-        <Clear className="clear-input" onClick={() => setInputValue("")} />
+        <XMarkIcon className="clear-input" onClick={() => setInputValue("")} />
       )}
     </Form>
   );
@@ -42,16 +45,24 @@ const Form = styled.form`
     background: ${({ theme }) => theme.palette.secondary};
   }
 
-  .icon-nowrap {
+  .icon-wrap {
     display: flex;
     align-items: center;
     cursor: pointer;
     padding: ${({ theme }) => theme.spacing(0)};
+    color: ${({ theme }) => theme.palette.text};
+    background: none;
+    border: none;
+    transition: 0.3ms ease all;
 
     :hover {
       padding: ${({ theme }) => theme.spacing(0)};
       border-radius: 50%;
       background: ${({ theme }) => theme.palette.primary};
+    }
+
+    :active {
+      background: ${({ theme }) => theme.palette.secondary};
     }
   }
 
@@ -60,22 +71,23 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.text};
-    width: calc(100% - 24px);
+    width: calc(100% - 50px);
     background: none;
     border: none;
     outline: none;
+    display: flex;
 
     ::placeholder {
       color: ${({ theme }) => theme.palette.text};
-      font-family: ${({ theme }) => theme.typography.main.fontFamily};
     }
   }
 
   .clear-input {
     cursor: pointer;
-    font-size: 20px;
     position: absolute;
     right: 15px;
+    width: 18px;
+    height: 18px;
   }
 `;
 

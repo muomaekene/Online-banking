@@ -5,7 +5,6 @@ export const GlobalStyles = createGlobalStyle`
   html, body {
     background: ${({ theme }) => theme.palette.main};
     color: ${({ theme }) => theme.palette.text};
-    font-family: ${({ theme }) => theme.typography.main.fontFamily};
     height: 100%;
   } 
 
@@ -17,6 +16,8 @@ export const GlobalStyles = createGlobalStyle`
      margin: 0;
      padding: 0;
      box-sizing: border-box;
+     font-family: ${({ theme }) => theme.typography.main.fontFamily};
+
  }
 
  a {

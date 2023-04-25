@@ -43,7 +43,7 @@ const LineChart = () => {
       ],
     });
     setChatOptions({
-      // fill: true,
+      fill: true,
       pointStyle: false,
       responsive: true,
       maintainAspectRatio: false,
