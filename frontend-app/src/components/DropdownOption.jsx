@@ -71,8 +71,8 @@ const Container = styled.li`
   }
 
   .icon-2 {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     color: ${({ theme }) => theme.palette.altText};
     margin-right: 7px;
   }

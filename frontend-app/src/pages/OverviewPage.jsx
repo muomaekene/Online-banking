@@ -1,32 +1,52 @@
+import { Suspense, lazy } from "react";
 import MainLayout from "../components/MainLayout";
 
-import Accounts from "../components/Accounts";
-import Transactions from "../components/Transactions";
-import Analytics from "../components/Analytics";
-import VirtualCards from "../components/VirtualCards";
-import QuickTransfer from "../components/QuickTransfer";
+import ClipLoader from "react-spinners/ClipLoader";
 
 import styled from "styled-components";
 
-const Overview = () => {
+const Accounts = lazy(() => import("../components/Accounts"));
+const Transactions = lazy(() => import("../components/Transactions"));
+const Analytics = lazy(() => import("../components/Analytics"));
+const VirtualCards = lazy(() => import("../components/VirtualCards"));
+const QuickTransfer = lazy(() => import("../components/QuickTransfer"));
+
+const override = {
+  display: "block",
+  margin: "20% auto",
+  borderColor: "#bbbaba",
+};
+
+const OverviewPage = () => {
   return (
     <MainLayout>
       <Container>
-        <div className="flex-left">
-          <Accounts />
-          <Transactions />
-          <Analytics />
-        </div>
-        <div className="flex-right">
-          <VirtualCards />
-          <QuickTransfer />
-        </div>
+        <Suspense
+          fallback={
+            <ClipLoader
+              cssOverride={override}
+              size={70}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          }
+        >
+          <div className="flex-left">
+            <Accounts />
+            <Transactions />
+            <Analytics />
+          </div>
+          <div className="flex-right">
+            <VirtualCards />
+            <QuickTransfer />
+          </div>
+        </Suspense>
       </Container>
     </MainLayout>
   );
 };
 
-export default Overview;
+export default OverviewPage;
 
 const Container = styled.div`
   display: flex;

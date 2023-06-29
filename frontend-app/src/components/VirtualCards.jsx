@@ -15,7 +15,7 @@ export default VirtualCards;
 
 const Section = styled.section`
   .card-details {
-    height: 3rem;
+    height: 2.5rem;
     background: ${({ theme }) => theme.palette.primary};
     border-radius: 10px;
     margin-bottom: 15px;

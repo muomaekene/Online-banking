@@ -47,8 +47,9 @@ const TransferForm = () => {
           />
         </div>
       </div>
-      <CustomBtn title="Send money">
+      <CustomBtn>
         <SendRounded style={{ fontSize: "15px", marginRight: "4px" }} />
+        Send money
       </CustomBtn>
     </Form>
   );

@@ -3,8 +3,6 @@ import { createTheme } from "@mui/system";
 import { GlobalStyles } from "../utils/global";
 import { getDesignToken } from "../utils/theme";
 
-import Footer from "./Footer";
-
 const AuthLayout = ({ children }) => {
   const themes = createTheme(getDesignToken("light"));
 
@@ -22,22 +20,23 @@ const AuthLayout = ({ children }) => {
 export default AuthLayout;
 
 const Navbar = styled.nav`
-  background: ${({ theme }) => theme.palette.solid};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.border};
   color: ${({ theme }) => theme.palette.main};
+  background: ${({ theme }) => theme.palette.solid};
   display: flex;
   align-items: center;
-  padding: 15px 30px;
+  padding: 0 30px;
+  height: 4rem;
 
   .title {
     font-size: ${({ theme }) => theme.typography.header.fontSize};
     font-family: ${({ theme }) => theme.typography.header.fontFamily};
-    font-weight: ${({ theme }) => theme.typography.header.fontWeight};
+    font-weight: ${({ theme }) => theme.typography.header.fontWeight[1]};
   }
 `;
 
 const Main = styled.main`
   position: relative;
   width: 100%;
-  height: 84%;
-  overflow: auto;
+  height: calc(100% - 4rem);
 `;

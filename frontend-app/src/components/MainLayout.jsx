@@ -23,7 +23,7 @@ const MainLayout = ({ children }) => {
         <main id="content">
           <TopBar theme={theme} themeToggler={themeToggler} />
           <div>{children}</div>
-          <Footer />
+          {/* <Footer /> */}
         </main>
       </Container>
     </ThemeProvider>

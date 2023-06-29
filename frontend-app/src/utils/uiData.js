@@ -9,20 +9,21 @@ import {
   BuildingLibraryIcon,
   QuestionMarkCircleIcon,
   ArrowLeftOnRectangleIcon,
+  Bars3CenterLeftIcon,
+  UserCircleIcon,
+  UserPlusIcon,
+  Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
-
-import { AccountCircle, DashboardOutlined } from "@mui/icons-material";
 
 import moneyBox from "../assets/images/moneyBox.png";
 import creditCard from "../assets/images/creditCard.png";
 import checkBook from "../assets/images/checkBook.png";
 
-// navigation links data
 export const navLinks = [
   {
     key: "overview",
     name: "Overview",
-    icon: DashboardOutlined,
+    icon: Bars3CenterLeftIcon,
     to: "/overview",
   },
   {
@@ -33,7 +34,7 @@ export const navLinks = [
   },
   {
     key: "transfer",
-    name: "Pay & transfer",
+    name: "Payments & transfers",
     icon: ArrowsRightLeftIcon,
     to: "/transfer",
   },
@@ -75,13 +76,12 @@ export const navLinks = [
   },
   {
     key: "help",
-    name: "Get Help",
+    name: "Help & support",
     icon: QuestionMarkCircleIcon,
     to: "/help",
   },
 ];
 
-// account summary data
 export const accountInfo = [
   {
     key: 10,
@@ -112,7 +112,6 @@ export const accountInfo = [
   },
 ];
 
-// chart data
 export const ChartData = [
   {
     id: 1,
@@ -182,7 +181,6 @@ export const ChartData = [
   },
 ];
 
-// table header data
 export const COLUMNS = [
   {
     Header: "Account",
@@ -288,12 +286,12 @@ export const ACCOUNT_TYPE = [
 export const profileDropdown = [
   {
     title: "Edit profile",
-    icon: UserIcon,
+    icon: UserPlusIcon,
     to: "/profile",
   },
   {
     title: "Settings",
-    icon: WrenchIcon,
+    icon: Cog6ToothIcon,
     to: "/settings",
   },
   {
@@ -311,19 +309,19 @@ export const profileDropdown = [
 export const notificationsDropdown = [
   {
     title: "New credit alert!",
-    icon: AccountCircle,
+    icon: UserCircleIcon,
     message: "Dear customer, you just...",
     time: "12:02 am",
   },
   {
     title: "Terms update!",
-    icon: AccountCircle,
+    icon: UserCircleIcon,
     message: "Dear customer, we have...",
     time: "10:13 pm",
   },
   {
     title: "New offer!",
-    icon: AccountCircle,
+    icon: UserCircleIcon,
     message: "Congratulations, your account...",
     time: "5:27 pm",
   },
@@ -332,19 +330,19 @@ export const notificationsDropdown = [
 export const messagesDropdown = [
   {
     title: "Melinda Brown",
-    icon: AccountCircle,
+    icon: UserCircleIcon,
     message: "Hey, I need yout to confirm...",
     time: "9:16 am",
   },
   {
     title: "Oliver Eckert",
-    icon: AccountCircle,
+    icon: UserCircleIcon,
     message: "I have just sent some funds to...",
     time: "11:10 am",
   },
   {
     title: "Ekene Muoma",
-    icon: AccountCircle,
+    icon: UserCircleIcon,
     message: "Good day, please when am I...",
     time: "11:10 am",
   },

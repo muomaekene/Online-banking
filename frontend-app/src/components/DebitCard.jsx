@@ -1,18 +1,9 @@
-import { useState } from "react";
-
 import masterCard from "../assets/images/masterCard.png";
-import Dropdown from "./Dropdown";
 import More from "./More";
 
 import styled from "styled-components";
 
 const DebitCard = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <Container>
       <div className="card-body">

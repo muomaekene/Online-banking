@@ -90,7 +90,9 @@ const SignupForm = () => {
           </li>
         </ul>
       </fieldset>
-      <CustomBtn title="Create account" />
+      <div className="btn-cover">
+        <CustomBtn>Create account</CustomBtn>
+      </div>
     </Form>
   );
 };
@@ -100,6 +102,7 @@ export default SignupForm;
 const Form = styled.form`
   width: 60%;
   padding-top: ${({ theme }) => theme.spacing(3)};
+  padding-bottom: ${({ theme }) => theme.spacing(3)};
   margin-left: auto;
   margin-right: auto;
 
@@ -110,7 +113,7 @@ const Form = styled.form`
   }
 
   .select-group {
-    margin-bottom: ${({ theme }) => theme.spacing(3)};
+    margin-bottom: ${({ theme }) => theme.spacing(2)};
     border: none;
     color: ${({ theme }) => theme.palette.altText};
   }
@@ -121,7 +124,7 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     background: ${({ theme }) => theme.palette.primary};
     color: ${({ theme }) => theme.palette.text};
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 12px 15px;
     display: flex;
     flex-direction: column;
@@ -147,7 +150,7 @@ const Form = styled.form`
   }
 
   .field-title {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.altText};
@@ -159,5 +162,9 @@ const Form = styled.form`
     :hover {
       color: ${({ theme }) => theme.palette.text};
     }
+  }
+
+  .btn-cover {
+    width: 15rem;
   }
 `;

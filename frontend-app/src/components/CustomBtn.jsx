@@ -1,28 +1,24 @@
 import styled from "styled-components";
 
-const CustomBtn = ({ children, title }) => {
-  return (
-    <Button>
-      {children}
-      {title}
-    </Button>
-  );
+const CustomBtn = ({ children }) => {
+  return <Button>{children}</Button>;
 };
 
 export default CustomBtn;
 
 const Button = styled.button`
   display: flex;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  padding: 12px 20px;
-  font-size: 13px;
-  cursor: pointer;
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 10px;
   border: none;
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   background: ${({ theme }) => theme.palette.solid};
   color: ${({ theme }) => theme.palette.main};
-  border-radius: 30px;
   font-family: inherit;
+  cursor: pointer;
 
   :hover {
     background: ${({ theme }) => theme.palette.light};

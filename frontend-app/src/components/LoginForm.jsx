@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import { LoginRounded } from "@mui/icons-material";
+import {
+  EyeIcon,
+  EyeSlashIcon,
+  ArrowRightOnRectangleIcon,
+} from "@heroicons/react/24/outline";
 
 import Logo from "../components/Logo";
 import CustomBtn from "./CustomBtn";
@@ -35,48 +38,48 @@ const LoginForm = () => {
       <div className="brand">
         <Logo />
       </div>
-      <>
-        <fieldset className="form-group">
-          <legend className="form-header">e-Banking login</legend>
-          <input
-            className="input-bar"
-            name="userID"
-            type="text"
-            placeholder="User ID"
-            value={loginValues.userID}
-            onChange={handleChange}
-            required
-          />
-          <input
-            className="input-bar"
-            name="password"
-            type={inputType}
-            placeholder="Password"
-            value={loginValues.password}
-            onChange={handleChange}
-            required
-          />
-          <button type="button" className="show-passw" onClick={showPassw}>
-            {loginValues.password &&
-              (inputType === "password" ? (
-                <EyeSlashIcon className="icon" />
-              ) : (
-                <EyeIcon className="icon" />
-              ))}
-          </button>
-        </fieldset>
+      <fieldset className="form-group">
+        <legend className="form-header">e-Banking login</legend>
+        <input
+          className="input-bar"
+          name="userID"
+          type="text"
+          placeholder="User ID"
+          value={loginValues.userID}
+          onChange={handleChange}
+          required
+        />
+        <input
+          className="input-bar"
+          name="password"
+          type={inputType}
+          placeholder="Password"
+          value={loginValues.password}
+          onChange={handleChange}
+          required
+        />
+        <button type="button" className="show-passw" onClick={showPassw}>
+          {loginValues.password &&
+            (inputType === "password" ? (
+              <EyeSlashIcon className="icon" />
+            ) : (
+              <EyeIcon className="icon" />
+            ))}
+        </button>
+      </fieldset>
 
-        <div className="form-actions">
-          <p className="reset-passw">
-            <Link to="#" className="reset-link">
-              Forgot password?
-            </Link>
-          </p>
-          <CustomBtn title="Login">
-            <LoginRounded style={{ fontSize: "15px", marginRight: "2px" }} />
-          </CustomBtn>
-        </div>
-      </>
+      <p className="reset-passw">
+        <Link to="#" className="reset-link">
+          Forgot password?
+        </Link>
+      </p>
+
+      <CustomBtn>
+        <ArrowRightOnRectangleIcon
+          style={{ width: "18px", marginRight: "4px" }}
+        />
+        Login
+      </CustomBtn>
 
       <div className="bottom-links">
         <Link to="/create-account" className="link">
@@ -95,26 +98,27 @@ export default LoginForm;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 350px;
   height: 22rem;
-  padding: 25px 25px;
+  padding: 25px 35px;
   border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: 10px;
   position: absolute;
   left: 0;
   right: 0;
   top: 50px;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
+  /* margin-right: auto;
+  margin-left: auto; */
 
   .brand {
     display: flex;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
   }
 
   .form-header {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.text};
@@ -126,7 +130,7 @@ const Form = styled.form`
   }
 
   .input-bar {
-    margin-bottom: 8px;
+    margin-top: 8px;
     border-radius: 10px;
     border: 1px solid ${({ theme }) => theme.palette.border};
     background: ${({ theme }) => theme.palette.main};
@@ -152,7 +156,7 @@ const Form = styled.form`
     cursor: pointer;
     outline: none;
     position: absolute;
-    top: 60px;
+    top: 68px;
     right: 16px;
   }
 
@@ -173,6 +177,7 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     color: ${({ theme }) => theme.palette.text};
+    margin: 10px 0;
   }
 
   .reset-link {
@@ -185,8 +190,9 @@ const Form = styled.form`
   .bottom-links {
     display: flex;
     justify-content: space-between;
+    margin-top: 10px;
     width: 80%;
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.altText};
   }

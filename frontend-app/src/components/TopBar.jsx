@@ -6,16 +6,17 @@ import {
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
 
-import Searchbar from "./Searchbar";
-import Dropdown from "./Dropdown";
-import NavIcon from "./NavIcon";
-import Avatar from "./Avatar";
-
 import {
   messagesDropdown,
   notificationsDropdown,
   profileDropdown,
 } from "../utils/uiData";
+
+import WelcomeMsg from "./WelcomeMsg";
+import Searchbar from "./Searchbar";
+import Dropdown from "./Dropdown";
+import NavIcon from "./NavIcon";
+import Avatar from "./Avatar";
 
 import styled from "styled-components";
 
@@ -23,7 +24,7 @@ const TopBar = ({ theme, themeToggler }) => {
   return (
     <Container>
       <div className="left-topbar">
-        <h2 className="welcome-message">Good morning, Robbin</h2>
+        <WelcomeMsg />
         <Searchbar />
       </div>
       <div className="right-topbar">
@@ -79,29 +80,11 @@ const Container = styled.div`
     padding: 0 10px;
   }
 
-  .welcome-message {
-    font-size: 19px;
-    margin-right: 80px;
-    font-weight: 400;
-  }
-
   .right-topbar {
     width: 30%;
     display: flex;
     align-items: center;
     padding: 0 5px;
-  }
-
-  .profile-name {
-    font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    color: ${({ theme }) => theme.palette.text};
-    margin-left: 5px;
-
-    :hover {
-      color: ${({ theme }) => theme.palette.altText};
-    }
   }
 
   .icon {

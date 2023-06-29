@@ -18,10 +18,10 @@ export const getDesignToken = (mode) => ({
           main: "#030712",
           primary: "#242a35",
           secondary: "#303a48",
-          solid: "#dae0f0",
+          solid: "#bdc6dc",
           light: "#c2c9da",
           hover: "#111827",
-          border: "#2a2a2f",
+          border: "#494953",
           text: "#E3E3E3",
           altText: "#9AA0A6",
           scrollbar: "#4E4D4D",
@@ -30,7 +30,7 @@ export const getDesignToken = (mode) => ({
   typography: {
     main: {
       fontFamily: "Figtree, sans-serif",
-      fontSize: ["12px", "14px", "16px"],
+      fontSize: ["12px", "13px", "14px", "16px"],
       fontWeight: [400, 500, 600],
     },
     header: {
