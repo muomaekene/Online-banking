@@ -108,8 +108,6 @@ const Form = styled.form`
   right: 0;
   top: 50px;
   margin: 0 auto;
-  /* margin-right: auto;
-  margin-left: auto; */
 
   .brand {
     display: flex;

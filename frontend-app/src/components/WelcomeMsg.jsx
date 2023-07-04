@@ -7,7 +7,7 @@ const WelcomeMsg = () => {
 export default WelcomeMsg;
 
 const Container = styled.div`
-  font-size: 19px;
-  margin-right: 80px;
+  font-size: 16px;
+  margin-right: 74px;
   font-weight: 400;
 `;

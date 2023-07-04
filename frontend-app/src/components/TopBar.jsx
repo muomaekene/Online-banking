@@ -77,7 +77,6 @@ const Container = styled.div`
     width: 70%;
     display: flex;
     align-items: center;
-    padding: 0 10px;
   }
 
   .right-topbar {

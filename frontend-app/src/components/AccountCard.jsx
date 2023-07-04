@@ -45,6 +45,7 @@ const Container = styled(Link)`
   .account-type {
     color: ${({ theme }) => theme.palette.text};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    text-transform: uppercase;
   }
 
   .account-bal {
