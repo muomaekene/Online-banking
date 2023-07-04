@@ -5,7 +5,6 @@ import { validations } from "../utils/validations";
 
 import SignupInput from "./SignupInput";
 import CustomBtn from "./CustomBtn";
-import ErrorMsg from "./ErrorMsg";
 
 import styled from "styled-components";
 
@@ -19,38 +18,8 @@ const SignupForm = () => {
   });
 
   return (
-    <Form className="form" onSubmit={handleSubmit}>
-      <h2 className="form-title">Open bank account</h2>
-      <fieldset className="select-group">
-        <legend className="field-title">Select account</legend>
-        <ul className="select-items">
-          <li className="select-item">
-            <input
-              id="savings"
-              name="accountType"
-              className="select-option"
-              type="radio"
-              value="savings"
-              checked={data.accountType === "savings"}
-              onChange={handleChange}
-            />
-            <label htmlFor="savings">Savings account</label>
-          </li>
-          <li className="select-item">
-            <input
-              id="checking"
-              name="accountType"
-              className="select-option"
-              type="radio"
-              value="checking"
-              checked={data.accountType === "checking"}
-              onChange={handleChange}
-            />
-            <label htmlFor="checking">Checking account</label>
-          </li>
-        </ul>
-        {errors.accountType && <ErrorMsg message={errors.accountType} />}
-      </fieldset>
+    <Form onSubmit={handleSubmit}>
+      <h2 className="form-title">Create account profile</h2>
 
       {SIGNUP_CONTROLS.map((items) => (
         <fieldset key={items.title} className="input-group">
@@ -100,16 +69,21 @@ const SignupForm = () => {
 export default SignupForm;
 
 const Form = styled.form`
+  background: ${({ theme }) => theme.palette.main};
   width: 60%;
-  padding-top: ${({ theme }) => theme.spacing(3)};
-  padding-bottom: ${({ theme }) => theme.spacing(3)};
+  padding: 25px 35px;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
+  border-radius: 10px;
+  margin-top: 40px;
 
   .form-title {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    font-size: 22px;
-    margin-bottom: ${({ theme }) => theme.spacing(3)};
+    margin-bottom: 30px;
+    color: ${({ theme }) => theme.palette.text};
+    text-transform: uppercase;
   }
 
   .select-group {

@@ -7,7 +7,6 @@ import {
   ArrowRightOnRectangleIcon,
 } from "@heroicons/react/24/outline";
 
-import Logo from "../components/Logo";
 import CustomBtn from "./CustomBtn";
 
 import styled from "styled-components";
@@ -35,11 +34,8 @@ const LoginForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <div className="brand">
-        <Logo />
-      </div>
       <fieldset className="form-group">
-        <legend className="form-header">e-Banking login</legend>
+        <legend className="form-title">e-Banking login</legend>
         <input
           className="input-bar"
           name="userID"
@@ -82,7 +78,7 @@ const LoginForm = () => {
       </CustomBtn>
 
       <div className="bottom-links">
-        <Link to="/create-account" className="link">
+        <Link to="/create-profile" className="link">
           Open bank account
         </Link>
         <Link to="#" className="link">
@@ -98,28 +94,24 @@ export default LoginForm;
 const Form = styled.form`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 350px;
-  height: 22rem;
+  height: 20rem;
   padding: 25px 35px;
   border: 1px solid ${({ theme }) => theme.palette.border};
+  background: ${({ theme }) => theme.palette.main};
   border-radius: 10px;
   position: absolute;
   left: 0;
   right: 0;
-  top: 50px;
-  margin: 0 auto;
+  margin: 120px auto;
 
-  .brand {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .form-header {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+  .form-title {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.text};
+    text-transform: uppercase;
   }
 
   .form-group {
