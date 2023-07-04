@@ -7,5 +7,5 @@ const AccountStatementsPage = () => {
 export default AccountStatementsPage;
 
 const Container = styled.section`
-  width: 70%;
+  width: 67%;
 `;

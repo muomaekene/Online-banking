@@ -4,7 +4,7 @@ import {
   MoonIcon,
   ChatBubbleOvalLeftIcon,
   Cog6ToothIcon,
-} from "@heroicons/react/24/outline";
+} from "@heroicons/react/24/solid";
 
 import {
   messagesDropdown,

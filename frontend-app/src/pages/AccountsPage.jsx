@@ -39,13 +39,16 @@ const MainContent = styled.div`
   height: calc(100vh - 70px);
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.palette.border};
-  padding: 15px 10px;
+  padding: 15px 15px 0 15px;
+  border-bottom: none;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 
   .tabs {
     display: flex;
     flex-direction: column;
     align-items: right;
-    width: calc(100%-70%);
+    width: calc(100%-67%);
     height: 100%;
     border-left: 1px solid ${({ theme }) => theme.palette.border};
     padding-left: 15px;
@@ -53,6 +56,12 @@ const MainContent = styled.div`
 
     ul {
       list-style-type: none;
+    }
+
+    li {
+      :hover {
+        text-decoration: underline;
+      }
     }
 
     .tab-link {
@@ -68,7 +77,7 @@ const MainContent = styled.div`
       cursor: pointer;
       font-size: 12px;
       font-weight: 400;
-      padding: 15px;
+      padding: 10px;
     }
 
     .active {

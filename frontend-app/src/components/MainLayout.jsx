@@ -1,4 +1,3 @@
-import styled, { ThemeProvider } from "styled-components";
 import { createTheme } from "@mui/system";
 
 import { GlobalStyles } from "../utils/global";
@@ -7,7 +6,8 @@ import { getDesignToken } from "../utils/theme";
 
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
-import Footer from "./Footer";
+
+import styled, { ThemeProvider } from "styled-components";
 
 const MainLayout = ({ children }) => {
   const [theme, themeToggler] = useDarkMode();
@@ -23,7 +23,6 @@ const MainLayout = ({ children }) => {
         <main id="content">
           <TopBar theme={theme} themeToggler={themeToggler} />
           <div>{children}</div>
-          {/* <Footer /> */}
         </main>
       </Container>
     </ThemeProvider>

@@ -347,3 +347,18 @@ export const messagesDropdown = [
     time: "11:10 am",
   },
 ];
+
+export const ACCOUNT_DATA = [
+  { type: "Business Checking", number: "9548", amount: "9,250.00" },
+  { type: "ADV Money Market Savings", number: "9876", amount: "3,820.00" },
+  { type: "ADV Plus Savings", number: "9792", amount: "4,050.00" },
+];
+
+export const CC_DATA = [
+  {
+    type: "Customized Cash Rewards Visa Signature",
+    number: "9548",
+    amount: "9,250.00",
+  },
+  { type: "Travel Rewards Visa Gold", number: "5632", amount: "1,690.00" },
+];

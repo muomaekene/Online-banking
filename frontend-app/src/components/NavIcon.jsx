@@ -15,11 +15,11 @@ const Cover = styled.button`
   cursor: pointer;
   border: 1px solid transparent;
   background: ${({ theme }) => theme.palette.primary};
-  color: ${({ theme }) => theme.palette.text};
+  color: ${({ theme }) => theme.palette.solid};
 
   :hover {
     background: ${({ theme }) => theme.palette.secondary};
-    color: ${({ theme }) => theme.palette.solid};
+    color: ${({ theme }) => theme.palette.text};
   }
 
   :active {

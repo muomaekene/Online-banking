@@ -7,5 +7,5 @@ const CreateAccountPage = () => {
 export default CreateAccountPage;
 
 const Container = styled.section`
-  width: 70%;
+  width: 67%;
 `;

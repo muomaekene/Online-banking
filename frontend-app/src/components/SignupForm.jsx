@@ -19,7 +19,7 @@ const SignupForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="form-title">Create account profile</h2>
+      <h2 className="form-title">Register a profile</h2>
 
       {SIGNUP_CONTROLS.map((items) => (
         <fieldset key={items.title} className="input-group">
@@ -60,7 +60,7 @@ const SignupForm = () => {
         </ul>
       </fieldset>
       <div className="btn-cover">
-        <CustomBtn>Create account</CustomBtn>
+        <CustomBtn>Sign up</CustomBtn>
       </div>
     </Form>
   );
@@ -83,7 +83,6 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: 30px;
     color: ${({ theme }) => theme.palette.text};
-    text-transform: uppercase;
   }
 
   .select-group {

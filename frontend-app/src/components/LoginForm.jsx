@@ -111,7 +111,6 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.text};
-    text-transform: uppercase;
   }
 
   .form-group {

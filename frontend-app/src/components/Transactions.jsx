@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ChevronRightRounded } from "@mui/icons-material";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 import SectionHeader from "./SectionHeader";
 import Table from "./Table";
@@ -12,7 +12,7 @@ const Transactions = () => {
       <SectionHeader title="Recent transactions">
         <Link to="/transactions" className="link-to">
           <p>see all</p>
-          <ChevronRightRounded className="icon" />
+          <ChevronRightIcon className="icon" />
         </Link>
       </SectionHeader>
       <Table />
@@ -31,6 +31,8 @@ const Section = styled.section`
 
   .link-to {
     display: flex;
+    align-items: center;
+    justify-content: center;
     color: ${({ theme }) => theme.palette.altText};
 
     :hover {
@@ -39,11 +41,13 @@ const Section = styled.section`
 
     p {
       font-size: inherit;
-      font-weight: 500;
+      font-weight: 400;
     }
   }
 
   .icon {
-    font-size: 17px;
+    width: 12px;
+    height: 12px;
+    /* color: inherit; */
   }
 `;
