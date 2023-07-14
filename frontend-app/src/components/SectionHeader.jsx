@@ -13,7 +13,7 @@ export default SectionHeader;
 
 const Container = styled.div`
   padding: 10px 20px 10px 15px;
-  font-size: 14px;
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: space-between;

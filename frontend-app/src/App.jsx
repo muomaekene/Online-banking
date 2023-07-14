@@ -17,6 +17,7 @@ import VirtualCardsPage from "./pages/VirtualCardsPage";
 import AllAccountsPage from "./pages/AllAccountsPage";
 import AccountStatementsPage from "./pages/AccountStatementsPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
+import AccountDetailsPage from "./pages/AccountDetailsPage";
 
 const App = () => {
   return (

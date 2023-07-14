@@ -8,7 +8,7 @@ const Accounts = () => {
     <MainLayout>
       <MainContent>
         <Outlet />
-        <nav className="tabs">
+        <nav className="tab-nav">
           <ul>
             <li>
               <NavLink to="all" className="tab-link">
@@ -44,7 +44,7 @@ const MainContent = styled.div`
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 
-  .tabs {
+  .tab-nav {
     display: flex;
     flex-direction: column;
     align-items: right;

@@ -1,20 +1,19 @@
-import React from "react";
 import { accountInfo } from "../utils/uiData";
-import AccountCard from "./AccountCard";
+import AccountBanner from "./AccountBanner";
 
 import styled from "styled-components";
 
-const Accounts = () => {
+const AccountBanners = () => {
   return (
     <Section>
       {accountInfo.map((info) => (
-        <AccountCard account={info} key={info.key} />
+        <AccountBanner account={info} key={info.key} />
       ))}
     </Section>
   );
 };
 
-export default Accounts;
+export default AccountBanners;
 
 const Section = styled.section`
   display: grid;

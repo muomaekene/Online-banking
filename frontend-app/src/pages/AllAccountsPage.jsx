@@ -1,4 +1,5 @@
-import AccountDetails from "../components/AccountDetails";
+import AccountSummary from "../components/AccountSummary";
+import SectionHeader from "../components/SectionHeader";
 import { ACCOUNT_DATA, CC_DATA } from "../utils/uiData";
 
 import styled from "styled-components";
@@ -6,18 +7,20 @@ import styled from "styled-components";
 const AllAccountsPage = () => {
   return (
     <Container>
-      <h2 className="page-title">My accounts</h2>
+      <h2 className="page-title">My Accounts</h2>
+
       <hr className="divider" />
-      <h3 className="account-title">Checking, Savings & CDs</h3>
+      <SectionHeader title="Checking, Savings & CDs" />
+
       {ACCOUNT_DATA.map((item) => (
-        <AccountDetails item={item} key={item.number} />
+        <AccountSummary item={item} key={item.number} />
       ))}
 
       <hr className="divider" />
-      <h3 className="account-title">Credit Cards</h3>
+      <SectionHeader title="Credit Cards" />
 
       {CC_DATA.map((item) => (
-        <AccountDetails item={item} key={item.number} />
+        <AccountSummary item={item} key={item.number} />
       ))}
     </Container>
   );
@@ -44,7 +47,6 @@ const Container = styled.section`
     height: 0;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 10px;
     margin-right: 15px;
   }
 
@@ -52,14 +54,5 @@ const Container = styled.section`
     font-size: 16px;
     font-weight: 500;
     margin-bottom: 10px;
-    margin-left: 15px;
-  }
-
-  .account-title {
-    font-size: 12px;
-    font-weight: 500;
-    margin-bottom: 5px;
-    margin-left: 15px;
-    text-transform: uppercase;
   }
 `;

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
-const AccountCard = ({ account }) => {
+const AccountBanner = ({ account }) => {
   const { type, bal, number, desc, img: Image, alt: altText } = account;
 
   return (
@@ -18,7 +18,7 @@ const AccountCard = ({ account }) => {
   );
 };
 
-export default AccountCard;
+export default AccountBanner;
 
 const Container = styled(Link)`
   padding: 10px 15px;
@@ -45,7 +45,7 @@ const Container = styled(Link)`
   .account-type {
     color: ${({ theme }) => theme.palette.text};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .account-bal {

@@ -13,18 +13,20 @@ export const getDesignToken = (mode) => ({
           text: "#0f172a",
           altText: "#475569",
           scrollbar: "#8B8B8B",
+          link: "#002aff",
         }
       : {
           main: "#030712",
           primary: "#242a35",
           secondary: "#303a48",
-          solid: "#bdc6dc",
+          solid: "#b2bbd5",
           light: "#c2c9da",
           hover: "#111827",
           border: "#494953",
           text: "#E3E3E3",
           altText: "#9AA0A6",
           scrollbar: "#4E4D4D",
+          link: "#71b7ff",
         }),
   },
   typography: {

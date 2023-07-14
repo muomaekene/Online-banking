@@ -5,7 +5,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 import styled from "styled-components";
 
-const Accounts = lazy(() => import("../components/Accounts"));
+const AccountBanners = lazy(() => import("../components/AccountBanners"));
 const Transactions = lazy(() => import("../components/Transactions"));
 const Analytics = lazy(() => import("../components/Analytics"));
 const VirtualCards = lazy(() => import("../components/VirtualCards"));
@@ -32,7 +32,7 @@ const OverviewPage = () => {
           }
         >
           <div className="flex-left">
-            <Accounts />
+            <AccountBanners />
             <Transactions />
             <Analytics />
           </div>
