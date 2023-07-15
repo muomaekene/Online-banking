@@ -34,13 +34,13 @@ export const navLinks = [
   },
   {
     key: "transfer",
-    name: "Payments & transfers",
+    name: "Transfer & payments",
     icon: ArrowsRightLeftIcon,
     to: "/transfer",
   },
   {
     key: "deposit",
-    name: "Deposit",
+    name: "Deposit checks",
     icon: BanknotesIcon,
     to: "/deposit",
   },
@@ -85,30 +85,30 @@ export const navLinks = [
 export const accountInfo = [
   {
     key: 10,
-    type: "Checking",
+    type: "Total Checking",
     bal: "$8,450.10",
-    number: "*7786",
-    desc: "Total available bal",
+    desc: "Available bal",
     img: checkBook,
     alt: "check-book",
+    msg: "This is the total balance on all your checking accounts",
   },
   {
     key: 15,
-    type: "Savings",
-    bal: "$19,885.85",
-    number: "*7361",
-    desc: "Total available bal",
+    type: "Total Savings",
+    bal: "$906,885.85",
+    desc: "Available bal",
     img: moneyBox,
     alt: "money-box",
+    msg: "This is the total balance on all your savings accounts",
   },
   {
     key: 20,
-    type: "Credit card",
-    bal: "$2,950.03",
-    number: "*7098",
+    type: "Credit cards",
+    bal: "$42,940.03",
     desc: "Outstanding bal",
     img: creditCard,
     alt: "credit-card",
+    msg: "This is the total amount you owe on all your credit cards",
   },
 ];
 
@@ -349,9 +349,9 @@ export const messagesDropdown = [
 ];
 
 export const ACCOUNT_DATA = [
-  { type: "Business Checking", number: "9548", amount: "9,250.00" },
-  { type: "Adv Money Market Savings", number: "9876", amount: "3,820.00" },
-  { type: "Adv Plus Savings", number: "9792", amount: "4,050.00" },
+  { type: "Smart Rewards Checking", number: "9548", amount: "9,250.00" },
+  { type: "Adv Fixed Term CD", number: "9876", amount: "3,820.00" },
+  { type: "Adv+ Savings", number: "9792", amount: "4,050.00" },
 ];
 
 export const CC_DATA = [
@@ -360,5 +360,5 @@ export const CC_DATA = [
     number: "9548",
     amount: "9,250.00",
   },
-  { type: "Travel Rewards Visa Gold", number: "5632", amount: "1,690.00" },
+  { type: "Venture Rewards Visa Gold", number: "5632", amount: "1,690.00" },
 ];

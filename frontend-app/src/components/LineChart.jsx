@@ -48,6 +48,8 @@ const LineChart = () => {
       maintainAspectRatio: false,
       scales: {
         y: {
+          suggestedMin: 0,
+          suggestedMax: 25000,
           ticks: {
             color: "#868686",
             font: {
@@ -86,7 +88,7 @@ const LineChart = () => {
 
   return (
     <Container>
-      <Line data={chartData} options={chartOptions} width="400" height="129" />
+      <Line data={chartData} options={chartOptions} width="400" height="137" />
     </Container>
   );
 };

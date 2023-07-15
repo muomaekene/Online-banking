@@ -14,21 +14,22 @@ const DebitCard = () => {
 
         <div className="group-item">
           <img className="card-logo" src={masterCard} alt="visa-logo" />
+          <p className="card-no">5102 ****</p>
+
           <p>
             <i>917</i>
           </p>
-          <p className="card-no">8834 ****</p>
         </div>
       </div>
 
       <div className="card-band">
         <div>
           <p>Card balance</p>
-          <p>$13 528.31</p>
+          <p>$3 528.31</p>
         </div>
         <div>
           <p>Expiry date</p>
-          <p>10/26</p>
+          <p>10/24</p>
         </div>
       </div>
     </Container>
@@ -72,7 +73,7 @@ const Container = styled.section`
     height: 40px;
   }
   .card-no {
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 1px;
   }
 
