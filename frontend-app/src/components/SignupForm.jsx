@@ -7,6 +7,7 @@ import SignupInput from "./SignupInput";
 import CustomBtn from "./CustomBtn";
 
 import styled from "styled-components";
+import Select from "./Select";
 
 const SignupForm = () => {
   const { handleChange, handleSubmit, data, errors } = useForm({
@@ -36,6 +37,30 @@ const SignupForm = () => {
         </fieldset>
       ))}
 
+      <fieldset className="input-group">
+        <legend className="field-title">Employment & finances</legend>
+        <Select
+          placeholder="Employment status"
+          options={[
+            "Employed",
+            "Retired",
+            "Self-employed",
+            "Student",
+            "Unemployed",
+          ]}
+        />
+        <Select
+          placeholder="Source of income"
+          options={[
+            "Employment income",
+            "Inheritance or trust",
+            "Invesment income",
+            "Retirement income",
+            "Household income/other",
+          ]}
+        />
+      </fieldset>
+
       <fieldset className="select-group">
         <ul className="select-items">
           <li className="select-item">
@@ -44,7 +69,7 @@ const SignupForm = () => {
               name="tos"
               className="select-option"
               type="checkbox"
-              required
+              // required
             />
             <label htmlFor="tos">
               I have read and I accept the &#160;

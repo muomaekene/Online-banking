@@ -1,24 +1,17 @@
 import masterCard from "../assets/images/masterCard.png";
-import More from "./More";
 
 import styled from "styled-components";
 
-const DebitCard = () => {
+const VirtualCard = () => {
   return (
     <Container>
       <div className="card-body">
-        <div className="group-item">
+        <div className="group-item-top">
           <p>Debit</p>
-          <More />
-        </div>
-
-        <div className="group-item">
           <img className="card-logo" src={masterCard} alt="visa-logo" />
-          <p className="card-no">5102 ****</p>
-
-          <p>
-            <i>917</i>
-          </p>
+        </div>
+        <div className="group-item-bottom">
+          <p className="card-no">5102 6684 ****</p>
         </div>
       </div>
 
@@ -36,9 +29,9 @@ const DebitCard = () => {
   );
 };
 
-export default DebitCard;
+export default VirtualCard;
 
-const Container = styled.section`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -47,25 +40,29 @@ const Container = styled.section`
   width: 100%;
   cursor: pointer;
   font-weight: 400;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 
   .card-body {
     background: rgb(46, 104, 154);
-
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     height: 65%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
   }
 
-  .group-item {
+  .group-item-top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
     font-size: 12px;
+    margin-bottom: 20px;
+  }
+
+  .group-item-bottom {
+    display: flex;
+    justify-content: center;
   }
 
   .card-logo {
@@ -73,7 +70,7 @@ const Container = styled.section`
     height: 40px;
   }
   .card-no {
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 1px;
   }
 

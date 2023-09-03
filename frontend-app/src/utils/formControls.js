@@ -23,7 +23,7 @@ export const SIGNUP_CONTROLS = [
     ],
   },
   {
-    title: "Personal info",
+    title: "Personal information",
     attributes: [
       {
         id: 6,
@@ -70,7 +70,7 @@ export const SIGNUP_CONTROLS = [
     ],
   },
   {
-    title: "Contact info",
+    title: "Contact information & residency",
     attributes: [
       {
         id: 13,

@@ -1,5 +1,4 @@
 import AccountSummary from "../components/AccountSummary";
-import SectionHeader from "../components/SectionHeader";
 import { ACCOUNT_DATA, CC_DATA } from "../utils/uiData";
 
 import styled from "styled-components";
@@ -7,17 +6,16 @@ import styled from "styled-components";
 const AllAccountsPage = () => {
   return (
     <Container>
-      <h2 className="page-title">My Accounts</h2>
-
+      <h1 className="page-title">My Accounts</h1>
       <hr className="divider" />
-      <SectionHeader title="Checking, Savings & CDs" />
+      <h2 className="section-title">Checking, Savings & CDs</h2>
 
       {ACCOUNT_DATA.map((item) => (
         <AccountSummary item={item} key={item.number} />
       ))}
 
       <hr className="divider" />
-      <SectionHeader title="Credit Cards" />
+      <h2 className="section-title">Credit Cards</h2>
 
       {CC_DATA.map((item) => (
         <AccountSummary item={item} key={item.number} />
@@ -52,7 +50,13 @@ const Container = styled.section`
 
   .page-title {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 10px;
+  }
+
+  .section-title {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 0;
   }
 `;

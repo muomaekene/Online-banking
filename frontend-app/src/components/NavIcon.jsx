@@ -17,13 +17,8 @@ const Cover = styled.button`
   background: ${({ theme }) => theme.palette.primary};
   color: ${({ theme }) => theme.palette.text};
 
-  :hover {
-    background: ${({ theme }) => theme.palette.secondary};
-    color: ${({ theme }) => theme.palette.solid};
-  }
-
   :active {
-    background: ${({ theme }) => theme.palette.main};
-    transition: 1s ease-in-out all;
+    background: ${({ theme }) => theme.palette.secondary};
+    background-size: 100%;
   }
 `;

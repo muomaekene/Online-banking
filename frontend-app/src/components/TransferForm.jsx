@@ -99,7 +99,7 @@ const Form = styled.form`
     background: none;
     font-family: inherit;
     font-size: 12px;
-    color: ${({ theme }) => theme.palette.altText};
+    color: ${({ theme }) => theme.palette.text};
 
     ::placeholder {
       color: ${({ theme }) => theme.palette.altText};

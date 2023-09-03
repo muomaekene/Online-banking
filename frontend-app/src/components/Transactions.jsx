@@ -48,6 +48,5 @@ const Section = styled.section`
   .icon {
     width: 12px;
     height: 12px;
-    /* color: inherit; */
   }
 `;

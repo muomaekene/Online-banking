@@ -95,7 +95,7 @@ export const accountInfo = [
   {
     key: 15,
     type: "Total Savings",
-    bal: "$906,885.85",
+    bal: "$651,720.83",
     desc: "Available bal",
     img: moneyBox,
     alt: "money-box",
@@ -191,8 +191,8 @@ export const COLUMNS = [
     accessor: "date",
   },
   {
-    Header: "Details",
-    accessor: "details",
+    Header: "Description",
+    accessor: "description",
   },
   {
     Header: "Amount",
@@ -349,9 +349,9 @@ export const messagesDropdown = [
 ];
 
 export const ACCOUNT_DATA = [
-  { type: "Smart Rewards Checking", number: "9548", amount: "9,250.00" },
+  { type: "Adv Smart Rewards Checking", number: "9548", amount: "9,250.00" },
   { type: "Adv Fixed Term CD", number: "9876", amount: "3,820.00" },
-  { type: "Adv+ Savings", number: "9792", amount: "4,050.00" },
+  { type: "Adv Plus Savings", number: "9792", amount: "4,050.00" },
 ];
 
 export const CC_DATA = [

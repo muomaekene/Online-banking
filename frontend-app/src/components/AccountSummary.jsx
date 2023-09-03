@@ -1,13 +1,22 @@
-import { useState } from "react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
 const AccountSummary = ({ item }) => {
   const [open, setOpen] = useState(false);
+  const [boxHeight, setBoxHeight] = useState(4);
+
+  useEffect(() => {
+    if (open) {
+      setBoxHeight(16);
+    } else {
+      setBoxHeight(4);
+    }
+  }, [open]);
 
   return (
-    <Container>
+    <Container style={{ height: `${boxHeight}rem` }}>
       <div className="account-info">
         <p className="account-type">
           {item.type} | {item.number}
@@ -15,13 +24,16 @@ const AccountSummary = ({ item }) => {
         <p className="account-bal">${item.amount}</p>
       </div>
       <button className="dropdown-btn" onClick={() => setOpen(!open)}>
-        <p>View transactions</p>
-        {open ? (
-          <ChevronUpIcon className="icon" />
-        ) : (
-          <ChevronDownIcon className="icon" />
-        )}
+        {open ? "Hide" : "Show transactions"}
       </button>
+      {open && (
+        <>
+          <div className="transactions-table">Transactions table goes here</div>
+          <p className="more-transactions">
+            <Link to="">See all transactions</Link>
+          </p>
+        </>
+      )}
     </Container>
   );
 };
@@ -29,24 +41,21 @@ const AccountSummary = ({ item }) => {
 export default AccountSummary;
 
 const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  margin-bottom: 5px;
   margin-right: 15px;
-  margin-bottom: 15px;
-  padding: 15px;
-  height: 65px;
   background: ${({ theme }) => theme.palette.primary};
-  border-radius: 10px;
+  border-radius: 1px;
+  position: relative;
 
   .account-info {
     display: flex;
     justify-content: space-between;
+    padding: 10px 15px 0 15px;
   }
 
   .account-type {
-    font-size: 12px;
-    font-weight: 600;
+    font-size: 13px;
+    font-weight: 400;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
 
@@ -57,22 +66,45 @@ const Container = styled.section`
   }
 
   .account-bal {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
   }
 
   .dropdown-btn {
-    width: fit-content;
-    display: flex;
-    align-items: center;
     cursor: pointer;
     border: none;
-    background: ${({ theme }) => theme.palette.secondary};
+    background: none;
+    font-size: 12px;
+    color: ${({ theme }) => theme.palette.text};
+    margin: 0px 0px 10px 15px;
+  }
 
-    p {
-      font-size: 12px;
-      color: ${({ theme }) => theme.palette.text};
-      margin-right: 2px;
+  .transactions-table {
+    background: ${({ theme }) => theme.palette.secondary};
+    color: ${({ theme }) => theme.palette.text};
+    border-top: 2px solid ${({ theme }) => theme.palette.border};
+    border-bottom: 2px solid ${({ theme }) => theme.palette.border};
+    left: 0;
+    top: 60px;
+    width: 100%;
+    height: 10rem;
+    padding-left: 15px;
+    padding-top: 10px;
+    font-size: 12px;
+    z-index: 666;
+  }
+
+  .more-transactions {
+    font-size: 12px;
+    padding-left: 15px;
+    padding-top: 12px;
+
+    a {
+      text-decoration: underline;
+
+      :hover {
+        color: ${({ theme }) => theme.palette.altText};
+      }
     }
   }
 
@@ -80,5 +112,6 @@ const Container = styled.section`
     width: 10px;
     height: 10px;
     color: ${({ theme }) => theme.palette.text};
+    margin-left: 4px;
   }
 `;
