@@ -40,9 +40,12 @@ const Form = styled.form`
   padding: 0 ${({ theme }) => theme.spacing(1)};
   background: ${({ theme }) => theme.palette.primary};
   border-radius: 10px;
+  border: 1px solid transparent;
+  margin-left: 4rem;
 
   :focus-within {
-    background: ${({ theme }) => theme.palette.secondary};
+    background: ${({ theme }) => theme.palette.main};
+    border: 1px solid ${({ theme }) => theme.palette.border};
   }
 
   .icon-wrap {

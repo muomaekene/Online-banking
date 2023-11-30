@@ -17,6 +17,7 @@ import Searchbar from "./Searchbar";
 import Dropdown from "./Dropdown";
 import NavIcon from "./NavIcon";
 import Avatar from "./Avatar";
+import ToggleMenu from "./ToggleMenu";
 
 import styled from "styled-components";
 
@@ -24,6 +25,7 @@ const TopBar = ({ theme, themeToggler }) => {
   return (
     <Container>
       <div className="left-topbar">
+        <ToggleMenu />
         <WelcomeMsg />
         <Searchbar />
       </div>

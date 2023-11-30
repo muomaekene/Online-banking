@@ -13,12 +13,13 @@ const Cover = styled.button`
   border-radius: 25%;
   position: relative;
   cursor: pointer;
-  border: 1px solid transparent;
-  background: ${({ theme }) => theme.palette.primary};
+  border: 1px solid ${({ theme }) => theme.palette.border};
+  background: none;
   color: ${({ theme }) => theme.palette.text};
 
   :active {
-    background: ${({ theme }) => theme.palette.secondary};
+    background: ${({ theme }) => theme.palette.primary};
+    border: 1px solid transparent;
     background-size: 100%;
   }
 `;

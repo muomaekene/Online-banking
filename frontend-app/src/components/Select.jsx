@@ -59,9 +59,9 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     padding: 2px 12px;
-    border-radius: 10px;
+    border-radius: 2px;
     background: ${({ theme }) => theme.palette.main};
-    color: ${({ theme }) => theme.palette.text};
+    color: ${({ theme }) => theme.palette.altText};
     border: 1px solid ${({ theme }) => theme.palette.border};
     font-size: 12px;
     cursor: pointer;
@@ -81,8 +81,7 @@ const Container = styled.div`
     background: ${({ theme }) => theme.palette.main};
     border: 1px solid ${({ theme }) => theme.palette.border};
     width: 100%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-radius: 2px;
     border-top: none;
     list-style-type: none;
     padding: 8px 0 5px 0;
@@ -97,9 +96,9 @@ const Container = styled.div`
   .select-option-btn {
     background: none;
     border: none;
-    padding: 5px 12px;
+    padding: 8px 12px;
     color: ${({ theme }) => theme.palette.altText};
-    font-weight: 500;
+    font-weight: 400;
     width: 100%;
     display: flex;
     font-size: 12px;

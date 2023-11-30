@@ -6,15 +6,13 @@ import styled from "styled-components";
 const AllAccountsPage = () => {
   return (
     <Container>
-      <h1 className="page-title">My Accounts</h1>
+      <h1 className="page-title">Manage Accounts</h1>
       <hr className="divider" />
-      <h2 className="section-title">Checking, Savings & CDs</h2>
 
+      <h2 className="section-title">Checking, Savings & CDs</h2>
       {ACCOUNT_DATA.map((item) => (
         <AccountSummary item={item} key={item.number} />
       ))}
-
-      <hr className="divider" />
       <h2 className="section-title">Credit Cards</h2>
 
       {CC_DATA.map((item) => (
@@ -55,7 +53,7 @@ const Container = styled.section`
   }
 
   .section-title {
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     padding: 10px 0;
   }

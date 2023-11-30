@@ -33,7 +33,7 @@ const Section = styled.section`
     color: ${({ theme }) => theme.palette.text};
     border-radius: 10px;
     border: none;
-    margin-bottom: 15px;
+    margin: 10px 0;
     display: flex;
     align-items: center;
     justify-content: center;

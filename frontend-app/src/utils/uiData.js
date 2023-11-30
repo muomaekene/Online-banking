@@ -85,30 +85,33 @@ export const navLinks = [
 export const accountInfo = [
   {
     key: 10,
+    name: "checking",
     type: "Total Checking",
     bal: "$8,450.10",
     desc: "Available bal",
     img: checkBook,
     alt: "check-book",
-    msg: "This is the total balance on all your checking accounts",
+    msg: "Cummulative balance on all your checking accounts",
   },
   {
     key: 15,
+    name: "savings",
     type: "Total Savings",
     bal: "$651,720.83",
     desc: "Available bal",
     img: moneyBox,
     alt: "money-box",
-    msg: "This is the total balance on all your savings accounts",
+    msg: "Cummulative balance on all your savings accounts",
   },
   {
     key: 20,
+    name: "cc",
     type: "Credit cards",
     bal: "$42,940.03",
     desc: "Outstanding bal",
     img: creditCard,
     alt: "credit-card",
-    msg: "This is the total amount you owe on all your credit cards",
+    msg: "Total amount you owe on all your credit cards",
   },
 ];
 

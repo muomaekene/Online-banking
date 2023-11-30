@@ -15,7 +15,11 @@ const TransferForm = () => {
     <Form onSubmit={handleSubmit}>
       <Select
         placeholder="Select account"
-        options={["Savings", "Checking", "Credit card"]}
+        options={[
+          "ADV Plus Savings (...9792)",
+          "Venture Rewards Visa (...5632)",
+          "ADV Smart Rewards Checking (...9548)",
+        ]}
       />
       <div className="input-group">
         <div className="input-wrap">
@@ -68,7 +72,7 @@ const Form = styled.form`
   .input-wrap {
     margin-top: 10px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 2px;
     height: 40px;
     display: flex;
     align-items: center;
@@ -77,7 +81,8 @@ const Form = styled.form`
     position: relative;
 
     :focus-within {
-      background: ${({ theme }) => theme.palette.secondary};
+      background: ${({ theme }) => theme.palette.main};
+      border: 1px solid ${({ theme }) => theme.palette.border};
     }
 
     span {
@@ -94,7 +99,6 @@ const Form = styled.form`
     height: 100%;
     outline: none;
     border: none;
-    border-radius: 10px;
     padding: 0 30px;
     background: none;
     font-family: inherit;

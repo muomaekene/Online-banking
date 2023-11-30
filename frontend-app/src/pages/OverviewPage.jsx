@@ -51,14 +51,16 @@ export default OverviewPage;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
+  padding-bottom: 15px;
+  justify-content: space-between;
 
   .flex-left {
-    width: 70%;
-    margin-right: ${({ theme }) => theme.spacing(3)};
+    margin-right: 15px;
+    width: 67%;
   }
 
   .flex-right {
-    width: 30%;
+    width: 32%;
     display: flex;
     flex-direction: column;
   }

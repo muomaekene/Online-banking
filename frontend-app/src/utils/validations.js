@@ -1,25 +1,19 @@
 export const validations = {
-  accountType: {
-    required: {
-      value: true,
-      message: "*Please choose an account",
-    },
-  },
   userId: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Please provide a user id",
     },
     pattern: {
       value: "^(?=.*[A-Za-z])(?=.*[0-9])[0-9a-zA-Z]{4,16}$",
       message:
-        "*User ID should be between 4-16 characters and shouldn't include any special characters",
+        "*User id should be between 4-16 alphanumeric characters and shouldn't include any special characters",
     },
   },
   password: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Please enter a valid password",
     },
     pattern: {
       value: "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$",
@@ -30,7 +24,7 @@ export const validations = {
   confirmPassword: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Please confirm password",
     },
     custom: {
       isMatch: (value, passw) => value === passw,
@@ -40,47 +34,51 @@ export const validations = {
   firstName: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*First name is required",
     },
     pattern: {
       value: "^[A-Za-z]{2,20}$",
-      message: "*Enter correct name",
+      message:
+        "*Your first name must have more than one character and begin with an alphabet",
     },
   },
   initial: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Middle initial is required",
     },
     pattern: {
       value: "^^[A-Za-z]{1}$",
-      message: "*Enter a middle initial",
+      message:
+        "*Your initial must be an alphabet and contain only one character",
     },
   },
   lastName: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Last name is required",
     },
     pattern: {
       value: "^[A-Za-z]{2,20}$",
-      message: "*Enter correct name",
+      message:
+        "*Your last name must have more than one character and begin with an alphabet",
     },
   },
   maidenName: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Maiden name is required",
     },
     pattern: {
       value: "^[A-Za-z]{2,20}$",
-      message: "*Enter correct name",
+      message:
+        "*Your maiden name must have more than one character and begin with an alphabet",
     },
   },
   dob: {
     required: {
       value: true,
-      message: "*This field is required",
+      message: "*Please provide your date of birth",
     },
   },
   ssn: {
@@ -121,7 +119,7 @@ export const validations = {
       message: "*This field is required",
     },
   },
-  zipcode: {
+  zipCode: {
     required: {
       value: true,
       message: "*This field is required",
@@ -136,11 +134,11 @@ export const validations = {
       value: true,
       message: "*This field is required",
     },
-    pattern: {
-      value:
-        "^(([^<>()[]\\.,;:s@']+(.[^<>()[]\\.,;:s@']+)*)|('.+'))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$",
-      message: "*Provide valid email address",
-    },
+    // pattern: {
+    //   value: // LOOK UP THE CORRECT REGEX FOR EMAIL VALIDATION
+    //     "^(([^<>()[]\\.,;:s@']+(.[^<>()[]\\.,;:s@']+)*)|('.+'))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$",
+    //   message: "*Provide valid email address",
+    // },
   },
   phone1: {
     required: {

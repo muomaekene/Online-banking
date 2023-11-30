@@ -22,7 +22,7 @@ export const getDesignToken = (mode) => ({
           solid: "#b2bbd5",
           light: "#c2c9da",
           hover: "#111827",
-          border: "#474751",
+          border: "#3a3a42",
           text: "#E3E3E3",
           altText: "#9AA0A6",
           scrollbar: "#4E4D4D",

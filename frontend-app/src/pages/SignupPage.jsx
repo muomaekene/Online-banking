@@ -8,7 +8,6 @@ import BrandTitle from "../components/BrandTitle";
 const SignupPage = () => {
   return (
     <AuthLayout>
-      <BrandTitle />
       <SignupForm />
     </AuthLayout>
   );

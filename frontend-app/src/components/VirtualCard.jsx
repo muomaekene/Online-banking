@@ -40,7 +40,6 @@ const Container = styled.div`
   width: 100%;
   cursor: pointer;
   font-weight: 400;
-  margin-bottom: 10px;
 
   .card-body {
     background: rgb(46, 104, 154);
@@ -70,7 +69,7 @@ const Container = styled.div`
     height: 40px;
   }
   .card-no {
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
   }
 
@@ -78,6 +77,7 @@ const Container = styled.div`
     background: ${({ theme }) => theme.palette.primary};
     color: ${({ theme }) => theme.palette.altText};
     font-weight: 500;
+    font-size: 12px;
     height: 35%;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -85,7 +85,6 @@ const Container = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    font-size: 12px;
     padding: 0 20px;
   }
 `;

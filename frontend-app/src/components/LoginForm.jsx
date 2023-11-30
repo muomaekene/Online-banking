@@ -79,7 +79,7 @@ const LoginForm = () => {
 
       <div className="bottom-links">
         <Link to="/create-profile" className="link">
-          Open bank account
+          Create banking profile
         </Link>
         <Link to="#" className="link">
           Learn more
@@ -120,7 +120,7 @@ const Form = styled.form`
 
   .input-bar {
     margin-top: 8px;
-    border-radius: 10px;
+    border-radius: 2px;
     border: 1px solid ${({ theme }) => theme.palette.border};
     background: ${({ theme }) => theme.palette.main};
     padding: 0 15px;
@@ -179,9 +179,9 @@ const Form = styled.form`
   .bottom-links {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 20px;
     width: 80%;
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.altText};
   }

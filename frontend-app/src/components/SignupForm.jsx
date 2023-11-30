@@ -5,9 +5,9 @@ import { validations } from "../utils/validations";
 
 import SignupInput from "./SignupInput";
 import CustomBtn from "./CustomBtn";
+import Select from "./Select";
 
 import styled from "styled-components";
-import Select from "./Select";
 
 const SignupForm = () => {
   const { handleChange, handleSubmit, data, errors } = useForm({
@@ -20,19 +20,24 @@ const SignupForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <h2 className="form-title">Register a profile</h2>
+      <h2 className="form-title">
+        Get started: Create an online banking profile
+      </h2>
 
       {SIGNUP_CONTROLS.map((items) => (
         <fieldset key={items.title} className="input-group">
           <legend className="field-title">{items.title}</legend>
           {items.attributes.map((attribute) => (
-            <SignupInput
-              key={attribute.id}
-              {...attribute}
-              value={data[attribute.name]}
-              handleChange={handleChange}
-              errors={errors}
-            />
+            <div className="input-container" key={attribute.id}>
+              <SignupInput
+                value={data[attribute.name]}
+                handleChange={handleChange}
+                {...attribute}
+              />
+              {errors[attribute.name] && (
+                <p id="error-msg">{errors[attribute.name]}</p>
+              )}
+            </div>
           ))}
         </fieldset>
       ))}
@@ -69,7 +74,6 @@ const SignupForm = () => {
               name="tos"
               className="select-option"
               type="checkbox"
-              // required
             />
             <label htmlFor="tos">
               I have read and I accept the &#160;
@@ -94,19 +98,19 @@ const SignupForm = () => {
 export default SignupForm;
 
 const Form = styled.form`
+  border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
-  width: 60%;
-  padding: 25px 35px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 50px 40px;
+  width: fit-content;
+  height: fit-content;
   box-sizing: border-box;
   border-radius: 10px;
-  margin-top: 40px;
 
   .form-title {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 50px;
+    text-transform: capitalize;
     color: ${({ theme }) => theme.palette.text};
   }
 
@@ -122,7 +126,7 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     background: ${({ theme }) => theme.palette.primary};
     color: ${({ theme }) => theme.palette.text};
-    border-radius: 10px;
+    border-radius: 2px;
     padding: 12px 15px;
     display: flex;
     flex-direction: column;
@@ -147,11 +151,22 @@ const Form = styled.form`
     border: none;
   }
 
+  .input-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #error-msg {
+    color: #e64848;
+    font-size: 12px;
+    padding: 5px;
+  }
+
   .field-title {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
-    color: ${({ theme }) => theme.palette.altText};
+    color: ${({ theme }) => theme.palette.text};
   }
 
   .terms-of-service {

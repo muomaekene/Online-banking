@@ -3,6 +3,7 @@ import { createTheme } from "@mui/system";
 import { GlobalStyles } from "../utils/global";
 import { useDarkMode } from "../utils/useDarkMode";
 import { getDesignToken } from "../utils/theme";
+import { devices as device } from "../utils/breakpoints";
 
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
@@ -36,12 +37,14 @@ const Container = styled.div`
   padding-right: 3px;
   padding-top: 3px;
   padding: 3px 3px 3px 0;
+  display: flex;
+  justify-content: center;
 
   #sidebar-container {
     display: inline-block;
     vertical-align: top;
     height: 100%;
-    width: 18%;
+    width: 240px;
     overflow: auto;
 
     ::-webkit-scrollbar {
@@ -52,16 +55,21 @@ const Container = styled.div`
       border-radius: 10px;
       background: ${({ theme }) => theme.palette.scrollbar};
     }
+
+    @media ${device.laptop} {
+      display: none;
+    }
   }
 
   #content {
     display: inline-block;
     vertical-align: top;
     height: 100%;
-    width: 82%;
+    max-width: 1040px;
+    width: calc(100% - 15rem);
     overflow: auto;
     background: ${({ theme }) => theme.palette.main};
-    padding: 0 ${({ theme }) => theme.spacing(3)};
+    padding: 0 ${({ theme }) => theme.spacing(2)};
 
     ::-webkit-scrollbar {
       width: 7px;
@@ -70,6 +78,11 @@ const Container = styled.div`
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background: ${({ theme }) => theme.palette.scrollbar};
+    }
+
+    @media ${device.laptop} {
+      width: 100%;
+      overflow: hidden;
     }
   }
 `;

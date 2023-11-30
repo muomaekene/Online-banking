@@ -5,7 +5,6 @@ import LoginForm from "../components/LoginForm";
 const LoginPage = () => {
   return (
     <AuthLayout>
-      <BrandTitle />
       <LoginForm />
     </AuthLayout>
   );

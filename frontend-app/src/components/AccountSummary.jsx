@@ -54,7 +54,7 @@ const Container = styled.section`
   }
 
   .account-type {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
@@ -66,7 +66,7 @@ const Container = styled.section`
   }
 
   .account-bal {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 400;
   }
 

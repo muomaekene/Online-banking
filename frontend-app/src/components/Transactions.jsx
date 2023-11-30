@@ -23,11 +23,11 @@ const Transactions = () => {
 export default Transactions;
 
 const Section = styled.section`
-  margin: ${({ theme }) => theme.spacing(2)} 0;
+  margin: 10px 0;
   padding-bottom: 5px;
   border-radius: 10px;
-  background: ${({ theme }) => theme.palette.main};
   border: 1px solid ${({ theme }) => theme.palette.border};
+  background: ${({ theme }) => theme.palette.main};
 
   .link-to {
     display: flex;

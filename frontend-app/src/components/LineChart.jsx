@@ -88,7 +88,7 @@ const LineChart = () => {
 
   return (
     <Container>
-      <Line data={chartData} options={chartOptions} width="400" height="137" />
+      <Line data={chartData} options={chartOptions} width="400" height="140" />
     </Container>
   );
 };

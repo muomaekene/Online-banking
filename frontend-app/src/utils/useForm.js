@@ -11,41 +11,35 @@ export const useForm = (options) => {
     setData({ ...data, [key]: value });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const validations = options?.validations;
 
     if (validations) {
       let valid = true;
-      const newErrors = {};
+      const newError = {};
 
       for (const key in validations) {
         const value = data[key];
         const validation = validations[key];
 
-        // REQUIRED VALIDATION RULE
         const required = validation?.required;
+        const pattern = validation?.pattern;
+        const custom = validation?.custom;
+
         if (required.value && !value) {
           valid = false;
-          newErrors[key] = required.message;
-        }
-
-        // PATTERN VALIDATION RULE
-        const pattern = validation?.pattern;
-        if (pattern?.value && !RegExp(pattern.value).test(value)) {
+          newError[key] = required.message;
+        } else if (pattern?.value && !RegExp(pattern.value).test(value)) {
           valid = false;
-          newErrors[key] = pattern.message;
-        }
-
-        // CUSTOM VALIDATION RULE
-        const custom = validation?.custom;
-        if (custom?.isMatch && !custom.isMatch(value, data.password)) {
+          newError[key] = pattern.message;
+        } else if (custom?.isMatch && !custom.isMatch(value, data.password)) {
           valid = false;
-          newErrors[key] = custom.message;
+          newError[key] = custom.message;
         }
 
         if (!valid) {
-          setErrors(newErrors);
+          setErrors(newError);
           return;
         }
       }
@@ -53,8 +47,8 @@ export const useForm = (options) => {
 
     setErrors({});
 
-    if (options?.onSubmit) {
-      options.onSubmit();
+    if (Object.keys(errors).length === 0 && Object.keys(data).length !== 0) {
+      await options?.onSubmit();
     }
   };
 

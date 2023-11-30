@@ -8,6 +8,6 @@ export default BrandTitle;
 
 const Title = styled.h2`
   font-family: ${({ theme }) => theme.typography.header.fontFamily};
-  color: white;
+  color: ${({ theme }) => theme.palette.solid};
   font-size: 20px;
 `;

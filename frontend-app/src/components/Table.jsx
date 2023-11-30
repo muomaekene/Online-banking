@@ -46,7 +46,6 @@ const Container = styled.table`
   display: table;
   table-layout: fixed;
   width: 100%;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
   overflow: hidden;
 
   thead {
@@ -58,7 +57,8 @@ const Container = styled.table`
   th,
   td {
     padding: 7px 15px;
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-size: 12px;
+    font-weight: 400;
   }
 
   tbody {
