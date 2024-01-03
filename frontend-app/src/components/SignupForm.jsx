@@ -104,12 +104,12 @@ const Form = styled.form`
   width: fit-content;
   height: fit-content;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.border.radius};
 
   .form-title {
     font-size: 20px;
     font-weight: 400;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-transform: capitalize;
     color: ${({ theme }) => theme.palette.text};
   }
@@ -167,6 +167,7 @@ const Form = styled.form`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.text};
+    text-transform: capitalize;
   }
 
   .terms-of-service {

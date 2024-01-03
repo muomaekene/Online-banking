@@ -29,11 +29,12 @@ const Section = styled.section`
   .card-btn {
     height: 2.5rem;
     width: 100%;
-    background: ${({ theme }) => theme.palette.primary};
     color: ${({ theme }) => theme.palette.text};
-    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.border.radius};
     border: none;
-    margin: 10px 0;
+    background: ${({ theme }) => theme.palette.primary};
+    margin-top: 10px;
+    margin-bottom: ${({ theme }) => theme.border.margin};
     display: flex;
     align-items: center;
     justify-content: center;

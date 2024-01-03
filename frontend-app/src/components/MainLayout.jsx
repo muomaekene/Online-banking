@@ -34,8 +34,6 @@ export default MainLayout;
 
 const Container = styled.div`
   height: 100%;
-  padding-right: 3px;
-  padding-top: 3px;
   padding: 3px 3px 3px 0;
   display: flex;
   justify-content: center;

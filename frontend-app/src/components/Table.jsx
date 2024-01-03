@@ -44,14 +44,15 @@ export default Table;
 const Container = styled.table`
   border-collapse: collapse;
   display: table;
-  table-layout: fixed;
   width: 100%;
   overflow: hidden;
+  text-transform: uppercase;
 
   thead {
     tr {
       background-color: ${({ theme }) => theme.palette.primary};
       text-align: left;
+      text-transform: capitalize;
     }
   }
   th,

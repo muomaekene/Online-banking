@@ -21,7 +21,7 @@ const Input = styled.input`
   height: 40px;
   border-radius: 2px;
   border: 1px solid ${({ theme }) => theme.palette.border};
-  background: ${({ theme }) => theme.palette.main};
+  background: ${({ theme }) => theme.palette.secondary};
   outline: none;
 
   ::placeholder {

@@ -38,8 +38,8 @@ const AccountBanner = ({ account }) => {
 export default AccountBanner;
 
 const Container = styled(Link)`
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: 15px;
+  border-radius: ${({ theme }) => theme.border.radius};
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -49,6 +49,7 @@ const Container = styled(Link)`
 
   :hover {
     background: ${({ theme }) => theme.palette.secondary};
+    border-color: transparent;
   }
 
   .account-icon {

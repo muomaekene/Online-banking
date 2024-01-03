@@ -11,7 +11,7 @@ const AccountSummary = ({ item }) => {
     if (open) {
       setBoxHeight(16);
     } else {
-      setBoxHeight(4);
+      setBoxHeight(4.5);
     }
   }, [open]);
 
@@ -41,21 +41,22 @@ const AccountSummary = ({ item }) => {
 export default AccountSummary;
 
 const Container = styled.section`
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   margin-right: 15px;
   background: ${({ theme }) => theme.palette.primary};
-  border-radius: 1px;
+  border-radius: ${({ theme }) => theme.border.radius};
   position: relative;
 
   .account-info {
     display: flex;
     justify-content: space-between;
-    padding: 10px 15px 0 15px;
+    padding: 20px 20px 0 20px;
   }
 
   .account-type {
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 500;
+    text-transform: uppercase;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
 
@@ -76,7 +77,7 @@ const Container = styled.section`
     background: none;
     font-size: 12px;
     color: ${({ theme }) => theme.palette.text};
-    margin: 0px 0px 10px 15px;
+    margin-left: 20px;
   }
 
   .transactions-table {
@@ -87,9 +88,10 @@ const Container = styled.section`
     left: 0;
     top: 60px;
     width: 100%;
-    height: 10rem;
+    height: 9.5rem;
     padding-left: 15px;
     padding-top: 10px;
+    margin-top: 5px;
     font-size: 12px;
     z-index: 666;
   }
@@ -97,7 +99,7 @@ const Container = styled.section`
   .more-transactions {
     font-size: 12px;
     padding-left: 15px;
-    padding-top: 12px;
+    padding-top: 10px;
 
     a {
       text-decoration: underline;

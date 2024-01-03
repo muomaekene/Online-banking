@@ -35,7 +35,7 @@ const LoginForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <fieldset className="form-group">
-        <legend className="form-title">e-Banking login</legend>
+        <legend className="form-title">e-Banking Login</legend>
         <input
           className="input-bar"
           name="userID"
@@ -100,7 +100,7 @@ const Form = styled.form`
   padding: 25px 35px;
   border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.border.radius};
   position: absolute;
   left: 0;
   right: 0;
@@ -122,7 +122,7 @@ const Form = styled.form`
     margin-top: 8px;
     border-radius: 2px;
     border: 1px solid ${({ theme }) => theme.palette.border};
-    background: ${({ theme }) => theme.palette.main};
+    background: ${({ theme }) => theme.palette.secondary};
     padding: 0 15px;
     outline: none;
     width: 100%;

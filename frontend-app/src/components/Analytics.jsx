@@ -21,7 +21,7 @@ export default Analytics;
 
 const Section = styled.section`
   position: relative;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.border.radius};
   background: ${({ theme }) => theme.palette.main};
   border: 1px solid ${({ theme }) => theme.palette.border};
 

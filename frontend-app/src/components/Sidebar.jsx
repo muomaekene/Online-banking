@@ -39,7 +39,7 @@ const Container = styled.aside`
   padding: 25px 10px;
   color: ${({ theme }) => theme.palette.altText};
   border-right: 1px solid ${({ theme }) => theme.palette.border};
-  background: ${({ theme }) => theme.palette.main};
+  background: ${({ theme }) => theme.palette.overlay};
 
   .top-sidebar {
     display: flex;
@@ -58,15 +58,15 @@ const Container = styled.aside`
 
     .nav-item {
       :hover {
-        background: ${({ theme }) => theme.palette.hover};
+        background: ${({ theme }) => theme.palette.secondary};
         color: ${({ theme }) => theme.palette.text};
-        border-radius: 10px;
+        border-radius: ${({ theme }) => theme.border.radius};
       }
 
       .active {
         background: ${({ theme }) => theme.palette.solid};
         color: ${({ theme }) => theme.palette.main};
-        border-radius: 10px;
+        border-radius: ${({ theme }) => theme.border.radius};
         font-weight: 500;
       }
     }

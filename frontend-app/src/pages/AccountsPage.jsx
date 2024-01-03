@@ -37,12 +37,7 @@ export default Accounts;
 const MainContent = styled.div`
   display: flex;
   height: calc(100vh - 70px);
-  border-radius: 10px;
-  border: 1px solid ${({ theme }) => theme.palette.border};
-  padding: 15px 15px 0 15px;
-  border-bottom: none;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+  margin-top: 15px;
 
   .tab-nav {
     display: flex;
@@ -56,12 +51,6 @@ const MainContent = styled.div`
 
     ul {
       list-style-type: none;
-    }
-
-    li {
-      :hover {
-        text-decoration: underline;
-      }
     }
 
     .tab-link {
@@ -81,7 +70,8 @@ const MainContent = styled.div`
     }
 
     .active {
-      border: 1px solid ${({ theme }) => theme.palette.solid};
+      background: ${({ theme }) => theme.palette.solid};
+      color: ${({ theme }) => theme.palette.main};
     }
   }
 `;

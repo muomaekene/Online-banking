@@ -36,7 +36,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
-  height: 9.6rem;
+  height: 10rem;
   width: 100%;
   cursor: pointer;
   font-weight: 400;

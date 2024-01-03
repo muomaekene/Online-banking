@@ -38,8 +38,8 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   padding: 0 ${({ theme }) => theme.spacing(1)};
-  background: ${({ theme }) => theme.palette.primary};
-  border-radius: 10px;
+  background: ${({ theme }) => theme.palette.secondary};
+  border-radius: ${({ theme }) => theme.border.radius};
   border: 1px solid transparent;
   margin-left: 4rem;
 

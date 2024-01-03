@@ -23,9 +23,9 @@ const Transactions = () => {
 export default Transactions;
 
 const Section = styled.section`
-  margin: 10px 0;
+  margin: ${({ theme }) => theme.border.margin} 0;
   padding-bottom: 5px;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.border.radius};
   border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
 

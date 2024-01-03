@@ -12,7 +12,7 @@ const Button = styled.button`
   justify-content: center;
   width: 100%;
   padding: 12px 0;
-  border-radius: 10px;
+  border-radius: ${({ theme }) => theme.border.radius};
   border: none;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   background: ${({ theme }) => theme.palette.solid};

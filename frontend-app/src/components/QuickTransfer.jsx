@@ -15,8 +15,8 @@ const QuickTransfer = () => {
 export default QuickTransfer;
 
 const Section = styled.section`
-  height: 315px;
-  border-radius: 10px;
+  height: 311px;
+  border-radius: ${({ theme }) => theme.border.radius};
   border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
   position: relative;

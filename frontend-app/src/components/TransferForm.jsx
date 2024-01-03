@@ -62,7 +62,7 @@ const TransferForm = () => {
 export default TransferForm;
 
 const Form = styled.form`
-  margin-top: 5px;
+  margin-top: 10px;
   width: 88%;
 
   .input-group {
@@ -76,7 +76,7 @@ const Form = styled.form`
     height: 40px;
     display: flex;
     align-items: center;
-    border: 1px solid transparent;
+    border: 1px solid ${({ theme }) => theme.palette.border};
     background: ${({ theme }) => theme.palette.primary};
     position: relative;
 

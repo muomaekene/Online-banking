@@ -9,6 +9,6 @@ export default Logo;
 const Container = styled.h1`
   font-family: ${({ theme }) => theme.typography.header.fontFamily};
   font-size: ${({ theme }) => theme.typography.header.fontSize};
-  color: ${({ theme }) => theme.palette.solid};
+  color: ${({ theme }) => theme.palette.altText};
   text-transform: uppercase;
 `;
