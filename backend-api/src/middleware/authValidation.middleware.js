@@ -4,7 +4,7 @@ const registrationValidation = async (req, res, next) => {
   const rules = {
     email: "required|string|email",
     password:
-      "required|string|regex:/^(?=.*d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/",
+      "required|string|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/",
     firstName: "required|string|min:3",
     initial: "required|string|max:1|min:1",
     lastName: "required|string|min:3",

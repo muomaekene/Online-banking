@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 
 app.use(bodyParser.json());
-app.use("/api/", routes);
+app.use("/api", routes);
 
 const port = 3000 || process.env.PORT;
 
