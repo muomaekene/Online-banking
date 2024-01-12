@@ -4,14 +4,29 @@ const bodyParser = require("body-parser");
 const routes = require("./routes");
 const db = require("./db");
 
-require("dotenv").config();
+const { PORT } = require("./config/index");
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use("/api", routes);
+app.use("/v1", routes);
 
-const port = 3000 || process.env.PORT;
+app.get("/v1", (req, res) => {
+  try {
+    res.status(200).json({
+      status: "success",
+      data: [],
+      message: "Welcome to our API homepage!",
+    });
+  } catch (err) {
+    res.status(500).json({
+      status: "error",
+      message: "Internal Server Error",
+    });
+  }
+});
+
+const port = 3000 || PORT;
 
 app.listen(port, () => {
   console.log(`################################################

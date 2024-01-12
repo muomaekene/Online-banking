@@ -1,4 +1,5 @@
 const express = require("express");
+
 const authRouter = require("./auth.route");
 
 const router = express.Router();

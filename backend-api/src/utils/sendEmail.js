@@ -1,8 +1,11 @@
 const nodemailer = require("nodemailer");
+const {
+  BASE_URL,
+  SENDER_ADDRESS,
+  SENDER_PASSWORD,
+} = require("../config/index");
 
-const sendConfirmationEmail = (email, confirmationToken) => {
-  const { SENDER_ADDRESS, SENDER_PASSWORD, BASE_URL } = process.env;
-
+const sendVerificationEmail = (email, verificationToken) => {
   const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -11,7 +14,7 @@ const sendConfirmationEmail = (email, confirmationToken) => {
     },
   });
 
-  const verificationLink = `${BASE_URL}/verify-email/${confirmationToken}`;
+  const verificationLink = `${BASE_URL}/auth/verify-email/${verificationToken}`;
 
   const mailConfigurations = {
     from: "no-reply@cunj.com",
@@ -22,9 +25,9 @@ const sendConfirmationEmail = (email, confirmationToken) => {
 
   transporter.sendMail(mailConfigurations, (error, response) => {
     if (error) throw Error(error);
-    console.log("Email sent successfully");
+    console.log("Email sent, check your box.");
     return response;
   });
 };
 
-module.exports = sendConfirmationEmail;
+module.exports = sendVerificationEmail;

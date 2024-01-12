@@ -1,4 +1,6 @@
 const jwt = require("jsonwebtoken");
+const { SECRET_ACCESS_TOKEN } = require("../config/index");
+
 const date = new Date();
 
 const encodeToken = (userId) => {
@@ -7,15 +9,15 @@ const encodeToken = (userId) => {
     created: date.toString(),
   };
 
-  const emailToken = jwt.sign(info, process.env.JWT_SECRET, {
-    expiresIn: "12m",
+  const emailToken = jwt.sign(info, SECRET_ACCESS_TOKEN, {
+    expiresIn: "10m",
   });
 
   return emailToken;
 };
 
 const decodeToken = (token) => {
-  const decoded = jwt.verify(token, process.env.JWT_SECRET);
+  const decoded = jwt.verify(token, SECRET_ACCESS_TOKEN);
 
   const userId = decoded.id;
 

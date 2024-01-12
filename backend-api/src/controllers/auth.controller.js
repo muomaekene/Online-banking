@@ -1,13 +1,13 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const { v4: uuidv4 } = require("uuid");
-
 const asyncHandler = require("express-async-handler");
 
 const User = require("../models/user.model");
 
-const sendConfirmationEmail = require("../utils/sendEmail");
-const { decodeToken, encodeToken } = require("../utils/generateToken");
+const sendVerificationEmail = require("../utils/sendEmail");
+const { decodeToken, encodeToken } = require("../utils/token");
+const { SECRET_ACCESS_TOKEN } = require("../config");
 
 const register = asyncHandler(async (req, res) => {
   const {
@@ -31,13 +31,12 @@ const register = asyncHandler(async (req, res) => {
     sourceOfIncome,
   } = req.body;
 
-  const verifyEmail = await User.findOne({ email });
+  const emailExists = await User.findOne({ email });
 
   try {
-    if (verifyEmail) {
+    if (emailExists) {
       return res.status(403).json({
-        message:
-          "There is already an account registered with this email, try another.",
+        message: "This email has been taken.",
       });
     } else {
       const userId = uuidv4();
@@ -73,12 +72,13 @@ const register = asyncHandler(async (req, res) => {
           });
         });
 
-        const confirmationToken = encodeToken(userId);
-        sendConfirmationEmail(email, confirmationToken);
+        const verificationToken = encodeToken(userId);
+
+        sendVerificationEmail(email, verificationToken);
       });
     }
   } catch (error) {
-    return res.status(412).send({
+    return res.status(412).json({
       success: false,
       message: error,
     });
@@ -111,9 +111,9 @@ const login = asyncHandler(async (req, res) => {
               email: getUser.email,
               userId: getUser.userId,
             },
-            process.env.JWT_SECRET,
+            SECRET_ACCESS_TOKEN,
             {
-              expiresIn: "1h",
+              expiresIn: "30m",
             }
           );
 
@@ -133,16 +133,16 @@ const userProfile = asyncHandler(async (req, res) => {
   const { id } = req.params;
 
   try {
-    const verifyUser = await User.findOne({ userId: id });
+    const user = await User.findOne({ userId: id });
 
-    if (!verifyUser) {
+    if (!user) {
       return res
         .status(403)
         .json({ success: "false", message: "User not found" });
     } else {
       return res.status(200).json({
         success: true,
-        message: `Profile of ${verifyUser.firstName} ${verifyUser.lastName}`,
+        message: `Profile of ${user.firstName} ${user.lastName}`,
       });
     }
   } catch (error) {
@@ -179,22 +179,24 @@ const verifyEmail = asyncHandler(async (req, res) => {
 
     if (!decodedUserId) {
       return res
-        .status(400)
-        .send({ success: false, message: "User Id not found" });
+        .status(401)
+        .json({ success: false, message: "User Id not found" });
     } else {
       await User.updateOne(decodedUserId, {
-        isVerified: true,
+        $set: {
+          isVerified: true,
+        },
       });
 
       const updatedData = await User.findOne(decodedUserId);
-      return res.status(201).send({
+      return res.status(201).json({
         success: true,
         message: "User successfully verified!",
         data: updatedData,
       });
     }
   } catch (error) {
-    return res.status(401).send({
+    return res.status(401).json({
       success: false,
       message: error.message,
     });
