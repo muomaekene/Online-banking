@@ -62,7 +62,7 @@ const TransferForm = () => {
 export default TransferForm;
 
 const Form = styled.form`
-  margin-top: 10px;
+  margin-top: 5px;
   width: 88%;
 
   .input-group {

@@ -23,9 +23,11 @@ const AccountSummary = ({ item }) => {
         </p>
         <p className="account-bal">${item.amount}</p>
       </div>
+
       <button className="dropdown-btn" onClick={() => setOpen(!open)}>
         {open ? "Hide" : "Show transactions"}
       </button>
+
       {open && (
         <>
           <div className="transactions-table">Transactions table goes here</div>
@@ -41,10 +43,8 @@ const AccountSummary = ({ item }) => {
 export default AccountSummary;
 
 const Container = styled.section`
-  margin-bottom: 10px;
-  margin-right: 15px;
+  margin-bottom: 5px;
   background: ${({ theme }) => theme.palette.main};
-  border-radius: ${({ theme }) => theme.border.radius};
   position: relative;
 
   .account-info {
