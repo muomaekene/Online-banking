@@ -11,12 +11,13 @@ const Button = styled.button`
   align-content: center;
   justify-content: center;
   width: 100%;
-  padding: 12px 0;
-  border-radius: ${({ theme }) => theme.border.radius};
+  padding: 14px 0;
+  border-radius: ${({ theme }) => theme.button.radius};
   border: none;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+  text-transform: capitalize;
   background: ${({ theme }) => theme.palette.solid};
-  color: ${({ theme }) => theme.palette.main};
+  color: ${({ theme }) => theme.palette.activeText};
   font-family: inherit;
   cursor: pointer;
 

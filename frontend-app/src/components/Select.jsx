@@ -61,7 +61,7 @@ const Container = styled.div`
     padding: 2px 12px;
     border-radius: 2px;
     background: ${({ theme }) => theme.palette.main};
-    color: ${({ theme }) => theme.palette.altText};
+    color: ${({ theme }) => theme.palette.text};
     border: 1px solid ${({ theme }) => theme.palette.border};
     font-size: 12px;
     cursor: pointer;
@@ -73,6 +73,7 @@ const Container = styled.div`
   .select-title {
     font-size: inherit;
     font-weight: 500;
+    text-transform: capitalize;
   }
 
   .select-options {

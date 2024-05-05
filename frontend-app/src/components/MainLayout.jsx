@@ -66,7 +66,7 @@ const Container = styled.div`
     max-width: 1040px;
     width: calc(100% - 15rem);
     overflow: auto;
-    background: ${({ theme }) => theme.palette.main};
+    background: ${({ theme }) => theme.palette.secondary};
     padding: 0 ${({ theme }) => theme.spacing(2)};
 
     ::-webkit-scrollbar {

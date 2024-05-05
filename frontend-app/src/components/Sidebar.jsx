@@ -37,8 +37,8 @@ const Container = styled.aside`
   display: flex;
   flex-direction: column;
   padding: 25px 10px;
+  text-transform: capitalize;
   color: ${({ theme }) => theme.palette.altText};
-  border-right: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.overlay};
 
   .top-sidebar {
@@ -60,22 +60,22 @@ const Container = styled.aside`
       :hover {
         background: ${({ theme }) => theme.palette.secondary};
         color: ${({ theme }) => theme.palette.text};
-        border-radius: ${({ theme }) => theme.border.radius};
+        border-radius: ${({ theme }) => theme.button.radius};
       }
 
       .active {
         background: ${({ theme }) => theme.palette.solid};
-        color: ${({ theme }) => theme.palette.main};
-        border-radius: ${({ theme }) => theme.border.radius};
+        color: ${({ theme }) => theme.palette.activeText};
+        border-radius: ${({ theme }) => theme.button.radius};
         font-weight: 500;
       }
     }
     .nav-item:nth-child(7) {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
 
     .nav-link {
-      padding: 12px 30px;
+      padding: 14px 30px;
       display: flex;
       align-items: center;
     }

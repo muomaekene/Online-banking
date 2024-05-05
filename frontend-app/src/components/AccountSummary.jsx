@@ -11,7 +11,7 @@ const AccountSummary = ({ item }) => {
     if (open) {
       setBoxHeight(16);
     } else {
-      setBoxHeight(4.5);
+      setBoxHeight(5);
     }
   }, [open]);
 
@@ -43,7 +43,7 @@ export default AccountSummary;
 const Container = styled.section`
   margin-bottom: 10px;
   margin-right: 15px;
-  background: ${({ theme }) => theme.palette.primary};
+  background: ${({ theme }) => theme.palette.main};
   border-radius: ${({ theme }) => theme.border.radius};
   position: relative;
 
@@ -54,9 +54,9 @@ const Container = styled.section`
   }
 
   .account-type {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
-    text-transform: uppercase;
+    text-transform: capitalize;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
 
@@ -67,7 +67,7 @@ const Container = styled.section`
   }
 
   .account-bal {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
   }
 

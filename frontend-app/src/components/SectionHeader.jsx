@@ -12,8 +12,8 @@ const SectionHeader = ({ title, children }) => {
 export default SectionHeader;
 
 const Container = styled.div`
-  padding: 10px 20px 10px 15px;
-  font-size: 13px;
+  padding: 20px 20px 10px 20px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,5 +22,6 @@ const Container = styled.div`
   h2 {
     font-weight: 500;
     font-size: inherit;
+    text-transform: capitalize;
   }
 `;

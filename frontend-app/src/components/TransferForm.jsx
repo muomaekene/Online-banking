@@ -76,8 +76,7 @@ const Form = styled.form`
     height: 40px;
     display: flex;
     align-items: center;
-    border: 1px solid ${({ theme }) => theme.palette.border};
-    background: ${({ theme }) => theme.palette.primary};
+    background: ${({ theme }) => theme.palette.secondary};
     position: relative;
 
     :focus-within {
@@ -108,6 +107,7 @@ const Form = styled.form`
     ::placeholder {
       color: ${({ theme }) => theme.palette.altText};
       font-size: 12px;
+      text-transform: capitalize;
     }
 
     ::-webkit-outer-spin-button,

@@ -46,26 +46,24 @@ const Container = styled.table`
   display: table;
   width: 100%;
   overflow: hidden;
-  text-transform: uppercase;
 
   thead {
     tr {
-      background-color: ${({ theme }) => theme.palette.primary};
       text-align: left;
-      text-transform: capitalize;
+      text-transform: uppercase;
     }
   }
   th,
   td {
-    padding: 7px 15px;
+    padding: 10px 20px;
     font-size: 12px;
     font-weight: 400;
   }
 
   tbody {
     tr {
-      :nth-of-type(even) {
-        background-color: ${({ theme }) => theme.palette.primary};
+      :nth-of-type(odd) {
+        background-color: ${({ theme }) => theme.palette.secondary};
       }
     }
   }

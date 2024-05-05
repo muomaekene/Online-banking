@@ -8,14 +8,14 @@ export default Avatar;
 
 const Cover = styled.button`
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 600;
-  width: 31px;
-  height: 31px;
+  font-size: 13px;
+  font-weight: 500;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   border: none;
   background: ${({ theme }) => theme.palette.solid};
-  color: ${({ theme }) => theme.palette.primary};
+  color: ${({ theme }) => theme.palette.activeText};
   display: flex;
   align-items: center;
   justify-content: center;

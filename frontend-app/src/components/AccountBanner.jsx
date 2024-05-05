@@ -38,18 +38,21 @@ const AccountBanner = ({ account }) => {
 export default AccountBanner;
 
 const Container = styled(Link)`
-  padding: 15px;
+  padding: 0 25px;
+  height: 100%;
   border-radius: ${({ theme }) => theme.border.radius};
   display: flex;
   align-items: center;
   cursor: pointer;
-  background: ${({ theme }) => theme.palette.primary};
+  background: ${({ theme }) => theme.palette.main};
   color: ${({ theme }) => theme.palette.altText};
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 
   :hover {
-    background: ${({ theme }) => theme.palette.secondary};
     border-color: transparent;
+    box-shadow: none;
   }
 
   .account-icon {
@@ -59,17 +62,17 @@ const Container = styled(Link)`
   }
 
   .account-type {
-    color: ${({ theme }) => theme.palette.text};
+    color: ${({ theme }) => theme.palette.link};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   }
 
   .account-bal {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
-    margin: 2px 0;
+    margin: 4px 0;
   }
 
   .desc {
@@ -92,7 +95,7 @@ const Container = styled(Link)`
   .account-info {
     position: absolute;
     top: 23px;
-    background: ${({ theme }) => theme.palette.main};
+    background: ${({ theme }) => theme.palette.secondary};
     color: ${({ theme }) => theme.palette.altText};
     font-size: 11px;
     padding: 5px 0;

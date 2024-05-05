@@ -61,17 +61,17 @@ const MainContent = styled.div`
       display: flex;
       align-items: center;
       border: 1px solid transparent;
-      background: ${({ theme }) => theme.palette.primary};
-      color: ${({ theme }) => theme.palette.text};
+      background: ${({ theme }) => theme.palette.main};
+      color: ${({ theme }) => theme.palette.altText};
       cursor: pointer;
       font-size: 12px;
       font-weight: 400;
-      padding: 10px;
+      padding: 15px;
     }
 
     .active {
       background: ${({ theme }) => theme.palette.solid};
-      color: ${({ theme }) => theme.palette.main};
+      color: ${({ theme }) => theme.palette.activeText};
     }
   }
 `;

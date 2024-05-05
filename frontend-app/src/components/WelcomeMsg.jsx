@@ -8,6 +8,6 @@ export default WelcomeMsg;
 
 const Container = styled.div`
   font-size: 16px;
-  /* margin-right: 75px; */
   font-weight: 400;
+  text-transform: capitalize;
 `;

@@ -72,13 +72,14 @@ export default TopBar;
 
 const Container = styled.div`
   display: flex;
-  height: 48px;
+  height: 55px;
   margin-bottom: 10px;
 
   .left-topbar {
     width: 70%;
     display: flex;
     align-items: center;
+    padding-top: 5px;
   }
 
   .right-topbar {

@@ -11,18 +11,19 @@ const VirtualCard = () => {
           <img className="card-logo" src={masterCard} alt="visa-logo" />
         </div>
         <div className="group-item-bottom">
-          <p className="card-no">5102 6684 ****</p>
+          <p className="card-no">**** **** **** 6684</p>
+          <i>375</i>
         </div>
       </div>
 
       <div className="card-band">
         <div>
-          <p>Card balance</p>
-          <p>$3 528.31</p>
+          <p>Card Balance</p>
+          <p className="figure">$3 528.31</p>
         </div>
         <div>
-          <p>Expiry date</p>
-          <p>10/24</p>
+          <p>Expiry Date</p>
+          <p className="figure">10/24</p>
         </div>
       </div>
     </Container>
@@ -36,15 +37,17 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
   color: #fff;
-  height: 10rem;
+  height: 11rem;
   width: 100%;
   cursor: pointer;
   font-weight: 400;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  background: #fc466b;
+  background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
+  background: linear-gradient(to right, #3f5efb, #fc466b);
 
   .card-body {
-    background: rgb(46, 104, 154);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
     height: 65%;
     display: flex;
     flex-direction: column;
@@ -55,36 +58,38 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
-    font-size: 12px;
+    font-size: 13px;
     margin-bottom: 20px;
   }
 
   .group-item-bottom {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+
+    i {
+      font-size: 13px;
+    }
   }
 
   .card-logo {
-    width: 40px;
-    height: 40px;
+    width: 55px;
+    height: 55px;
   }
   .card-no {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 1px;
   }
 
   .card-band {
-    background: ${({ theme }) => theme.palette.primary};
-    color: ${({ theme }) => theme.palette.altText};
-    font-weight: 500;
     font-size: 12px;
-    height: 35%;
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
+
+    .figure {
+      font-size: 13px;
+    }
   }
 `;

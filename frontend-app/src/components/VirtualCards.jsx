@@ -15,7 +15,7 @@ const VirtualCards = () => {
       </div>
 
       <button className="card-btn">
-        <span>+</span>Create new card
+        <span>+</span>Create New Card
       </button>
     </Section>
   );
@@ -27,20 +27,22 @@ const Section = styled.section`
   position: relative;
 
   .card-btn {
-    height: 2.5rem;
+    height: 3rem;
     width: 100%;
     color: ${({ theme }) => theme.palette.text};
-    border-radius: ${({ theme }) => theme.border.radius};
+    border-radius: 10px;
+    border-radius: ${({ theme }) => theme.button.radius};
     border: none;
-    background: ${({ theme }) => theme.palette.primary};
-    margin-top: 10px;
-    margin-bottom: ${({ theme }) => theme.border.margin};
+    background: ${({ theme }) => theme.palette.main};
+    margin: ${({ theme }) => theme.border.margin} 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+      rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 
     :active {
       background: ${({ theme }) => theme.palette.secondary};

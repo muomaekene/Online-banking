@@ -19,7 +19,7 @@ const Searchbar = () => {
       <input
         className="input-bar"
         type="text"
-        placeholder="Search dashboard"
+        placeholder="Search Dashboard"
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       />
@@ -38,14 +38,16 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   padding: 0 ${({ theme }) => theme.spacing(1)};
-  background: ${({ theme }) => theme.palette.secondary};
-  border-radius: ${({ theme }) => theme.border.radius};
+  background: ${({ theme }) => theme.palette.main};
+  border-radius: ${({ theme }) => theme.button.radius};
   border: 1px solid transparent;
   margin-left: 4rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 
   :focus-within {
     background: ${({ theme }) => theme.palette.main};
-    border: 1px solid ${({ theme }) => theme.palette.border};
+    box-shadow: none;
   }
 
   .icon-wrap {
@@ -81,7 +83,7 @@ const Form = styled.form`
     display: flex;
 
     ::placeholder {
-      color: ${({ theme }) => theme.palette.text};
+      color: ${({ theme }) => theme.palette.altText};
     }
   }
 
