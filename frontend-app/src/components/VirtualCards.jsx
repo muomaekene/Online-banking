@@ -30,19 +30,17 @@ const Section = styled.section`
     height: 3rem;
     width: 100%;
     color: ${({ theme }) => theme.palette.text};
-    border-radius: 10px;
-    border-radius: ${({ theme }) => theme.button.radius};
-    border: none;
+    border-radius: ${({ theme }) => theme.borderRadius[0]};
+    margin: ${({ theme }) => theme.spacing(2)} 0;
     background: ${({ theme }) => theme.palette.main};
-    margin: ${({ theme }) => theme.border.margin} 0;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-      rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
     :active {
       background: ${({ theme }) => theme.palette.secondary};

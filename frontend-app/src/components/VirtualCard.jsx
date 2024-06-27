@@ -19,11 +19,11 @@ const VirtualCard = () => {
       <div className="card-band">
         <div>
           <p>Card Balance</p>
-          <p className="figure">$3 528.31</p>
+          <p className="figure">$1 628.31</p>
         </div>
         <div>
           <p>Expiry Date</p>
-          <p className="figure">10/24</p>
+          <p className="figure">10/22</p>
         </div>
       </div>
     </Container>

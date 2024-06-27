@@ -40,19 +40,18 @@ export default AccountBanner;
 const Container = styled(Link)`
   padding: 0 25px;
   height: 100%;
-  border-radius: ${({ theme }) => theme.border.radius};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
   display: flex;
   align-items: center;
   cursor: pointer;
   background: ${({ theme }) => theme.palette.main};
   color: ${({ theme }) => theme.palette.altText};
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
   :hover {
-    border-color: transparent;
-    box-shadow: none;
+    border: 1px solid ${({ theme }) => theme.palette.border};
+    /* box-shadow: none; */
   }
 
   .account-icon {
@@ -64,13 +63,13 @@ const Container = styled(Link)`
   .account-type {
     color: ${({ theme }) => theme.palette.link};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    text-transform: capitalize;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    text-transform: capitalize;
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.text};
     margin: 4px 0;
   }

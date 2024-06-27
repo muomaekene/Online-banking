@@ -56,8 +56,8 @@ const Container = styled.table`
   th,
   td {
     padding: 10px 20px;
-    font-size: 12px;
-    font-weight: 400;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   }
 
   tbody {

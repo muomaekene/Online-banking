@@ -53,7 +53,7 @@ const Container = styled.div`
   z-index: 667;
 
   .menu-trigger {
-    margin-left: 15px;
+    margin-left: ${({ theme }) => theme.spacing(2)};
     background: none;
     border: none;
   }
@@ -61,12 +61,12 @@ const Container = styled.div`
   .dropdown-menu {
     position: absolute;
     left: -86px;
-    margin-top: 43px;
-    padding-bottom: 10px;
+    margin-top: 46px;
+    padding-bottom: ${({ theme }) => theme.spacing(1)};
     background: ${({ theme }) => theme.palette.main};
     border: 1px solid ${({ theme }) => theme.palette.border};
+    border-radius: ${({ theme }) => theme.borderRadius[0]};
     min-width: 15rem;
-    border-radius: 10px;
 
     :before {
       content: "";
@@ -83,10 +83,12 @@ const Container = styled.div`
   }
 
   .menu-header {
-    padding: 10px 15px;
+    padding: ${({ theme }) => theme.spacing(1)};
+    ${({ theme }) => theme.spacing(2)};
+
     background: ${({ theme }) => theme.palette.main};
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
+    border-top-right-radius: ${({ theme }) => theme.borderRadius[0]};
+    border-top-left-radius: ${({ theme }) => theme.borderRadius[0]};
   }
 
   .tooltip {

@@ -87,7 +87,7 @@ export const accountInfo = [
     key: 10,
     name: "checking",
     type: "Total Checking",
-    bal: "$8,450.10",
+    bal: "$467,720.83",
     desc: "Available bal",
     img: checkBook,
     alt: "check-book",
@@ -97,7 +97,7 @@ export const accountInfo = [
     key: 15,
     name: "savings",
     type: "Total Savings",
-    bal: "$651,720.83",
+    bal: "$8,450.10",
     desc: "Available bal",
     img: moneyBox,
     alt: "money-box",
@@ -107,7 +107,7 @@ export const accountInfo = [
     key: 20,
     name: "cc",
     type: "Credit cards",
-    bal: "$42,940.03",
+    bal: "$49,940.06",
     desc: "Outstanding bal",
     img: creditCard,
     alt: "credit-card",
@@ -332,9 +332,9 @@ export const notificationsDropdown = [
 
 export const messagesDropdown = [
   {
-    title: "Melinda Brown",
+    title: "Ellie",
     icon: UserCircleIcon,
-    message: "Hey, I need yout to confirm...",
+    message: "Hey, I need you to confirm...",
     time: "9:16 am",
   },
   {
@@ -344,7 +344,7 @@ export const messagesDropdown = [
     time: "11:10 am",
   },
   {
-    title: "Ekene Muoma",
+    title: "Jon Schwab",
     icon: UserCircleIcon,
     message: "Good day, please when am I...",
     time: "11:10 am",
@@ -352,9 +352,13 @@ export const messagesDropdown = [
 ];
 
 export const ACCOUNT_DATA = [
-  { type: "Adv Smart Rewards Checking", number: "9548", amount: "9,250.00" },
-  { type: "Adv Fixed Term CD", number: "9876", amount: "3,820.00" },
-  { type: "Adv Plus Savings", number: "9792", amount: "4,050.00" },
+  { type: "Classic Checking Account", number: "9548", amount: "467,720.83" },
+  {
+    type: "Individual Retirement Account (IRA)",
+    number: "9876",
+    amount: "35.81",
+  },
+  { type: "Classic Savings Account", number: "9792", amount: "8,450.10" },
 ];
 
 export const CC_DATA = [
@@ -363,5 +367,5 @@ export const CC_DATA = [
     number: "9548",
     amount: "9,250.00",
   },
-  { type: "Venture Rewards Visa Gold", number: "5632", amount: "1,690.00" },
+  { type: "Venture Rewards Visa Gold", number: "5632", amount: "40,690.06" },
 ];

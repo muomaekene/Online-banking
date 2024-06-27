@@ -1,14 +1,11 @@
-import styled from "styled-components";
-
 const Logo = () => {
-  return <Container>cunj</Container>;
+  return (
+    <img
+      width="150"
+      src="https://frontiercreditunion.com/wp-content/uploads/2023/08/frontier-credit-union.png"
+      alt="frontier logo"
+    />
+  );
 };
 
 export default Logo;
-
-const Container = styled.h1`
-  font-family: ${({ theme }) => theme.typography.header.fontFamily};
-  font-size: ${({ theme }) => theme.typography.header.fontSize};
-  color: ${({ theme }) => theme.palette.altText};
-  text-transform: uppercase;
-`;

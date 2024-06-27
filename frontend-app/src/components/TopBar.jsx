@@ -37,6 +37,7 @@ const TopBar = ({ theme, themeToggler }) => {
             <MoonIcon className="icon" />
           )}
         </NavIcon>
+
         <Dropdown
           name="Messages"
           link="View all"
@@ -58,7 +59,7 @@ const TopBar = ({ theme, themeToggler }) => {
           data={notificationsDropdown}
         />
         <Dropdown
-          name="Robbin J. Eckert"
+          name="Robbin Eckert"
           userID="@user_1039"
           triggerElement={<Avatar>RE</Avatar>}
           data={profileDropdown}
@@ -79,14 +80,12 @@ const Container = styled.div`
     width: 70%;
     display: flex;
     align-items: center;
-    padding-top: 5px;
   }
 
   .right-topbar {
     width: 30%;
     display: flex;
     align-items: center;
-    padding: 0 5px;
   }
 
   .icon {

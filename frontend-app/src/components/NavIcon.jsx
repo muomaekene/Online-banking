@@ -16,12 +16,16 @@ const Cover = styled.button`
   border: 1px solid transparent;
   color: ${({ theme }) => theme.palette.text};
   background: ${({ theme }) => theme.palette.main};
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
   :active {
     background: ${({ theme }) => theme.palette.secondary};
     border: 1px solid transparent;
     background-size: 100%;
+  }
+
+  :hover {
+    border: 1px solid ${({ theme }) => theme.palette.border};
+    /* box-shadow: none; */
   }
 `;

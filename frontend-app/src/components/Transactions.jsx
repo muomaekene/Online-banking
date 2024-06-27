@@ -23,12 +23,11 @@ const Transactions = () => {
 export default Transactions;
 
 const Section = styled.section`
-  margin: ${({ theme }) => theme.border.margin} 0;
-  padding-bottom: 15px;
-  border-radius: ${({ theme }) => theme.border.radius};
+  margin: ${({ theme }) => theme.spacing(2)} 0;
+  padding-bottom: ${({ theme }) => theme.spacing(2)};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
   background: ${({ theme }) => theme.palette.main};
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
   .link-to {
     display: flex;

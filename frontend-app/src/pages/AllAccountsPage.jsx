@@ -1,4 +1,5 @@
 import AccountSummary from "../components/AccountSummary";
+import Info from "../components/Info";
 import { ACCOUNT_DATA, CC_DATA } from "../utils/uiData";
 
 import styled from "styled-components";
@@ -8,6 +9,8 @@ const AllAccountsPage = () => {
     <Container>
       <h1 className="section-title">Manage Accounts</h1>
       <hr className="divider" />
+
+      <Info />
 
       {/* BANK ACCOUNTS ---- Checking, Savings and CD */}
       <div className="group-section">
@@ -63,10 +66,10 @@ const Container = styled.section`
     background: ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.activeText};
     font-size: 14px;
-    font-weight: 400;
-    padding: 15px 20px;
-    border-top-right-radius: ${({ theme }) => theme.border.radius};
-    border-top-left-radius: ${({ theme }) => theme.border.radius};
+    font-weight: 300;
+    padding: 18px;
+    border-top-right-radius: ${({ theme }) => theme.borderRadius[1]};
+    border-top-left-radius: ${({ theme }) => theme.borderRadius[1]};
   }
 
   .group-section {

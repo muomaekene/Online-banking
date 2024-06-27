@@ -11,7 +11,7 @@ const Sidebar = () => {
       <div className="top-sidebar">
         <Logo />
       </div>
-      <div className="mid-sidebar">
+      <div className="bottom-sidebar">
         <ul className="navs">
           {navLinks.map(({ key, name, icon: Icon, to }) => (
             <li className="nav-item" key={key}>
@@ -49,7 +49,7 @@ const Container = styled.aside`
     position: relative;
   }
 
-  .mid-sidebar {
+  .bottom-sidebar {
     margin-bottom: 40px;
   }
 
@@ -60,14 +60,14 @@ const Container = styled.aside`
       :hover {
         background: ${({ theme }) => theme.palette.secondary};
         color: ${({ theme }) => theme.palette.text};
-        border-radius: ${({ theme }) => theme.button.radius};
+        border-radius: ${({ theme }) => theme.borderRadius[0]};
       }
 
       .active {
         background: ${({ theme }) => theme.palette.solid};
         color: ${({ theme }) => theme.palette.activeText};
-        border-radius: ${({ theme }) => theme.button.radius};
-        font-weight: 500;
+        border-radius: ${({ theme }) => theme.borderRadius[0]};
+        font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
       }
     }
     .nav-item:nth-child(7) {
