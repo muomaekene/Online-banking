@@ -50,16 +50,16 @@ const Select = ({ placeholder, options }) => {
 export default Select;
 
 const Container = styled.div`
-  z-index: 666;
   position: relative;
 
   .select-header {
+    z-index: 666;
     width: 100%;
-    height: 40px;
+    height: 45px;
     display: flex;
     align-items: center;
     padding: 2px 12px;
-    border-radius: 2px;
+    border-radius: ${({ theme }) => theme.borderRadius[0]};
     background: ${({ theme }) => theme.palette.main};
     color: ${({ theme }) => theme.palette.text};
     border: 1px solid ${({ theme }) => theme.palette.border};
@@ -67,7 +67,7 @@ const Container = styled.div`
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    z-index: 1000;
+    z-index: 666;
   }
 
   .select-title {
@@ -78,16 +78,16 @@ const Container = styled.div`
 
   .select-options {
     position: absolute;
-    top: 30px;
     background: ${({ theme }) => theme.palette.main};
+    border-radius: ${({ theme }) => theme.borderRadius[0]};
     border: 1px solid ${({ theme }) => theme.palette.border};
     width: 100%;
-    border-radius: 2px;
-    border-top: none;
     list-style-type: none;
     padding: 8px 0 5px 0;
     font-size: 12px;
     font-weight: 500;
+    margin-top: 5px;
+    z-index: 667;
   }
 
   .select-option {

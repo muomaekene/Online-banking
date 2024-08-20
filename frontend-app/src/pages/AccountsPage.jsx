@@ -61,8 +61,10 @@ const MainContent = styled.div`
       display: flex;
       align-items: center;
       border: 1px solid transparent;
+      border: 1px solid ${({ theme }) => theme.palette.border};
       background: ${({ theme }) => theme.palette.main};
       color: ${({ theme }) => theme.palette.altText};
+
       cursor: pointer;
       font-size: 12px;
       font-weight: 400;
@@ -72,6 +74,7 @@ const MainContent = styled.div`
     .active {
       background: ${({ theme }) => theme.palette.solid};
       color: ${({ theme }) => theme.palette.activeText};
+      border: none;
     }
   }
 `;

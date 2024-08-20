@@ -20,7 +20,7 @@ export default AuthLayout;
 const Main = styled.main`
   padding: 20px;
   height: 100%;
-  background: ${({ theme }) => theme.palette.secondary};
+  background: ${({ theme }) => theme.palette.main};
   position: relative;
   overflow-x: hidden !important;
   display: flex;

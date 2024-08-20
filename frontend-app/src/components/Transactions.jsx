@@ -27,7 +27,7 @@ const Section = styled.section`
   padding-bottom: ${({ theme }) => theme.spacing(2)};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   background: ${({ theme }) => theme.palette.main};
-  box-shadow: ${({ theme }) => theme.palette.boxShadow};
+  border: 1px solid ${({ theme }) => theme.palette.border};
 
   .link-to {
     display: flex;

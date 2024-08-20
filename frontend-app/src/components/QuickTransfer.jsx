@@ -15,12 +15,12 @@ const QuickTransfer = () => {
 export default QuickTransfer;
 
 const Section = styled.section`
-  height: 22.5rem;
+  height: 22.7rem;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   background: ${({ theme }) => theme.palette.main};
-  box-shadow: ${({ theme }) => theme.palette.boxShadow};
+  border: 1px solid ${({ theme }) => theme.palette.border};
 `;

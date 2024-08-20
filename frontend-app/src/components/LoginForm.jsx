@@ -1,30 +1,28 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import {
-  EyeIcon,
-  EyeSlashIcon,
-  ArrowRightOnRectangleIcon,
-} from "@heroicons/react/24/outline";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 
 import CustomBtn from "./CustomBtn";
+import AuthInput from "./AuthInput";
 
+import { LOGIN_CONTROLS } from "../utils/formControls";
 import styled from "styled-components";
 
 const LoginForm = () => {
+  const [loginValues, setLoginValues] = useState("");
   const [inputType, setInputType] = useState("password");
-  const [loginValues, setLoginValues] = useState({ userID: "", password: "" });
+
+  const handleChange = (e) => {
+    setLoginValues({ ...loginValues, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(JSON.stringify(loginValues));
   };
 
-  const handleChange = (e) => {
-    setLoginValues({ ...loginValues, [e.target.name]: e.target.value });
-  };
-
-  const showPassw = () => {
+  const togglePassw = () => {
     if (inputType === "password") {
       setInputType("text");
       return;
@@ -36,30 +34,26 @@ const LoginForm = () => {
     <Form onSubmit={handleSubmit}>
       <fieldset className="form-group">
         <legend className="form-title">e-Banking Login</legend>
-        <input
-          className="input-bar"
-          name="userID"
-          type="text"
-          placeholder="User ID"
-          value={loginValues.userID}
-          onChange={handleChange}
-          required
-        />
-        <input
-          className="input-bar"
-          name="password"
-          type={inputType}
-          placeholder="Password"
-          value={loginValues.password}
-          onChange={handleChange}
-          required
-        />
-        <button type="button" className="show-passw" onClick={showPassw}>
+
+        <div className="inputs">
+          {LOGIN_CONTROLS.map((attribute) => (
+            <AuthInput
+              key={attribute.id}
+              name={attribute.name}
+              placeholder={attribute.placeholder}
+              type={attribute.id === 1 ? "text" : inputType}
+              value={loginValues[attribute.name]}
+              handleChange={handleChange}
+            />
+          ))}
+        </div>
+
+        <button type="button" className="show-passw" onClick={togglePassw}>
           {loginValues.password &&
             (inputType === "password" ? (
-              <EyeSlashIcon className="icon" />
+              <EyeSlashIcon width="15" />
             ) : (
-              <EyeIcon className="icon" />
+              <EyeIcon width="15" />
             ))}
         </button>
       </fieldset>
@@ -70,12 +64,7 @@ const LoginForm = () => {
         </Link>
       </p>
 
-      <CustomBtn>
-        <ArrowRightOnRectangleIcon
-          style={{ width: "18px", marginRight: "4px" }}
-        />
-        Login
-      </CustomBtn>
+      <CustomBtn>Login</CustomBtn>
 
       <div className="bottom-links">
         <Link to="/create-profile" className="link">
@@ -100,7 +89,7 @@ const Form = styled.form`
   padding: 25px 35px;
   border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
-  border-radius: ${({ theme }) => theme.border.radius};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
   position: absolute;
   left: 0;
   right: 0;
@@ -118,25 +107,10 @@ const Form = styled.form`
     border: none;
   }
 
-  .input-bar {
-    margin-top: 8px;
-    border-radius: 2px;
-    border: 1px solid ${({ theme }) => theme.palette.border};
-    background: ${({ theme }) => theme.palette.secondary};
-    padding: 0 15px;
-    outline: none;
-    width: 100%;
-    height: 40px;
-
-    ::placeholder {
-      font-size: 12px;
-      font-weight: 400;
-    }
-
-    :focus-within {
-      border: 1px solid ${({ theme }) => theme.palette.solid};
-      background: ${({ theme }) => theme.palette.main};
-    }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .show-passw {
@@ -145,7 +119,7 @@ const Form = styled.form`
     cursor: pointer;
     outline: none;
     position: absolute;
-    top: 68px;
+    top: 70px;
     right: 16px;
   }
 
@@ -155,11 +129,6 @@ const Form = styled.form`
     align-content: center;
     justify-content: space-between;
     margin-bottom: 1rem;
-  }
-
-  .icon {
-    height: 15px;
-    width: 15px;
   }
 
   .reset-passw {

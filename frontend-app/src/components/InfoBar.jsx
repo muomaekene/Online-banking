@@ -18,10 +18,11 @@ const Info = () => {
 export default Info;
 
 const Container = styled.div`
+  margin-top: 10px;
   background: ${({ theme }) => theme.palette.main};
   border: 1px solid ${({ theme }) => theme.palette.danger};
   color: ${({ theme }) => theme.palette.text};
-  border-radius: 6px;
+  border-radius: ${({ theme }) => theme.borderRadius[0]};
   padding: 12px;
   display: flex;
   justify-content: space-between;
@@ -40,7 +41,7 @@ const Container = styled.div`
   }
 
   .icon {
-    width: 20px;
+    width: 18px;
     cursor: pointer;
   }
 `;

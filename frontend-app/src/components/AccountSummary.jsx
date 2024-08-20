@@ -43,8 +43,8 @@ const AccountSummary = ({ item }) => {
 export default AccountSummary;
 
 const Container = styled.section`
-  margin-bottom: 2px;
-  background: ${({ theme }) => theme.palette.main};
+  background: ${({ theme }) => theme.palette.secondary};
+  border-bottom: 1px solid ${({ theme }) => theme.palette.border};
   position: relative;
 
   .account-info {

@@ -31,16 +31,15 @@ const Section = styled.section`
     width: 100%;
     color: ${({ theme }) => theme.palette.text};
     border-radius: ${({ theme }) => theme.borderRadius[0]};
+    border: 1px solid ${({ theme }) => theme.palette.border};
     margin: ${({ theme }) => theme.spacing(2)} 0;
     background: ${({ theme }) => theme.palette.main};
-    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
-    box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
     :active {
       background: ${({ theme }) => theme.palette.secondary};

@@ -36,7 +36,7 @@ export const navLinks = [
     key: "transfer",
     name: "Transfer & payments",
     icon: ArrowsRightLeftIcon,
-    to: "/transfer",
+    to: "/transfers",
   },
   {
     key: "deposit",

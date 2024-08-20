@@ -51,6 +51,7 @@ const Container = styled.table`
     tr {
       text-align: left;
       text-transform: uppercase;
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
     }
   }
   th,
@@ -62,6 +63,8 @@ const Container = styled.table`
 
   tbody {
     tr {
+      color: ${({ theme }) => theme.palette.text};
+
       :nth-of-type(odd) {
         background-color: ${({ theme }) => theme.palette.secondary};
       }

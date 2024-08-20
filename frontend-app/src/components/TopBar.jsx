@@ -29,13 +29,10 @@ const TopBar = ({ theme, themeToggler }) => {
         <WelcomeMsg />
         <Searchbar />
       </div>
+
       <div className="right-topbar">
         <NavIcon themeToggler={themeToggler}>
-          {theme === "dark" ? (
-            <SunIcon className="icon" />
-          ) : (
-            <MoonIcon className="icon" />
-          )}
+          {theme === "dark" ? <SunIcon width="20" /> : <MoonIcon width="20" />}
         </NavIcon>
 
         <Dropdown
@@ -43,17 +40,17 @@ const TopBar = ({ theme, themeToggler }) => {
           link="View all"
           triggerElement={
             <NavIcon>
-              <ChatBubbleOvalLeftIcon className="icon" />
+              <ChatBubbleOvalLeftIcon width="20" />
             </NavIcon>
           }
           data={messagesDropdown}
         />
         <Dropdown
           name="Notifications"
-          icon={<Cog6ToothIcon style={{ width: "15px", height: "15px" }} />}
+          icon={<Cog6ToothIcon width="15" />}
           triggerElement={
             <NavIcon>
-              <BellIcon className="icon" />
+              <BellIcon width="20" />
             </NavIcon>
           }
           data={notificationsDropdown}
@@ -86,11 +83,5 @@ const Container = styled.div`
     width: 30%;
     display: flex;
     align-items: center;
-  }
-
-  .icon {
-    width: 20px;
-    height: 20px;
-    color: inherit;
   }
 `;

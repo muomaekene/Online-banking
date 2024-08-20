@@ -1,7 +1,11 @@
 import MainLayout from "../components/MainLayout";
 
 const Transactions = () => {
-  return <MainLayout>Transactions</MainLayout>;
+  return (
+    <MainLayout>
+      <h2>All Transactions</h2>
+    </MainLayout>
+  );
 };
 
 export default Transactions;

@@ -41,12 +41,13 @@ const Form = styled.form`
   background: ${({ theme }) => theme.palette.main};
   border-radius: ${({ theme }) => theme.borderRadius[0]};
   margin-top: ${({ theme }) => theme.spacing(0)};
-  border: 1px solid transparent;
+  border: 1px solid ${({ theme }) => theme.palette.border};
   margin-left: 4rem;
-  box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
   :focus-within {
-    border: 1px solid ${({ theme }) => theme.palette.border};
+    background: ${({ theme }) => theme.palette.main};
+    border: 1px solid ${({ theme }) => theme.palette.focus};
+    border-radius: ${({ theme }) => theme.borderRadius[0]};
   }
 
   .icon-wrap {

@@ -1,7 +1,12 @@
 import MainLayout from "../components/MainLayout";
+import InternalTransfer from "../components/InternalTransfer";
 
 const Transfers = () => {
-  return <MainLayout>Transfers</MainLayout>;
+  return (
+    <MainLayout>
+      <InternalTransfer />
+    </MainLayout>
+  );
 };
 
 export default Transfers;

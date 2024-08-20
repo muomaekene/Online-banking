@@ -39,7 +39,7 @@ const Container = styled.aside`
   padding: 25px 10px;
   text-transform: capitalize;
   color: ${({ theme }) => theme.palette.altText};
-  background: ${({ theme }) => theme.palette.overlay};
+  border-right: 1px solid ${({ theme }) => theme.palette.border};
 
   .top-sidebar {
     display: flex;
@@ -66,7 +66,7 @@ const Container = styled.aside`
       .active {
         background: ${({ theme }) => theme.palette.solid};
         color: ${({ theme }) => theme.palette.activeText};
-        border-radius: ${({ theme }) => theme.borderRadius[0]};
+        border-radius: ${({ theme }) => theme.borderRadius[1]};
         font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
       }
     }

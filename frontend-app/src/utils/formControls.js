@@ -1,3 +1,18 @@
+export const LOGIN_CONTROLS = [
+  {
+    id: 1,
+    type: "text",
+    name: "userId",
+    placeholder: "User ID",
+  },
+  {
+    id: 2,
+    type: "password",
+    name: "password",
+    placeholder: "Password",
+  },
+];
+
 export const SIGNUP_CONTROLS = [
   {
     title: "Create login",

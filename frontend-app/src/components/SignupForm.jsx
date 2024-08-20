@@ -3,7 +3,7 @@ import { useForm } from "../utils/useForm";
 import { SIGNUP_CONTROLS } from "../utils/formControls";
 import { validations } from "../utils/validations";
 
-import SignupInput from "./SignupInput";
+import AuthInput from "./AuthInput";
 import CustomBtn from "./CustomBtn";
 import Select from "./Select";
 
@@ -29,10 +29,10 @@ const SignupForm = () => {
           <legend className="field-title">{items.title}</legend>
           {items.attributes.map((attribute) => (
             <div className="input-container" key={attribute.id}>
-              <SignupInput
+              <AuthInput
+                {...attribute}
                 value={data[attribute.name]}
                 handleChange={handleChange}
-                {...attribute}
               />
               {errors[attribute.name] && (
                 <p id="error-msg">{errors[attribute.name]}</p>
@@ -101,10 +101,10 @@ const Form = styled.form`
   border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
   padding: 50px 40px;
-  width: fit-content;
+  width: 65%;
   height: fit-content;
   box-sizing: border-box;
-  border-radius: ${({ theme }) => theme.border.radius};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
 
   .form-title {
     font-size: 20px;

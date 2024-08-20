@@ -31,7 +31,7 @@ const App = () => {
         <Route path="open-new" element={<CreateAccountPage />} />
         <Route path="*" element={<PageNotFound />} />
       </Route>
-      <Route path="transfer" element={<TransferPage />} />
+      <Route path="transfers" element={<TransferPage />} />
       <Route path="deposit" element={<DepositPage />} />
       <Route path="transactions" element={<TransactionsPage />} />
       <Route path="analytics" element={<AnalyticsPage />} />

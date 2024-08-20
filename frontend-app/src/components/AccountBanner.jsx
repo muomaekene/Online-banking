@@ -41,17 +41,16 @@ const Container = styled(Link)`
   padding: 0 25px;
   height: 100%;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
+  border: 1px solid ${({ theme }) => theme.palette.border};
   display: flex;
   align-items: center;
   cursor: pointer;
-  background: ${({ theme }) => theme.palette.main};
   color: ${({ theme }) => theme.palette.altText};
   position: relative;
-  box-shadow: ${({ theme }) => theme.palette.boxShadow};
 
   :hover {
-    border: 1px solid ${({ theme }) => theme.palette.border};
-    /* box-shadow: none; */
+    background: ${({ theme }) => theme.palette.secondary};
+    border: 1px solid transparent;
   }
 
   .account-icon {
@@ -93,8 +92,8 @@ const Container = styled(Link)`
 
   .account-info {
     position: absolute;
-    top: 23px;
-    background: ${({ theme }) => theme.palette.secondary};
+    top: 0;
+    background: ${({ theme }) => theme.palette.main};
     color: ${({ theme }) => theme.palette.altText};
     font-size: 11px;
     padding: 5px 0;

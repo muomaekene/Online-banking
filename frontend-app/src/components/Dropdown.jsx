@@ -22,9 +22,9 @@ const Dropdown = ({ triggerElement, data, name, icon, userID, link }) => {
 
   return (
     <Container ref={menuRef}>
-      <button className="menu-trigger" onClick={() => setIsOpen(!open)}>
+      <div className="menu-trigger" onClick={() => setIsOpen(!open)}>
         {triggerElement}
-      </button>
+      </div>
       <div className={`dropdown-menu ${open ? "active" : "inactive"}`}>
         <div className="menu-header">
           <div className="tooltip">
@@ -54,8 +54,6 @@ const Container = styled.div`
 
   .menu-trigger {
     margin-left: ${({ theme }) => theme.spacing(2)};
-    background: none;
-    border: none;
   }
 
   .dropdown-menu {

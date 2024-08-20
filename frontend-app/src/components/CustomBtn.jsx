@@ -8,7 +8,6 @@ export default CustomBtn;
 
 const Button = styled.button`
   display: flex;
-  align-content: center;
   justify-content: center;
   width: 100%;
   padding: 14px 0;

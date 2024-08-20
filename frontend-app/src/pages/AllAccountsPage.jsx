@@ -1,5 +1,7 @@
 import AccountSummary from "../components/AccountSummary";
-import Info from "../components/Info";
+import InfoBar from "../components/InfoBar";
+import Heading from "../components/Heading";
+
 import { ACCOUNT_DATA, CC_DATA } from "../utils/uiData";
 
 import styled from "styled-components";
@@ -7,10 +9,9 @@ import styled from "styled-components";
 const AllAccountsPage = () => {
   return (
     <Container>
-      <h1 className="section-title">Manage Accounts</h1>
-      <hr className="divider" />
+      <Heading title="Manage Accounts" />
 
-      <Info />
+      <InfoBar />
 
       {/* BANK ACCOUNTS ---- Checking, Savings and CD */}
       <div className="group-section">
@@ -54,22 +55,17 @@ const Container = styled.section`
     border-bottom: 1px solid rgba(232, 229, 229, 0.4);
     margin-right: 15px;
     margin-bottom: 10px;
-  }
-
-  .section-title {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .group-title {
     background: ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.activeText};
-    font-size: 14px;
-    font-weight: 300;
-    padding: 18px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     border-top-right-radius: ${({ theme }) => theme.borderRadius[1]};
     border-top-left-radius: ${({ theme }) => theme.borderRadius[1]};
+    padding: 18px;
   }
 
   .group-section {

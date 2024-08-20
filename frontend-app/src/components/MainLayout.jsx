@@ -17,22 +17,22 @@ const MainLayout = ({ children }) => {
   return (
     <ThemeProvider theme={themes}>
       <GlobalStyles />
-      <Container>
+      <Main>
         <div id="sidebar-container">
           <Sidebar />
         </div>
-        <main id="content">
+        <div id="content">
           <TopBar theme={theme} themeToggler={themeToggler} />
           <div>{children}</div>
-        </main>
-      </Container>
+        </div>
+      </Main>
     </ThemeProvider>
   );
 };
 
 export default MainLayout;
 
-const Container = styled.div`
+const Main = styled.main`
   height: 100%;
   padding: 3px 3px 3px 0;
   display: flex;
@@ -66,7 +66,7 @@ const Container = styled.div`
     max-width: 1040px;
     width: calc(100% - 15rem);
     overflow: auto;
-    background: ${({ theme }) => theme.palette.secondary};
+    background: ${({ theme }) => theme.palette.main};
     padding: 0 ${({ theme }) => theme.spacing(2)};
 
     ::-webkit-scrollbar {

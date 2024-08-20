@@ -5,33 +5,30 @@ export const getDesignToken = (mode) => ({
       ? {
           main: "#FFFFFF",
           // primary: "#edf0f0",
-          danger: "#f21616",
-          secondary: "#f0f5f5",
-          solid: "#11204f",
-          border: "#c9ced7",
+          danger: "#ff2e2e",
+          secondary: "#EEEEEE",
+          solid: "#201E43",
+          focus: "#0e0d20",
+          border: "#a1a0a085",
           activeText: "#fff",
           text: "#172546",
           altText: "#475569",
           scrollbar: "#8B8B8B",
-          link: "#20659d",
-          hover: "#f9f9f9",
-          boxShadow:
-            "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;",
+          link: "#1831a4",
         }
       : {
-          main: "#1E1E2C",
+          main: "#0d0d0d",
           // primary: "#313947",
-          danger: "#ef4343",
-          secondary: "#454a58",
-          solid: "#0a57ae",
-          border: "#585b5d",
+          danger: "#c63030",
+          secondary: "#464646a4",
+          solid: "#134B70",
+          focus: "#989898d2",
+          border: "#585858ca",
           text: "#E3E3E3",
           activeText: "#fff",
           altText: "#a6adb4",
           scrollbar: "#828181",
           link: "#51a3e6",
-          boxShadow:
-            "rgba(47, 47, 47, 0.5) 0px 1px 3px 0px, rgba(72, 73, 73, 0.15) 0px 0px 0px 1px;",
         }),
   },
 
@@ -49,7 +46,7 @@ export const getDesignToken = (mode) => ({
     },
   },
 
-  borderRadius: ["10px", "15px"],
+  borderRadius: ["4px", "6px"],
 
   spacing: [5, 10, 15, 20],
 });

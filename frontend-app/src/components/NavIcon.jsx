@@ -1,22 +1,22 @@
 import styled from "styled-components";
 
 const NavIcon = ({ children, themeToggler }) => {
-  return <Cover onClick={themeToggler}>{children}</Cover>;
+  return <Button onClick={themeToggler}>{children}</Button>;
 };
 
 export default NavIcon;
 
-const Cover = styled.button`
+const Button = styled.button`
   display: flex;
   align-items: center;
   padding: 8px;
-  border-radius: 25%;
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
   position: relative;
   cursor: pointer;
   border: 1px solid transparent;
   color: ${({ theme }) => theme.palette.text};
   background: ${({ theme }) => theme.palette.main};
-  box-shadow: ${({ theme }) => theme.palette.boxShadow};
+  border: 1px solid ${({ theme }) => theme.palette.border};
 
   :active {
     background: ${({ theme }) => theme.palette.secondary};
@@ -26,6 +26,5 @@ const Cover = styled.button`
 
   :hover {
     border: 1px solid ${({ theme }) => theme.palette.border};
-    /* box-shadow: none; */
   }
 `;
