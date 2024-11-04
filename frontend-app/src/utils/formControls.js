@@ -131,4 +131,15 @@ export const SIGNUP_CONTROLS = [
       },
     ],
   },
+  {
+    title: "Upload Valid ID",
+    attributes: [
+      {
+        id: 20,
+        type: "file",
+        name: "file",
+        placeholder: "Valid ID",
+      },
+    ],
+  },
 ];

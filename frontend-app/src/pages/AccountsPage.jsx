@@ -22,7 +22,7 @@ const Accounts = () => {
             </li>
             <li>
               <NavLink to="open-new" className="tab-link">
-                Open Account
+                Open New Account
               </NavLink>
             </li>
           </ul>
@@ -55,19 +55,16 @@ const MainContent = styled.div`
 
     .tab-link {
       width: fit-content;
-      height: 30px;
+      height: 35px;
       border-radius: 20px;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
-      border: 1px solid transparent;
-      border: 1px solid ${({ theme }) => theme.palette.border};
       background: ${({ theme }) => theme.palette.main};
       color: ${({ theme }) => theme.palette.altText};
-
       cursor: pointer;
-      font-size: 12px;
-      font-weight: 400;
+      font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+      font-weight: ${({ theme }) => theme.typography.main.fontSize[0]};
       padding: 15px;
     }
 

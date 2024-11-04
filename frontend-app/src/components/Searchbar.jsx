@@ -39,15 +39,15 @@ const Form = styled.form`
   align-items: center;
   padding: 0 ${({ theme }) => theme.spacing(1)};
   background: ${({ theme }) => theme.palette.main};
+  border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[0]};
   margin-top: ${({ theme }) => theme.spacing(0)};
-  border: 1px solid ${({ theme }) => theme.palette.border};
   margin-left: 4rem;
 
   :focus-within {
-    background: ${({ theme }) => theme.palette.main};
-    border: 1px solid ${({ theme }) => theme.palette.focus};
+    background: ${({ theme }) => theme.palette.focus};
     border-radius: ${({ theme }) => theme.borderRadius[0]};
+    border: 1px solid transparent;
   }
 
   .icon-wrap {

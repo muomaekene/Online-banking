@@ -51,6 +51,7 @@ export default Select;
 
 const Container = styled.div`
   position: relative;
+  width: 100%;
 
   .select-header {
     z-index: 666;
@@ -72,7 +73,7 @@ const Container = styled.div`
 
   .select-title {
     font-size: inherit;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: capitalize;
   }
 

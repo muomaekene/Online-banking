@@ -30,9 +30,11 @@ const AccountSummary = ({ item }) => {
 
       {open && (
         <>
-          <div className="transactions-table">Transactions table goes here</div>
+          <div className="transactions-table">
+            No transactions. Send money now
+          </div>
           <p className="more-transactions">
-            <Link to="">See all transactions</Link>
+            <Link to="/transactions">See all transactions</Link>
           </p>
         </>
       )}
@@ -43,9 +45,9 @@ const AccountSummary = ({ item }) => {
 export default AccountSummary;
 
 const Container = styled.section`
-  background: ${({ theme }) => theme.palette.secondary};
-  border-bottom: 1px solid ${({ theme }) => theme.palette.border};
+  background: ${({ theme }) => theme.palette.main};
   position: relative;
+  margin-bottom: 5px;
 
   .account-info {
     display: flex;
@@ -54,8 +56,8 @@ const Container = styled.section`
   }
 
   .account-type {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     text-transform: capitalize;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
@@ -67,21 +69,23 @@ const Container = styled.section`
   }
 
   .account-bal {
-    font-size: 13px;
-    font-weight: 400;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    color: ${({ theme }) => theme.palette.text};
   }
 
   .dropdown-btn {
     cursor: pointer;
     border: none;
     background: none;
-    font-size: 12px;
-    color: ${({ theme }) => theme.palette.text};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    color: ${({ theme }) => theme.palette.altText};
     margin-left: 20px;
   }
 
   .transactions-table {
-    background: ${({ theme }) => theme.palette.secondary};
+    background: ${({ theme }) => theme.palette.focus};
     color: ${({ theme }) => theme.palette.text};
     border-top: 2px solid ${({ theme }) => theme.palette.border};
     border-bottom: 2px solid ${({ theme }) => theme.palette.border};
@@ -92,12 +96,13 @@ const Container = styled.section`
     padding-left: 15px;
     padding-top: 10px;
     margin-top: 5px;
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     z-index: 666;
   }
 
   .more-transactions {
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     padding-left: 15px;
     padding-top: 10px;
 

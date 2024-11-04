@@ -8,10 +8,11 @@ import styled from "styled-components";
 const Sidebar = () => {
   return (
     <Container>
-      <div className="top-sidebar">
+      <div className="sidebar-header">
         <Logo />
       </div>
-      <div className="bottom-sidebar">
+
+      <div className="sidebar-navs">
         <ul className="navs">
           {navLinks.map(({ key, name, icon: Icon, to }) => (
             <li className="nav-item" key={key}>
@@ -33,15 +34,14 @@ const Container = styled.aside`
   height: 100%;
   width: 100%;
   font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   display: flex;
   flex-direction: column;
   padding: 25px 10px;
   text-transform: capitalize;
   color: ${({ theme }) => theme.palette.altText};
-  border-right: 1px solid ${({ theme }) => theme.palette.border};
 
-  .top-sidebar {
+  .sidebar-header {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -49,7 +49,7 @@ const Container = styled.aside`
     position: relative;
   }
 
-  .bottom-sidebar {
+  .sidebar-navs {
     margin-bottom: 40px;
   }
 
@@ -67,7 +67,7 @@ const Container = styled.aside`
         background: ${({ theme }) => theme.palette.solid};
         color: ${({ theme }) => theme.palette.activeText};
         border-radius: ${({ theme }) => theme.borderRadius[1]};
-        font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+        font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
       }
     }
     .nav-item:nth-child(7) {

@@ -87,7 +87,6 @@ const Form = styled.form`
   width: 350px;
   height: 20rem;
   padding: 25px 35px;
-  border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   position: absolute;

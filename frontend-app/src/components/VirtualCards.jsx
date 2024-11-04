@@ -15,7 +15,7 @@ const VirtualCards = () => {
       </div>
 
       <button className="card-btn">
-        <span>+</span>Create New Card
+        <span>+</span>Add New Card
       </button>
     </Section>
   );
@@ -41,8 +41,12 @@ const Section = styled.section`
     font-weight: 400;
     cursor: pointer;
 
+    :hover {
+      border: 1px solid ${({ theme }) => theme.palette.border};
+    }
+
     :active {
-      background: ${({ theme }) => theme.palette.secondary};
+      background: ${({ theme }) => theme.palette.focus};
       background-size: 100%;
       border: none;
     }

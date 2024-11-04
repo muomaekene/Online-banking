@@ -1,18 +1,14 @@
 import CustomBtn from "./CustomBtn";
 import Select from "./Select";
 import TransferInput from "./TransferInput";
-
-import Heading from "../components/Heading";
-import Paragraph from "../components/Paragraph";
+import SectionHeader from "./SectionHeader";
 
 import styled from "styled-components";
 
 const InternalTransfer = () => {
   return (
-    <Container>
-      <Heading>Internal Transfers</Heading>
-      <Paragraph>Manage money between your FCU accounts</Paragraph>
-
+    <Section>
+      <SectionHeader title="Internal transfer" />
       <div className="form">
         <Select
           placeholder="Transfer From"
@@ -39,20 +35,23 @@ const InternalTransfer = () => {
 
         <CustomBtn>Send Transfer</CustomBtn>
       </div>
-    </Container>
+    </Section>
   );
 };
 
 export default InternalTransfer;
 
-const Container = styled.section`
-  width: 18rem;
+const Section = styled.section`
+  width: 20rem;
+  background: ${({ theme }) => theme.palette.main};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
+  border: 1px solid ${({ theme }) => theme.palette.border};
 
   .form {
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    padding: 0 20px 20px 20px;
   }
 
   .check-check {

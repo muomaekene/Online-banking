@@ -42,6 +42,7 @@ const Container = styled(Link)`
   height: 100%;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   border: 1px solid ${({ theme }) => theme.palette.border};
+  background: ${({ theme }) => theme.palette.main};
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -49,8 +50,13 @@ const Container = styled(Link)`
   position: relative;
 
   :hover {
-    background: ${({ theme }) => theme.palette.secondary};
+    border: 1px solid ${({ theme }) => theme.palette.border};
+  }
+
+  :active {
+    background: ${({ theme }) => theme.palette.focus};
     border: 1px solid transparent;
+    background-size: 100%;
   }
 
   .account-icon {
@@ -61,20 +67,21 @@ const Container = styled(Link)`
 
   .account-type {
     color: ${({ theme }) => theme.palette.link};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     text-transform: capitalize;
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.text};
-    margin: 4px 0;
+    margin: 2px 0;
   }
 
   .desc {
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     position: relative;
 
     span {

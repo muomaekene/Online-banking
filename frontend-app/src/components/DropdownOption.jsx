@@ -47,11 +47,13 @@ const Container = styled.li`
     display: flex;
     flex-direction: column;
     margin-bottom: 4px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
   }
 
   .message {
     color: ${({ theme }) => theme.palette.altText};
     font-size: 11px;
+    font-weight: 400;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -59,7 +61,7 @@ const Container = styled.li`
 
   .title {
     white-space: nowrap;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 5px;
   }
 

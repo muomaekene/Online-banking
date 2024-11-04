@@ -52,13 +52,9 @@ const Container = styled.div`
   position: relative;
   z-index: 667;
 
-  .menu-trigger {
-    margin-left: ${({ theme }) => theme.spacing(2)};
-  }
-
   .dropdown-menu {
     position: absolute;
-    left: -86px;
+    left: -100px;
     margin-top: 46px;
     padding-bottom: ${({ theme }) => theme.spacing(1)};
     background: ${({ theme }) => theme.palette.main};
@@ -83,7 +79,6 @@ const Container = styled.div`
   .menu-header {
     padding: ${({ theme }) => theme.spacing(1)};
     ${({ theme }) => theme.spacing(2)};
-
     background: ${({ theme }) => theme.palette.main};
     border-top-right-radius: ${({ theme }) => theme.borderRadius[0]};
     border-top-left-radius: ${({ theme }) => theme.borderRadius[0]};
@@ -95,12 +90,12 @@ const Container = styled.div`
   }
 
   .menu-name {
-    font-size: 14px;
-    font-weight: 500;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 
   .menu-link {
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     text-decoration: underline;
 
     :hover {
@@ -110,7 +105,7 @@ const Container = styled.div`
 
   .user-id {
     color: ${({ theme }) => theme.palette.altText};
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
   }
 
   .menu-content {

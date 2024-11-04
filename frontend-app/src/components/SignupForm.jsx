@@ -89,7 +89,7 @@ const SignupForm = () => {
         </ul>
       </fieldset>
       <div className="btn-cover">
-        <CustomBtn>Sign up</CustomBtn>
+        <CustomBtn>Create Profile</CustomBtn>
       </div>
     </Form>
   );
@@ -98,7 +98,6 @@ const SignupForm = () => {
 export default SignupForm;
 
 const Form = styled.form`
-  border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
   padding: 50px 40px;
   width: 65%;
@@ -127,11 +126,10 @@ const Form = styled.form`
     background: ${({ theme }) => theme.palette.primary};
     color: ${({ theme }) => theme.palette.text};
     border-radius: 2px;
-    padding: 12px 15px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 60px;
+    gap: 5px;
   }
 
   .select-item {

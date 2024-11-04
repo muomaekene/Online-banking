@@ -9,6 +9,8 @@ export default CustomBtn;
 const Button = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
+  gap: 5px;
   width: 100%;
   padding: 14px 0;
   border-radius: ${({ theme }) => theme.borderRadius[0]};

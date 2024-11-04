@@ -51,11 +51,11 @@ export default OverviewPage;
 const Container = styled.div`
   display: flex;
   flex-direction: row;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   justify-content: space-between;
 
   .flex-left {
-    margin-right: 15px;
+    margin-right: ${({ theme }) => theme.spacing(2)};
     width: 67%;
   }
 

@@ -1,7 +1,6 @@
 import {
   CreditCardIcon,
   ArrowsRightLeftIcon,
-  BanknotesIcon,
   ArrowPathIcon,
   WrenchIcon,
   UserIcon,
@@ -38,12 +37,7 @@ export const navLinks = [
     icon: ArrowsRightLeftIcon,
     to: "/transfers",
   },
-  {
-    key: "deposit",
-    name: "Deposit checks",
-    icon: BanknotesIcon,
-    to: "/deposit",
-  },
+
   {
     key: "transactions",
     name: "Transactions",
@@ -207,33 +201,33 @@ export const COLUMNS = [
   },
 ];
 
-export const CHOOSE_ACCT = [
-  {
-    id: 1,
-    name: "Please choose an account",
-    value: "",
-  },
-  {
-    id: 2,
-    name: "Savings account",
-    value: "savings",
-  },
-  {
-    id: 3,
-    name: "Checking account",
-    value: "checking",
-  },
-  {
-    id: 4,
-    name: "Individual retirement account",
-    value: "retirement",
-  },
-  {
-    id: 5,
-    name: "Money market account",
-    value: "money-market",
-  },
-];
+// export const CHOOSE_ACCT = [
+//   {
+//     id: 1,
+//     name: "Please choose an account",
+//     value: "",
+//   },
+//   {
+//     id: 2,
+//     name: "SmartPlus Savings",
+//     value: "savings",
+//   },
+//   {
+//     id: 3,
+//     name: "SmartPlus Checking",
+//     value: "checking",
+//   },
+//   {
+//     id: 4,
+//     name: "Individual retirement account",
+//     value: "retirement",
+//   },
+//   {
+//     id: 5,
+//     name: "Money market account",
+//     value: "money-market",
+//   },
+// ];
 
 export const FISCAL_YEAR = [
   {
@@ -263,28 +257,28 @@ export const FISCAL_YEAR = [
   },
 ];
 
-export const ACCOUNT_TYPE = [
-  {
-    id: 25,
-    name: "Transfer from",
-    value: "",
-  },
-  {
-    id: 26,
-    name: "Savings",
-    value: "savings",
-  },
-  {
-    id: 27,
-    name: "Checking",
-    value: "checking",
-  },
-  {
-    id: 28,
-    name: "Credit card",
-    value: "credit-card",
-  },
-];
+// export const ACCOUNT_TYPE = [
+//   {
+//     id: 25,
+//     name: "Transfer from",
+//     value: "",
+//   },
+//   {
+//     id: 26,
+//     name: "Savings",
+//     value: "savings",
+//   },
+//   {
+//     id: 27,
+//     name: "Checking",
+//     value: "checking",
+//   },
+//   {
+//     id: 28,
+//     name: "Credit card",
+//     value: "credit-card",
+//   },
+// ];
 
 export const profileDropdown = [
   {
@@ -352,20 +346,162 @@ export const messagesDropdown = [
 ];
 
 export const ACCOUNT_DATA = [
-  { type: "Classic Checking Account", number: "9548", amount: "467,720.83" },
+  { type: "SmartPlus Checking Account", number: "9548", amount: "467,720.83" },
   {
-    type: "Individual Retirement Account (IRA)",
+    type: "Fixed Term CD Individual Retirement Account",
     number: "9876",
     amount: "35.81",
   },
-  { type: "Classic Savings Account", number: "9792", amount: "8,450.10" },
+  { type: "SmartPlus Savings Account", number: "9792", amount: "8,450.10" },
 ];
 
 export const CC_DATA = [
   {
-    type: "Customized Cash Rewards Visa Signature",
+    type: "Customized Cash Rewards Visa Card",
     number: "9548",
     amount: "9,250.00",
   },
-  { type: "Venture Rewards Visa Gold", number: "5632", amount: "40,690.06" },
+  { type: "Venture Rewards Visa Card", number: "5632", amount: "40,690.06" },
+];
+
+export const YEARS = [2024, 2023, 2022, 2021, 2020];
+
+export const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export const ACCOUNTS_OWNED = [
+  "SmartPlus Savings (...9792)",
+  "SmartPlus Checking (...9792)",
+  "Venture Rewards Visa Card (...5632)",
+  "Customized Cash Rewards Visa Card (...5376)",
+];
+
+export const ACCOUNTS_AVAILABLE = [
+  {
+    id: 10,
+    name: "Smart Savings",
+    category: "savings",
+    description: "This smart option covers all your savings essentials.",
+    category: "savings",
+    features: [
+      "It works great as a secondary savings account",
+      "You'll enjoy a base rate of interest with no nonsense",
+    ],
+  },
+  {
+    id: 11,
+    name: "SmartPlus Savings",
+    category: "savings",
+    description: "It’s a smart savings account that earns you interest.",
+    features: [
+      "7.00% APY on your first $500 in balances",
+      "You can use this account to establish membership (with a $5 deposit)",
+    ],
+  },
+  {
+    id: 12,
+    name: "Smart Checking",
+    category: "checking",
+    description: "This hassle-free checking account covers all your basics.",
+    features: [
+      "This account is great to use as a secondary checking account",
+      "There are no monthly fees, ever",
+    ],
+  },
+  {
+    id: 13,
+    name: "SmartPlus Checking",
+    category: "checking",
+    description: "This smart option covers all your savings essentials.",
+    features: [
+      "5.00% APY on your first $5,000 in balances",
+      "Enjoy speedy and free ATM fee refunds nationwide",
+    ],
+  },
+  {
+    id: 14,
+    name: "Fixed Certificate",
+    category: "others",
+    description: "Fixed CD’s offer you a reliable way to secure savings..",
+    features: [
+      "Higher interest rate paid without early withdrawal fees",
+      "Money stays in the account for a specific amount of time before accessing",
+    ],
+  },
+  {
+    id: 15,
+    name: "Bump Certificates",
+    category: "others",
+    description: "Bump CDs offer you the flexibility to maximize savings.",
+    features: [
+      "We offer a variety of term options to best support your savings goals",
+      "Access a one-time rate increase during the term of your Certificate",
+    ],
+  },
+  {
+    id: 16,
+    name: "Fixed Term CD IRA",
+    category: "others",
+    description:
+      "This Certificate of Deposit helps you manage your retirement savings.",
+    features: [
+      "It works great as a secondary savings account",
+      "You'll enjoy a base rate of interest with no nonsense",
+    ],
+  },
+  {
+    id: 17,
+    name: "SmartPlus Investment IRA",
+    category: "others",
+    description:
+      "If you have saved up money for your retirement, you could invest it.",
+    features: [
+      "It works great as a secondary savings account",
+      "You'll enjoy a base rate of interest with no nonsense",
+    ],
+  },
+];
+
+export const btnList = [
+  { id: "all", name: "All" },
+  { id: "savings", name: "Savings" },
+  { id: "checking", name: "Checking" },
+  { id: "others", name: "IRAs & CDs" },
+];
+
+export const TRANSFER_DATA = [
+  {
+    title: "Make An Internal Transfer",
+    description: "Manage money between your U.S. bank accounts",
+    action: "Transfer Money",
+  },
+  {
+    title: "Make An External Transfer",
+    description:
+      "Transfer money between your U.S. bank accounts and external accounts",
+    action: "Transfer Money",
+  },
+  {
+    title: "Send A Wire Transfer",
+    description:
+      "Transfer large sums of money to another person anywhere in the world",
+    action: "Send A Wire",
+  },
+  {
+    title: "Manage & Pay Bills",
+    description: "Pay your bills and always stay on track with your spending",
+    action: "Pay Bills",
+  },
 ];

@@ -45,6 +45,7 @@ const TopBar = ({ theme, themeToggler }) => {
           }
           data={messagesDropdown}
         />
+
         <Dropdown
           name="Notifications"
           icon={<Cog6ToothIcon width="15" />}
@@ -55,6 +56,7 @@ const TopBar = ({ theme, themeToggler }) => {
           }
           data={notificationsDropdown}
         />
+
         <Dropdown
           name="Robbin Eckert"
           userID="@user_1039"
@@ -83,5 +85,6 @@ const Container = styled.div`
     width: 30%;
     display: flex;
     align-items: center;
+    gap: ${({ theme }) => theme.spacing(1)};
   }
 `;

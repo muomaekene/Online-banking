@@ -1,4 +1,5 @@
 import AccountSummary from "../components/AccountSummary";
+import Subheading from "../components/Subheading";
 import InfoBar from "../components/InfoBar";
 import Heading from "../components/Heading";
 
@@ -9,32 +10,33 @@ import styled from "styled-components";
 const AllAccountsPage = () => {
   return (
     <Container>
-      <Heading title="Manage Accounts" />
+      <Heading>Manage Accounts</Heading>
+      <Subheading>
+        Interact with your accounts and view recent transactions
+      </Subheading>
 
       <InfoBar />
 
-      {/* BANK ACCOUNTS ---- Checking, Savings and CD */}
-      <div className="group-section">
+      <section className="group-section">
         <h2 className="group-title">Checking, Savings & CDs</h2>
         {ACCOUNT_DATA.map((item) => (
           <AccountSummary item={item} key={item.number} />
         ))}
-      </div>
+      </section>
 
-      {/* CREDIT CARDS */}
-      <div className="group-section">
+      <section className="group-section">
         <h2 className="group-title">Credit Cards</h2>
         {CC_DATA.map((item) => (
           <AccountSummary item={item} key={item.number} />
         ))}
-      </div>
+      </section>
     </Container>
   );
 };
 
 export default AllAccountsPage;
 
-const Container = styled.section`
+const Container = styled.div`
   width: 67%;
   height: 100%;
   overflow-x: hidden !important;

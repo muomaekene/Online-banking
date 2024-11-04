@@ -17,9 +17,10 @@ const TransferForm = () => {
       <Select
         placeholder="Select account"
         options={[
-          "Classic Savings (...9792)",
-          "Venture Rewards Visa (...5632)",
-          "Classic Checking (...9548)",
+          "SmartPlus Savings (...9792)",
+          "SmartPlus Checking (...9548)",
+          "Venture Rewards Visa Card (...5632)",
+          "Customized Cash Rewards Visa Card (...5376)",
         ]}
       />
 

@@ -13,18 +13,17 @@ const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   position: relative;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid ${({ theme }) => theme.palette.border};
   color: ${({ theme }) => theme.palette.text};
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
-
-  :active {
-    background: ${({ theme }) => theme.palette.secondary};
-    border: 1px solid transparent;
-    background-size: 100%;
-  }
 
   :hover {
     border: 1px solid ${({ theme }) => theme.palette.border};
+  }
+
+  :active {
+    background: ${({ theme }) => theme.palette.focus};
+    background-size: 100%;
+    border: 1px solid transparent;
   }
 `;

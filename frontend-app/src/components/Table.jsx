@@ -49,12 +49,16 @@ const Container = styled.table`
 
   thead {
     tr {
-      text-align: left;
-      text-transform: uppercase;
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+      th {
+        text-align: left;
+        text-transform: uppercase;
+        font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+        font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+        color: ${({ theme }) => theme.palette.altText};
+        padding: 10px 20px;
+      }
     }
   }
-  th,
   td {
     padding: 10px 20px;
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
@@ -66,7 +70,7 @@ const Container = styled.table`
       color: ${({ theme }) => theme.palette.text};
 
       :nth-of-type(odd) {
-        background-color: ${({ theme }) => theme.palette.secondary};
+        background-color: ${({ theme }) => theme.palette.focus};
       }
     }
   }

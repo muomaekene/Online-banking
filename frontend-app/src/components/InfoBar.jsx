@@ -1,4 +1,4 @@
-import { ExclamationCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { ExclamationCircleIcon } from "@heroicons/react/24/outline";
 
 import styled from "styled-components";
 
@@ -7,10 +7,11 @@ const Info = () => {
     <Container>
       <div className="left">
         <ExclamationCircleIcon className="icon" />
-        <p>Your accounts have been restricted!</p>
+        <p>
+          Your accounts have been restricted, visit our nearest branch to get
+          this resolved.
+        </p>
       </div>
-
-      <XMarkIcon className="icon" />
     </Container>
   );
 };

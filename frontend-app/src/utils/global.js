@@ -6,6 +6,10 @@ export const GlobalStyles = createGlobalStyle`
     background: ${({ theme }) => theme.palette.main};
     color: ${({ theme }) => theme.palette.text};
     height: 100%;
+
+    @media only screen and (max-width: 900px) {
+      width: 940px;
+    }
   } 
 
   #root {

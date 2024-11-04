@@ -53,9 +53,9 @@ const LineChart = () => {
           ticks: {
             color: "#868686",
             font: {
-              weight: 500,
+              weight: 400,
               size: "12px",
-              family: "'Figtree', sans-serif",
+              family: "'Reddit Sans', sans-serif",
             },
           },
         },
@@ -63,9 +63,9 @@ const LineChart = () => {
           ticks: {
             color: "#868686",
             font: {
-              weight: 500,
+              weight: 400,
               size: "12px",
-              family: "'Figtree', sans-serif",
+              family: "'Reddit Sans', sans-serif",
             },
           },
         },
@@ -76,9 +76,9 @@ const LineChart = () => {
           position: "right",
           labels: {
             font: {
-              weight: 500,
+              weight: 400,
               size: "12px",
-              family: "'Figtree', sans-serif",
+              family: "'Reddit Sans', sans-serif",
             },
           },
         },
