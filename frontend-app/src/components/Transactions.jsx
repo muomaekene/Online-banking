@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 import SectionHeader from "./SectionHeader";
-import Table from "./Table";
+import TableMain from "./TableMain";
 
 import styled from "styled-components";
 
@@ -15,7 +15,7 @@ const Transactions = () => {
           <ChevronRightIcon className="icon" />
         </Link>
       </SectionHeader>
-      <Table />
+      <TableMain />
     </Section>
   );
 };

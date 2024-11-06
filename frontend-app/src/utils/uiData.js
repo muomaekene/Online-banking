@@ -345,25 +345,6 @@ export const messagesDropdown = [
   },
 ];
 
-export const ACCOUNT_DATA = [
-  { type: "SmartPlus Checking Account", number: "9548", amount: "467,720.83" },
-  {
-    type: "Fixed Term CD Individual Retirement Account",
-    number: "9876",
-    amount: "35.81",
-  },
-  { type: "SmartPlus Savings Account", number: "9792", amount: "8,450.10" },
-];
-
-export const CC_DATA = [
-  {
-    type: "Customized Cash Rewards Visa Card",
-    number: "9548",
-    amount: "9,250.00",
-  },
-  { type: "Venture Rewards Visa Card", number: "5632", amount: "40,690.06" },
-];
-
 export const YEARS = [2024, 2023, 2022, 2021, 2020];
 
 export const MONTHS = [

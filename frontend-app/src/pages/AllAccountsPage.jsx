@@ -3,7 +3,7 @@ import Subheading from "../components/Subheading";
 import InfoBar from "../components/InfoBar";
 import Heading from "../components/Heading";
 
-import { ACCOUNT_DATA, CC_DATA } from "../utils/uiData";
+import { ACCOUNT_SUMMARY, CREDIT_CARDS } from "../utils/COMPONENT_DATA";
 
 import styled from "styled-components";
 
@@ -19,15 +19,15 @@ const AllAccountsPage = () => {
 
       <section className="group-section">
         <h2 className="group-title">Checking, Savings & CDs</h2>
-        {ACCOUNT_DATA.map((item) => (
-          <AccountSummary item={item} key={item.number} />
+        {ACCOUNT_SUMMARY.map((item) => (
+          <AccountSummary item={item} key={item.accountId} />
         ))}
       </section>
 
       <section className="group-section">
         <h2 className="group-title">Credit Cards</h2>
-        {CC_DATA.map((item) => (
-          <AccountSummary item={item} key={item.number} />
+        {CREDIT_CARDS.map((item) => (
+          <AccountSummary item={item} key={item.accountId} />
         ))}
       </section>
     </Container>

@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import TableSummary from "../components/TableSummary";
+
 import styled from "styled-components";
 
-const AccountSummary = ({ item }) => {
+const AccountSummary = ({
+  item: { account, accountNo, balance, transactions },
+}) => {
   const [open, setOpen] = useState(false);
   const [boxHeight, setBoxHeight] = useState(4);
 
   useEffect(() => {
     if (open) {
-      setBoxHeight(16);
+      setBoxHeight(18);
     } else {
       setBoxHeight(5);
     }
@@ -19,9 +23,9 @@ const AccountSummary = ({ item }) => {
     <Container style={{ height: `${boxHeight}rem` }}>
       <div className="account-info">
         <p className="account-type">
-          {item.type} | {item.number}
+          {account} | {accountNo}...
         </p>
-        <p className="account-bal">${item.amount}</p>
+        <p className="account-bal">${balance}</p>
       </div>
 
       <button className="dropdown-btn" onClick={() => setOpen(!open)}>
@@ -31,7 +35,7 @@ const AccountSummary = ({ item }) => {
       {open && (
         <>
           <div className="transactions-table">
-            No transactions. Send money now
+            <TableSummary transactions={transactions} />
           </div>
           <p className="more-transactions">
             <Link to="/transactions">See all transactions</Link>
@@ -64,7 +68,7 @@ const Container = styled.section`
 
     :hover {
       text-decoration: underline;
-      text-decoration-thickness: 1px;
+      text-decoration-thickness: 0.5px;
     }
   }
 
@@ -85,16 +89,13 @@ const Container = styled.section`
   }
 
   .transactions-table {
-    background: ${({ theme }) => theme.palette.focus};
     color: ${({ theme }) => theme.palette.text};
-    border-top: 2px solid ${({ theme }) => theme.palette.border};
-    border-bottom: 2px solid ${({ theme }) => theme.palette.border};
+    border-top: 1px solid ${({ theme }) => theme.palette.border};
+    border-bottom: 1px solid ${({ theme }) => theme.palette.border};
     left: 0;
     top: 60px;
     width: 100%;
-    height: 9.5rem;
-    padding-left: 15px;
-    padding-top: 10px;
+    height: 11.2rem;
     margin-top: 5px;
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
@@ -103,8 +104,7 @@ const Container = styled.section`
 
   .more-transactions {
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
-    padding-left: 15px;
-    padding-top: 10px;
+    padding: 12px 15px;
 
     a {
       text-decoration: underline;
