@@ -415,7 +415,7 @@ export const ACCOUNTS_AVAILABLE = [
     id: 14,
     name: "Fixed Certificate",
     category: "others",
-    description: "Fixed CD’s offer you a reliable way to secure savings..",
+    description: "Fixed CD’s offers you a reliable way to secure your savings.",
     features: [
       "Higher interest rate paid without early withdrawal fees",
       "Money stays in the account for a specific amount of time before accessing",
@@ -425,7 +425,7 @@ export const ACCOUNTS_AVAILABLE = [
     id: 15,
     name: "Bump Certificates",
     category: "others",
-    description: "Bump CDs offer you the flexibility to maximize savings.",
+    description: "Bump CDs offers you the flexibility to maximize savings.",
     features: [
       "We offer a variety of term options to best support your savings goals",
       "Access a one-time rate increase during the term of your Certificate",
@@ -438,8 +438,8 @@ export const ACCOUNTS_AVAILABLE = [
     description:
       "This Certificate of Deposit helps you manage your retirement savings.",
     features: [
-      "It works great as a secondary savings account",
-      "You'll enjoy a base rate of interest with no nonsense",
+      "Maximize the growth of your money, get higher yields",
+      "Enjoy a higher rate of interest than regular savings",
     ],
   },
   {
@@ -447,10 +447,10 @@ export const ACCOUNTS_AVAILABLE = [
     name: "SmartPlus Investment IRA",
     category: "others",
     description:
-      "If you have saved up money for your retirement, you could invest it.",
+      "This is the account for you if you're looking to save up money for your retirement and invest.",
     features: [
-      "It works great as a secondary savings account",
-      "You'll enjoy a base rate of interest with no nonsense",
+      "Save money and benefit from paying lower in taxes",
+      "You'll enjoy a higher rate of interest compared to a regular savings",
     ],
   },
 ];

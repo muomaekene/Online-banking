@@ -25,6 +25,7 @@ export default NewAccountCard;
 const Section = styled.section`
   font-size: 13px;
   background: ${({ theme }) => theme.palette.main};
+  border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   padding: 20px;
   width: 100%;
