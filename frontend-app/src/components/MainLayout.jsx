@@ -34,7 +34,6 @@ export default MainLayout;
 
 const Main = styled.main`
   height: 100%;
-  padding: 3px 3px 3px 0;
   display: flex;
   justify-content: center;
 

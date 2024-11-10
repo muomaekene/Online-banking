@@ -1,4 +1,5 @@
-import { ArrowForwardIos } from "@mui/icons-material";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
+
 import styled from "styled-components";
 
 const TransferCard = ({ title, desc, action }) => {
@@ -13,7 +14,7 @@ const TransferCard = ({ title, desc, action }) => {
       <div className="action">
         <a href="#">
           {action}
-          <ArrowForwardIos style={{ fontSize: "13px", marginLeft: "3px" }} />
+          <ChevronRightIcon width="15px" />
         </a>
       </div>
     </Container>

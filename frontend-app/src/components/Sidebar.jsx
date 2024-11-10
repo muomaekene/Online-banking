@@ -33,7 +33,7 @@ export default Sidebar;
 const Container = styled.aside`
   height: 100%;
   width: 100%;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   display: flex;
   flex-direction: column;

@@ -61,7 +61,7 @@ const Container = styled.li`
 
   .title {
     white-space: nowrap;
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 5px;
   }
 

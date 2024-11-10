@@ -68,12 +68,12 @@ const Container = styled(Link)`
   .account-type {
     color: ${({ theme }) => theme.palette.link};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     text-transform: capitalize;
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.text};
     margin: 2px 0;

@@ -63,8 +63,8 @@ const MainContent = styled.div`
       background: ${({ theme }) => theme.palette.main};
       color: ${({ theme }) => theme.palette.altText};
       cursor: pointer;
-      font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
-      font-weight: ${({ theme }) => theme.typography.main.fontSize[0]};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
       padding: 15px;
     }
 

@@ -64,7 +64,7 @@ const Container = styled.div`
     background: ${({ theme }) => theme.palette.main};
     color: ${({ theme }) => theme.palette.text};
     border: 1px solid ${({ theme }) => theme.palette.border};
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -85,7 +85,7 @@ const Container = styled.div`
     width: 100%;
     list-style-type: none;
     padding: 8px 0 5px 0;
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: 500;
     margin-top: 5px;
     z-index: 667;

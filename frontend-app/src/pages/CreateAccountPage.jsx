@@ -85,7 +85,6 @@ const Container = styled.section`
     display: flex;
     gap: 5px;
     margin-bottom: 15px;
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     list-style-type: none;
 
     button {
@@ -95,6 +94,7 @@ const Container = styled.section`
       border: none;
       color: ${({ theme }) => theme.palette.altText};
       font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
       cursor: pointer;
     }
 

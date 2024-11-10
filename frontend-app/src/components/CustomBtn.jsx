@@ -10,9 +10,8 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 5px;
   width: 100%;
-  padding: 14px 0;
+  height: 3rem;
   border-radius: ${({ theme }) => theme.borderRadius[0]};
   border: none;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};

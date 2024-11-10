@@ -29,8 +29,8 @@ const Wrap = styled.div`
   span {
     position: absolute;
     left: 15px;
-    font-weight: 500;
-    font-size: 13px;
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     color: ${({ theme }) => theme.palette.altText};
   }
 
@@ -42,8 +42,8 @@ const Wrap = styled.div`
     padding: 0 30px;
     background: none;
     font-family: inherit;
-    font-size: 12px;
-    font-weight: 300;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.text};
     border: 1px solid transparent;
 

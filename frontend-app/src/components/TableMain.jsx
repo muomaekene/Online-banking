@@ -37,7 +37,7 @@ const Table = styled.table`
       th {
         text-align: left;
         text-transform: uppercase;
-        font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+        font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
         font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
         color: ${({ theme }) => theme.palette.altText};
         padding: 10px 20px;

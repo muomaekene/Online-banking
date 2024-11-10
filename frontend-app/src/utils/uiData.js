@@ -377,7 +377,7 @@ export const ACCOUNTS_AVAILABLE = [
     description: "This smart option covers all your savings essentials.",
     category: "savings",
     features: [
-      "It works great as a secondary savings account",
+      "This account works great as a secondary savings account",
       "You'll enjoy a base rate of interest with no nonsense",
     ],
   },
@@ -387,7 +387,7 @@ export const ACCOUNTS_AVAILABLE = [
     category: "savings",
     description: "It’s a smart savings account that earns you interest.",
     features: [
-      "7.00% APY on your first $500 in balances",
+      "Get a 7.00% APY on your first $500 in balances",
       "You can use this account to establish membership (with a $5 deposit)",
     ],
   },
@@ -407,8 +407,8 @@ export const ACCOUNTS_AVAILABLE = [
     category: "checking",
     description: "This smart option covers all your savings essentials.",
     features: [
-      "5.00% APY on your first $5,000 in balances",
-      "Enjoy speedy and free ATM fee refunds nationwide",
+      "Get a 5.00% APY on your first $5,000 in balances",
+      "Enjoy speedy, assured and free ATM fee refunds nationwide",
     ],
   },
   {
@@ -465,13 +465,13 @@ export const btnList = [
 export const TRANSFER_DATA = [
   {
     title: "Make An Internal Transfer",
-    description: "Manage money between your U.S. bank accounts",
+    description: "Manage money between all your Frontier bank accounts",
     action: "Transfer Money",
   },
   {
     title: "Make An External Transfer",
     description:
-      "Transfer money between your U.S. bank accounts and external accounts",
+      "Transfer money between your Frontier bank accounts and external accounts",
     action: "Transfer Money",
   },
   {

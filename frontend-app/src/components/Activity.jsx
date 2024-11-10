@@ -8,12 +8,13 @@ import {
 } from "../utils/COMPONENT_DATA";
 
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Activity = () => {
   return (
     <Container>
       <div className="header">
-        <h5>Activity</h5>
+        <h5>Transfer Activity</h5>
         <form action="">
           <MagnifyingGlassIcon width="20" />
           <input type="text" name="" id="" placeholder="Search Transactions" />
@@ -45,7 +46,7 @@ const Activity = () => {
       ))}
 
       <div className="footer">
-        <Button>View More Transactions</Button>
+        <Anchor to="/transactions">View More Transactions</Anchor>
       </div>
     </Container>
   );
@@ -61,7 +62,7 @@ const Container = styled.section`
   height: fit-content;
 
   .header {
-    padding: 20px 20px 15px 20px;
+    padding: 20px 15px 15px 15px;
     border-bottom: 1px solid ${({ theme }) => theme.palette.border};
   }
 
@@ -77,6 +78,10 @@ const Container = styled.section`
     border-radius: ${({ theme }) => theme.borderRadius[0]};
     display: flex;
     padding: 8px 6px;
+
+    :active {
+      border: 1px solid ${({ theme }) => theme.palette.link};
+    }
   }
 
   input {
@@ -91,6 +96,7 @@ const Container = styled.section`
 
   .footer {
     padding: 15px;
+    width: 100%;
   }
 `;
 
@@ -108,12 +114,11 @@ const ActivityTitle = styled.div`
   }
 `;
 
-const Button = styled.button`
-  background: none;
+const Anchor = styled(Link)`
   border: 1px solid ${({ theme }) => theme.palette.link};
   color: ${({ theme }) => theme.palette.text};
   width: 100%;
-  padding: 4px 0;
+  padding: 4px;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};

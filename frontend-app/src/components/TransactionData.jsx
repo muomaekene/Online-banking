@@ -32,7 +32,7 @@ const TableRow = styled.tr`
 
   td {
     padding: 10px 20px;
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     text-transform: capitalize;
   }

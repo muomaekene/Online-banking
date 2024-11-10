@@ -5,6 +5,7 @@ import Select from "./Select";
 import TransferInput from "./TransferInput";
 
 import styled from "styled-components";
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const TransferForm = () => {
   const handleSubmit = (event) => {
@@ -29,8 +30,8 @@ const TransferForm = () => {
       <TransferInput icon="#" placeholder="Routing No" />
 
       <CustomBtn>
-        <SendRounded style={{ fontSize: "15px", marginRight: "4px" }} />
         Send money
+        <ChevronRightIcon width="15px" />
       </CustomBtn>
     </Form>
   );
@@ -39,7 +40,7 @@ const TransferForm = () => {
 export default TransferForm;
 
 const Form = styled.form`
-  margin-top: 5px;
+  margin-top: 25px;
   width: 88%;
   display: flex;
   flex-direction: column;

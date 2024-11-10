@@ -23,7 +23,7 @@ const AccountSummary = ({
     <Container style={{ height: `${boxHeight}rem` }}>
       <div className="account-info">
         <p className="account-type">
-          {account} | {accountNo}...
+          {account} | ...{accountNo}
         </p>
         <p className="account-bal">${balance}</p>
       </div>
@@ -60,7 +60,7 @@ const Container = styled.section`
   }
 
   .account-type {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     text-transform: capitalize;
     color: ${({ theme }) => theme.palette.link};
