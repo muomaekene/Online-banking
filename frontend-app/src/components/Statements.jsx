@@ -95,6 +95,7 @@ const StatementResult = styled.section`
   width: 100%;
   padding: 20px;
   color: ${({ theme }) => theme.palette.altText};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
 
   .result {
     flex: 1;
@@ -103,7 +104,6 @@ const StatementResult = styled.section`
   }
 
   .selected-account {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
   }
@@ -114,7 +114,7 @@ const StatementResult = styled.section`
     background: none;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   }
 
   hr {
