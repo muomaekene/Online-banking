@@ -67,7 +67,6 @@ const Container = styled.aside`
         background: ${({ theme }) => theme.palette.solid};
         color: ${({ theme }) => theme.palette.activeText};
         border-radius: ${({ theme }) => theme.borderRadius[1]};
-        font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
       }
     }
     .nav-item:nth-child(7) {

@@ -58,6 +58,7 @@ const Container = styled.div`
 
   a {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.link};
     background: none;
     border: none;

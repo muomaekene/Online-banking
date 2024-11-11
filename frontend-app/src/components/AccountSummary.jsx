@@ -61,7 +61,7 @@ const Container = styled.section`
 
   .account-type {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;

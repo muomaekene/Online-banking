@@ -67,7 +67,7 @@ const Container = styled(Link)`
 
   .account-type {
     color: ${({ theme }) => theme.palette.link};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     text-transform: capitalize;
   }

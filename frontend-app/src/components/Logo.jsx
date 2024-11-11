@@ -1,12 +1,7 @@
+import firstFlorida from "../assets/images/firstFlorida.png";
+
 const Logo = () => {
-  return (
-    // <img
-    //   width="150"
-    //   src="https://frontiercreditunion.com/wp-content/uploads/2023/08/frontier-credit-union.png"
-    //   alt="frontier logo"
-    // />
-    <h1>FRONTIER BANK</h1>
-  );
+  return <img width="130" src={firstFlorida} alt="first florida logo" />;
 };
 
 export default Logo;
