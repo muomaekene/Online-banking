@@ -31,9 +31,9 @@ const Statements = () => {
         <hr />
         <div className="result">
           <p>
-            Account statement for <a href="#">July 2024</a>
+            Account statement for <span>July 2024</span>
           </p>
-          <button href="#">
+          <button>
             <ArrowDownward style={{ fontSize: "15px", marginRight: "2px" }} />
             Download
           </button>
@@ -110,11 +110,15 @@ const StatementResult = styled.section`
 
   button {
     display: flex;
-    border: none;
+    border: 1px solid transparent;
     background: none;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+
+    :hover {
+      border: 1px solid ${({ theme }) => theme.palette.border};
+    }
   }
 
   hr {
@@ -122,8 +126,8 @@ const StatementResult = styled.section`
     margin: 10px -20px 10px;
   }
 
-  a {
-    color: ${({ theme }) => theme.palette.link};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+  span {
+    color: ${({ theme }) => theme.palette.text};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 `;

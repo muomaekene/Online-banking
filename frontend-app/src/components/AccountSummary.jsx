@@ -22,14 +22,14 @@ const AccountSummary = ({
   return (
     <Container style={{ height: `${boxHeight}rem` }}>
       <div className="account-info">
-        <p className="account-type">
+        <button className="account-type">
           {account} | ...{accountNo}
-        </p>
+        </button>
         <p className="account-bal">${balance}</p>
       </div>
 
       <button className="dropdown-btn" onClick={() => setOpen(!open)}>
-        {open ? "Hide" : "Show transactions"}
+        {open ? " - Hide" : " + Show transactions"}
       </button>
 
       {open && (
@@ -56,7 +56,7 @@ const Container = styled.section`
   .account-info {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px 0 20px;
+    padding: 20px 20px 5px 20px;
   }
 
   .account-type {
@@ -65,27 +65,32 @@ const Container = styled.section`
     text-transform: capitalize;
     color: ${({ theme }) => theme.palette.link};
     cursor: pointer;
+    border: 1px solid transparent;
+    background: none;
 
     :hover {
-      text-decoration: underline;
-      text-decoration-thickness: 0.5px;
+      border: 1px solid ${({ theme }) => theme.palette.border};
     }
   }
 
   .account-bal {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
   }
 
   .dropdown-btn {
     cursor: pointer;
-    border: none;
     background: none;
+    border: 1px solid transparent;
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.altText};
     margin-left: 20px;
+
+    :hover {
+      border: 1px solid ${({ theme }) => theme.palette.border};
+    }
   }
 
   .transactions-table {

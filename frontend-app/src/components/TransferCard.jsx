@@ -12,10 +12,10 @@ const TransferCard = ({ title, desc, action }) => {
 
       <hr />
       <div className="action">
-        <a href="#">
+        <button>
           {action}
           <ChevronRightIcon width="15px" />
-        </a>
+        </button>
       </div>
     </Container>
   );
@@ -56,15 +56,19 @@ const Container = styled.div`
     justify-content: flex-end;
   }
 
-  a {
+  button {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.link};
     background: none;
-    border: none;
+    border: 1px solid transparent;
     cursor: pointer;
     width: fit-content;
     display: flex;
     align-items: center;
+
+    :hover {
+      border: 1px solid ${({ theme }) => theme.palette.border};
+    }
   }
 `;

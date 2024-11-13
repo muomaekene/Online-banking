@@ -55,7 +55,7 @@ const Container = styled.div`
   }
 
   .top {
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.link};
   }

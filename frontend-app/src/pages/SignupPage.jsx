@@ -1,5 +1,4 @@
 import SignupForm from "../components/SignupForm";
-
 import AuthLayout from "../components/AuthLayout";
 
 const SignupPage = () => {

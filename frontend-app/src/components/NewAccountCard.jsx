@@ -10,11 +10,11 @@ const NewAccountCard = ({ name, desc, children }) => {
       <div className="account-features">{children}</div>
       <hr />
       <div className="account-actions">
-        <a href="#">See Details</a>
-        <a href="#">
+        <button href="#">See Details</button>
+        <button href="#">
           Open Account
           <ArrowForwardIos style={{ fontSize: "13px", marginLeft: "3px" }} />
-        </a>
+        </button>
       </div>
     </Section>
   );
@@ -51,11 +51,19 @@ const Section = styled.section`
     display: flex;
     justify-content: space-between;
 
-    a {
+    button {
       font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
       color: ${({ theme }) => theme.palette.link};
       display: flex;
       align-items: center;
+      background: none;
+      border: 1px solid transparent;
+      cursor: pointer;
+
+      :hover {
+        border: 1px solid ${({ theme }) => theme.palette.border};
+      }
     }
   }
 

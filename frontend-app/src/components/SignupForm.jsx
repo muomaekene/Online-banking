@@ -8,6 +8,7 @@ import CustomBtn from "./CustomBtn";
 import Select from "./Select";
 
 import styled from "styled-components";
+import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 const SignupForm = () => {
   const { handleChange, handleSubmit, data, errors } = useForm({
@@ -20,8 +21,12 @@ const SignupForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
+      <CustomLink to="/login">
+        <ChevronLeftIcon width="20px" />
+        Back to login
+      </CustomLink>
       <h2 className="form-title">
-        Get started: Create an online banking profile
+        Let's get you started: Create an online banking profile
       </h2>
 
       {SIGNUP_CONTROLS.map((items) => (
@@ -99,17 +104,17 @@ export default SignupForm;
 
 const Form = styled.form`
   background: ${({ theme }) => theme.palette.main};
-  padding: 50px 40px;
+  padding: 40px 30px;
   width: 65%;
   height: fit-content;
   box-sizing: border-box;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
+  border: 1px solid ${({ theme }) => theme.palette.border};
 
   .form-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
-    margin-bottom: 30px;
-    text-transform: capitalize;
+    margin: 30px 0;
     color: ${({ theme }) => theme.palette.text};
   }
 
@@ -161,7 +166,7 @@ const Form = styled.form`
   }
 
   .field-title {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: ${({ theme }) => theme.spacing(1)};
     color: ${({ theme }) => theme.palette.text};
@@ -178,5 +183,18 @@ const Form = styled.form`
 
   .btn-cover {
     width: 15rem;
+  }
+`;
+
+const CustomLink = styled(Link)`
+  display: flex;
+  align-content: center;
+  gap: 5px;
+  width: fit-content;
+  font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
+  color: ${({ theme }) => theme.palette.link};
+
+  :hover {
+    text-decoration: underline;
   }
 `;

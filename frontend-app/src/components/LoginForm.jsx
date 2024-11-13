@@ -33,7 +33,7 @@ const LoginForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <fieldset className="form-group">
-        <legend className="form-title">e-Banking Login</legend>
+        <legend className="form-title">e-Banking login</legend>
 
         <div className="inputs">
           {LOGIN_CONTROLS.map((attribute) => (
@@ -89,10 +89,7 @@ const Form = styled.form`
   padding: 25px 35px;
   background: ${({ theme }) => theme.palette.main};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 120px auto;
+  border: 1px solid ${({ theme }) => theme.palette.border};
 
   .form-title {
     font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
@@ -155,6 +152,8 @@ const Form = styled.form`
   }
 
   .link {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+
     :hover {
       text-decoration: underline;
       color: ${({ theme }) => theme.palette.solid};
