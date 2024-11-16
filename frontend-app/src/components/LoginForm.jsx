@@ -92,9 +92,9 @@ const Form = styled.form`
   border: 1px solid ${({ theme }) => theme.palette.border};
 
   .form-title {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[6]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    margin-bottom: ${({ theme }) => theme.spacing(1)};
+    margin-bottom: ${({ theme }) => theme.spacing(2)};
     color: ${({ theme }) => theme.palette.text};
   }
 

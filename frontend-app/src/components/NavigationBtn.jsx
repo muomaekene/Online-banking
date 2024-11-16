@@ -22,6 +22,7 @@ const Button = styled.button`
   justify-content: center;
   width: fit-content;
   font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+  color: ${({ theme }) => theme.palette.link};
   background: none;
   border: 1px solid transparent;
   cursor: pointer;

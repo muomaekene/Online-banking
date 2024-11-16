@@ -9,7 +9,7 @@ const AccountDetailsPage = () => {
     <Container>
       <NavigationBtn>All accounts</NavigationBtn>
 
-      <h1>{params.id}</h1>
+      <h4>{params.id}</h4>
     </Container>
   );
 };
@@ -19,4 +19,8 @@ export default AccountDetailsPage;
 const Container = styled.div`
   height: 100%;
   width: 70%;
+
+  h4 {
+    margin-top: 10px;
+  }
 `;

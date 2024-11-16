@@ -39,7 +39,6 @@ const Container = styled.aside`
   flex-direction: column;
   padding: 25px 10px;
   text-transform: capitalize;
-  color: ${({ theme }) => theme.palette.altText};
 
   .sidebar-header {
     display: flex;
@@ -57,6 +56,18 @@ const Container = styled.aside`
     list-style: none;
 
     .nav-item {
+      .nav-link {
+        padding: 14px 30px;
+        display: flex;
+        align-items: center;
+
+        .icon {
+          width: 18px;
+          height: 18px;
+          margin-right: 10px;
+        }
+      }
+
       :hover {
         background: ${({ theme }) => theme.palette.secondary};
         color: ${({ theme }) => theme.palette.text};
@@ -71,18 +82,6 @@ const Container = styled.aside`
     }
     .nav-item:nth-child(7) {
       margin-bottom: 60px;
-    }
-
-    .nav-link {
-      padding: 14px 30px;
-      display: flex;
-      align-items: center;
-    }
-
-    .icon {
-      width: 18px;
-      height: 18px;
-      margin-right: 10px;
     }
   }
 `;

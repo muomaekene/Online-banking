@@ -71,6 +71,7 @@ const Container = styled.div`
 
     :hover {
       text-decoration: underline;
+      color: ${({ theme }) => theme.palette.link};
     }
   }
 

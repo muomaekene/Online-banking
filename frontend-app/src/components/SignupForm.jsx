@@ -113,7 +113,7 @@ const Form = styled.form`
   .form-title {
     font-size: 22px;
     font-weight: 400;
-    margin: 30px 0;
+    margin: 20px 0;
     color: ${({ theme }) => theme.palette.text};
   }
 
