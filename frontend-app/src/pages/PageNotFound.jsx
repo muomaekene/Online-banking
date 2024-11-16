@@ -22,6 +22,7 @@ export default PageNotFound;
 const Container = styled.div`
   font-family: "Product Sans", Roboto, sans-serif;
   height: 100vh;
+  width: 100vw;
   font-weight: bolder;
   display: flex;
   justify-content: center;

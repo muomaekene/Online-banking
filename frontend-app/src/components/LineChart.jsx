@@ -51,9 +51,9 @@ const LineChart = () => {
           suggestedMin: 0,
           suggestedMax: 25000,
           ticks: {
-            color: "#868686",
+            color: "#7e7e7e",
             font: {
-              weight: 400,
+              weight: 300,
               size: "12px",
               family: "'Reddit Sans', sans-serif",
             },
@@ -61,9 +61,9 @@ const LineChart = () => {
         },
         x: {
           ticks: {
-            color: "#868686",
+            color: "#7e7e7e",
             font: {
-              weight: 400,
+              weight: 300,
               size: "12px",
               family: "'Reddit Sans', sans-serif",
             },

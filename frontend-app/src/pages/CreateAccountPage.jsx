@@ -68,7 +68,7 @@ const CreateAccountPage = () => {
 export default CreateAccountPage;
 
 const Container = styled.section`
-  width: 67%;
+  width: 70%;
   height: 100%;
   overflow-x: hidden !important;
 

@@ -1,5 +1,6 @@
-import ActivitySummary from "./ActivitySummary";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
+import ActivitySummary from "./ActivitySummary";
 
 import {
   SCHEDULED_ACTIVITY,
@@ -8,7 +9,6 @@ import {
 } from "../utils/COMPONENT_DATA";
 
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 const Activity = () => {
   return (
@@ -23,7 +23,7 @@ const Activity = () => {
 
       <ActivityTitle>
         <p>Scheduled</p>
-        <p className="amount">$250.11</p>
+        <p>$250.11</p>
       </ActivityTitle>
 
       {SCHEDULED_ACTIVITY.map((item) => (
@@ -58,7 +58,7 @@ const Container = styled.section`
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   border: 1px solid ${({ theme }) => theme.palette.border};
   background: ${({ theme }) => theme.palette.main};
-  width: 100%;
+  width: 30%;
   height: fit-content;
 
   .header {
@@ -107,11 +107,8 @@ const ActivityTitle = styled.div`
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   display: flex;
   justify-content: space-between;
-
-  .amount {
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-  }
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
 `;
 
 const Anchor = styled(Link)`

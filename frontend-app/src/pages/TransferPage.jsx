@@ -41,15 +41,16 @@ export default TransferPage;
 const Container = styled.div`
   display: flex;
   padding-bottom: 15px;
+  width: 100%;
 
   .transfers {
     padding-right: ${({ theme }) => theme.spacing(2)};
+    width: 70%;
   }
 
   .all-transfers {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: ${({ theme }) => theme.spacing(2)};
-    margin-top: ${({ theme }) => theme.spacing(2)};
   }
 `;

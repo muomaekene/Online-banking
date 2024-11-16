@@ -74,7 +74,7 @@ const Container = styled(Link)`
 
   .account-bal {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
     margin: 2px 0;
   }

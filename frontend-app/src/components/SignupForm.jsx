@@ -6,9 +6,9 @@ import { validations } from "../utils/validations";
 import AuthInput from "./AuthInput";
 import CustomBtn from "./CustomBtn";
 import Select from "./Select";
+import NavigationBtn from "./NavigationBtn";
 
 import styled from "styled-components";
-import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 const SignupForm = () => {
   const { handleChange, handleSubmit, data, errors } = useForm({
@@ -21,10 +21,8 @@ const SignupForm = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <CustomLink to="/login">
-        <ChevronLeftIcon width="20px" />
-        Back to login
-      </CustomLink>
+      <NavigationBtn>Back to login</NavigationBtn>
+
       <h2 className="form-title">
         Let's get you started: Create an online banking profile
       </h2>
@@ -93,6 +91,7 @@ const SignupForm = () => {
           </li>
         </ul>
       </fieldset>
+
       <div className="btn-cover">
         <CustomBtn>Create Profile</CustomBtn>
       </div>
@@ -126,7 +125,7 @@ const Form = styled.form`
 
   .select-items {
     list-style-type: none;
-    font-size: 12px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     background: ${({ theme }) => theme.palette.primary};
     color: ${({ theme }) => theme.palette.text};
@@ -183,18 +182,5 @@ const Form = styled.form`
 
   .btn-cover {
     width: 15rem;
-  }
-`;
-
-const CustomLink = styled(Link)`
-  display: flex;
-  align-content: center;
-  gap: 5px;
-  width: fit-content;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
-  color: ${({ theme }) => theme.palette.link};
-
-  :hover {
-    text-decoration: underline;
   }
 `;

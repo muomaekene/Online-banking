@@ -13,7 +13,7 @@ export const getDesignToken = (mode) => ({
           hr: "#f9f9f998",
           activeText: "#fff",
           text: "#262626",
-          altText: "#292929ae",
+          altText: "#7e7e7e",
           scrollbar: "#8B8B8B",
           link: "#057d47",
         }
@@ -28,7 +28,7 @@ export const getDesignToken = (mode) => ({
           hr: "#434343c9",
           activeText: "#fff",
           text: "#d4d4d4",
-          altText: "#a5abb1",
+          altText: "#888889",
           scrollbar: "#828181",
           link: "#06845c",
         }),
@@ -40,11 +40,6 @@ export const getDesignToken = (mode) => ({
       fontSize: ["11px", "12px", "13px", "14px", "15px", "16px", "18px"],
       fontWeight: [400, 500, 600],
       borderRadius: "5px",
-    },
-    header: {
-      fontFamily: "Gloock, sans-serif",
-      fontSize: "20px",
-      fontWeight: 500,
     },
   },
 

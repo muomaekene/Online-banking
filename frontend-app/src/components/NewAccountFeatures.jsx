@@ -5,7 +5,7 @@ const NewAccountFeatures = ({ children }) => {
   return (
     <Feature>
       <CustomCheckOutline>
-        <CheckOutlined style={{ fontSize: "14px", marginRight: "10px" }} />
+        <CheckOutlined style={{ fontSize: "16px", marginRight: "10px" }} />
       </CustomCheckOutline>
       {children}
     </Feature>
@@ -17,9 +17,9 @@ export default NewAccountFeatures;
 const Feature = styled.p`
   display: flex;
   align-items: center;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
 `;
 
-const CustomCheckOutline = styled.div`
+const CustomCheckOutline = styled.span`
   color: ${({ theme }) => theme.palette.link};
 `;

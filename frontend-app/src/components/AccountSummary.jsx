@@ -6,7 +6,7 @@ import TableSummary from "../components/TableSummary";
 import styled from "styled-components";
 
 const AccountSummary = ({
-  item: { account, accountNo, balance, transactions },
+  item: { accountId, account, accountNo, balance, transactions },
 }) => {
   const [open, setOpen] = useState(false);
   const [boxHeight, setBoxHeight] = useState(4);
@@ -22,14 +22,15 @@ const AccountSummary = ({
   return (
     <Container style={{ height: `${boxHeight}rem` }}>
       <div className="account-info">
-        <button className="account-type">
+        <Link to={accountId} className="account-type">
           {account} | ...{accountNo}
-        </button>
+        </Link>
+
         <p className="account-bal">${balance}</p>
       </div>
 
       <button className="dropdown-btn" onClick={() => setOpen(!open)}>
-        {open ? " - Hide" : " + Show transactions"}
+        {open ? " - Hide" : " + Recent transactions"}
       </button>
 
       {open && (
@@ -48,7 +49,7 @@ const AccountSummary = ({
 
 export default AccountSummary;
 
-const Container = styled.section`
+const Container = styled.div`
   background: ${({ theme }) => theme.palette.main};
   position: relative;
   margin-bottom: 5px;
@@ -56,25 +57,25 @@ const Container = styled.section`
   .account-info {
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px 5px 20px;
+    padding: 20px 20px 0px 20px;
   }
 
   .account-type {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
-    color: ${({ theme }) => theme.palette.link};
+    color: ${({ theme }) => theme.palette.text};
     cursor: pointer;
     border: 1px solid transparent;
     background: none;
 
     :hover {
-      border: 1px solid ${({ theme }) => theme.palette.border};
+      text-decoration: underline;
     }
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
   }
@@ -104,7 +105,6 @@ const Container = styled.section`
     margin-top: 5px;
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    z-index: 666;
   }
 
   .more-transactions {

@@ -45,7 +45,7 @@ const Container = styled.aside`
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     position: relative;
   }
 

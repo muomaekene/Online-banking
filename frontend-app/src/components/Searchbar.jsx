@@ -14,7 +14,7 @@ const Searchbar = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <button className="icon-wrap">
-        <MagnifyingGlassIcon className="icon" />
+        <MagnifyingGlassIcon width="18px" />
       </button>
       <input
         className="input-bar"

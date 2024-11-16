@@ -24,13 +24,15 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Navigate to="overview" />} />
       <Route path="overview" element={<OverviewPage />} />
+
       <Route path="accounts" element={<AccountsPage />}>
         <Route index element={<Navigate to="all" />} />
         <Route path="all" element={<AllAccountsPage />} />
+        <Route path="all/:id" element={<AccountDetailsPage />} />
         <Route path="statements" element={<AccountStatementsPage />} />
         <Route path="open-new" element={<CreateAccountPage />} />
-        <Route path="*" element={<PageNotFound />} />
       </Route>
+
       <Route path="transfers" element={<TransferPage />} />
       <Route path="deposit" element={<DepositPage />} />
       <Route path="transactions" element={<TransactionsPage />} />

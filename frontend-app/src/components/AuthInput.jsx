@@ -26,7 +26,7 @@ const Input = styled.input`
   outline: none;
 
   ::placeholder {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     text-transform: capitalize;
   }
 

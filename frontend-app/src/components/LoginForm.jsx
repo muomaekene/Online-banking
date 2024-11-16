@@ -129,7 +129,7 @@ const Form = styled.form`
 
   .reset-passw {
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.text};
     margin: 10px 0;
   }

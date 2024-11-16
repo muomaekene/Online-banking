@@ -23,7 +23,7 @@ const MainLayout = ({ children }) => {
         </div>
         <div id="content">
           <TopBar theme={theme} themeToggler={themeToggler} />
-          <div>{children}</div>
+          <section>{children}</section>
         </div>
       </Main>
     </ThemeProvider>
@@ -63,7 +63,7 @@ const Main = styled.main`
     vertical-align: top;
     height: 100%;
     max-width: 1040px;
-    width: calc(100% - 15rem);
+    width: calc(100% - 240px);
     overflow: auto;
     background: ${({ theme }) => theme.palette.secondary};
     padding: 0 ${({ theme }) => theme.spacing(2)};

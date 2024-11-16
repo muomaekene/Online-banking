@@ -6,9 +6,13 @@ import {
 
 export const ACCOUNT_SUMMARY = [
   {
-    accountId: 4930975835,
+    accountId: "493097583584",
     account: "smartplus checking account",
     accountNo: 3473,
+    interestRate: 0.005,
+    interestPaidNow: "0.00",
+    interestPaidThen: "750.25",
+    tier: "premium",
     balance: "7,720.83",
     transactions: [
       {
@@ -42,9 +46,13 @@ export const ACCOUNT_SUMMARY = [
     ],
   },
   {
-    accountId: 583492854053,
+    accountId: "583492854053",
     account: "fixed term individual retirement account",
     accountNo: 5823,
+    interestRate: 1.85,
+    interestPaidNow: "0.00",
+    interestPaidThen: "2,500.85",
+    tier: "regular",
     balance: "56,250.99",
     transactions: [
       {
@@ -78,9 +86,13 @@ export const ACCOUNT_SUMMARY = [
     ],
   },
   {
-    accountId: 586503848234,
+    accountId: "586503848234",
     account: "smartplus savings account",
     accountNo: 7534,
+    interestRate: 2.55,
+    interestPaidNow: "0.00",
+    interestPaidThen: "4,750.00",
+    tier: "premium",
     balance: "247,560.14",
     transactions: [
       {
@@ -117,9 +129,13 @@ export const ACCOUNT_SUMMARY = [
 
 export const CREDIT_CARDS = [
   {
-    accountId: 883458348237,
-    account: "Customized Cash Rewards Visa Card",
+    accountId: "883458348237",
+    account: "customized cash rewards visa card",
     accountNo: 9548,
+    interestRate: "0.00",
+    interestPaidNow: "0.00",
+    interestPaidThen: "0.00",
+    tier: "regular",
     balance: "9,250.00",
     transactions: [
       {
@@ -153,9 +169,13 @@ export const CREDIT_CARDS = [
     ],
   },
   {
-    accountId: 883204948345,
-    account: "Venture Rewards Visa Card",
+    accountId: "883204948345",
+    account: "venture rewards master card",
     accountNo: 5632,
+    interestRate: "0.00",
+    interestPaidNow: "0.00",
+    interestPaidThen: "0.00",
+    tier: "premium",
     balance: "40,690.06",
     transactions: [
       {
@@ -190,6 +210,7 @@ export const CREDIT_CARDS = [
   },
 ];
 
+// table data shown on our overview and transaction pages
 export const MAIN_TABLE = [
   {
     id: 222,

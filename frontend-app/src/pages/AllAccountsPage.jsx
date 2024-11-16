@@ -37,7 +37,7 @@ const AllAccountsPage = () => {
 export default AllAccountsPage;
 
 const Container = styled.div`
-  width: 67%;
+  width: 70%;
   height: 100%;
   overflow-x: hidden !important;
 

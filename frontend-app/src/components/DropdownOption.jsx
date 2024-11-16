@@ -47,7 +47,7 @@ const Container = styled.li`
     display: flex;
     flex-direction: column;
     margin-bottom: 4px;
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   }
 
   .message {

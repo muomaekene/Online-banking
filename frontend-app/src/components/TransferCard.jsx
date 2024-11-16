@@ -28,22 +28,23 @@ const Container = styled.div`
   background: ${({ theme }) => theme.palette.main};
   border: 1px solid ${({ theme }) => theme.palette.border};
   padding: 20px;
-  width: 20rem;
-  height: 9rem;
+  width: 100%;
+  height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   h5 {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[5]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
 
   p {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.altText};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    margin-bottom: 20px;
   }
 
   hr {
@@ -57,7 +58,7 @@ const Container = styled.div`
   }
 
   button {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.link};
     background: none;

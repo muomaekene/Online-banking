@@ -7,7 +7,7 @@ const WelcomeMsg = () => {
 export default WelcomeMsg;
 
 const Container = styled.div`
-  font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[5]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   text-transform: capitalize;
 `;

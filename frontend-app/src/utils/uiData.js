@@ -374,7 +374,8 @@ export const ACCOUNTS_AVAILABLE = [
     id: 10,
     name: "Smart Savings",
     category: "savings",
-    description: "This smart option covers all your savings essentials.",
+    description:
+      "This smart option covers all your savings essentials and is ideal for getting started.",
     category: "savings",
     features: [
       "This account works great as a secondary savings account",
@@ -385,9 +386,10 @@ export const ACCOUNTS_AVAILABLE = [
     id: 11,
     name: "SmartPlus Savings",
     category: "savings",
-    description: "It’s a smart savings account that earns you interest.",
+    description:
+      "This is a smart savings account that earns you higher interests.",
     features: [
-      "Get a 7.00% APY on your first $500 in balances",
+      "You'll get a 7.00% APY on your first $500 in balances",
       "You can use this account to establish membership (with a $5 deposit)",
     ],
   },
@@ -405,10 +407,10 @@ export const ACCOUNTS_AVAILABLE = [
     id: 13,
     name: "SmartPlus Checking",
     category: "checking",
-    description: "This smart option covers all your savings essentials.",
+    description: "This smart option covers all your checking essentials.",
     features: [
       "Get a 5.00% APY on your first $5,000 in balances",
-      "Enjoy speedy, assured and free ATM fee refunds nationwide",
+      "Enjoy speedy and free ATM fee refunds nationwide",
     ],
   },
   {
@@ -439,7 +441,7 @@ export const ACCOUNTS_AVAILABLE = [
       "This Certificate of Deposit helps you manage your retirement savings.",
     features: [
       "Maximize the growth of your money, get higher yields",
-      "Enjoy a higher rate of interest than regular savings",
+      "Enjoy a higher rate of interest compared to regular savings",
     ],
   },
   {
@@ -450,7 +452,7 @@ export const ACCOUNTS_AVAILABLE = [
       "This is the account for you if you're looking to save up money for your retirement and invest.",
     features: [
       "Save money and benefit from paying lower in taxes",
-      "You'll enjoy a higher rate of interest compared to a regular savings",
+      "Enjoy a higher rate of interest compared to a regular savings",
     ],
   },
 ];

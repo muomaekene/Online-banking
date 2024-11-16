@@ -36,7 +36,7 @@ const Section = styled.section`
   }
 
   .account-name {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: 10px;
   }
@@ -52,7 +52,7 @@ const Section = styled.section`
     justify-content: space-between;
 
     button {
-      font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
       font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
       color: ${({ theme }) => theme.palette.link};
       display: flex;

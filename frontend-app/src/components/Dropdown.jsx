@@ -90,7 +90,7 @@ const Container = styled.div`
   }
 
   .menu-name {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 
