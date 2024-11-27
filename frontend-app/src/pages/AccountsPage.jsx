@@ -1,6 +1,6 @@
 import MainLayout from "../components/MainLayout";
 
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import styled from "styled-components";
 import TabNav from "../components/TabNav";
 

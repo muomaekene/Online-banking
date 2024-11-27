@@ -178,57 +178,6 @@ export const ChartData = [
   },
 ];
 
-export const COLUMNS = [
-  {
-    Header: "Account",
-    accessor: "account",
-  },
-  {
-    Header: "Date",
-    accessor: "date",
-  },
-  {
-    Header: "Description",
-    accessor: "description",
-  },
-  {
-    Header: "Amount",
-    accessor: "amount",
-  },
-  {
-    Header: "Balance",
-    accessor: "balance",
-  },
-];
-
-// export const CHOOSE_ACCT = [
-//   {
-//     id: 1,
-//     name: "Please choose an account",
-//     value: "",
-//   },
-//   {
-//     id: 2,
-//     name: "SmartPlus Savings",
-//     value: "savings",
-//   },
-//   {
-//     id: 3,
-//     name: "SmartPlus Checking",
-//     value: "checking",
-//   },
-//   {
-//     id: 4,
-//     name: "Individual retirement account",
-//     value: "retirement",
-//   },
-//   {
-//     id: 5,
-//     name: "Money market account",
-//     value: "money-market",
-//   },
-// ];
-
 export const FISCAL_YEAR = [
   {
     id: 6,
@@ -256,29 +205,6 @@ export const FISCAL_YEAR = [
     value: "2019",
   },
 ];
-
-// export const ACCOUNT_TYPE = [
-//   {
-//     id: 25,
-//     name: "Transfer from",
-//     value: "",
-//   },
-//   {
-//     id: 26,
-//     name: "Savings",
-//     value: "savings",
-//   },
-//   {
-//     id: 27,
-//     name: "Checking",
-//     value: "checking",
-//   },
-//   {
-//     id: 28,
-//     name: "Credit card",
-//     value: "credit-card",
-//   },
-// ];
 
 export const profileDropdown = [
   {
@@ -363,128 +289,265 @@ export const MONTHS = [
 ];
 
 export const ACCOUNTS_OWNED = [
-  "SmartPlus Savings (...9792)",
-  "SmartPlus Checking (...9792)",
+  "Prime Share Savings (...9792)",
+  "Smart Rewards Checking (...9792)",
   "Venture Rewards Visa Card (...5632)",
   "Customized Cash Rewards Visa Card (...5376)",
 ];
 
 export const ACCOUNTS_AVAILABLE = [
   {
-    id: 10,
-    name: "Smart Savings",
-    category: "savings",
-    description:
-      "This smart option covers all your savings essentials and is ideal for getting started.",
-    category: "savings",
-    features: [
-      "This account works great as a secondary savings account",
-      "You'll enjoy a base rate of interest with no nonsense",
+    id: "regular-savings",
+    name: "Regular Savings",
+    category: "Savings",
+    sc_description: "The basics only, except this is better.",
+    mn_description:
+      "The starter savings account for every First Florida Credit Union member, Regular Savings opens the door to a wealth of value-added products and services.",
+    benefits: [
+      "Easy access via ATM, online banking, mobile banking or phone",
+      "$10 minimum deposit to open (includes one-time $9 membership fee)",
+      "No monthly service charge",
+    ],
+    rates: [
+      {
+        balance: "$25-$99.99",
+        dividend_rate: "0.050%",
+        apy: "0.05%",
+      },
+      {
+        balance: "More than $99",
+        dividend_rate: "0.050%",
+        apy: "0.05%",
+      },
+    ],
+    rates_date: "11/20/2024",
+  },
+  {
+    id: "prime-share-savings",
+    name: "Prime Share Savings",
+    category: "Savings",
+    sc_description: "Get a complete banking experience with high-interest.",
+    mn_description:
+      "A Prime Share/Savings Account is a perfect vehicle to save for whatever you choose. Whether it’s for vacation, education, or a vehicle, you’ll be able to designate and name your account to serve its purpose. This account offers all that and more.",
+    benefits: [
+      "24/7 deposits and withdrawals",
+      "Peace of mind knowing your money is safe and insured",
+      "Earn dividends on balances of $25 or more",
     ],
   },
   {
-    id: 11,
-    name: "SmartPlus Savings",
-    category: "savings",
-    description:
-      "This is a smart savings account that earns you higher interests.",
-    features: [
-      "You'll get a 7.00% APY on your first $500 in balances",
+    id: "high-yield-mma",
+    name: "High Yield Money Market Account",
+    category: "Savings",
+    sc_description: "High-interest savings account with easy access.",
+    mn_description:
+      "Keep your earnings high and your assets liquid with a First Florida Credit Union Money Market account. Our tiered dividend structure rewards higher balances with higher yields. Choose a lower deposit minimum option or a higher minimum to earn more.",
+    benefits: [
+      "Choose your initial minimum deposit: $2,500 or $10,000",
+      "4 withdrawals per month",
+      "Low penalty fees for early withdrawal",
+      "Enjoy a higher interest rate",
+    ],
+  },
+  {
+    id: "platinum-mma",
+    name: "Platinum Money Market Account",
+    category: "Savings",
+    sc_description: "High-interest savings account with easy access.",
+    mn_description:
+      "Keep your earnings high and your assets liquid with a First Florida Credit Union Money Market account. Our tiered dividend structure rewards higher balances with higher yields. Choose a lower deposit minimum option or a higher minimum to earn more.",
+    benefits: [
+      "Choose your initial minimum deposit: $25,000 or $50,000",
+      "6 withdrawals per month",
+      "Low penalty fees for early withdrawal",
+      "Enjoy a higher interest rate",
+    ],
+  },
+  {
+    id: "share-cd",
+    name: "Share Certificate of Deposit",
+    category: "Cd",
+    sc_description: "Lock in our best yields on your terms.",
+    mn_description:
+      "Similar to CDs, share certificates earn credit union shareholders a guaranteed return when you lock in for a specific term.",
+    benefits: [
+      "$1,000 – $50,000 deposits",
+      "3-month to 5-year terms",
       "You can use this account to establish membership (with a $5 deposit)",
     ],
   },
   {
-    id: 12,
-    name: "Smart Checking",
-    category: "checking",
-    description: "This hassle-free checking account covers all your basics.",
-    features: [
-      "This account is great to use as a secondary checking account",
-      "There are no monthly fees, ever",
+    id: "smart-track-checking",
+    name: "Smart Track Checking",
+    category: "Checking",
+    sc_description:
+      "Your best interest checking account option for higher balances.",
+    mn_description:
+      "Take advantage of all the benefits of our premium value checking account, including high interest on your balance.",
+    benefits: [
+      "Earn dividends with a daily balance of at least $2,500",
+      "No direct deposit requirements ",
+      "4 free withdrawals per month at any non-shared ATMs",
+    ],
+  },
+
+  {
+    id: "premium-interest-checking",
+    name: "Premium Interest Checking",
+    category: "Checking",
+    sc_description: "Interest checking accounts made easy.",
+    mn_description:
+      "Keep a low minimum daily balance of just $750, and this interest-bearing checking account will pay you dividends with every check you write.",
+    benefits: [
+      "Earn dividends with a daily balance of at least $750",
+      "No direct deposit requirements",
+      "6 free withdrawals per month at any non-shared ATMs",
     ],
   },
   {
-    id: 13,
-    name: "SmartPlus Checking",
-    category: "checking",
-    description: "This smart option covers all your checking essentials.",
-    features: [
-      "Get a 5.00% APY on your first $5,000 in balances",
-      "Enjoy speedy and free ATM fee refunds nationwide",
+    id: "smart-rewards-checking",
+    name: "Smart Rewards Checking",
+    category: "Checking",
+    sc_description:
+      "Open our most popular checking account online with just a $25 deposit.",
+    mn_description:
+      "Enjoy the ease of no minimum balance and a low opening deposit with this best-of-the-basics free checking account.",
+    benefits: [
+      "Get mobile banking, free bill pay and more with no monthly service fee",
+      "No balance or direct deposit requirements",
+      "10 free withdrawals per month at any non-shared ATMs",
     ],
   },
   {
-    id: 14,
-    name: "Fixed Certificate",
-    category: "others",
-    description: "Fixed CD’s offers you a reliable way to secure your savings.",
-    features: [
-      "Higher interest rate paid without early withdrawal fees",
-      "Money stays in the account for a specific amount of time before accessing",
+    id: "student-checking",
+    name: "Student Checking",
+    category: "Checking",
+    sc_description: "Trojans, financial independence starts here.",
+    mn_description:
+      "Our student checking account fits you, your budget and your FFCU campus life.",
+    benefits: [
+      "Maintain your account with no minimum daily balance",
+      "No monthly service charges",
+      "2 free withdrawals per month at any non-shared ATMs",
+    ],
+  },
+
+  {
+    id: "business-savings",
+    name: "Business Savings",
+    category: "Business",
+    sc_description: "Grow your business savings.",
+    mn_description:
+      "The starter cushion account for every USC Credit Union business member to save for taxes, new investments, future projects, and unexpected expenses.",
+    benefits: [
+      "$10 minimum deposit to open (includes one-time $9 membership fee)",
+      "Earn dividends on balances of $1,000 or more",
+      "All deposits are safe and insured by the FDIC",
+      "Easy access to funds",
     ],
   },
   {
-    id: 15,
-    name: "Bump Certificates",
-    category: "others",
-    description: "Bump CDs offers you the flexibility to maximize savings.",
-    features: [
-      "We offer a variety of term options to best support your savings goals",
-      "Access a one-time rate increase during the term of your Certificate",
+    id: "business-checking",
+    name: "Business Checking",
+    category: "Business",
+    sc_description: "Streamline your cash flow with just a $200 deposit.",
+    mn_description:
+      "Manage day-to-day operating expenses, payroll, and income with a business checking account3 that covers the essentials.",
+    benefits: [
+      "Free online and mobile banking, bill pay, budgeting tools, and more",
+      "100 free transactions per month at no-fee ATMs",
+      "All deposits are safe and insured by the FDIC",
+      "Easy access to funds",
     ],
   },
   {
-    id: 16,
-    name: "Fixed Term CD IRA",
-    category: "others",
-    description:
-      "This Certificate of Deposit helps you manage your retirement savings.",
-    features: [
-      "Maximize the growth of your money, get higher yields",
-      "Enjoy a higher rate of interest compared to regular savings",
+    id: "business-mma",
+    name: "Business Money Market Account",
+    category: "Business",
+    sc_description: "High-interest account with easy access.",
+    mn_description:
+      "Get even more from your surplus cash. Business Money Market Accounts1 offer the flexibility and growth your business needs to thrive.",
+    benefits: [
+      "$10,000 minimum initial deposit",
+      "6 free withdrawals per month*",
+      "All deposits are safe and insured by the FDIC",
+      "Easy access to funds",
     ],
   },
   {
-    id: 17,
-    name: "SmartPlus Investment IRA",
-    category: "others",
-    description:
-      "This is the account for you if you're looking to save up money for your retirement and invest.",
-    features: [
-      "Save money and benefit from paying lower in taxes",
-      "Enjoy a higher rate of interest compared to a regular savings",
+    id: "traditional-ira",
+    name: "Traditional IRA",
+    category: "Cd",
+    sc_description: "Own your future with an IRA.",
+    mn_description:
+      "Invest for the years ahead with tax-deductible contributions to an individual retirement account. Save a little at a time and watch your contributions grow tax-deferred until you withdraw them. It’s your future. Own it.",
+    benefits: [
+      "Pay no monthly service charge",
+      "Open with $100 minimum balance (Share) or $1,000 (Certificate)",
+      "Contribute up to $7,000 per year if you’re under 50, $8,000 if over 50",
+    ],
+  },
+  {
+    id: "roth-ira",
+    name: "Roth IRA",
+    category: "Cd",
+    sc_description: "Compound your dividends with a Roth IRA.",
+    mn_description:
+      "Benefit from decades of tax-free, compounded growth with a Roth IRA. When your investments earn interest, that amount gets added to your account balance, compounding your interest and dividends over time.",
+    benefits: [
+      "Pay no monthly service charge",
+      "Open with $100 minimum balance (Share) or $1,000 (Certificate)",
+      "Contribute up to $7,000 per year if you’re under 50, $8,000 if over 50",
+    ],
+  },
+  {
+    id: "education-savings",
+    name: "Coverdell Education Savings",
+    category: "Cd",
+    sc_description: "Tax-free savings for education at every stage.",
+    mn_description:
+      "Education can come with a high price tag. Save for it by opening a tax-free Coverdell Education Savings Account (CESA) in the name of a child up to age 181. Also known as an Education IRA, a CESA is a trust or custodial savings account you can use to pay for qualified education expenses, including tuition, books, supplies, equipment, academic tutoring and special needs services. Unlike 529 plans, CESA funds can be used for elementary, secondary or higher education. CESAs also let you direct your investments versus choosing from a menu of options.",
+    benefits: [
+      "Contribute up to $2,000 per year",
+      "Enjoy tax-free growth and withdrawals",
+      "Open an unlimited number of CESAs for a designated beneficiary",
     ],
   },
 ];
 
 export const btnList = [
   { id: "all", name: "All" },
-  { id: "savings", name: "Savings" },
-  { id: "checking", name: "Checking" },
-  { id: "others", name: "IRAs & CDs" },
+  { id: "Savings", name: "Savings" },
+  { id: "Checking", name: "Checking" },
+  { id: "Business", name: "Business" },
+  { id: "Cd", name: "CDs & IRAs" },
 ];
 
 export const TRANSFER_DATA = [
   {
     title: "Make An Internal Transfer",
-    description: "Manage money between all your Frontier bank accounts",
-    action: "Transfer Money",
+    description: "Manage money between all your First Florida bank accounts",
+    action: "Transfer money",
+    id: "internal-transfer",
   },
   {
     title: "Make An External Transfer",
     description:
-      "Transfer money between your Frontier bank accounts and external accounts",
-    action: "Transfer Money",
+      "Transfer money between your First Florida bank accounts and external accounts",
+    action: "Transfer money",
+    id: "external-transfer",
   },
   {
     title: "Send A Wire Transfer",
     description:
       "Transfer large sums of money to another person anywhere in the world",
-    action: "Send A Wire",
+    action: "Send a wire",
+    id: "wire-transfer",
   },
   {
     title: "Manage & Pay Bills",
     description: "Pay your bills and always stay on track with your spending",
-    action: "Pay Bills",
+    action: "Pay bills",
+    id: "bill-pay",
   },
 ];

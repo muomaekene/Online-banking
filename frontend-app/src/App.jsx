@@ -18,6 +18,8 @@ import AllAccountsPage from "./pages/AllAccountsPage";
 import AccountStatementsPage from "./pages/AccountStatementsPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import AccountDetailsPage from "./pages/AccountDetailsPage";
+import LearnMorePage from "./pages/LearnMorePage";
+import CheckoutPage from "./pages/CheckoutPage";
 
 const App = () => {
   return (
@@ -30,7 +32,9 @@ const App = () => {
         <Route path="all" element={<AllAccountsPage />} />
         <Route path="all/:id" element={<AccountDetailsPage />} />
         <Route path="statements" element={<AccountStatementsPage />} />
-        <Route path="open-new" element={<CreateAccountPage />} />
+        <Route path="open-new-account" element={<CreateAccountPage />} />
+        <Route path="open-new-account/:id" element={<LearnMorePage />} />
+        <Route path="open-new-account/checkout" element={<CheckoutPage />} />
       </Route>
 
       <Route path="transfers" element={<TransferPage />} />

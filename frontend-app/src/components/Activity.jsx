@@ -46,7 +46,7 @@ const Activity = () => {
       ))}
 
       <div className="footer">
-        <Anchor to="/transactions">View More Transactions</Anchor>
+        <Anchor to="/transactions">View more transactions</Anchor>
       </div>
     </Container>
   );

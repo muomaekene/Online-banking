@@ -25,7 +25,7 @@ const Statements = () => {
 
       <StatementResult>
         <div className="result">
-          <p className="selected-account">SmartPlus Savings (...9792)</p>
+          <p className="selected-account">Prime Share Savings (...9792)</p>
         </div>
 
         <hr />
@@ -104,6 +104,7 @@ const StatementResult = styled.section`
   }
 
   .selected-account {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
   }

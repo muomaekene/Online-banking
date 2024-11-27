@@ -45,14 +45,4 @@ const Table = styled.table`
       }
     }
   }
-
-  tbody {
-    tr {
-      color: ${({ theme }) => theme.palette.text};
-
-      :nth-of-type(odd) {
-        background-color: ${({ theme }) => theme.palette.focus};
-      }
-    }
-  }
 `;

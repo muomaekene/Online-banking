@@ -21,7 +21,8 @@ const TransferPage = () => {
           <div className="all-transfers">
             {TRANSFER_DATA.map((card) => (
               <TransferCard
-                key={card.title}
+                key={card.id}
+                id={card.id}
                 title={card.title}
                 desc={card.description}
                 action={card.action}

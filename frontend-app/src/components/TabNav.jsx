@@ -16,7 +16,7 @@ const TabNav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="open-new" className="tab-link">
+          <NavLink to="open-new-account" className="tab-link">
             Open New Account
           </NavLink>
         </li>

@@ -1,10 +1,10 @@
+import { useEffect, useState } from "react";
 import Heading from "../components/Heading";
 import Subheading from "../components/Subheading";
 import NewAccountCard from "../components/NewAccountCard";
-import NewAccountFeatures from "../components/NewAccountFeatures";
 
 import { ACCOUNTS_AVAILABLE, btnList } from "../utils/uiData";
-import { useEffect, useState } from "react";
+import { CheckIcon } from "@heroicons/react/24/outline";
 
 import styled from "styled-components";
 
@@ -17,6 +17,7 @@ const CreateAccountPage = () => {
     setActive(event.target.id);
   };
 
+  // control tab filter
   useEffect(() => {
     if (active === "all") {
       setAccounts(ACCOUNTS_AVAILABLE);
@@ -51,12 +52,18 @@ const CreateAccountPage = () => {
       <div className="all-accounts">
         {accounts.map((account) => (
           <NewAccountCard
-            key={account.name}
+            key={account.id}
+            id={account.id}
             name={account.name}
-            desc={account.description}
+            sc_desc={account.sc_description}
           >
-            {account.features.map((feature) => (
-              <NewAccountFeatures key={feature}>{feature}</NewAccountFeatures>
+            {account.benefits.map((benefit) => (
+              <p key={benefit}>
+                <CustomCheckOutline>
+                  <CheckIcon width="18px" />
+                </CustomCheckOutline>
+                {benefit}
+              </p>
             ))}
           </NewAccountCard>
         ))}
@@ -115,4 +122,15 @@ const Container = styled.section`
     padding-right: 15px;
     margin-bottom: 15px;
   }
+
+  p {
+    display: flex;
+    align-items: center;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+  }
+`;
+
+const CustomCheckOutline = styled.span`
+  color: ${({ theme }) => theme.palette.link};
+  margin-right: 5px;
 `;

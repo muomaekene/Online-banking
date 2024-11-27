@@ -1,20 +1,19 @@
-import { ArrowForwardIos } from "@mui/icons-material";
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
-const NewAccountCard = ({ name, desc, children }) => {
+const NewAccountCard = ({ id, name, sc_desc, children }) => {
   return (
     <Section>
-      <h5 className="account-name"> {name}</h5>
-      <hr />
-      <p className="account-desc">{desc}</p>
-      <div className="account-features">{children}</div>
-      <hr />
+      <h2 className="account-name"> {name}</h2>
+      <div className="account-content">
+        <p className="account-desc">{sc_desc}</p>
+        <div className="account-features">{children}</div>
+      </div>
+
       <div className="account-actions">
-        <button href="#">See Details</button>
-        <button href="#">
-          Open Account
-          <ArrowForwardIos style={{ fontSize: "13px", marginLeft: "3px" }} />
-        </button>
+        <CustomLink to={id}>Learn more</CustomLink>
+        <CustomLink to="checkout">Open account</CustomLink>
       </div>
     </Section>
   );
@@ -27,44 +26,32 @@ const Section = styled.section`
   background: ${({ theme }) => theme.palette.main};
   border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
-  padding: 20px;
   width: 100%;
+  height: fit-content;
 
-  hr {
-    border-color: ${({ theme }) => theme.palette.hr};
-    margin: 10px -20px 10px;
+  .account-content {
+    height: 10rem;
+    border-top: 1px solid ${({ theme }) => theme.palette.border};
+    border-bottom: 1px solid ${({ theme }) => theme.palette.border};
+    padding: 10px 20px 0 20px;
   }
 
   .account-name {
     font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    margin-bottom: 10px;
+    padding: 20px 0 10px 20px;
   }
 
   .account-desc {
     color: ${({ theme }) => theme.palette.altText};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
   }
 
   .account-actions {
-    margin-top: 15px;
     display: flex;
     justify-content: space-between;
-
-    button {
-      font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-      color: ${({ theme }) => theme.palette.link};
-      display: flex;
-      align-items: center;
-      background: none;
-      border: 1px solid transparent;
-      cursor: pointer;
-
-      :hover {
-        border: 1px solid ${({ theme }) => theme.palette.border};
-      }
-    }
+    padding: 15px 20px;
   }
 
   .account-features {
@@ -72,5 +59,21 @@ const Section = styled.section`
     display: flex;
     flex-direction: column;
     gap: 5px;
+  }
+`;
+
+const CustomLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+
+  :hover {
+    text-decoration: underline;
+    text-decoration-color: ${({ theme }) => theme.palette.link};
+    text-decoration-thickness: 1px;
+    color: ${({ theme }) => theme.palette.link};
   }
 `;

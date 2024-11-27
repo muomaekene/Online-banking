@@ -7,7 +7,7 @@ import {
 export const ACCOUNT_SUMMARY = [
   {
     accountId: "493097583584",
-    account: "smartplus checking account",
+    account: "smart rewards checking account",
     accountNo: 3473,
     interestRate: 0.005,
     interestPaidNow: "0.00",
@@ -47,7 +47,7 @@ export const ACCOUNT_SUMMARY = [
   },
   {
     accountId: "583492854053",
-    account: "fixed term individual retirement account",
+    account: "traditional individual retirement account",
     accountNo: 5823,
     interestRate: 1.85,
     interestPaidNow: "0.00",
@@ -87,7 +87,7 @@ export const ACCOUNT_SUMMARY = [
   },
   {
     accountId: "586503848234",
-    account: "smartplus savings account",
+    account: "prime share savings account",
     accountNo: 7534,
     interestRate: 2.55,
     interestPaidNow: "0.00",

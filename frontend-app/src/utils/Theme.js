@@ -13,7 +13,7 @@ export const getDesignToken = (mode) => ({
           hr: "#f9f9f998",
           activeText: "#fff",
           text: "#262626",
-          altText: "#888888",
+          altText: "#7b7b7b",
           scrollbar: "#8B8B8B",
           link: "#057d47",
         }

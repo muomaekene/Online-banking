@@ -99,7 +99,7 @@ const Container = styled.div`
     background: none;
     border: none;
     padding: 8px 12px;
-    color: ${({ theme }) => theme.palette.altText};
+    color: ${({ theme }) => theme.palette.text};
     font-weight: 400;
     width: 100%;
     display: flex;

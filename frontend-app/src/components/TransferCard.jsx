@@ -6,17 +6,15 @@ const TransferCard = ({ title, desc, action }) => {
   return (
     <Container>
       <div className="content">
-        <h5>{title}</h5>
+        <h2>{title}</h2>
         <p>{desc}</p>
       </div>
 
       <hr />
-      <div className="action">
-        <button>
-          {action}
-          <ChevronRightIcon width="15px" />
-        </button>
-      </div>
+      <button>
+        {action}
+        <ChevronRightIcon width="15px" />
+      </button>
     </Container>
   );
 };
@@ -34,8 +32,8 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  h5 {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[5]};
+  h2 {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: 5px;
   }
@@ -52,24 +50,22 @@ const Container = styled.div`
     border-color: ${({ theme }) => theme.palette.hr};
   }
 
-  .action {
-    display: flex;
-    justify-content: flex-end;
-  }
-
   button {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    color: ${({ theme }) => theme.palette.link};
+    color: ${({ theme }) => theme.palette.text};
     background: none;
     border: 1px solid transparent;
     cursor: pointer;
     width: fit-content;
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 2px;
 
     :hover {
       border: 1px solid ${({ theme }) => theme.palette.border};
+      color: ${({ theme }) => theme.palette.link};
     }
   }
 `;
