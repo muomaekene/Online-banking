@@ -50,16 +50,6 @@ const Container = styled.div`
     background: ${({ theme }) => theme.palette.scrollbar};
   }
 
-  .divider {
-    border: 0;
-    height: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(232, 229, 229, 0.4);
-    margin-right: 15px;
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-
   .group-title {
     background: ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.activeText};
