@@ -8,7 +8,7 @@ import styled from "styled-components";
 const CheckoutPage = () => {
   return (
     <Container>
-      <NavigationBtn>Back to accounts</NavigationBtn>
+      <NavigationBtn />
       <div className="page-content">
         <div className="title">Your contact Information</div>
 
@@ -59,15 +59,6 @@ const Container = styled.div`
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   padding-right: 15px;
 
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: ${({ theme }) => theme.palette.scrollbar};
-  }
-
   .page-content {
     border-radius: ${({ theme }) => theme.borderRadius[1]};
     padding: 20px;
@@ -80,9 +71,7 @@ const Container = styled.div`
     }
 
     p {
-      line-height: 1.3rem;
       color: ${({ theme }) => theme.palette.altText};
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     }
 
     .title {

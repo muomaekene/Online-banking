@@ -7,10 +7,10 @@ const Info = () => {
     <Container>
       <div className="left">
         <ExclamationCircleIcon className="icon" />
-        <p>
+        <span>
           Your accounts have been restricted, visit our nearest branch to get
           this resolved.
-        </p>
+        </span>
       </div>
     </Container>
   );
@@ -29,16 +29,17 @@ const Container = styled.div`
   justify-content: space-between;
   margin-bottom: 10px;
   margin-right: 20px;
-  font-size: 13px;
-  font-weight: 300;
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
 
   .left {
     display: flex;
     align-items: center;
   }
 
-  p {
+  span {
     margin-left: 5px;
+    display: block;
   }
 
   .icon {

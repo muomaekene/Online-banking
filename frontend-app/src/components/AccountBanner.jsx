@@ -41,7 +41,7 @@ const Container = styled(Link)`
   padding: 0 25px;
   height: 100%;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
-  border: 1px solid ${({ theme }) => theme.palette.border};
+  border: 1px solid transparent;
   background: ${({ theme }) => theme.palette.main};
   display: flex;
   align-items: center;
@@ -76,12 +76,11 @@ const Container = styled(Link)`
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
-    margin: 2px 0;
   }
 
   .desc {
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     position: relative;
 
     span {

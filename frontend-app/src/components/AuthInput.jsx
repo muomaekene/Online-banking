@@ -31,7 +31,7 @@ const Input = styled.input`
   }
 
   :focus-within {
-    border: 1px solid ${({ theme }) => theme.palette.focus};
+    border: 1px solid ${({ theme }) => theme.palette.solid};
     background: ${({ theme }) => theme.palette.main};
     border-radius: ${({ theme }) => theme.borderRadius[0]};
   }

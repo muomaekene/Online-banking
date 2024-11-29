@@ -53,7 +53,7 @@ const Container = styled.li`
   .message {
     color: ${({ theme }) => theme.palette.altText};
     font-size: 11px;
-    font-weight: 400;
+    font-weight: 500;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,7 +62,6 @@ const Container = styled.li`
   .title {
     white-space: nowrap;
     font-weight: 500;
-    margin-top: 5px;
   }
 
   .time {

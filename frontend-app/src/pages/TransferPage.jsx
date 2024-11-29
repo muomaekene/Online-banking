@@ -46,7 +46,7 @@ const Container = styled.div`
 
   .transfers {
     padding-right: ${({ theme }) => theme.spacing(2)};
-    width: 70%;
+    width: 68%;
   }
 
   .all-transfers {

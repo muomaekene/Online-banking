@@ -74,7 +74,7 @@ const Container = styled.section`
       font: inherit;
       width: 1.4em;
       height: 1.4em;
-      border: 1px solid ${({ theme }) => theme.palette.border};
+      border: 1px solid gray;
       border-radius: 50%;
       transform: translateY(-0.075em);
       display: grid;

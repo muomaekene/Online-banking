@@ -64,7 +64,6 @@ const Page = styled.div`
 
 const StatementForm = styled.section`
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   width: 100%;
   padding: 20px;
@@ -90,12 +89,12 @@ const StatementForm = styled.section`
 
 const StatementResult = styled.section`
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   width: 100%;
   padding: 20px;
   color: ${({ theme }) => theme.palette.altText};
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
 
   .result {
     flex: 1;
@@ -113,9 +112,10 @@ const StatementResult = styled.section`
     display: flex;
     border: 1px solid transparent;
     background: none;
-    color: ${({ theme }) => theme.palette.link};
+    color: ${({ theme }) => theme.palette.text};
     cursor: pointer;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
 
     :hover {
       border: 1px solid ${({ theme }) => theme.palette.border};

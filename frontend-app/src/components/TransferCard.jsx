@@ -24,7 +24,6 @@ export default TransferCard;
 const Container = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
   padding: 20px;
   width: 100%;
   height: 10rem;
@@ -39,9 +38,7 @@ const Container = styled.div`
   }
 
   p {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.altText};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     margin-bottom: 20px;
   }
 
@@ -61,7 +58,6 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 2px;
 
     :hover {
       border: 1px solid ${({ theme }) => theme.palette.border};

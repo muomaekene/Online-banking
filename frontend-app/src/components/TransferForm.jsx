@@ -25,9 +25,9 @@ const TransferForm = () => {
         ]}
       />
 
-      <TransferInput icon="$" placeholder="Enter Amount" />
-      <TransferInput icon="#" placeholder="Account No" />
-      <TransferInput icon="#" placeholder="Routing No" />
+      <TransferInput icon="$" placeholder="Enter amount" />
+      <TransferInput icon="#" placeholder="Account no." />
+      <TransferInput icon="#" placeholder="Routing no." />
 
       <CustomBtn>
         Send money

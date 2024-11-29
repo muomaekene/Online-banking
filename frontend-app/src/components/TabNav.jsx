@@ -52,13 +52,14 @@ const Nav = styled.div`
     color: ${({ theme }) => theme.palette.altText};
     cursor: pointer;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     padding: 15px;
   }
 
   .active {
     background: ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.activeText};
+    font-weight: normal;
     border: none;
   }
 `;

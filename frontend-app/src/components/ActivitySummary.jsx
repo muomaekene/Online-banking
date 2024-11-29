@@ -37,7 +37,7 @@ const Container = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.palette.border};
   justify-content: space-between;
   align-items: center;
-  height: 3rem;
+  height: 3.5rem;
   padding: 0 20px;
 
   .account-info {
@@ -55,14 +55,14 @@ const Container = styled.div`
   }
 
   .top {
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     color: ${({ theme }) => theme.palette.text};
   }
 
   .bottom {
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.altText};
   }
 `;

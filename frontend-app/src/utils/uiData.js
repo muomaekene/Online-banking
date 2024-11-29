@@ -297,12 +297,39 @@ export const ACCOUNTS_OWNED = [
 
 export const ACCOUNTS_AVAILABLE = [
   {
+    id: "smart-track-checking",
+    name: "Smart Track Checking",
+    category: "Checking",
+    sc_description:
+      "Your best interest checking account option for higher balances.",
+    mn_description:
+      "Take advantage of all the benefits of our premium value checking account, including high interest on your balance.",
+    benefits: [
+      "Earn dividends with a daily balance of at least $2,500",
+      "No direct deposit requirements ",
+      "4 free withdrawals per month at any non-shared ATMs",
+    ],
+  },
+  {
+    id: "share-cd",
+    name: "Share Certificate of Deposit",
+    category: "Cd",
+    sc_description: "Lock in our best yields on your terms.",
+    mn_description:
+      "Similar to CDs, share certificates earn credit union shareholders a guaranteed return when you lock in for a specific term.",
+    benefits: [
+      "$1,000 – $50,000 deposits",
+      "3-month to 5-year terms",
+      "You can use this account to establish membership (with a $5 deposit)",
+    ],
+  },
+  {
     id: "regular-savings",
     name: "Regular Savings",
     category: "Savings",
     sc_description: "The basics only, except this is better.",
     mn_description:
-      "The starter savings account for every First Florida Credit Union member, Regular Savings opens the door to a wealth of value-added products and services.",
+      "The starter savings account for every First Florida Credit Union member, Regular Savings opens the door to a wealth of value-added products and services. This bank account is a basic financial product offered by First Florida Credit Union that allows individuals to deposit money securely while earning interest on their balance. It provides easy access to funds, with the option to withdraw or transfer money at any time, subject to any bank-specific conditions. The account typically has a low minimum balance requirement and earns interest, although the interest rate is usually lower compared to other savings options like certificates of deposit or high-yield savings accounts. Our Regular savings account is insured by the FDIC up to a certain limit, ensuring the safety of the deposited funds. This account is ideal for individuals seeking a safe place to store their money while earning some interest over time.",
     benefits: [
       "Easy access via ATM, online banking, mobile banking or phone",
       "$10 minimum deposit to open (includes one-time $9 membership fee)",
@@ -322,75 +349,6 @@ export const ACCOUNTS_AVAILABLE = [
     ],
     rates_date: "11/20/2024",
   },
-  {
-    id: "prime-share-savings",
-    name: "Prime Share Savings",
-    category: "Savings",
-    sc_description: "Get a complete banking experience with high-interest.",
-    mn_description:
-      "A Prime Share/Savings Account is a perfect vehicle to save for whatever you choose. Whether it’s for vacation, education, or a vehicle, you’ll be able to designate and name your account to serve its purpose. This account offers all that and more.",
-    benefits: [
-      "24/7 deposits and withdrawals",
-      "Peace of mind knowing your money is safe and insured",
-      "Earn dividends on balances of $25 or more",
-    ],
-  },
-  {
-    id: "high-yield-mma",
-    name: "High Yield Money Market Account",
-    category: "Savings",
-    sc_description: "High-interest savings account with easy access.",
-    mn_description:
-      "Keep your earnings high and your assets liquid with a First Florida Credit Union Money Market account. Our tiered dividend structure rewards higher balances with higher yields. Choose a lower deposit minimum option or a higher minimum to earn more.",
-    benefits: [
-      "Choose your initial minimum deposit: $2,500 or $10,000",
-      "4 withdrawals per month",
-      "Low penalty fees for early withdrawal",
-      "Enjoy a higher interest rate",
-    ],
-  },
-  {
-    id: "platinum-mma",
-    name: "Platinum Money Market Account",
-    category: "Savings",
-    sc_description: "High-interest savings account with easy access.",
-    mn_description:
-      "Keep your earnings high and your assets liquid with a First Florida Credit Union Money Market account. Our tiered dividend structure rewards higher balances with higher yields. Choose a lower deposit minimum option or a higher minimum to earn more.",
-    benefits: [
-      "Choose your initial minimum deposit: $25,000 or $50,000",
-      "6 withdrawals per month",
-      "Low penalty fees for early withdrawal",
-      "Enjoy a higher interest rate",
-    ],
-  },
-  {
-    id: "share-cd",
-    name: "Share Certificate of Deposit",
-    category: "Cd",
-    sc_description: "Lock in our best yields on your terms.",
-    mn_description:
-      "Similar to CDs, share certificates earn credit union shareholders a guaranteed return when you lock in for a specific term.",
-    benefits: [
-      "$1,000 – $50,000 deposits",
-      "3-month to 5-year terms",
-      "You can use this account to establish membership (with a $5 deposit)",
-    ],
-  },
-  {
-    id: "smart-track-checking",
-    name: "Smart Track Checking",
-    category: "Checking",
-    sc_description:
-      "Your best interest checking account option for higher balances.",
-    mn_description:
-      "Take advantage of all the benefits of our premium value checking account, including high interest on your balance.",
-    benefits: [
-      "Earn dividends with a daily balance of at least $2,500",
-      "No direct deposit requirements ",
-      "4 free withdrawals per month at any non-shared ATMs",
-    ],
-  },
-
   {
     id: "premium-interest-checking",
     name: "Premium Interest Checking",
@@ -431,7 +389,19 @@ export const ACCOUNTS_AVAILABLE = [
       "2 free withdrawals per month at any non-shared ATMs",
     ],
   },
-
+  {
+    id: "prime-share-savings",
+    name: "Prime Share Savings",
+    category: "Savings",
+    sc_description: "Get a complete banking experience with high-interest.",
+    mn_description:
+      "A Prime Share/Savings Account is a perfect vehicle to save for whatever you choose. Whether it’s for vacation, education, or a vehicle, you’ll be able to designate and name your account to serve its purpose. This account offers all that and more.",
+    benefits: [
+      "24/7 deposits and withdrawals",
+      "Peace of mind knowing your money is safe and insured",
+      "Earn dividends on balances of $25 or more",
+    ],
+  },
   {
     id: "business-savings",
     name: "Business Savings",
@@ -460,6 +430,21 @@ export const ACCOUNTS_AVAILABLE = [
       "Easy access to funds",
     ],
   },
+
+  {
+    id: "platinum-mma",
+    name: "Platinum Money Market Account",
+    category: "Savings",
+    sc_description: "High-interest savings account with easy access.",
+    mn_description:
+      "Keep your earnings high and your assets liquid with a First Florida Credit Union Money Market account. Our tiered dividend structure rewards higher balances with higher yields. Choose a lower deposit minimum option or a higher minimum to earn more.",
+    benefits: [
+      "Choose your initial minimum deposit: $25,000 or $50,000",
+      "6 withdrawals per month",
+      "Low penalty fees for early withdrawal",
+      "Enjoy a higher interest rate",
+    ],
+  },
   {
     id: "business-mma",
     name: "Business Money Market Account",
@@ -485,6 +470,20 @@ export const ACCOUNTS_AVAILABLE = [
       "Pay no monthly service charge",
       "Open with $100 minimum balance (Share) or $1,000 (Certificate)",
       "Contribute up to $7,000 per year if you’re under 50, $8,000 if over 50",
+    ],
+  },
+  {
+    id: "high-yield-mma",
+    name: "High Yield Money Market Account",
+    category: "Savings",
+    sc_description: "High-interest savings account with easy access.",
+    mn_description:
+      "Keep your earnings high and your assets liquid with a First Florida Credit Union Money Market account. Our tiered dividend structure rewards higher balances with higher yields. Choose a lower deposit minimum option or a higher minimum to earn more.",
+    benefits: [
+      "Choose your initial minimum deposit: $2,500 or $10,000",
+      "4 withdrawals per month",
+      "Low penalty fees for early withdrawal",
+      "Enjoy a higher interest rate",
     ],
   },
   {

@@ -79,15 +79,6 @@ const Container = styled.section`
   height: 100%;
   overflow-x: hidden !important;
 
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: ${({ theme }) => theme.palette.scrollbar};
-  }
-
   .filter-buttons {
     display: flex;
     gap: 5px;
@@ -100,7 +91,7 @@ const Container = styled.section`
       border-radius: ${({ theme }) => theme.borderRadius[1]};
       border: none;
       color: ${({ theme }) => theme.palette.altText};
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
       font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
       cursor: pointer;
     }
@@ -108,7 +99,7 @@ const Container = styled.section`
     .active {
       background: ${({ theme }) => theme.palette.solid};
       color: ${({ theme }) => theme.palette.activeText};
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+      font-weight: normal;
       border: none;
     }
   }

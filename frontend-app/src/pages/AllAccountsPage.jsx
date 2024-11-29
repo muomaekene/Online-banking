@@ -41,15 +41,6 @@ const Container = styled.div`
   height: 100%;
   overflow-x: hidden !important;
 
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: ${({ theme }) => theme.palette.scrollbar};
-  }
-
   .group-title {
     background: ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.activeText};

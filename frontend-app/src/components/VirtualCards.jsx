@@ -65,7 +65,6 @@ const Anchor = styled(Link)`
   width: 100%;
   color: ${({ theme }) => theme.palette.text};
   border-radius: ${({ theme }) => theme.borderRadius[0]};
-  border: 1px solid ${({ theme }) => theme.palette.border};
   margin: ${({ theme }) => theme.spacing(2)} 0;
   background: ${({ theme }) => theme.palette.main};
   display: flex;
@@ -74,6 +73,10 @@ const Anchor = styled(Link)`
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   font-weight: 400;
   cursor: pointer;
+
+  :hover {
+    border: 1px solid ${({ theme }) => theme.palette.border};
+  }
 
   :active {
     background: ${({ theme }) => theme.palette.focus};

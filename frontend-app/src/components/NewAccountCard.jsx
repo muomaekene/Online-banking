@@ -24,34 +24,35 @@ export default NewAccountCard;
 const Section = styled.section`
   font-size: 13px;
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   width: 100%;
   height: fit-content;
 
   .account-content {
-    height: 10rem;
+    height: 12rem;
     border-top: 1px solid ${({ theme }) => theme.palette.border};
     border-bottom: 1px solid ${({ theme }) => theme.palette.border};
     padding: 10px 20px 0 20px;
   }
 
   .account-name {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    padding: 20px 0 10px 20px;
+    padding: 20px 0 15px 20px;
+    text-transform: capitalize;
   }
 
   .account-desc {
     color: ${({ theme }) => theme.palette.altText};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    line-height: 1.3rem;
   }
 
   .account-actions {
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    padding: 15px 20px 20px 20px;
   }
 
   .account-features {

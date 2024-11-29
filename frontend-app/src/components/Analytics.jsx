@@ -23,7 +23,6 @@ const Section = styled.section`
   position: relative;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
 
   .tooltip {
     width: 100px;

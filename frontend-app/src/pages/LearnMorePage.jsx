@@ -19,11 +19,13 @@ const LearnMorePage = () => {
 
   return (
     <Container>
-      <NavigationBtn>Back to accounts</NavigationBtn>
+      <NavigationBtn />
       {accountsList.map((account) => (
         <div className="all-details" key={account.id}>
           <h2 className="account-name">{account.name}</h2>
           <p className="top-desc">{account.sc_description}</p>
+
+          <h3 className="title">How this account works:</h3>
           <p className="bottom-desc">{account.mn_description}</p>
 
           <h3 className="title">Benefits:</h3>
@@ -58,65 +60,62 @@ const LearnMorePage = () => {
 export default LearnMorePage;
 
 const Container = styled.div`
+  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   height: 100%;
   width: 70%;
   overflow-x: hidden !important;
-  padding-bottom: 15px;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
 
-  ::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: ${({ theme }) => theme.palette.scrollbar};
-  }
-
-  div {
-    background: ${({ theme }) => theme.palette.main};
+  .features {
     border: 1px solid ${({ theme }) => theme.palette.border};
     border-radius: ${({ theme }) => theme.borderRadius[1]};
   }
 
   .all-details {
     margin-top: 10px;
+    background: ${({ theme }) => theme.palette.main};
+    border-radius: ${({ theme }) => theme.borderRadius[1]};
     margin-right: 15px;
     padding: 20px;
   }
 
   .account-name {
-    font-size: 22px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 
   .top-desc {
-    margin-top: 5px;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     color: ${({ theme }) => theme.palette.altText};
   }
 
   .bottom-desc {
-    margin-top: 20px;
+    /* margin-top: 20px; */
   }
 
   .title {
-    margin-bottom: 5px;
-    margin-top: 15px;
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    display: flex;
+    gap: 5px;
   }
 
   .features {
     padding: 15px;
+    width: fit-content;
   }
 
   .feature {
     padding: 4px 0;
     display: flex;
     align-items: center;
+    gap: 5px;
   }
 
   table {

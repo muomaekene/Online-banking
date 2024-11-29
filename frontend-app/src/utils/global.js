@@ -21,7 +21,8 @@ export const GlobalStyles = createGlobalStyle`
      padding: 0;
      box-sizing: border-box;
      font-family: ${({ theme }) => theme.typography.main.fontFamily};
-
+     scrollbar-width: thin;
+     scrollbar-color:  darkgray transparent;
  }
 
  a {
@@ -34,6 +35,12 @@ export const GlobalStyles = createGlobalStyle`
     :active {
      text-decoration: none;
     }
+ }
+
+ p {
+   line-height: 1.3rem;
+   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+   font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
  }
 
   `;

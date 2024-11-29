@@ -53,7 +53,7 @@ const LineChart = () => {
           ticks: {
             color: "#7e7e7e",
             font: {
-              weight: 300,
+              weight: 400,
               size: "12px",
               family: "'Reddit Sans', sans-serif",
             },
@@ -63,7 +63,7 @@ const LineChart = () => {
           ticks: {
             color: "#7e7e7e",
             font: {
-              weight: 300,
+              weight: 400,
               size: "12px",
               family: "'Reddit Sans', sans-serif",
             },

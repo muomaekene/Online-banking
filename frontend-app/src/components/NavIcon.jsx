@@ -13,7 +13,7 @@ const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   position: relative;
   cursor: pointer;
-  border: 1px solid ${({ theme }) => theme.palette.border};
+  border: 1px solid transparent;
   color: ${({ theme }) => theme.palette.text};
   background: ${({ theme }) => theme.palette.main};
 

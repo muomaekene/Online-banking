@@ -18,11 +18,11 @@ const VirtualCard = () => {
 
       <div className="card-band">
         <div>
-          <p>Card Balance</p>
+          <p>Card bal.</p>
           <p className="figure">$1 628.31</p>
         </div>
         <div>
-          <p>Expiry Date</p>
+          <p>Expiry date</p>
           <p className="figure">10/22</p>
         </div>
       </div>
@@ -46,6 +46,10 @@ const Container = styled.div`
   background: #fc466b;
   background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
   background: linear-gradient(to right, #3f5efb, #fc466b);
+
+  p {
+    color: ${({ theme }) => theme.palette.active};
+  }
 
   .card-body {
     height: 65%;

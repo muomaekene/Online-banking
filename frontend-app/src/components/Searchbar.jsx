@@ -39,7 +39,7 @@ const Form = styled.form`
   align-items: center;
   padding: 0 ${({ theme }) => theme.spacing(1)};
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
+  border: 1px solid transparent;
   border-radius: ${({ theme }) => theme.borderRadius[0]};
   margin-top: ${({ theme }) => theme.spacing(0)};
   margin-left: 4rem;
@@ -47,7 +47,7 @@ const Form = styled.form`
   :focus-within {
     background: ${({ theme }) => theme.palette.focus};
     border-radius: ${({ theme }) => theme.borderRadius[0]};
-    border: 1px solid transparent;
+    border: 1px solid ${({ theme }) => theme.palette.border};
   }
 
   .icon-wrap {

@@ -9,44 +9,38 @@ import {
 } from "../utils/COMPONENT_DATA";
 
 import styled from "styled-components";
+import SectionHeader from "./SectionHeader";
 
 const Activity = () => {
   return (
     <Container>
-      <div className="header">
-        <h5>Transfer Activity</h5>
-        <form action="">
-          <MagnifyingGlassIcon width="20" />
-          <input type="text" name="" id="" placeholder="Search Transactions" />
-        </form>
-      </div>
+      <div className="activity-card">
+        <SectionHeader title="Transfer Activities" />
+        <div className="top-border"></div>
 
-      <ActivityTitle>
-        <p>Scheduled</p>
-        <p>$250.11</p>
-      </ActivityTitle>
+        <ActivityTitle>
+          Scheduled
+          <span>$250.11</span>
+        </ActivityTitle>
 
-      {SCHEDULED_ACTIVITY.map((item) => (
-        <ActivitySummary item={item} key={item.id} />
-      ))}
+        {SCHEDULED_ACTIVITY.map((item) => (
+          <ActivitySummary item={item} key={item.id} />
+        ))}
 
-      <ActivityTitle>
-        <p>Pending</p>
-      </ActivityTitle>
+        <ActivityTitle>Pending</ActivityTitle>
 
-      {PENDING_ACTIVITY.map((item) => (
-        <ActivitySummary item={item} key={item.id} />
-      ))}
+        {PENDING_ACTIVITY.map((item) => (
+          <ActivitySummary item={item} key={item.id} />
+        ))}
 
-      <ActivityTitle>
-        <p>Completed</p>
-      </ActivityTitle>
-      {COMPLETED_ACTIVITY.map((item) => (
-        <ActivitySummary item={item} key={item.id} />
-      ))}
+        <ActivityTitle>Completed</ActivityTitle>
+        {COMPLETED_ACTIVITY.map((item) => (
+          <ActivitySummary item={item} key={item.id} />
+        ))}
 
-      <div className="footer">
-        <Anchor to="/transactions">View more transactions</Anchor>
+        <div className="footer">
+          <Anchor to="/transactions">View more transactions</Anchor>
+        </div>
       </div>
     </Container>
   );
@@ -55,47 +49,43 @@ const Activity = () => {
 export default Activity;
 
 const Container = styled.section`
-  border-radius: ${({ theme }) => theme.borderRadius[1]};
-  border: 1px solid ${({ theme }) => theme.palette.border};
-  background: ${({ theme }) => theme.palette.main};
-  width: 30%;
-  height: fit-content;
+  width: 32%;
 
-  .header {
-    padding: 20px 15px 15px 15px;
+  .activity-card {
+    border-radius: ${({ theme }) => theme.borderRadius[1]};
+    background: ${({ theme }) => theme.palette.main};
+    height: fit-content;
+    margin-left: 15px;
+  }
+
+  .top-border {
     border-bottom: 1px solid ${({ theme }) => theme.palette.border};
-  }
+    margin-top: 5px;
 
-  h5 {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    margin-bottom: 10px;
-  }
+    form {
+      width: 100%;
+      border: 1px solid ${({ theme }) => theme.palette.border};
+      border-radius: ${({ theme }) => theme.borderRadius[0]};
+      display: flex;
+      margin-right: 20px;
+      padding: 0 10px;
 
-  form {
-    width: 100%;
-    border: 1px solid ${({ theme }) => theme.palette.border};
-    border-radius: ${({ theme }) => theme.borderRadius[0]};
-    display: flex;
-    padding: 8px 6px;
-
-    :active {
-      border: 1px solid ${({ theme }) => theme.palette.link};
+      input {
+        background: red;
+        padding: 10px 0;
+        width: 100%;
+        border: none;
+        outline: none;
+        margin-left: 5px;
+        background: transparent;
+        color: ${({ theme }) => theme.palette.text};
+        font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+      }
     }
   }
 
-  input {
-    width: 100%;
-    border: none;
-    outline: none;
-    margin-left: 5px;
-    background: transparent;
-    color: ${({ theme }) => theme.palette.text};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
-  }
-
   .footer {
-    padding: 15px;
+    padding: 15px 20px;
     width: 100%;
   }
 `;
@@ -103,23 +93,29 @@ const Container = styled.section`
 const ActivityTitle = styled.div`
   padding: 6px 20px;
   border-bottom: 1px solid ${({ theme }) => theme.palette.border};
-  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   display: flex;
   justify-content: space-between;
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
-  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+  text-transform: uppercase;
+
+  span {
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+  }
 `;
 
 const Anchor = styled(Link)`
-  border: 1px solid ${({ theme }) => theme.palette.link};
   color: ${({ theme }) => theme.palette.text};
   width: 100%;
   padding: 4px;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+  border: 1px solid ${({ theme }) => theme.palette.link};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   :active {
     background: ${({ theme }) => theme.palette.focus};

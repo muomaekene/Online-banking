@@ -20,7 +20,7 @@ const Select = ({ placeholder, options }) => {
   return (
     <Container>
       <button className="select-header" onClick={toggler}>
-        <p className="select-title">{selected || placeholder}</p>
+        <span>{selected || placeholder}</span>
         <>
           {isOpen ? (
             <ChevronUpIcon className="icon" />
@@ -65,16 +65,11 @@ const Container = styled.div`
     color: ${({ theme }) => theme.palette.text};
     border: 1px solid ${({ theme }) => theme.palette.border};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    text-transform: capitalize;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     z-index: 666;
-  }
-
-  .select-title {
-    font-size: inherit;
-    font-weight: 400;
-    text-transform: capitalize;
   }
 
   .select-options {

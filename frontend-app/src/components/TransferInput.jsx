@@ -8,7 +8,7 @@ const InputBar = ({ icon, placeholder }) => {
         name="amount"
         className="input"
         placeholder={placeholder}
-        type="number"
+        type="tel"
       />
     </Wrap>
   );
@@ -48,15 +48,12 @@ const Wrap = styled.div`
     border: 1px solid transparent;
 
     ::placeholder {
-      color: ${({ theme }) => theme.palette.altText};
+      color: ${({ theme }) => theme.palette.text};
       font-size: 12px;
-      text-transform: capitalize;
     }
 
     :focus-within {
-      border: 1px solid ${({ theme }) => theme.palette.focus};
-      background: ${({ theme }) => theme.palette.main};
-      border-radius: ${({ theme }) => theme.borderRadius[0]};
+      background: ${({ theme }) => theme.palette.focus};
     }
 
     ::-webkit-outer-spin-button,

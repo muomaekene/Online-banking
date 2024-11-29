@@ -7,7 +7,7 @@ const AccountDetailsPage = () => {
 
   return (
     <Container>
-      <NavigationBtn>All accounts</NavigationBtn>
+      <NavigationBtn />
 
       <h4>{params.id}</h4>
     </Container>

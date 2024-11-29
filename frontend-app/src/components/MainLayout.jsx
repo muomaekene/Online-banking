@@ -3,7 +3,6 @@ import { createTheme } from "@mui/system";
 import { GlobalStyles } from "../utils/global";
 import { useDarkMode } from "../utils/useDarkMode";
 import { getDesignToken } from "../utils/theme";
-import { devices as device } from "../utils/breakpoints";
 
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
@@ -52,10 +51,6 @@ const Main = styled.main`
       border-radius: 10px;
       background: ${({ theme }) => theme.palette.scrollbar};
     }
-
-    @media ${device.laptop} {
-      display: none;
-    }
   }
 
   #content {
@@ -75,11 +70,6 @@ const Main = styled.main`
     ::-webkit-scrollbar-thumb {
       border-radius: 10px;
       background: ${({ theme }) => theme.palette.scrollbar};
-    }
-
-    @media ${device.laptop} {
-      width: 100%;
-      overflow: hidden;
     }
   }
 `;
