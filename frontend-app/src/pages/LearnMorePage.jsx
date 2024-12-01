@@ -82,7 +82,7 @@ const Container = styled.div`
   .account-name {
     margin-top: 10px;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 

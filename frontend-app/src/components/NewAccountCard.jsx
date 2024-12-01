@@ -36,10 +36,10 @@ const Section = styled.section`
   }
 
   .account-name {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    padding: 20px 0 15px 20px;
-    text-transform: capitalize;
+    padding: 20px 0 10px 20px;
+    text-transform: uppercase;
   }
 
   .account-desc {
@@ -52,7 +52,7 @@ const Section = styled.section`
   .account-actions {
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px 20px 20px;
+    padding: 10px 20px 20px 20px;
   }
 
   .account-features {

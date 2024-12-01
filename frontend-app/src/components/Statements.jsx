@@ -106,6 +106,7 @@ const StatementResult = styled.section`
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
+    text-transform: uppercase;
   }
 
   button {
@@ -118,7 +119,8 @@ const StatementResult = styled.section`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
 
     :hover {
-      border: 1px solid ${({ theme }) => theme.palette.border};
+      border: 1px solid ${({ theme }) => theme.palette.link};
+      color: ${({ theme }) => theme.palette.solid};
     }
   }
 

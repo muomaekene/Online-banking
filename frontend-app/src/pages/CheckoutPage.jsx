@@ -11,14 +11,13 @@ const CheckoutPage = () => {
       <NavigationBtn />
       <div className="page-content">
         <div className="title">Your contact Information</div>
-
-        <h1>Robbin J. Eckert</h1>
-        <div>
-          <p>3714 Lake Forest Drive, White Plains, NY, 10601</p>
-          <p>robbin121eckert@gmail.com</p>
-          <p>
-            <span>SSN:</span> 332-78-8254
-          </p>
+        <div className="contact-details">
+          <h1>Robbin J. Eckert</h1>
+          <div>
+            <p>3714 Lake Forest Drive, White Plains, NY, 10601</p>
+            <p>Email: robbin121eckert@gmail.com</p>
+            <p>SSN: 332-78-8254</p>
+          </div>
         </div>
 
         <div className="title">
@@ -65,6 +64,13 @@ const Container = styled.div`
     margin-top: 10px;
     background: ${({ theme }) => theme.palette.main};
 
+    .contact-details {
+      border: 1px solid ${({ theme }) => theme.palette.border};
+      border-radius: ${({ theme }) => theme.borderRadius[1]};
+      padding: 20px;
+      width: fit-content;
+    }
+
     h1 {
       font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
       font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
@@ -72,6 +78,7 @@ const Container = styled.div`
 
     p {
       color: ${({ theme }) => theme.palette.altText};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     }
 
     .title {
