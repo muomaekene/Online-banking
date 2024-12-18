@@ -21,11 +21,12 @@ const LearnMorePage = () => {
     <Container>
       <NavigationBtn />
       {accountsList.map((account) => (
-        <div className="all-details" key={account.id}>
+        <section className="all-details" key={account.id}>
+          <div className="page-title">Learn More</div>
           <h2 className="account-name">{account.name}</h2>
           <p className="top-desc">{account.sc_description}</p>
 
-          <h3 className="title">How this account works:</h3>
+          <div className="sub">How this account works:</div>
           <p className="bottom-desc">{account.mn_description}</p>
 
           <h3 className="title">Benefits:</h3>
@@ -51,7 +52,7 @@ const LearnMorePage = () => {
           </table>
 
           <FooterInfo />
-        </div>
+        </section>
       ))}
     </Container>
   );
@@ -79,10 +80,17 @@ const Container = styled.div`
     padding: 20px;
   }
 
+  .page-title {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    margin-bottom: 15px;
+    text-decoration: underline;
+    text-decoration-color: ${({ theme }) => theme.palette.solid};
+  }
+
   .account-name {
     margin-top: 10px;
-    text-transform: uppercase;
-    font-size: 18px;
+    text-transform: capitalize;
+    font-size: 16px;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 
@@ -96,7 +104,7 @@ const Container = styled.div`
     /* margin-top: 20px; */
   }
 
-  .title {
+  h3 {
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     margin-top: 20px;
@@ -104,6 +112,12 @@ const Container = styled.div`
     text-transform: uppercase;
     display: flex;
     gap: 5px;
+  }
+
+  .sub {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    margin-top: 15px;
+    text-transform: capitalize;
   }
 
   .features {

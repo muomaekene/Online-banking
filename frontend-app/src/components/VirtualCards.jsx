@@ -17,7 +17,7 @@ const VirtualCards = () => {
       </div>
 
       <Anchor to="/cards" className="card-btn">
-        Manage Cards
+        + Manage Cards
       </Anchor>
     </Section>
   );

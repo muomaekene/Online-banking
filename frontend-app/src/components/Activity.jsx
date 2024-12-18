@@ -18,10 +18,7 @@ const Activity = () => {
         <SectionHeader title="Transfer Activities" />
         <div className="top-border"></div>
 
-        <ActivityTitle>
-          Scheduled
-          <span>$250.11</span>
-        </ActivityTitle>
+        <ActivityTitle>Scheduled</ActivityTitle>
 
         {SCHEDULED_ACTIVITY.map((item) => (
           <ActivitySummary item={item} key={item.id} />
@@ -60,7 +57,6 @@ const Container = styled.section`
 
   .top-border {
     border-bottom: 1px solid ${({ theme }) => theme.palette.border};
-    margin-top: 5px;
 
     form {
       width: 100%;
@@ -100,7 +96,7 @@ const ActivityTitle = styled.div`
   text-transform: uppercase;
 
   span {
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
   }
 `;
 

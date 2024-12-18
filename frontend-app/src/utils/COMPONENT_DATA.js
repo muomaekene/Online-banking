@@ -7,7 +7,7 @@ import {
 export const ACCOUNT_SUMMARY = [
   {
     accountId: "493097583584",
-    account: "smart rewards checking account",
+    account: "smart rewards checking",
     accountNo: 3473,
     interestRate: 0.005,
     interestPaidNow: "0.00",
@@ -47,7 +47,7 @@ export const ACCOUNT_SUMMARY = [
   },
   {
     accountId: "583492854053",
-    account: "traditional individual retirement account",
+    account: "traditional IRA",
     accountNo: 5823,
     interestRate: 1.85,
     interestPaidNow: "0.00",
@@ -87,7 +87,7 @@ export const ACCOUNT_SUMMARY = [
   },
   {
     accountId: "586503848234",
-    account: "prime share savings account",
+    account: "prime share savings",
     accountNo: 7534,
     interestRate: 2.55,
     interestPaidNow: "0.00",
@@ -130,7 +130,7 @@ export const ACCOUNT_SUMMARY = [
 export const CREDIT_CARDS = [
   {
     accountId: "883458348237",
-    account: "customized cash rewards visa card",
+    account: "customized cash rewards visa",
     accountNo: 9548,
     interestRate: "0.00",
     interestPaidNow: "0.00",
@@ -170,7 +170,7 @@ export const CREDIT_CARDS = [
   },
   {
     accountId: "883204948345",
-    account: "venture rewards master card",
+    account: "venture rewards mastercard",
     accountNo: 5632,
     interestRate: "0.00",
     interestPaidNow: "0.00",
@@ -230,7 +230,7 @@ export const MAIN_TABLE = [
   },
   {
     id: 888,
-    accountName: "venture rewards visa cards",
+    accountName: "venture rewards mastercard",
     date: "10/14/2024",
     description: "CREDIT",
     amount: "465,000.00",

@@ -10,7 +10,7 @@ const CheckoutPage = () => {
     <Container>
       <NavigationBtn />
       <div className="page-content">
-        <div className="title">Your contact Information</div>
+        <div className="page-title">Checkout</div>
         <div className="contact-details">
           <h1>Robbin J. Eckert</h1>
           <div>
@@ -64,20 +64,28 @@ const Container = styled.div`
     margin-top: 10px;
     background: ${({ theme }) => theme.palette.main};
 
+    .page-title {
+      font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
+      margin-bottom: 15px;
+      text-decoration: underline;
+      text-decoration-color: ${({ theme }) => theme.palette.solid};
+    }
+
     .contact-details {
       border: 1px solid ${({ theme }) => theme.palette.border};
       border-radius: ${({ theme }) => theme.borderRadius[1]};
-      padding: 20px;
+      padding: 15px 20px;
       width: fit-content;
     }
 
     h1 {
-      font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+      text-transform: capitalize;
     }
 
     p {
-      color: ${({ theme }) => theme.palette.altText};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
       font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     }
 
@@ -111,6 +119,7 @@ const Container = styled.div`
 
         span {
           color: ${({ theme }) => theme.palette.text};
+          font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
         }
       }
     }
