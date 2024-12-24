@@ -40,7 +40,7 @@ const Main = styled.main`
     display: inline-block;
     vertical-align: top;
     height: 100%;
-    width: 240px;
+    width: 270px;
     overflow: auto;
 
     ::-webkit-scrollbar {
@@ -58,7 +58,7 @@ const Main = styled.main`
     vertical-align: top;
     height: 100%;
     max-width: 1040px;
-    width: calc(100% - 240px);
+    width: calc(100% - 270px);
     overflow: auto;
     background: ${({ theme }) => theme.palette.secondary};
     padding: 0 ${({ theme }) => theme.spacing(2)};

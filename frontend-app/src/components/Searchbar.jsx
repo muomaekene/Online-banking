@@ -45,9 +45,9 @@ const Form = styled.form`
   margin-left: 4rem;
 
   :focus-within {
-    background: ${({ theme }) => theme.palette.focus};
+    /* background: ${({ theme }) => theme.palette.focus}; */
     border-radius: ${({ theme }) => theme.borderRadius[0]};
-    border: 1px solid ${({ theme }) => theme.palette.border};
+    border: 1px solid ${({ theme }) => theme.palette.link};
   }
 
   .icon-wrap {
@@ -72,15 +72,16 @@ const Form = styled.form`
   }
 
   .input-bar {
-    padding: 0 ${({ theme }) => theme.spacing(0)};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     color: ${({ theme }) => theme.palette.text};
     width: calc(100% - 50px);
     background: none;
     border: none;
     outline: none;
     display: flex;
+    align-items: center;
+    justify-content: center;
 
     ::placeholder {
       color: ${({ theme }) => theme.palette.altText};

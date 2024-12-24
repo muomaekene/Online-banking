@@ -27,7 +27,7 @@ const Input = styled.input`
 
   ::placeholder {
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    text-transform: capitalize;
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 
   :focus-within {

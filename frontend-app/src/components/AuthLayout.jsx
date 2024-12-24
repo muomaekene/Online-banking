@@ -35,6 +35,6 @@ const Main = styled.main`
   .auth-body {
     display: flex;
     justify-content: center;
-    margin: 100px 0;
+    /* margin: 100px 0; */
   }
 `;

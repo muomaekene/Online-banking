@@ -4,16 +4,12 @@ import OverviewPage from "./pages/OverviewPage";
 import AccountsPage from "./pages/AccountsPage";
 import DepositPage from "./pages/DepositPage";
 import TransferPage from "./pages/TransferPage";
-import TransactionsPage from "./pages/TransactionsPage";
 import ProfilePage from "./pages/ProfilePage";
 import SettingsPage from "./pages/SettingsPage";
 import HelpPage from "./pages/HelpPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import PageNotFound from "./pages/PageNotFound";
-import AnalyticsPage from "./pages/AnalyticsPage";
-import VirtualCardsPage from "./pages/VirtualCardsPage";
-
 import AllAccountsPage from "./pages/AllAccountsPage";
 import AccountStatementsPage from "./pages/AccountStatementsPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
@@ -39,9 +35,6 @@ const App = () => {
 
       <Route path="transfers" element={<TransferPage />} />
       <Route path="deposit" element={<DepositPage />} />
-      <Route path="transactions" element={<TransactionsPage />} />
-      <Route path="analytics" element={<AnalyticsPage />} />
-      <Route path="cards" element={<VirtualCardsPage />} />
       <Route path="profile" element={<ProfilePage />} />
       <Route path="settings" element={<SettingsPage />} />
       <Route path="help" element={<HelpPage />} />

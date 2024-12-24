@@ -43,7 +43,7 @@ const Wrap = styled.div`
     background: none;
     font-family: inherit;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
     border: 1px solid transparent;
 

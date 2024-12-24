@@ -47,11 +47,11 @@ export default AuthFooter;
 
 const Container = styled.footer`
   background: ${({ theme }) => theme.palette.main};
-  margin-top: 15px;
+  margin-top: 20px;
   padding: 20px;
   border-top: 1px solid #ebe043;
   display: flex;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
 
   .navigation {

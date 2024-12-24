@@ -10,13 +10,20 @@ const CheckoutPage = () => {
     <Container>
       <NavigationBtn />
       <div className="page-content">
-        <div className="page-title">Checkout</div>
+        <div className="title">Your contact information</div>
         <div className="contact-details">
           <h1>Robbin J. Eckert</h1>
-          <div>
-            <p>3714 Lake Forest Drive, White Plains, NY, 10601</p>
-            <p>Email: robbin121eckert@gmail.com</p>
-            <p>SSN: 332-78-8254</p>
+          <div className="more-info">
+            <p>
+              <span>Residence:</span> 3714 Lake Forest Drive, White Plains, NY,
+              10601
+            </p>
+            <p>
+              <span>Email:</span> robbin121eckert@gmail.com
+            </p>
+            <p>
+              <span>SSN:</span> 332-78-8254
+            </p>
           </div>
         </div>
 
@@ -39,10 +46,8 @@ const CheckoutPage = () => {
             Min. deposit:<span> $250.00</span>
           </div>
         </div>
-
-        <div className="title">Choose your payment method</div>
-        <Payment />
       </div>
+      <Payment />
     </Container>
   );
 };
@@ -55,20 +60,18 @@ const Container = styled.div`
   overflow-x: hidden !important;
   padding-bottom: 15px;
   font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   padding-right: 15px;
 
   .page-content {
     border-radius: ${({ theme }) => theme.borderRadius[1]};
-    padding: 20px;
+    padding: 5px 20px 25px 20px;
     margin-top: 10px;
     background: ${({ theme }) => theme.palette.main};
 
     .page-title {
       font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
       margin-bottom: 15px;
-      text-decoration: underline;
-      text-decoration-color: ${({ theme }) => theme.palette.solid};
     }
 
     .contact-details {
@@ -78,22 +81,29 @@ const Container = styled.div`
       width: fit-content;
     }
 
+    .more-info {
+      p {
+        > span {
+          color: ${({ theme }) => theme.palette.altText};
+        }
+      }
+    }
+
     h1 {
-      font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
       text-transform: capitalize;
     }
 
     p {
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
       font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     }
 
     .title {
-      font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
       margin-top: 20px;
       margin-bottom: 10px;
-      text-transform: uppercase;
       display: flex;
       gap: 5px;
     }
@@ -109,6 +119,10 @@ const Container = styled.div`
       border-radius: ${({ theme }) => theme.borderRadius[1]};
       padding: 20px;
       width: fit-content;
+
+      > p {
+        color: ${({ theme }) => theme.palette.altText};
+      }
 
       .amount {
         border-top: 1px solid ${({ theme }) => theme.palette.border};

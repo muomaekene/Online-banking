@@ -9,6 +9,8 @@ export default FileUpload;
 const Input = styled.input`
   border: 1px solid ${({ theme }) => theme.palette.border};
   border-radius: ${({ theme }) => theme.borderRadius[1]};
+  color: ${({ theme }) => theme.palette.altText};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
 
   ::file-selector-button {
     background-color: ${({ theme }) => theme.palette.main};
@@ -18,6 +20,8 @@ const Input = styled.input`
     padding: 15px 20px;
     margin-right: 20px;
     transition: 0.2s;
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-family: inherit;
   }
 
   ::file-selector-button:hover {

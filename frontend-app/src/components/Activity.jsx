@@ -93,7 +93,7 @@ const ActivityTitle = styled.div`
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
+  text-transform: capitalize;
 
   span {
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};

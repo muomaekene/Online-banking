@@ -63,23 +63,25 @@ const AccountDetailsPage = () => {
           </p>
         </div>
       </section>
-      <section className="generic">
-        <div className="title">Activities</div>
+      <section className="table-cover">
+        <div className="top-group">
+          <div className="title">Activities</div>
 
-        <div className="all-actions">
-          <div className="actions">
-            <p>
-              <MagnifyingGlassIcon width="15px" /> Search
-            </p>
-            <p>
-              <ArrowDownIcon width="15px" /> Download
-            </p>
-            <p>
-              <PrinterIcon width="15px" /> Print
-            </p>
-          </div>
-          <div className="filter">
-            <Select placeholder="Sort: Date - Newest to Oldest" />
+          <div className="all-actions">
+            <div className="actions">
+              <p>
+                <MagnifyingGlassIcon width="15px" /> Search
+              </p>
+              <p>
+                <ArrowDownIcon width="15px" /> Download
+              </p>
+              <p>
+                <PrinterIcon width="15px" /> Print
+              </p>
+            </div>
+            <div className="filter">
+              <Select placeholder="Sort: Date - Newest to Oldest" />
+            </div>
           </div>
         </div>
 
@@ -102,6 +104,18 @@ const Container = styled.div`
     border-radius: ${({ theme }) => theme.borderRadius[1]};
     margin-right: 15px;
     padding: 20px;
+  }
+
+  .table-cover {
+    background: ${({ theme }) => theme.palette.main};
+    margin-bottom: 15px;
+    margin-right: 15px;
+    padding-bottom: 10px;
+    border-radius: ${({ theme }) => theme.borderRadius[1]};
+
+    .top-group {
+      padding: 20px 20px 0px 20px;
+    }
   }
 
   .space {

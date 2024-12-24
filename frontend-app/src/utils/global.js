@@ -38,7 +38,7 @@ export const GlobalStyles = createGlobalStyle`
  }
 
  p {
-   line-height: 1.3rem;
+   line-height: 1.2rem;
    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
  }

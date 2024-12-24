@@ -22,6 +22,5 @@ const Container = styled.div`
   h2 {
     font-weight: 500;
     font-size: inherit;
-    text-transform: capitalize;
   }
 `;

@@ -1,35 +1,40 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  ChevronRightIcon,
+  EllipsisHorizontalIcon,
+} from "@heroicons/react/24/outline";
 
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
 const AccountBanner = ({ account }) => {
-  const [showMessage, setShowMessage] = useState(false);
-
-  const { type, bal, desc, msg, img: Image, alt: altText } = account;
+  const { type, bal, desc, info, img: Image, alt: altText } = account;
 
   return (
-    <Container to="/accounts">
-      <img className="account-icon" src={Image} alt={altText} />
-      <div>
-        <p className="account-type">{type}</p>
+    <Container>
+      <div className="left">
+        <img className="account-icon" src={Image} alt={altText} />
+        <div>
+          <p className="account-type">
+            <Link to="#">{type}</Link>
+          </p>
+          <p className="more-info">{info}</p>
+        </div>
+      </div>
+
+      <div className="right">
         <p className="account-bal">{bal}</p>
-        <p className="desc">
-          {desc}
-          <span
-            onMouseEnter={() => {
-              setShowMessage(true);
-            }}
-            onMouseLeave={() => {
-              setShowMessage(false);
-            }}
-          >
-            <InformationCircleIcon className="icon" />
-          </span>
-        </p>
-        {showMessage && <p className="account-info">{msg}</p>}
+        <div className="actions">
+          <button>
+            View activity <ChevronRightIcon width="15px" />
+          </button>
+          <button>
+            Make a transfer <ChevronRightIcon width="15px" />
+          </button>
+          <button>
+            <EllipsisHorizontalIcon width="15px" />
+          </button>
+        </div>
       </div>
     </Container>
   );
@@ -37,45 +42,51 @@ const AccountBanner = ({ account }) => {
 
 export default AccountBanner;
 
-const Container = styled(Link)`
-  padding: 0 25px;
-  height: 100%;
+const Container = styled.div`
+  padding: 15px 20px;
+  height: 6rem;
   border-radius: ${({ theme }) => theme.borderRadius[1]};
   border: 1px solid transparent;
   background: ${({ theme }) => theme.palette.main};
   display: flex;
   align-items: center;
-  cursor: pointer;
+  justify-content: space-between;
   color: ${({ theme }) => theme.palette.altText};
   position: relative;
 
-  :hover {
-    border: 1px solid ${({ theme }) => theme.palette.border};
-  }
-
-  :active {
-    background: ${({ theme }) => theme.palette.focus};
-    border: 1px solid transparent;
-    background-size: 100%;
+  .left {
+    display: flex;
+    align-items: start;
   }
 
   .account-icon {
-    width: 35px;
-    height: 35px;
-    margin-right: ${({ theme }) => theme.spacing(2)};
+    width: 40px;
+    height: 40px;
+    margin-right: ${({ theme }) => theme.spacing(1)};
+    border-radius: 4px;
   }
 
   .account-type {
-    color: ${({ theme }) => theme.palette.link};
+    color: ${({ theme }) => theme.palette.text};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     text-transform: capitalize;
+    display: flex;
+    gap: 2px;
+  }
+
+  .more-info {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    color: ${({ theme }) => theme.palette.altText};
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
+    text-align: end;
+    cursor: pointer;
   }
 
   .desc {
@@ -104,5 +115,30 @@ const Container = styled(Link)`
     font-size: 11px;
     padding: 5px 0;
     z-index: 666;
+  }
+
+  .actions {
+    margin-top: 5px;
+    display: flex;
+    gap: 5px;
+
+    button {
+      display: flex;
+      align-items: center;
+      padding: 4px 6px;
+      background: none;
+      border: 1px solid ${({ theme }) => theme.palette.solid};
+      color: ${({ theme }) => theme.palette.text};
+      font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+      border-radius: 4px;
+      cursor: pointer;
+
+      :active {
+        background: ${({ theme }) => theme.palette.focus};
+        background-size: 100%;
+        border: 1px solid transparent;
+      }
+    }
   }
 `;

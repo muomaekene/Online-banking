@@ -34,10 +34,10 @@ const Container = styled.aside`
   height: 100%;
   width: 100%;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   display: flex;
   flex-direction: column;
-  padding: 25px 10px;
+  padding: 20px 10px;
   text-transform: capitalize;
 
   .sidebar-header {
@@ -57,7 +57,7 @@ const Container = styled.aside`
 
     .nav-item {
       .nav-link {
-        padding: 14px 30px;
+        padding: 15px 30px;
         display: flex;
         align-items: center;
 
@@ -80,8 +80,8 @@ const Container = styled.aside`
         border-radius: ${({ theme }) => theme.borderRadius[1]};
       }
     }
-    .nav-item:nth-child(7) {
-      margin-bottom: 60px;
+    .nav-item:nth-child(4) {
+      margin-bottom: 5rem;
     }
   }
 `;

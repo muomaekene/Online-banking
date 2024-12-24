@@ -7,7 +7,6 @@ import styled from "styled-components";
 
 const AccountBanners = lazy(() => import("../components/AccountBanners"));
 const Transactions = lazy(() => import("../components/Transactions"));
-const Analytics = lazy(() => import("../components/Analytics"));
 const VirtualCards = lazy(() => import("../components/VirtualCards"));
 const QuickTransfer = lazy(() => import("../components/QuickTransfer"));
 
@@ -34,7 +33,6 @@ const OverviewPage = () => {
           <div className="flex-left">
             <AccountBanners />
             <Transactions />
-            <Analytics />
           </div>
           <div className="flex-right">
             <VirtualCards />
@@ -55,7 +53,7 @@ const Container = styled.div`
   justify-content: space-between;
 
   .flex-left {
-    margin-right: ${({ theme }) => theme.spacing(2)};
+    margin-right: ${({ theme }) => theme.spacing(3)};
     width: 67%;
   }
 

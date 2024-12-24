@@ -22,8 +22,8 @@ const Container = styled.div`
   margin-top: 10px;
   background: ${({ theme }) => theme.palette.main};
   border: 1px solid ${({ theme }) => theme.palette.danger};
-  color: ${({ theme }) => theme.palette.text};
   border-radius: ${({ theme }) => theme.borderRadius[0]};
+  color: ${({ theme }) => theme.palette.danger};
   padding: 12px;
   display: flex;
   justify-content: space-between;

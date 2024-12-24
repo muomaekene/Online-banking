@@ -1,10 +1,8 @@
 import {
   CreditCardIcon,
-  ArrowsRightLeftIcon,
   ArrowPathIcon,
   WrenchIcon,
   UserIcon,
-  ArrowTrendingUpIcon,
   BuildingLibraryIcon,
   QuestionMarkCircleIcon,
   ArrowLeftOnRectangleIcon,
@@ -12,11 +10,14 @@ import {
   UserCircleIcon,
   UserPlusIcon,
   Cog6ToothIcon,
+  CameraIcon,
 } from "@heroicons/react/24/outline";
 
 import moneyBox from "../assets/images/moneyBox.png";
 import creditCard from "../assets/images/creditCard.png";
 import checkBook from "../assets/images/checkBook.png";
+
+import bank from "../assets/images/bank.png";
 
 export const navLinks = [
   {
@@ -34,28 +35,16 @@ export const navLinks = [
   {
     key: "transfer",
     name: "Transfer & payments",
-    icon: ArrowsRightLeftIcon,
+    icon: ArrowPathIcon,
     to: "/transfers",
   },
+  {
+    key: "deposit",
+    name: "Deposit Check",
+    icon: CameraIcon,
+    to: "/deposit",
+  },
 
-  {
-    key: "transactions",
-    name: "Transactions",
-    icon: ArrowPathIcon,
-    to: "/transactions",
-  },
-  {
-    key: "analytics",
-    name: "Analytics",
-    icon: ArrowTrendingUpIcon,
-    to: "/analytics",
-  },
-  {
-    key: "cards",
-    name: "Virtual cards",
-    icon: CreditCardIcon,
-    to: "/cards",
-  },
   {
     key: "profile",
     name: "Manage profile",
@@ -80,32 +69,32 @@ export const accountInfo = [
   {
     key: 10,
     name: "checking",
-    type: "Total Checking",
+    type: "smart rewards checking | ...3473",
     bal: "$467,720.83",
     desc: "Available bal",
-    img: checkBook,
+    img: bank,
     alt: "check-book",
-    msg: "Cummulative balance on all your checking accounts",
+    info: "Fees/charges: $260.00",
   },
   {
     key: 15,
     name: "savings",
-    type: "Total Savings",
+    type: "prime share savings | ...7534",
     bal: "$8,450.10",
     desc: "Available bal",
-    img: moneyBox,
+    img: bank,
     alt: "money-box",
-    msg: "Cummulative balance on all your savings accounts",
+    info: "Interest rate: 4.75%",
   },
   {
     key: 20,
     name: "cc",
-    type: "Credit cards",
+    type: "venture rewards mastercard | ...5632",
     bal: "$49,940.06",
     desc: "Outstanding bal",
-    img: creditCard,
+    img: bank,
     alt: "credit-card",
-    msg: "Total amount you owe on all your credit cards",
+    info: "Payment due: $3,750.10 on Feb 13",
   },
 ];
 

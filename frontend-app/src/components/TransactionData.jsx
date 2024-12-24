@@ -1,18 +1,10 @@
 import styled from "styled-components";
 
 const TransactionData = ({
-  transaction: {
-    transactionNum,
-    accountName,
-    date,
-    description,
-    amount,
-    balance,
-  },
+  transaction: { date, description, amount, balance },
 }) => {
   return (
     <TableRow>
-      <td>{transactionNum || accountName}</td>
       <td>{date}</td>
       <td>{description}</td>
       <td>${amount}</td>
@@ -31,9 +23,9 @@ const TableRow = styled.tr`
   }
 
   td {
-    padding: 10px 20px;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
+    padding: 10px 0px 10px 20px;
   }
 `;

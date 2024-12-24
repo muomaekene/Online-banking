@@ -8,7 +8,6 @@ const TableMain = () => {
     <Table>
       <thead>
         <tr>
-          <th scope="col">Account</th>
           <th scope="col">Date</th>
           <th scope="col">Description</th>
           <th scope="col">Amount</th>
@@ -31,14 +30,15 @@ const Table = styled.table`
   display: table;
   width: 100%;
   overflow: hidden;
+  border-spacing: 5px;
 
   thead {
     tr {
       th {
         text-align: left;
-        text-transform: uppercase;
-        font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-        font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+        text-transform: capitalize;
+        font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+        font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
         color: ${({ theme }) => theme.palette.altText};
         padding: 10px 20px;
       }

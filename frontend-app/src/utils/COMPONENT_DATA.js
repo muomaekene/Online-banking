@@ -16,28 +16,24 @@ export const ACCOUNT_SUMMARY = [
     balance: "7,720.83",
     transactions: [
       {
-        transactionNum: 754986893665,
         date: "11/02/2024",
         description: "CREDIT",
         amount: "465,000.00",
         balance: "467,720.83",
       },
       {
-        transactionNum: 768945389533,
         date: "10/08/2024",
         description: "TRF",
         amount: "2,000.00",
         balance: "2,720.83",
       },
       {
-        transactionNum: 748645783496,
         date: "10/29/2024",
         description: "DEBIT",
         amount: "4,500.20",
         balance: "42,940.06",
       },
       {
-        transactionNum: 798472643612,
         date: "03/22/2024",
         description: "CREDIT",
         amount: "570.00",
@@ -56,28 +52,24 @@ export const ACCOUNT_SUMMARY = [
     balance: "56,250.99",
     transactions: [
       {
-        transactionNum: 754986893689,
         date: "10/14/2024",
         description: "CREDIT",
         amount: "465,000.00",
         balance: "467,720.83",
       },
       {
-        transactionNum: 768945389502,
         date: "06/08/2024",
         description: "TRF",
         amount: "2,000.00",
         balance: "2,720.83",
       },
       {
-        transactionNum: 748645783476,
         date: "02/12/2024",
         description: "DEBIT",
         amount: "4,500.20",
         balance: "42,940.06",
       },
       {
-        transactionNum: 798472643610,
         date: "11/18/2023",
         description: "CREDIT",
         amount: "570.00",
@@ -96,28 +88,24 @@ export const ACCOUNT_SUMMARY = [
     balance: "247,560.14",
     transactions: [
       {
-        transactionNum: 767683948321,
         date: "06/15/2024",
         description: "CREDIT",
         amount: "465,000.00",
         balance: "467,720.83",
       },
       {
-        transactionNum: 760239458349,
         date: "02/10/2022",
         description: "TRF",
         amount: "2,000.00",
         balance: "2,720.83",
       },
       {
-        transactionNum: 759054050322,
         date: "01/30/2022",
         description: "DEBIT",
         amount: "4,500.20",
         balance: "42,940.06",
       },
       {
-        transactionNum: 791103540342,
         date: "01/28/2022",
         description: "CREDIT",
         amount: "570.00",
@@ -139,28 +127,24 @@ export const CREDIT_CARDS = [
     balance: "9,250.00",
     transactions: [
       {
-        transactionNum: 54986893689,
         date: "10/14/2024",
         description: "CREDIT",
         amount: "465,000.00",
         balance: "467,720.83",
       },
       {
-        transactionNum: 68945389502,
         date: "06/08/2024",
         description: "TRF",
         amount: "2,000.00",
         balance: "2,720.83",
       },
       {
-        transactionNum: 48645783476,
         date: "02/12/2024",
         description: "DEBIT",
         amount: "4,500.20",
         balance: "42,940.06",
       },
       {
-        transactionNum: 98472643610,
         date: "11/18/2023",
         description: "CREDIT",
         amount: "570.00",
@@ -179,28 +163,24 @@ export const CREDIT_CARDS = [
     balance: "40,690.06",
     transactions: [
       {
-        transactionNum: 54986893689,
         date: "10/14/2024",
         description: "CREDIT",
         amount: "465,000.00",
         balance: "467,720.83",
       },
       {
-        transactionNum: 68945389502,
         date: "06/08/2024",
         description: "TRF",
         amount: "2,000.00",
         balance: "2,720.83",
       },
       {
-        transactionNum: 48645783476,
         date: "02/12/2024",
         description: "DEBIT",
         amount: "4,500.20",
         balance: "42,940.06",
       },
       {
-        transactionNum: 98472643610,
         date: "11/18/2023",
         description: "CREDIT",
         amount: "570.00",
@@ -214,26 +194,30 @@ export const CREDIT_CARDS = [
 export const MAIN_TABLE = [
   {
     id: 222,
-    accountName: "smartplus checking",
     date: "11/02/2024",
-    description: "CREDIT",
+    description: "ATM deposit",
     amount: "465,000.00",
     balance: "467,720.83",
   },
   {
     id: 666,
-    accountName: "smartplus checking",
     date: "10/08/2024",
-    description: "TRF",
+    description: "Mobile banking payment to Credit Card",
+    amount: "2,000.00",
+    balance: "2,720.83",
+  },
+  {
+    id: 999,
+    date: "10/08/2024",
+    description: "Debit purchase - Apple Green Bay",
     amount: "2,000.00",
     balance: "2,720.83",
   },
   {
     id: 888,
-    accountName: "venture rewards mastercard",
     date: "10/14/2024",
-    description: "CREDIT",
-    amount: "465,000.00",
+    description: "Internet banking payment to Credit Card",
+    amount: "6,500.00",
     balance: "467,720.83",
   },
 ];

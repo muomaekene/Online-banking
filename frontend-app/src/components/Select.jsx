@@ -60,12 +60,12 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     padding: 2px 12px;
+    font-weight: 500;
     border-radius: ${({ theme }) => theme.borderRadius[0]};
+    border: 1px solid ${({ theme }) => theme.palette.border};
     background: ${({ theme }) => theme.palette.main};
     color: ${({ theme }) => theme.palette.text};
-    border: 1px solid ${({ theme }) => theme.palette.border};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    text-transform: capitalize;
     cursor: pointer;
     display: flex;
     justify-content: space-between;

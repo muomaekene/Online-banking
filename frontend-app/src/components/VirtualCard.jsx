@@ -42,7 +42,7 @@ const Container = styled.div`
   cursor: pointer;
   font-weight: 400;
   padding-bottom: 15px;
-  border-radius: 15px;
+  border-radius: 10px;
   background: #fc466b;
   background: -webkit-linear-gradient(to right, #3f5efb, #fc466b);
   background: linear-gradient(to right, #3f5efb, #fc466b);

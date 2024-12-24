@@ -34,7 +34,7 @@ const Statements = () => {
             Account statement for <span>July 2024</span>
           </p>
           <button>
-            <ArrowDownward style={{ fontSize: "15px", marginRight: "2px" }} />
+            <ArrowDownward style={{ fontSize: "15px" }} />
             Download
           </button>
         </div>
@@ -106,20 +106,21 @@ const StatementResult = styled.section`
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   button {
     display: flex;
-    border: 1px solid transparent;
     background: none;
+    border-radius: 4px;
     color: ${({ theme }) => theme.palette.text};
     cursor: pointer;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    border: 1px solid ${({ theme }) => theme.palette.link};
+    padding: 2px 4px;
 
     :hover {
-      border: 1px solid ${({ theme }) => theme.palette.link};
       color: ${({ theme }) => theme.palette.solid};
     }
   }

@@ -9,6 +9,8 @@ import styled from "styled-components";
 const Payment = () => {
   return (
     <Container>
+      <div className="title">Choose your payment method</div>
+
       <fieldset className="method">
         <label className="radio-control">
           <input
@@ -45,6 +47,18 @@ const Container = styled.section`
   flex-direction: column;
   gap: 10px;
   font-size: 14px;
+  padding: 25px 20px;
+  background: ${({ theme }) => theme.palette.main};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
+  margin-top: 15px;
+
+  .title {
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    margin-bottom: 5px;
+    display: flex;
+    gap: 5px;
+  }
 
   .method {
     padding: 0 20px;

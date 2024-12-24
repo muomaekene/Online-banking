@@ -32,7 +32,7 @@ const Container = styled.div`
   justify-content: space-between;
 
   h2 {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     margin-bottom: 5px;
   }
@@ -48,7 +48,7 @@ const Container = styled.div`
   }
 
   button {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
     background: none;

@@ -21,17 +21,24 @@ const AccountSummary = ({
 
   return (
     <Container style={{ height: `${boxHeight}rem` }}>
-      <div className="account-info">
-        <Link to={accountId} className="account-type">
-          {account} | ...{accountNo}
-        </Link>
+      <div className="account-details">
+        <div className="account-type">
+          <Link to={accountId} className="name">
+            {account} | ...{accountNo}
+          </Link>
 
-        <p className="account-bal">${balance}</p>
+          <div className="account-action">
+            <button className="dropdown-btn" onClick={() => setOpen(!open)}>
+              {open ? " - Hide" : " + Recent transactions"}
+            </button>
+          </div>
+        </div>
+
+        <div className="account-bal">
+          <p className="amount">${balance}</p>
+          <p className="desc">Available balance</p>
+        </div>
       </div>
-
-      <button className="dropdown-btn" onClick={() => setOpen(!open)}>
-        {open ? " - Hide" : " + Recent transactions"}
-      </button>
 
       {open && (
         <>
@@ -54,13 +61,13 @@ const Container = styled.div`
   position: relative;
   margin-bottom: 5px;
 
-  .account-info {
+  .account-details {
     display: flex;
     justify-content: space-between;
     padding: 20px 20px 0px 20px;
   }
 
-  .account-type {
+  .name {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
@@ -75,10 +82,17 @@ const Container = styled.div`
     }
   }
 
-  .account-bal {
+  .amount {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
+    text-align: end;
+  }
+
+  .desc {
+    font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+    color: ${({ theme }) => theme.palette.link};
   }
 
   .dropdown-btn {
@@ -88,7 +102,6 @@ const Container = styled.div`
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     color: ${({ theme }) => theme.palette.altText};
-    margin-left: 20px;
 
     :hover {
       border: 1px solid ${({ theme }) => theme.palette.border};

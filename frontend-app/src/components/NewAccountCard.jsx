@@ -1,3 +1,4 @@
+import { ChevronRightIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
@@ -12,8 +13,12 @@ const NewAccountCard = ({ id, name, sc_desc, children }) => {
       </div>
 
       <div className="account-actions">
-        <CustomLink to={id}>Learn more</CustomLink>
-        <CustomLink to="checkout">Open account</CustomLink>
+        <CustomLink to={id}>
+          Learn more <ChevronRightIcon width="16px" />
+        </CustomLink>
+        <CustomLink to="checkout">
+          Open account <ChevronRightIcon width="16px" />
+        </CustomLink>
       </div>
     </Section>
   );
@@ -39,14 +44,14 @@ const Section = styled.section`
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     padding: 20px 0 10px 20px;
-    text-transform: uppercase;
+    text-transform: capitalize;
   }
 
   .account-desc {
     color: ${({ theme }) => theme.palette.altText};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    line-height: 1.3rem;
+    line-height: 1.2rem;
   }
 
   .account-actions {
@@ -56,7 +61,7 @@ const Section = styled.section`
   }
 
   .account-features {
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -68,13 +73,10 @@ const CustomLink = styled(Link)`
   align-items: center;
   justify-content: center;
   gap: 2px;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
 
   :hover {
-    text-decoration: underline;
-    text-decoration-color: ${({ theme }) => theme.palette.link};
-    text-decoration-thickness: 1px;
     color: ${({ theme }) => theme.palette.link};
   }
 `;

@@ -6,7 +6,7 @@ import styled from "styled-components";
 const QuickTransfer = () => {
   return (
     <Section>
-      <SectionHeader title="Quick transfer" />
+      <SectionHeader title="Pay bill" />
       <TransferForm />
     </Section>
   );
@@ -15,7 +15,7 @@ const QuickTransfer = () => {
 export default QuickTransfer;
 
 const Section = styled.section`
-  height: 22.8rem;
+  height: 25rem;
   position: relative;
   display: flex;
   flex-direction: column;

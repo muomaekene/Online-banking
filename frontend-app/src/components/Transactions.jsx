@@ -1,20 +1,21 @@
-import { Link } from "react-router-dom";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
-
 import SectionHeader from "./SectionHeader";
 import TableMain from "./TableMain";
+import Select from "./Select";
 
 import styled from "styled-components";
 
 const Transactions = () => {
   return (
     <Section>
-      <SectionHeader title="Recent transactions">
-        <Link to="/transactions" className="link-to">
-          <p>see all</p>
-          <ChevronRightIcon className="icon" />
-        </Link>
+      <SectionHeader title="Last transactions">
+        <div className="tooltip">
+          <Select
+            placeholder="Sort: Status - Completed"
+            options={["Scheduled", "Pending", "Completed"]}
+          />
+        </div>
       </SectionHeader>
+
       <TableMain />
     </Section>
   );

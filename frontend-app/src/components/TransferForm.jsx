@@ -1,11 +1,8 @@
-import { SendRounded } from "@mui/icons-material";
-
 import CustomBtn from "./CustomBtn";
 import Select from "./Select";
 import TransferInput from "./TransferInput";
 
 import styled from "styled-components";
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
 
 const TransferForm = () => {
   const handleSubmit = (event) => {
@@ -16,7 +13,7 @@ const TransferForm = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <Select
-        placeholder="Select account"
+        placeholder="Choose a bill"
         options={[
           "SmartPlus Savings (...9792)",
           "SmartPlus Checking (...9548)",
@@ -24,15 +21,28 @@ const TransferForm = () => {
           "Customized Cash Rewards Visa Card (...5376)",
         ]}
       />
-
+      <Select
+        placeholder="Choose an account"
+        options={[
+          "SmartPlus Savings (...9792)",
+          "SmartPlus Checking (...9548)",
+          "Venture Rewards Visa Card (...5632)",
+          "Customized Cash Rewards Visa Card (...5376)",
+        ]}
+      />
+      <Select
+        placeholder="Delivery by"
+        options={[
+          "SmartPlus Savings (...9792)",
+          "SmartPlus Checking (...9548)",
+          "Venture Rewards Visa Card (...5632)",
+          "Customized Cash Rewards Visa Card (...5376)",
+        ]}
+      />
       <TransferInput icon="$" placeholder="Enter amount" />
-      <TransferInput icon="#" placeholder="Account no." />
-      <TransferInput icon="#" placeholder="Routing no." />
 
-      <CustomBtn>
-        Send money
-        <ChevronRightIcon width="15px" />
-      </CustomBtn>
+      <CustomBtn>Review & pay</CustomBtn>
+      <button className="secondary-btn">View Activity</button>
     </Form>
   );
 };
@@ -40,9 +50,19 @@ const TransferForm = () => {
 export default TransferForm;
 
 const Form = styled.form`
-  margin-top: 25px;
+  margin-top: 10px;
   width: 88%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  .secondary-btn {
+    background: none;
+    padding: 10px;
+    border-radius: ${({ theme }) => theme.borderRadius[0]};
+    border: 1px solid ${({ theme }) => theme.palette.solid};
+    color: ${({ theme }) => theme.palette.text};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: 500;
+  }
 `;

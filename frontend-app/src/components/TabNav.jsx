@@ -49,7 +49,7 @@ const Nav = styled.div`
     display: flex;
     align-items: center;
     background: ${({ theme }) => theme.palette.main};
-    color: ${({ theme }) => theme.palette.altText};
+    color: ${({ theme }) => theme.palette.text};
     cursor: pointer;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
