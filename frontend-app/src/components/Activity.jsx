@@ -1,4 +1,3 @@
-import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import ActivitySummary from "./ActivitySummary";
 
@@ -7,17 +6,25 @@ import {
   COMPLETED_ACTIVITY,
   PENDING_ACTIVITY,
 } from "../utils/COMPONENT_DATA";
+import { ACCOUNTS_OWNED } from "../utils/uiData";
 
 import styled from "styled-components";
 import SectionHeader from "./SectionHeader";
+import Select from "./Select";
 
 const Activity = () => {
   return (
     <Container>
       <div className="activity-card">
-        <SectionHeader title="Transfer Activities" />
-        <div className="top-border"></div>
+        <SectionHeader title="Activity" />
+        <div className="action">
+          <Select
+            placeholder="Account: All accounts"
+            options={ACCOUNTS_OWNED}
+          />
+        </div>
 
+        <div className="top-border"></div>
         <ActivityTitle>Scheduled</ActivityTitle>
 
         {SCHEDULED_ACTIVITY.map((item) => (
@@ -53,6 +60,11 @@ const Container = styled.section`
     background: ${({ theme }) => theme.palette.main};
     height: fit-content;
     margin-left: 15px;
+  }
+
+  .action {
+    padding: 0 20px;
+    margin-bottom: 15px;
   }
 
   .top-border {

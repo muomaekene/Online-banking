@@ -11,13 +11,13 @@ const TabNav = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="statements" className="tab-link">
-            Statements & Documents
+          <NavLink to="open-new-account" className="tab-link">
+            Open New Account
           </NavLink>
         </li>
         <li>
-          <NavLink to="open-new-account" className="tab-link">
-            Open New Account
+          <NavLink to="statements" className="tab-link">
+            Statements & Documents
           </NavLink>
         </li>
       </ul>

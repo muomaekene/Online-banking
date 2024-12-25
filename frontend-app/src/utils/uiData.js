@@ -280,8 +280,8 @@ export const MONTHS = [
 export const ACCOUNTS_OWNED = [
   "Prime Share Savings (...9792)",
   "Smart Rewards Checking (...9792)",
-  "Venture Rewards Visa Card (...5632)",
-  "Customized Cash Rewards Visa Card (...5376)",
+  "Venture Rewards Mastercard (...5632)",
+  "Customized Cash Rewards Visa (...5376)",
 ];
 
 export const ACCOUNTS_AVAILABLE = [

@@ -80,7 +80,7 @@ const AccountDetailsPage = () => {
               </p>
             </div>
             <div className="filter">
-              <Select placeholder="Sort: Date - Newest to Oldest" />
+              <Select placeholder="Date: Newest to Oldest" />
             </div>
           </div>
         </div>

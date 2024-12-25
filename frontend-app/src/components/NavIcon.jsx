@@ -16,7 +16,6 @@ const Button = styled.button`
   border: 1px solid transparent;
   color: ${({ theme }) => theme.palette.text};
   background: ${({ theme }) => theme.palette.main};
-  border: 1px solid ${({ theme }) => theme.palette.border};
 
   :hover {
     border: 1px solid ${({ theme }) => theme.palette.border};

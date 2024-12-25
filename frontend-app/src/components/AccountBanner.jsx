@@ -68,8 +68,8 @@ const Container = styled.div`
 
   .account-type {
     color: ${({ theme }) => theme.palette.text};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
     text-transform: capitalize;
     display: flex;
     gap: 2px;
@@ -82,8 +82,8 @@ const Container = styled.div`
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
     color: ${({ theme }) => theme.palette.text};
     text-align: end;
     cursor: pointer;

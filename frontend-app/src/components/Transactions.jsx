@@ -8,12 +8,10 @@ const Transactions = () => {
   return (
     <Section>
       <SectionHeader title="Last transactions">
-        <div className="tooltip">
-          <Select
-            placeholder="Sort: Status - Completed"
-            options={["Scheduled", "Pending", "Completed"]}
-          />
-        </div>
+        <Select
+          placeholder="Status: Completed"
+          options={["Scheduled", "Pending", "Completed"]}
+        />
       </SectionHeader>
 
       <TableMain />

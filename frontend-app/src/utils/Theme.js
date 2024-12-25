@@ -20,7 +20,7 @@ export const getDesignToken = (mode) => ({
       : {
           main: "#121212",
           // primary: "#313947",
-          danger: "#e93c3c",
+          danger: "#c32727",
           secondary: "#343434a9",
           solid: "#04813a",
           focus: "#49494971",
