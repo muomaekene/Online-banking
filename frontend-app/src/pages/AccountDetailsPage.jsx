@@ -4,21 +4,18 @@ import {
   MagnifyingGlassIcon,
   PrinterIcon,
 } from "@heroicons/react/24/outline";
-import NavigationBtn from "../components/NavigationBtn";
-import { NavLink, Outlet, useParams } from "react-router-dom";
 
-import styled from "styled-components";
 import Select from "../components/Select";
 import TableMain from "../components/TableMain";
+import NavigationBtn from "../components/NavigationBtn";
+
+import styled from "styled-components";
 
 const AccountDetailsPage = () => {
-  const params = useParams();
-
   return (
     <Container>
       <NavigationBtn />
 
-      {/* <p>{params.id}</p> */}
       <section className="generic account-summary">
         <div className="left">
           <p className="account-name">Smart rewards checking | ...3473</p>

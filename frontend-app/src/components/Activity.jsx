@@ -1,16 +1,17 @@
 import { Link } from "react-router-dom";
-import ActivitySummary from "./ActivitySummary";
 
+import ActivitySummary from "./ActivitySummary";
+import SectionHeader from "./SectionHeader";
+import Select from "./Select";
+
+import { ACCOUNTS_OWNED } from "../utils/uiData";
 import {
   SCHEDULED_ACTIVITY,
   COMPLETED_ACTIVITY,
   PENDING_ACTIVITY,
 } from "../utils/COMPONENT_DATA";
-import { ACCOUNTS_OWNED } from "../utils/uiData";
 
 import styled from "styled-components";
-import SectionHeader from "./SectionHeader";
-import Select from "./Select";
 
 const Activity = () => {
   return (
@@ -53,13 +54,12 @@ const Activity = () => {
 export default Activity;
 
 const Container = styled.section`
-  width: 32%;
+  width: 30%;
 
   .activity-card {
     border-radius: ${({ theme }) => theme.borderRadius[1]};
     background: ${({ theme }) => theme.palette.main};
     height: fit-content;
-    margin-left: 15px;
   }
 
   .action {
@@ -69,27 +69,6 @@ const Container = styled.section`
 
   .top-border {
     border-bottom: 1px solid ${({ theme }) => theme.palette.border};
-
-    form {
-      width: 100%;
-      border: 1px solid ${({ theme }) => theme.palette.border};
-      border-radius: ${({ theme }) => theme.borderRadius[0]};
-      display: flex;
-      margin-right: 20px;
-      padding: 0 10px;
-
-      input {
-        background: red;
-        padding: 10px 0;
-        width: 100%;
-        border: none;
-        outline: none;
-        margin-left: 5px;
-        background: transparent;
-        color: ${({ theme }) => theme.palette.text};
-        font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-      }
-    }
   }
 
   .footer {

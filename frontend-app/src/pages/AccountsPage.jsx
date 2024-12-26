@@ -20,5 +20,4 @@ export default Accounts;
 const MainContent = styled.div`
   display: flex;
   height: calc(100vh - 70px);
-  margin-top: 15px;
 `;

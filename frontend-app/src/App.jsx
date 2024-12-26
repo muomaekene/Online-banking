@@ -10,12 +10,19 @@ import HelpPage from "./pages/HelpPage";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
 import PageNotFound from "./pages/PageNotFound";
+
 import AllAccountsPage from "./pages/AllAccountsPage";
 import AccountStatementsPage from "./pages/AccountStatementsPage";
 import CreateAccountPage from "./pages/CreateAccountPage";
 import AccountDetailsPage from "./pages/AccountDetailsPage";
 import LearnMorePage from "./pages/LearnMorePage";
 import CheckoutPage from "./pages/CheckoutPage";
+
+import AllTransfers from "./pages/AllTransfers";
+import InternalTransferPage from "./pages/InternalTransferPage";
+import ExternalTransferPage from "./pages/ExternalTransferPage";
+import WireTransferPage from "./pages/WireTransferPage";
+import PayBillsPage from "./pages/PayBillsPage";
 
 const App = () => {
   return (
@@ -33,7 +40,14 @@ const App = () => {
         <Route path="open-new-account/checkout" element={<CheckoutPage />} />
       </Route>
 
-      <Route path="transfers" element={<TransferPage />} />
+      <Route path="transfers" element={<TransferPage />}>
+        <Route index element={<AllTransfers />} />
+        <Route path="internal" element={<InternalTransferPage />} />
+        <Route path="external" element={<ExternalTransferPage />} />
+        <Route path="wire" element={<WireTransferPage />} />
+        <Route path="bills" element={<PayBillsPage />} />
+      </Route>
+
       <Route path="deposit" element={<DepositPage />} />
       <Route path="profile" element={<ProfilePage />} />
       <Route path="settings" element={<SettingsPage />} />

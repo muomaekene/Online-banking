@@ -513,29 +513,33 @@ export const btnList = [
 
 export const TRANSFER_DATA = [
   {
+    id: "internal-transfer",
     title: "Make An Internal Transfer",
     description: "Manage money between all your First Florida bank accounts",
     action: "Transfer money",
-    id: "internal-transfer",
+    url: "internal",
   },
   {
+    id: "external-transfer",
     title: "Make An External Transfer",
     description:
       "Transfer money between your First Florida bank accounts and external accounts",
     action: "Transfer money",
-    id: "external-transfer",
+    url: "external",
   },
   {
+    id: "wire-transfer",
     title: "Send A Wire Transfer",
     description:
       "Transfer large sums of money to another person anywhere in the world",
     action: "Send a wire",
-    id: "wire-transfer",
+    url: "wire",
   },
   {
+    id: "bill-pay",
     title: "Manage & Pay Bills",
     description: "Pay your bills and always stay on track with your spending",
     action: "Pay bills",
-    id: "bill-pay",
+    url: "bills",
   },
 ];

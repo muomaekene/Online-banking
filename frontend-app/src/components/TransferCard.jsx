@@ -1,8 +1,9 @@
 import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
-const TransferCard = ({ title, desc, action }) => {
+const TransferCard = ({ title, desc, action, url }) => {
   return (
     <Container>
       <div className="content">
@@ -11,10 +12,10 @@ const TransferCard = ({ title, desc, action }) => {
       </div>
 
       <hr />
-      <button>
+      <CustomLink to={url}>
         {action}
         <ChevronRightIcon width="15px" />
-      </button>
+      </CustomLink>
     </Container>
   );
 };
@@ -46,22 +47,20 @@ const Container = styled.div`
     margin: -20px;
     border-color: ${({ theme }) => theme.palette.hr};
   }
+`;
 
-  button {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-    color: ${({ theme }) => theme.palette.text};
-    background: none;
-    border: 1px solid transparent;
-    cursor: pointer;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+const CustomLink = styled(Link)`
+  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
+  color: ${({ theme }) => theme.palette.text};
+  cursor: pointer;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    :hover {
-      border: 1px solid ${({ theme }) => theme.palette.border};
-      color: ${({ theme }) => theme.palette.link};
-    }
+  :hover {
+    color: ${({ theme }) => theme.palette.link};
+    text-decoration: underline;
   }
 `;

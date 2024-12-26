@@ -20,5 +20,4 @@ export default AccountStatementsPage;
 
 const Container = styled.div`
   width: 70%;
-  padding-right: 15px;
 `;

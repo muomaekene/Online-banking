@@ -29,8 +29,7 @@ const Container = styled.div`
   justify-content: space-between;
   margin-bottom: 10px;
   margin-right: 20px;
-  font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+  font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
 
   .left {
     display: flex;
