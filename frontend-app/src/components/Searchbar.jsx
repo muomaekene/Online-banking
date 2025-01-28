@@ -34,7 +34,7 @@ const Searchbar = () => {
 const Form = styled.form`
   position: relative;
   width: 50%;
-  height: 80%;
+  height: 45px;
   display: flex;
   align-items: center;
   padding: 0 ${({ theme }) => theme.spacing(1)};
@@ -47,7 +47,7 @@ const Form = styled.form`
   :focus-within {
     /* background: ${({ theme }) => theme.palette.focus}; */
     border-radius: ${({ theme }) => theme.borderRadius[0]};
-    border: 1px solid ${({ theme }) => theme.palette.link};
+    border: 1px solid ${({ theme }) => theme.palette.border};
   }
 
   .icon-wrap {

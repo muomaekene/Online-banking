@@ -148,7 +148,7 @@ const Form = styled.form`
     width: 80%;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    color: ${({ theme }) => theme.palette.altText};
+    color: ${({ theme }) => theme.palette.text};
   }
 
   .link {

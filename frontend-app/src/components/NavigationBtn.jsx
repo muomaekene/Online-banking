@@ -20,7 +20,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 2px;
   width: fit-content;
   font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};

@@ -20,10 +20,10 @@ export default Info;
 
 const Container = styled.div`
   margin-top: 10px;
-  background: ${({ theme }) => theme.palette.main};
+  background: ${({ theme }) => theme.palette.secondary};
   border: 1px solid ${({ theme }) => theme.palette.danger};
   border-radius: ${({ theme }) => theme.borderRadius[0]};
-  color: ${({ theme }) => theme.palette.danger};
+  color: ${({ theme }) => theme.palette.text};
   padding: 12px;
   display: flex;
   justify-content: space-between;

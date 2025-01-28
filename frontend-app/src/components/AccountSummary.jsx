@@ -59,7 +59,11 @@ export default AccountSummary;
 const Container = styled.div`
   background: ${({ theme }) => theme.palette.main};
   position: relative;
-  margin-bottom: 5px;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.border};
+
+  :last-child {
+    border: none;
+  }
 
   .account-details {
     display: flex;
@@ -92,7 +96,7 @@ const Container = styled.div`
   .desc {
     font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
-    color: ${({ theme }) => theme.palette.link};
+    color: ${({ theme }) => theme.palette.altText};
   }
 
   .dropdown-btn {

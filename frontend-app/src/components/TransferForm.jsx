@@ -15,30 +15,23 @@ const TransferForm = () => {
       <Select
         placeholder="Choose a bill"
         options={[
-          "SmartPlus Savings (...9792)",
-          "SmartPlus Checking (...9548)",
-          "Venture Rewards Visa Card (...5632)",
-          "Customized Cash Rewards Visa Card (...5376)",
+          "AT&T internet",
+          "Pacific Gas & Electric",
+          "Amazon Prime subscription",
+          "24 Hour Fitness Gym",
         ]}
       />
       <Select
         placeholder="Choose an account"
         options={[
-          "SmartPlus Savings (...9792)",
-          "SmartPlus Checking (...9548)",
-          "Venture Rewards Visa Card (...5632)",
-          "Customized Cash Rewards Visa Card (...5376)",
+          "SmartPlus Savings ...9792",
+          "SmartPlus Checking ...9548",
+          "Venture Rewards Visa Card ...5632",
+          "Customized Cash Rewards Visa ...5376",
         ]}
       />
-      <Select
-        placeholder="Delivery by"
-        options={[
-          "SmartPlus Savings (...9792)",
-          "SmartPlus Checking (...9548)",
-          "Venture Rewards Visa Card (...5632)",
-          "Customized Cash Rewards Visa Card (...5376)",
-        ]}
-      />
+
+      <TransferInput placeholder="MM/DD/YY" />
       <TransferInput icon="$" placeholder="Enter amount" />
 
       <CustomBtn>Review & pay</CustomBtn>
@@ -58,11 +51,18 @@ const Form = styled.form`
 
   .secondary-btn {
     background: none;
-    padding: 10px;
+    height: 45px;
     border-radius: ${({ theme }) => theme.borderRadius[0]};
     border: 1px solid ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.text};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     font-weight: 500;
+    cursor: pointer;
+
+    :active {
+      background: ${({ theme }) => theme.palette.focus};
+      background-size: 100%;
+      border: 1px solid transparent;
+    }
   }
 `;

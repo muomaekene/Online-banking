@@ -60,7 +60,7 @@ const TopBar = ({ theme, themeToggler }) => {
         <Dropdown
           name="Robbin Eckert"
           userID="@user_1039"
-          triggerElement={<Avatar>RE</Avatar>}
+          triggerElement={<Avatar>TL</Avatar>}
           data={profileDropdown}
         />
       </div>

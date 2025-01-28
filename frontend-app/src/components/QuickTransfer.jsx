@@ -6,7 +6,7 @@ import styled from "styled-components";
 const QuickTransfer = () => {
   return (
     <Section>
-      <SectionHeader title="Pay bill" />
+      <SectionHeader title="Quick pay" />
       <TransferForm />
     </Section>
   );

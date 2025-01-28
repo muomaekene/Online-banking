@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
-const InputBar = ({ icon, placeholder }) => {
+const InputBar = ({ placeholder }) => {
   return (
     <Wrap>
-      <span>{icon}</span>
       <input
         name="amount"
         className="input"
@@ -26,20 +25,11 @@ const Wrap = styled.div`
   position: relative;
   border: 1px solid ${({ theme }) => theme.palette.border};
 
-  span {
-    position: absolute;
-    left: 15px;
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
-    font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-    color: ${({ theme }) => theme.palette.altText};
-  }
-
   .input {
     width: 100%;
     height: 100%;
     outline: none;
-    border: none;
-    padding: 0 30px;
+    padding: 0 10px;
     background: none;
     font-family: inherit;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};

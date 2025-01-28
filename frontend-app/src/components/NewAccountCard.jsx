@@ -1,4 +1,8 @@
-import { ChevronRightIcon } from "@heroicons/react/24/outline";
+import {
+  ChevronRightIcon,
+  InformationCircleIcon,
+  PlusIcon,
+} from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
@@ -14,10 +18,11 @@ const NewAccountCard = ({ id, name, sc_desc, children }) => {
 
       <div className="account-actions">
         <CustomLink to={id}>
-          Learn more <ChevronRightIcon width="16px" />
+          Learn more
+          <ChevronRightIcon width="14px" />
         </CustomLink>
         <CustomLink to="checkout">
-          Open account <ChevronRightIcon width="16px" />
+          <PlusIcon width="14px" /> Open account
         </CustomLink>
       </div>
     </Section>
@@ -70,12 +75,6 @@ const Section = styled.section`
 
 const CustomLink = styled(Link)`
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
-
-  :hover {
-    color: ${({ theme }) => theme.palette.link};
-  }
 `;

@@ -19,13 +19,9 @@ const Activity = () => {
       <div className="activity-card">
         <SectionHeader title="Activity" />
         <div className="action">
-          <Select
-            placeholder="Account: All accounts"
-            options={ACCOUNTS_OWNED}
-          />
+          <Select placeholder="All accounts" options={ACCOUNTS_OWNED} />
         </div>
 
-        <div className="top-border"></div>
         <ActivityTitle>Scheduled</ActivityTitle>
 
         {SCHEDULED_ACTIVITY.map((item) => (
@@ -54,7 +50,8 @@ const Activity = () => {
 export default Activity;
 
 const Container = styled.section`
-  width: 30%;
+  width: 33%;
+  padding-left: 15px;
 
   .activity-card {
     border-radius: ${({ theme }) => theme.borderRadius[1]};
@@ -63,11 +60,7 @@ const Container = styled.section`
   }
 
   .action {
-    padding: 0 20px;
-    margin-bottom: 15px;
-  }
-
-  .top-border {
+    padding: 0 15px 15px 15px;
     border-bottom: 1px solid ${({ theme }) => theme.palette.border};
   }
 
@@ -78,9 +71,9 @@ const Container = styled.section`
 `;
 
 const ActivityTitle = styled.div`
-  padding: 6px 20px;
+  padding: 10px 15px;
   border-bottom: 1px solid ${({ theme }) => theme.palette.border};
-  font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
+  font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   display: flex;
   justify-content: space-between;

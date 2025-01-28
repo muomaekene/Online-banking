@@ -42,10 +42,10 @@ const App = () => {
 
       <Route path="transfers" element={<TransferPage />}>
         <Route index element={<AllTransfers />} />
-        <Route path="internal" element={<InternalTransferPage />} />
-        <Route path="external" element={<ExternalTransferPage />} />
-        <Route path="wire" element={<WireTransferPage />} />
-        <Route path="bills" element={<PayBillsPage />} />
+        <Route path="internal-transfer" element={<InternalTransferPage />} />
+        <Route path="external-transfer" element={<ExternalTransferPage />} />
+        <Route path="wire-transfer" element={<WireTransferPage />} />
+        <Route path="pay-bills" element={<PayBillsPage />} />
       </Route>
 
       <Route path="deposit" element={<DepositPage />} />

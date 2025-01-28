@@ -22,7 +22,6 @@ const LearnMorePage = () => {
       <NavigationBtn />
       {accountsList.map((account) => (
         <section className="all-details" key={account.id}>
-          <div className="page-title">Learn More</div>
           <h2 className="account-name">{account.name}</h2>
           <p className="top-desc">{account.sc_description}</p>
 
@@ -88,7 +87,6 @@ const Container = styled.div`
   }
 
   .account-name {
-    margin-top: 10px;
     text-transform: capitalize;
     font-size: 16px;
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
@@ -98,10 +96,6 @@ const Container = styled.div`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
     color: ${({ theme }) => theme.palette.altText};
-  }
-
-  .bottom-desc {
-    /* margin-top: 20px; */
   }
 
   h3 {

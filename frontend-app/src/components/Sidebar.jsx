@@ -57,7 +57,7 @@ const Container = styled.aside`
 
     .nav-item {
       .nav-link {
-        padding: 15px 30px;
+        padding: 18px 25px;
         display: flex;
         align-items: center;
 

@@ -10,7 +10,6 @@ const CheckoutPage = () => {
     <Container>
       <NavigationBtn />
       <div className="page-content">
-        <div className="title">Your contact information</div>
         <div className="contact-details">
           <h1>Robbin J. Eckert</h1>
           <div className="more-info">
@@ -79,6 +78,7 @@ const Container = styled.div`
       border-radius: ${({ theme }) => theme.borderRadius[1]};
       padding: 15px 20px;
       width: fit-content;
+      margin-top: 15px;
     }
 
     .more-info {

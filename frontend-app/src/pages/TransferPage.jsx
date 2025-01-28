@@ -19,6 +19,7 @@ export default TransferPage;
 
 const Container = styled.div`
   display: flex;
+  gap: 15px;
   padding-bottom: 15px;
   width: 100%;
 `;

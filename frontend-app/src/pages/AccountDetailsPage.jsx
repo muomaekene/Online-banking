@@ -62,7 +62,7 @@ const AccountDetailsPage = () => {
       </section>
       <section className="table-cover">
         <div className="top-group">
-          <div className="title">Activities</div>
+          <div className="title">Activity</div>
 
           <div className="all-actions">
             <div className="actions">
@@ -151,14 +151,14 @@ const Container = styled.div`
   }
 
   .account-name {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
   }
 
   .account-bal {
-    font-size: ${({ theme }) => theme.typography.main.fontSize[4]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+    font-size: ${({ theme }) => theme.typography.main.fontSize[3]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     /* height: 100%; */
   }
   p {

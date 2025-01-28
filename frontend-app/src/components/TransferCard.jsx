@@ -60,7 +60,6 @@ const CustomLink = styled(Link)`
   justify-content: center;
 
   :hover {
-    color: ${({ theme }) => theme.palette.link};
-    text-decoration: underline;
+    color: ${({ theme }) => theme.palette.altText};
   }
 `;

@@ -103,7 +103,7 @@ export default SignupForm;
 
 const Form = styled.form`
   background: ${({ theme }) => theme.palette.main};
-  padding: 40px 30px;
+  padding: 30px;
   width: 65%;
   height: fit-content;
   box-sizing: border-box;

@@ -31,7 +31,7 @@ export default AccountBanners;
 const Section = styled.section`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(1)};
+  /* gap: ${({ theme }) => theme.spacing(1)}; */
   margin-top: 5px;
 `;
 

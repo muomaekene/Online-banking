@@ -33,7 +33,6 @@ const AllTransfers = () => {
 export default AllTransfers;
 
 const Container = styled.div`
-  padding-right: ${({ theme }) => theme.spacing(2)};
   width: 70%;
 
   .all-transfers {

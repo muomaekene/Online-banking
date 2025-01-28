@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const WelcomeMsg = () => {
-  return <Container>Welcome back, Robbin</Container>;
+  return <Container>Welcome back, Theo</Container>;
 };
 
 export default WelcomeMsg;

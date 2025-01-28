@@ -1,5 +1,4 @@
 import {
-  CreditCardIcon,
   ArrowPathIcon,
   WrenchIcon,
   UserIcon,
@@ -12,10 +11,6 @@ import {
   Cog6ToothIcon,
   CameraIcon,
 } from "@heroicons/react/24/outline";
-
-import moneyBox from "../assets/images/moneyBox.png";
-import creditCard from "../assets/images/creditCard.png";
-import checkBook from "../assets/images/checkBook.png";
 
 import bank from "../assets/images/bank.png";
 
@@ -515,31 +510,31 @@ export const TRANSFER_DATA = [
   {
     id: "internal-transfer",
     title: "Make An Internal Transfer",
-    description: "Manage money between all your First Florida bank accounts",
+    description: "Manage money between your First Florida bank accounts",
     action: "Transfer money",
-    url: "internal",
+    url: "internal-transfer",
   },
   {
     id: "external-transfer",
     title: "Make An External Transfer",
     description:
-      "Transfer money between your First Florida bank accounts and external accounts",
+      "Send money from your First Florida bank accounts to external accounts",
     action: "Transfer money",
-    url: "external",
+    url: "external-transfer",
   },
   {
     id: "wire-transfer",
-    title: "Send A Wire Transfer",
+    title: "Perform A Wire Transfer",
     description:
-      "Transfer large sums of money to another person anywhere in the world",
+      "Send large sums of money to another person anywhere in the world",
     action: "Send a wire",
-    url: "wire",
+    url: "wire-transfer",
   },
   {
     id: "bill-pay",
     title: "Manage & Pay Bills",
-    description: "Pay your bills and always stay on track with your spending",
+    description: "Pay your bills easily and stay on track with your spending",
     action: "Pay bills",
-    url: "bills",
+    url: "pay-bills",
   },
 ];

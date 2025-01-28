@@ -32,13 +32,12 @@ const Select = ({ placeholder, options }) => {
       {isOpen && (
         <ul className="select-options">
           {options.map((option) => (
-            <li key={Math.random()} className="select-option">
-              <button
-                className="select-option-btn"
-                onClick={onOptionClicked(option)}
-              >
-                {option}
-              </button>
+            <li
+              onClick={onOptionClicked(option)}
+              key={Math.random()}
+              className="select-option"
+            >
+              {option}
             </li>
           ))}
         </ul>
@@ -59,7 +58,8 @@ const Container = styled.div`
     height: 45px;
     display: flex;
     align-items: center;
-    padding: 2px 12px;
+    justify-content: space-between;
+    padding: 0 10px;
     font-weight: 500;
     border-radius: ${({ theme }) => theme.borderRadius[0]};
     border: 1px solid ${({ theme }) => theme.palette.border};
@@ -67,9 +67,11 @@ const Container = styled.div`
     color: ${({ theme }) => theme.palette.text};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
     z-index: 666;
+
+    :active {
+      background: ${({ theme }) => theme.palette.focus};
+    }
   }
 
   .select-options {
@@ -79,26 +81,20 @@ const Container = styled.div`
     border: 1px solid ${({ theme }) => theme.palette.border};
     width: 100%;
     list-style-type: none;
-    padding: 8px 0 5px 0;
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
-    font-weight: 500;
-    margin-top: 5px;
+    margin-top: 10px;
     z-index: 667;
+    padding: 10px 0;
   }
 
   .select-option {
-    cursor: pointer;
-  }
-
-  .select-option-btn {
-    background: none;
-    border: none;
-    padding: 8px 12px;
+    padding-left: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-transform: capitalize;
+    font-weight: 500;
     color: ${({ theme }) => theme.palette.text};
-    font-weight: 400;
-    width: 100%;
-    display: flex;
-    font-size: 12px;
+    cursor: pointer;
 
     :hover {
       background: ${({ theme }) => theme.palette.secondary};

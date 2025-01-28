@@ -14,13 +14,13 @@ const VirtualCards = () => {
           <Link to="/cards">+ Manage cards</Link>
         </p>
       </div>
-      <div className="arrow-left">
+      <button className="arrow-left">
         <ChevronLeft className="icon" />
-      </div>
+      </button>
       <VirtualCard />
-      <div className="arrow-right">
+      <button className="arrow-right">
         <ChevronRight className="icon" />
-      </div>
+      </button>
     </Section>
   );
 };
@@ -50,16 +50,21 @@ const Section = styled.section`
     color: white;
   }
 
-  .arrow-left {
+  button {
     background-color: rgba(0, 0, 0, 0.3);
     position: absolute;
     height: 2rem;
     display: flex;
     align-items: center;
     top: 50%;
+    cursor: pointer;
+    border: none;
+  }
+  .arrow-left {
+    position: absolute;
+    top: 50%;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    cursor: pointer;
   }
 
   .arrow-right {

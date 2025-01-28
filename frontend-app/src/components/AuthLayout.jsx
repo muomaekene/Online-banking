@@ -2,8 +2,7 @@ import { createTheme } from "@mui/system";
 import { GlobalStyles } from "../utils/global";
 import { getDesignToken } from "../utils/theme";
 
-import AuthHeader from "./AuthHeader";
-import AuthFooter from "./AuthFooter";
+import Logo from "./Logo";
 
 import styled, { ThemeProvider } from "styled-components";
 
@@ -14,9 +13,15 @@ const AuthLayout = ({ children }) => {
     <ThemeProvider theme={themes}>
       <GlobalStyles />
       <Main>
-        <AuthHeader />
+        <div className="auth-header">
+          <Logo />
+        </div>
+
         <div className="auth-body">{children}</div>
-        <AuthFooter />
+
+        <div className="auth-footer">
+          Copyright &copy; 2025. All rights reserved
+        </div>
       </Main>
     </ThemeProvider>
   );
@@ -28,13 +33,26 @@ const Main = styled.main`
   height: 100%;
   background: ${({ theme }) => theme.palette.secondary};
   position: relative;
-  overflow-x: hidden !important;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden !important;
+
+  .auth-header {
+    padding: 20px;
+  }
 
   .auth-body {
     display: flex;
     justify-content: center;
-    /* margin: 100px 0; */
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 60px;
+  }
+
+  .auth-footer {
+    margin-top: 20px;
+    padding: 20px;
+    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 `;

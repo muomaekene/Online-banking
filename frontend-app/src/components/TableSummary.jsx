@@ -13,11 +13,8 @@ const TableSummary = ({ transactions }) => {
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction) => (
-          <TransactionData
-            transaction={transaction}
-            key={transaction.transactionNum}
-          />
+        {transactions.map((item) => (
+          <TransactionData transaction={item} key={item.transactionId} />
         ))}
       </tbody>
     </Table>

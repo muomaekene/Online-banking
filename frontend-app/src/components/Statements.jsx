@@ -34,15 +34,15 @@ const Statements = () => {
             Account statement for <span>July 2024</span>
           </p>
           <button>
-            <ArrowDownward style={{ fontSize: "15px" }} />
             Download
+            <ArrowDownward style={{ fontSize: "15px" }} />
           </button>
         </div>
 
         <hr />
         <div className="result">
           <p>
-            If you want a copy of the statement mailed to you,{" "}
+            If you want a copy of the statement mailed to you
             <a href="#">order a copy</a>
           </p>
         </div>
@@ -58,6 +58,7 @@ const Page = styled.div`
   flex-direction: column;
   gap: 15px;
   width: 100%;
+  padding-right: 15px;
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
 `;

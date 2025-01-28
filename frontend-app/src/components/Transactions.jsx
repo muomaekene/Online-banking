@@ -9,11 +9,10 @@ const Transactions = () => {
     <Section>
       <SectionHeader title="Last transactions">
         <Select
-          placeholder="Status: Completed"
+          placeholder="Transaction status"
           options={["Scheduled", "Pending", "Completed"]}
         />
       </SectionHeader>
-
       <TableMain />
     </Section>
   );

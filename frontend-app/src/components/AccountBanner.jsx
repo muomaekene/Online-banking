@@ -26,13 +26,13 @@ const AccountBanner = ({ account }) => {
         <p className="account-bal">{bal}</p>
         <div className="actions">
           <button>
-            View activity <ChevronRightIcon width="15px" />
+            View activity <ChevronRightIcon width="12px" />
           </button>
           <button>
-            Make a transfer <ChevronRightIcon width="15px" />
+            Make a transfer <ChevronRightIcon width="12px" />
           </button>
           <button>
-            <EllipsisHorizontalIcon width="15px" />
+            <EllipsisHorizontalIcon width="12px" />
           </button>
         </div>
       </div>
@@ -44,8 +44,7 @@ export default AccountBanner;
 
 const Container = styled.div`
   padding: 15px 20px;
-  height: 6rem;
-  border-radius: ${({ theme }) => theme.borderRadius[1]};
+  height: 6.2rem;
   border: 1px solid transparent;
   background: ${({ theme }) => theme.palette.main};
   display: flex;
@@ -53,6 +52,18 @@ const Container = styled.div`
   justify-content: space-between;
   color: ${({ theme }) => theme.palette.altText};
   position: relative;
+  border-bottom: 1px solid ${({ theme }) => theme.palette.border};
+
+  :first-child {
+    border-top-left-radius: ${({ theme }) => theme.borderRadius[1]};
+    border-top-right-radius: ${({ theme }) => theme.borderRadius[1]};
+  }
+
+  :last-child {
+    border: none;
+    border-bottom-left-radius: ${({ theme }) => theme.borderRadius[1]};
+    border-bottom-right-radius: ${({ theme }) => theme.borderRadius[1]};
+  }
 
   .left {
     display: flex;
@@ -60,8 +71,8 @@ const Container = styled.div`
   }
 
   .account-icon {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     margin-right: ${({ theme }) => theme.spacing(1)};
     border-radius: 4px;
   }
@@ -69,7 +80,7 @@ const Container = styled.div`
   .account-type {
     color: ${({ theme }) => theme.palette.text};
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     text-transform: capitalize;
     display: flex;
     gap: 2px;
@@ -83,7 +94,7 @@ const Container = styled.div`
 
   .account-bal {
     font-size: ${({ theme }) => theme.typography.main.fontSize[2]};
-    font-weight: ${({ theme }) => theme.typography.main.fontWeight[2]};
+    font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     color: ${({ theme }) => theme.palette.text};
     text-align: end;
     cursor: pointer;
@@ -127,7 +138,7 @@ const Container = styled.div`
       align-items: center;
       padding: 4px 6px;
       background: none;
-      border: 1px solid ${({ theme }) => theme.palette.solid};
+      border: 1px solid ${({ theme }) => theme.palette.border};
       color: ${({ theme }) => theme.palette.text};
       font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
       font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
