@@ -12,7 +12,7 @@ const Button = styled.button`
   align-items: center;
   width: 100%;
   height: 3rem;
-  border-radius: ${({ theme }) => theme.borderRadius[0]};
+  border-radius: ${({ theme }) => theme.borderRadius[1]};
   border: none;
   font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
   text-transform: capitalize;

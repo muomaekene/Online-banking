@@ -37,6 +37,7 @@ const Container = styled.div`
 
     ::placeholder {
       color: ${({ theme }) => theme.palette.text};
+      font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
     }
   }
 `;

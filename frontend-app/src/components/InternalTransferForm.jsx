@@ -32,7 +32,7 @@ const InternalTransferForm = () => {
       />
       <TransferInputPro
         labelTxt="Memo (optional)"
-        placeholderTxt="Don't enter sensitive info here"
+        placeholderTxt="Describe transaction"
       />
     </Container>
   );

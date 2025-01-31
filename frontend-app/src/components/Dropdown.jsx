@@ -59,7 +59,7 @@ const Container = styled.div`
     padding-bottom: ${({ theme }) => theme.spacing(1)};
     background: ${({ theme }) => theme.palette.main};
     border: 1px solid ${({ theme }) => theme.palette.border};
-    border-radius: ${({ theme }) => theme.borderRadius[0]};
+    border-radius: ${({ theme }) => theme.borderRadius[1]};
     min-width: 15rem;
 
     :before {
@@ -80,8 +80,8 @@ const Container = styled.div`
     padding: ${({ theme }) => theme.spacing(1)};
     ${({ theme }) => theme.spacing(2)};
     background: ${({ theme }) => theme.palette.main};
-    border-top-right-radius: ${({ theme }) => theme.borderRadius[0]};
-    border-top-left-radius: ${({ theme }) => theme.borderRadius[0]};
+    border-top-right-radius: ${({ theme }) => theme.borderRadius[1]};
+    border-top-left-radius: ${({ theme }) => theme.borderRadius[1]};
   }
 
   .tooltip {

@@ -20,7 +20,9 @@ const AuthLayout = ({ children }) => {
         <div className="auth-body">{children}</div>
 
         <div className="auth-footer">
-          Copyright &copy; 2025. All rights reserved
+          <small>
+            &copy; 2025 FirstFlorida Credit Union. All rights reserved.
+          </small>
         </div>
       </Main>
     </ThemeProvider>
@@ -46,13 +48,13 @@ const Main = styled.main`
     justify-content: center;
     align-items: center;
     padding: 20px;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
   }
 
   .auth-footer {
     margin-top: 20px;
     padding: 20px;
-    font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
+    color: ${({ theme }) => theme.palette.altText};
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[1]};
   }
 `;

@@ -84,13 +84,13 @@ const Container = styled.div`
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
     margin-top: 10px;
     z-index: 667;
-    padding: 10px 0;
+    /* padding: 10px 0; */
   }
 
   .select-option {
     padding-left: 10px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     text-transform: capitalize;
     font-weight: 500;
     color: ${({ theme }) => theme.palette.text};

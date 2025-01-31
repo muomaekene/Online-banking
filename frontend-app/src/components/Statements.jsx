@@ -42,7 +42,7 @@ const Statements = () => {
         <hr />
         <div className="result">
           <p>
-            If you want a copy of the statement mailed to you
+            If you want a copy of the statement mailed to you{" "}
             <a href="#">order a copy</a>
           </p>
         </div>
@@ -58,9 +58,12 @@ const Page = styled.div`
   flex-direction: column;
   gap: 15px;
   width: 100%;
+  height: 100%;
   padding-right: 15px;
   font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
   font-size: ${({ theme }) => theme.typography.main.fontSize[0]};
+
+  overflow-x: hidden !important;
 `;
 
 const StatementForm = styled.section`

@@ -48,7 +48,7 @@ const Container = styled.div`
     font-weight: ${({ theme }) => theme.typography.main.fontWeight[0]};
     border-top-right-radius: ${({ theme }) => theme.borderRadius[1]};
     border-top-left-radius: ${({ theme }) => theme.borderRadius[1]};
-    padding: 18px;
+    padding: 20px;
   }
 
   .group-section {

@@ -52,7 +52,7 @@ const Form = styled.form`
   .secondary-btn {
     background: none;
     height: 45px;
-    border-radius: ${({ theme }) => theme.borderRadius[0]};
+    border-radius: ${({ theme }) => theme.borderRadius[1]};
     border: 1px solid ${({ theme }) => theme.palette.solid};
     color: ${({ theme }) => theme.palette.text};
     font-size: ${({ theme }) => theme.typography.main.fontSize[1]};
